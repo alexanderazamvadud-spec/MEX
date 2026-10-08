@@ -1,0 +1,138 @@
+/*
+ * MEX design tokens: "Bright Start" (brand CONFIRMED by the owner, 2026-10-08).
+ * The hover tints, accent-hover and outline values were derived by the coding
+ * agent to satisfy the approved rules ("hover darkens", "outline passes 3:1")
+ * and are PROPOSED until the owner confirms them; see docs/design-system.md.
+ * Tokens are named by role, so a dark theme can later override the same
+ * variables under a [data-theme="dark"] selector without touching components.
+ */
+
+/*
+ * Companion face. Manrope does not include the Uzbek apostrophes U+02BB (oʻ, gʻ)
+ * and U+02BC (tutuq belgisi) or the combining acute accent U+0301 used for
+ * Russian stress marks. These three glyphs are subset from Noto Sans Variable
+ * (SIL Open Font License 1.1, see ./fonts/LICENSE-NotoSans.txt) into their own
+ * tiny family, which sits FIRST in the font stack. Its unicode-range limits it
+ * to exactly these three code points, so every other character falls through
+ * to Manrope. A separate family is used because browsers do not reliably try
+ * sibling faces of one family when the first matching face lacks a glyph.
+ *
+ * Known limitation: the two apostrophes work everywhere (each is its own
+ * character). The accent only works in browsers that pick fonts per character
+ * (Firefox). Chromium and WebKit pick fonts per letter-plus-mark cluster, and no
+ * single family here has both a Cyrillic letter and U+0301, so a stressed
+ * Russian letter falls back as a whole to the device font (Segoe UI, Roboto,
+ * system). The glyph is kept because it costs nothing.
+ */
+@font-face {
+  font-family: 'MEX Apostrophes';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('./fonts/mex-apostrophes.woff2') format('woff2-variations');
+  unicode-range: U+02BB-02BC, U+0301;
+}
+
+@theme {
+  /* Remove Tailwind's default palette so only MEX colours can be used. */
+  --color-*: initial;
+
+  --font-sans: 'MEX Apostrophes', 'Manrope Variable', 'Segoe UI', Roboto, 'Noto Sans', system-ui, sans-serif;
+
+  /* Brand */
+  --color-primary: #1F57C3;
+  --color-primary-hover: #16418F;
+  --color-accent: #F6BE2C;
+  --color-accent-hover: #E0A410;
+
+  /* Surfaces */
+  --color-surface: #FFFFFF;
+  --color-surface-soft: #F2F5FC;
+  --color-surface-soft-hover: #E4EAF7;
+  --color-surface-sky: #EAF0FC;
+  --color-surface-sky-hover: #DCE6F9;
+  --color-accent-tint: #FFF4D6;
+  --color-accent-tint-hover: #FFE9B8;
+
+  /* Text */
+  --color-ink: #121826;
+  --color-ink-secondary: #485066;
+  --color-ink-muted: #5A6275;
+  --color-on-primary: #FFFFFF;
+  --color-on-primary-muted: #D6E2FA;
+  --color-on-accent: #121826;
+  --color-on-accent-tint: #7A5A00;
+
+  /* Lines and tracks */
+  --color-divider: #E6EBF5;
+  --color-outline: #76829B;
+  --color-track: #D3DEF5;
+  --color-track-on-primary: #16418F;
+
+  /* Feedback */
+  --color-success-tint: #E3F4E8;
+  --color-success-border: #1E7B3A;
+  --color-success-text: #17602F;
+  --color-error-tint: #FDE8E4;
+  --color-error-tint-hover: #F9D5CE;
+  --color-error-border: #B8442C;
+  --color-error-text: #8A2A17;
+  --color-warning-tint: #FFF4D6;
+  --color-warning-text: #7A5A00;
+  --color-info-tint: #EAF0FC;
+  --color-info-text: #1F57C3;
+
+  /* Type scale (12 px floor). Each entry carries its line-height, tracking and weight. */
+  --text-label: 12px;
+  --text-label--line-height: 1.3;
+  --text-label--letter-spacing: 0.08em;
+  --text-label--font-weight: 700;
+  --text-small: 13px;
+  --text-small--line-height: 1.45;
+  --text-small--font-weight: 600;
+  --text-body: 15px;
+  --text-body--line-height: 1.5;
+  --text-body--font-weight: 600;
+  --text-lead: 17px;
+  --text-lead--line-height: 1.4;
+  --text-lead--font-weight: 600;
+  --text-h3: 20px;
+  --text-h3--line-height: 1.25;
+  --text-h3--letter-spacing: -0.01em;
+  --text-h3--font-weight: 800;
+  --text-h2: 24px;
+  --text-h2--line-height: 1.2;
+  --text-h2--letter-spacing: -0.02em;
+  --text-h2--font-weight: 800;
+  --text-h1: 26px;
+  --text-h1--line-height: 1.2;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h1--font-weight: 800;
+  --text-display: 30px;
+  --text-display--line-height: 1.15;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 800;
+  --text-wordmark: 46px;
+  --text-wordmark--line-height: 1;
+  --text-wordmark--letter-spacing: -0.03em;
+  --text-wordmark--font-weight: 800;
+
+  /* Shape */
+  --radius-card: 24px;
+  --radius-panel: 20px;
+  --radius-pill: 9999px;
+
+  /* Layout. Named "gutter", not "screen": a --spacing-screen token would override
+   * Tailwind's built-in h-screen / w-screen / min-h-screen utilities. */
+  --spacing-gutter: 18px;
+  --container-page: 560px;
+}
+
+/*
+ * Focus ring colour follows the surface around the control: primary blue on
+ * light surfaces, white inside primary-blue surfaces (set by the Card component).
+ * Saffron is never used for rings or lines on light surfaces (1.7:1).
+ */
+:root {
+  --focus-ring: var(--color-primary);
+}

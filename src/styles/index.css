@@ -1,1 +1,43 @@
 @import "tailwindcss";
+@import "@fontsource-variable/manrope";
+@import "./theme.css";
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: var(--color-surface);
+    color: var(--color-ink);
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    min-height: 100dvh;
+    font-size: var(--text-body);
+    line-height: var(--text-body--line-height);
+    font-weight: var(--text-body--font-weight);
+  }
+
+  a {
+    color: var(--color-primary);
+    font-weight: 700;
+  }
+
+  a:hover {
+    color: var(--color-primary-hover);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}

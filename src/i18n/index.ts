@@ -12,7 +12,7 @@ export const DEFAULT_LANGUAGE: SupportedLanguage = 'en'
 // Language names are always shown in their own language, whatever the current interface language.
 export const LANGUAGE_NAMES: Record<SupportedLanguage, string> = {
   en: 'English',
-  uz: 'O‘zbekcha',
+  uz: 'Oʻzbekcha',
   ru: 'Русский',
 }
 
