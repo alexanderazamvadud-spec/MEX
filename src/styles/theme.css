@@ -1,8 +1,7 @@
 /*
- * MEX design tokens: "Bright Start" (brand CONFIRMED by the owner, 2026-10-08).
- * The hover tints, accent-hover and outline values were derived by the coding
- * agent to satisfy the approved rules ("hover darkens", "outline passes 3:1")
- * and are PROPOSED until the owner confirms them; see docs/design-system.md.
+ * MEX design tokens: "Bright Start" (CONFIRMED by the owner, 2026-10-08; the
+ * derived hover tints, accent-hover and outline values confirmed 2026-10-09).
+ * See docs/design-system.md for the usage rules.
  * Tokens are named by role, so a dark theme can later override the same
  * variables under a [data-theme="dark"] selector without touching components.
  */

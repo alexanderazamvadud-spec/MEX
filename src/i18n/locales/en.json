@@ -4,6 +4,24 @@
     "subtitle": "Modern Employability eXperience"
   },
   "placeholder": {
-    "status": "Job Interview English — coming soon."
+    "status": "Job Interview English — coming soon.",
+    "openApp": "Open the app preview"
+  },
+  "language": {
+    "label": "Interface language"
+  },
+  "nav": {
+    "home": "Home",
+    "learn": "Learn",
+    "progress": "Progress",
+    "settings": "Settings"
+  },
+  "stub": {
+    "comingSoon": "This screen is coming in a later task."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "The link may be wrong or out of date.",
+    "cta": "Go to Home"
   }
 }

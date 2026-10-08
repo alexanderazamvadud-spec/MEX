@@ -12,6 +12,9 @@ dist-ssr
 CLAUDE.md
 MEX_MVP_SCOPE*.md
 
+# Local drafts of real learning content (never commit; see docs/design-system.md and the scope rules)
+content-private/
+
 # Coding-agent session files
 .claude/
 

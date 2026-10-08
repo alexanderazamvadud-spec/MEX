@@ -5,6 +5,24 @@
     "subtitle": "Modern Employability eXperience"
   },
   "placeholder": {
-    "status": "Ish suhbati uchun ingliz tili — tez kunda."
+    "status": "Ish suhbati uchun ingliz tili — tez kunda.",
+    "openApp": "Ilovani koʻrish"
+  },
+  "language": {
+    "label": "Interfeys tili"
+  },
+  "nav": {
+    "home": "Bosh sahifa",
+    "learn": "Oʻrganish",
+    "progress": "Rivojlanish",
+    "settings": "Sozlamalar"
+  },
+  "stub": {
+    "comingSoon": "Bu sahifa keyingi bosqichda tayyor boʻladi."
+  },
+  "notFound": {
+    "title": "Sahifa topilmadi",
+    "body": "Havola notoʻgʻri yoki eskirgan boʻlishi mumkin.",
+    "cta": "Bosh sahifaga"
   }
 }

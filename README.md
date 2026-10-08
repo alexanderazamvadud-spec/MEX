@@ -52,3 +52,7 @@ Fonts are self-hosted and served with the site; no font service is contacted.
 ## Translations
 
 English is the source language. The Uzbek (Latin script) and Russian translation files are DRAFT and pending review.
+
+## Licence
+
+Copyright © 2026 Alexis Team LLC. All rights reserved. The code and content of this repository may not be copied, modified or redistributed without written permission. The bundled fonts keep their own licences, listed above.
