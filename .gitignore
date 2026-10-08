@@ -1,0 +1,37 @@
+# Dependencies and build output
+node_modules
+dist
+dist-ssr
+*.local
+
+# Environment files and secrets (never commit)
+.env
+.env.*
+
+# Internal planning documents (never commit; the repository is public)
+CLAUDE.md
+MEX_MVP_SCOPE*.md
+
+# Coding-agent session files
+.claude/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor and OS files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
