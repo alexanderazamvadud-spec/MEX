@@ -1,0 +1,334 @@
+{
+  "id": "general-english",
+  "pathway": "general-english",
+  "title": "General English",
+  "description": {
+    "en": "Everyday English for conversation, reading, listening and speaking.",
+    "uz": "Suhbat, oʻqish, tinglash va gapirish uchun kundalik ingliz tili.",
+    "ru": "Повседневный английский для разговора, чтения, аудирования и речи."
+  },
+  "level": "elementary",
+  "content_status": "placeholder",
+  "license": "placeholder",
+  "units": [
+    {
+      "id": "ge-01-meeting-people",
+      "title": "Meeting people",
+      "summary": {
+        "en": "Say hello, introduce yourself and ask simple questions about other people.",
+        "uz": "Salomlashing, oʻzingizni tanishtiring va boshqalar haqida oddiy savollar bering.",
+        "ru": "Поздоровайтесь, представьтесь и задайте простые вопросы о других людях."
+      },
+      "estimatedMinutes": 35,
+      "activities": [
+        {
+          "id": "ge-01-a1-lesson",
+          "type": "lesson",
+          "title": "Key phrases: meeting someone new",
+          "instructions": {
+            "en": "Read the phrases and the example dialogue. Say each phrase aloud.",
+            "uz": "Iboralar va namunaviy suhbatni oʻqing. Har bir iborani ovoz chiqarib ayting.",
+            "ru": "Прочитайте фразы и пример диалога. Произнесите каждую фразу вслух."
+          },
+          "skills": ["vocabulary", "grammar", "interaction"],
+          "estimatedMinutes": 10,
+          "items": [
+            {
+              "id": "ge-01-a1-p1",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Nice to meet you.",
+              "example": "Hello, I'm Dilnoza. Nice to meet you.",
+              "note": {
+                "en": "Say this the first time you meet someone.",
+                "uz": "Buni kimdir bilan birinchi marta uchrashganda ayting.",
+                "ru": "Скажите это при первой встрече с человеком."
+              }
+            },
+            {
+              "id": "ge-01-a1-p2",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Where are you from?",
+              "example": "Where are you from? I'm from Samarkand."
+            },
+            {
+              "id": "ge-01-a1-p3",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "What do you do?",
+              "example": "What do you do? I'm a student at the university.",
+              "note": {
+                "en": "This question asks about someone's job or studies.",
+                "uz": "Bu savol kimningdir ishi yoki oʻqishi haqida soʻraydi.",
+                "ru": "Этот вопрос о работе или учёбе человека."
+              }
+            },
+            {
+              "id": "ge-01-a1-p4",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "This is my friend, ...",
+              "example": "This is my friend, Aziz. He works at a bank."
+            },
+            {
+              "id": "ge-01-a1-p5",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "How do you spell your name?",
+              "example": "How do you spell your name? D-I-L-N-O-Z-A."
+            },
+            {
+              "id": "ge-01-a1-p6",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "See you soon!",
+              "example": "It was nice talking to you. See you soon!"
+            },
+            {
+              "id": "ge-01-a1-g1",
+              "kind": "grammar-note",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "The verb 'be' in the present",
+              "explanation": {
+                "en": "Use am with I, is with he, she and it, and are with you, we and they. In questions, put the verb first: Are you from Tashkent?",
+                "uz": "I bilan am, he, she va it bilan is, you, we va they bilan are ishlatiladi. Savolda feʼl birinchi keladi: Are you from Tashkent?",
+                "ru": "Используйте am с I, is с he, she, it и are с you, we, they. В вопросе глагол стоит первым: Are you from Tashkent?"
+              },
+              "examples": [
+                "I am a teacher.",
+                "She is from Bukhara.",
+                "They are my colleagues.",
+                "Are you a student? Yes, I am."
+              ]
+            },
+            {
+              "id": "ge-01-a1-d1",
+              "kind": "dialogue",
+              "skills": ["interaction", "vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "At a language club",
+              "lines": [
+                { "speaker": "Dilnoza", "text": "Hello! I'm Dilnoza. Nice to meet you." },
+                { "speaker": "Tom", "text": "Nice to meet you too. I'm Tom." },
+                { "speaker": "Dilnoza", "text": "Where are you from, Tom?" },
+                { "speaker": "Tom", "text": "I'm from Manchester, in England. And you?" },
+                { "speaker": "Dilnoza", "text": "I'm from Samarkand. What do you do here?" },
+                { "speaker": "Tom", "text": "I teach English at a school. See you at the next meeting!" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ge-01-a2-exercises",
+          "type": "exercise",
+          "title": "Practice: meeting people",
+          "instructions": {
+            "en": "Choose or complete the answers. You will see an explanation after each one.",
+            "uz": "Javoblarni tanlang yoki toʻldiring. Har biridan keyin izoh koʻrasiz.",
+            "ru": "Выберите или дополните ответы. После каждого вы увидите объяснение."
+          },
+          "skills": ["grammar", "vocabulary"],
+          "estimatedMinutes": 8,
+          "items": [
+            {
+              "id": "ge-01-a2-q1",
+              "kind": "multiple-choice",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "You meet a new colleague for the first time. What do you say?",
+              "options": ["Nice to meet you.", "See you soon!", "How old are you?"],
+              "answer": "Nice to meet you.",
+              "explanation": {
+                "en": "'Nice to meet you' is the usual phrase at a first meeting. 'See you soon' is for saying goodbye.",
+                "uz": "'Nice to meet you' birinchi uchrashuvdagi odatiy ibora. 'See you soon' xayrlashishda aytiladi.",
+                "ru": "'Nice to meet you' — обычная фраза при первой встрече. 'See you soon' говорят при прощании."
+              }
+            },
+            {
+              "id": "ge-01-a2-q2",
+              "kind": "gap-fill",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "sentence": "My sister ___ a nurse in Tashkent.",
+              "options": ["am", "is", "are"],
+              "answer": "is",
+              "explanation": {
+                "en": "'My sister' is she, so the verb is 'is'.",
+                "uz": "'My sister' — bu she, shuning uchun feʼl 'is' boʻladi.",
+                "ru": "'My sister' — это she, поэтому глагол 'is'."
+              }
+            },
+            {
+              "id": "ge-01-a2-q3",
+              "kind": "matching",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Match each question with its answer.",
+              "pairs": [
+                { "left": "Where are you from?", "right": "I'm from Fergana." },
+                { "left": "What do you do?", "right": "I'm an engineer." },
+                { "left": "How do you spell your name?", "right": "A-Z-I-Z." }
+              ],
+              "explanation": {
+                "en": "Each answer gives the information the question asks for: a place, a job, or letters.",
+                "uz": "Har bir javob savol soʻragan maʼlumotni beradi: joy, kasb yoki harflar.",
+                "ru": "Каждый ответ даёт то, о чём спрашивает вопрос: место, профессию или буквы."
+              }
+            },
+            {
+              "id": "ge-01-a2-q4",
+              "kind": "ordering",
+              "skills": ["grammar", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Put the words in the right order to make a question.",
+              "segments": ["Are", "you", "from", "Tashkent?"],
+              "explanation": {
+                "en": "In questions with 'be', the verb comes first: Are you from Tashkent?",
+                "uz": "'Be' bilan savollarda feʼl birinchi keladi: Are you from Tashkent?",
+                "ru": "В вопросах с 'be' глагол стоит первым: Are you from Tashkent?"
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge-01-a3-reading",
+          "type": "reading",
+          "title": "Reading: a new neighbour",
+          "instructions": {
+            "en": "Read the short text, then answer the questions.",
+            "uz": "Qisqa matnni oʻqing, soʻng savollarga javob bering.",
+            "ru": "Прочитайте короткий текст, затем ответьте на вопросы."
+          },
+          "skills": ["reading"],
+          "estimatedMinutes": 8,
+          "items": [
+            {
+              "id": "ge-01-a3-r1",
+              "kind": "reading",
+              "skills": ["reading", "vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "A new neighbour",
+              "text": "My name is Kamola and I live in Tashkent. Last week a new family moved into the flat next to mine. The mother, Nargiza, is a doctor at the city hospital. Her husband, Bekzod, works from home as a designer. They have two children. The older one, Jasur, is ten and loves football. The younger one, Malika, is six and likes drawing. On Saturday we had tea together and talked about our jobs and the city. Now we are friends, and Jasur plays football with my brother every evening.",
+              "questions": [
+                {
+                  "prompt": "What is Nargiza's job?",
+                  "options": ["A doctor", "A designer", "A teacher"],
+                  "answer": "A doctor",
+                  "explanation": {
+                    "en": "The text says Nargiza is a doctor at the city hospital.",
+                    "uz": "Matnda Nargiza shahar kasalxonasida shifokor deb aytilgan.",
+                    "ru": "В тексте сказано, что Наргиза — врач в городской больнице."
+                  }
+                },
+                {
+                  "prompt": "Where does Bekzod work?",
+                  "options": ["At the hospital", "At home", "At a school"],
+                  "answer": "At home",
+                  "explanation": {
+                    "en": "Bekzod works from home as a designer.",
+                    "uz": "Bekzod uyda dizayner boʻlib ishlaydi.",
+                    "ru": "Бекзод работает дома дизайнером."
+                  }
+                },
+                {
+                  "prompt": "When did Kamola and the family have tea?",
+                  "options": ["On Saturday", "Last week", "On Monday"],
+                  "answer": "On Saturday",
+                  "explanation": {
+                    "en": "The last sentence says they had tea together on Saturday.",
+                    "uz": "Oxirgi gapda ular shanba kuni birga choy ichgani aytilgan.",
+                    "ru": "В последнем предложении сказано, что они пили чай вместе в субботу."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ge-01-a4-speaking",
+          "type": "speaking",
+          "title": "Speaking: introduce yourself",
+          "instructions": {
+            "en": "Prepare for one minute, then speak for about 30 seconds. Afterwards, compare with the model answer and tick the checklist.",
+            "uz": "Bir daqiqa tayyorlaning, soʻng 30 soniya atrofida gapiring. Keyin namunaviy javob bilan solishtiring va roʻyxatni belgilang.",
+            "ru": "Подготовьтесь одну минуту, затем говорите около 30 секунд. После этого сравните с образцом и отметьте пункты списка."
+          },
+          "skills": ["speaking"],
+          "estimatedMinutes": 9,
+          "items": [
+            {
+              "id": "ge-01-a4-s1",
+              "kind": "speaking",
+              "skills": ["speaking", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": {
+                "en": "Introduce yourself to a new neighbour: your name, where you are from, and what you do.",
+                "uz": "Yangi qoʻshningizga oʻzingizni tanishtiring: ismingiz, qayerdanligingiz va nima ish qilishingiz.",
+                "ru": "Представьтесь новому соседу: имя, откуда вы и чем занимаетесь."
+              },
+              "preparationHints": [
+                "Start with 'Hello, I'm ...'.",
+                "Say where you are from and what you do.",
+                "End with 'Nice to meet you.'"
+              ],
+              "modelAnswer": "Hello, I'm Kamola. I'm from Tashkent and I work at a travel agency. I like meeting new people. Nice to meet you!",
+              "selfCheck": [
+                {
+                  "en": "I said my name.",
+                  "uz": "Ismimni aytdim.",
+                  "ru": "Я назвал(а) своё имя."
+                },
+                {
+                  "en": "I said where I am from.",
+                  "uz": "Qayerdanligimni aytdim.",
+                  "ru": "Я сказал(а), откуда я."
+                },
+                {
+                  "en": "I used full sentences.",
+                  "uz": "Toʻliq gaplardan foydalandim.",
+                  "ru": "Я использовал(а) полные предложения."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

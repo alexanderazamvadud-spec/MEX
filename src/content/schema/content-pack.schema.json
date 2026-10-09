@@ -1,0 +1,701 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://alexanderazamvadud-spec.github.io/MEX/schema/content-pack.schema.json",
+  "title": "MEX content pack",
+  "description": "One pathway of learning content: units, activities and items. Mirrors src/content/types.ts.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "pathway",
+    "title",
+    "description",
+    "level",
+    "content_status",
+    "license",
+    "units"
+  ],
+  "properties": {
+    "id": {
+      "$ref": "#/definitions/id"
+    },
+    "pathway": {
+      "enum": [
+        "general-english",
+        "career-readiness"
+      ]
+    },
+    "title": {
+      "$ref": "#/definitions/nonEmpty"
+    },
+    "description": {
+      "$ref": "#/definitions/localizedText"
+    },
+    "level": {
+      "$ref": "#/definitions/level"
+    },
+    "content_status": {
+      "$ref": "#/definitions/contentStatus"
+    },
+    "license": {
+      "$ref": "#/definitions/license"
+    },
+    "units": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/unit"
+      }
+    }
+  },
+  "definitions": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+    },
+    "nonEmpty": {
+      "type": "string",
+      "minLength": 1
+    },
+    "level": {
+      "enum": [
+        "beginner",
+        "elementary",
+        "intermediate"
+      ]
+    },
+    "skill": {
+      "enum": [
+        "vocabulary",
+        "grammar",
+        "reading",
+        "listening",
+        "speaking",
+        "writing",
+        "interaction"
+      ]
+    },
+    "skills": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/skill"
+      }
+    },
+    "contentStatus": {
+      "enum": [
+        "placeholder",
+        "draft",
+        "approved"
+      ]
+    },
+    "license": {
+      "enum": [
+        "placeholder",
+        "mex-proprietary",
+        "open"
+      ]
+    },
+    "localizedText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "en"
+      ],
+      "properties": {
+        "en": {
+          "$ref": "#/definitions/nonEmpty"
+        },
+        "uz": {
+          "$ref": "#/definitions/nonEmpty"
+        },
+        "ru": {
+          "$ref": "#/definitions/nonEmpty"
+        }
+      }
+    },
+    "stringList": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/nonEmpty"
+      }
+    },
+    "localizedList": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/localizedText"
+      }
+    },
+    "options": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/definitions/nonEmpty"
+      }
+    },
+    "itemBase": {
+      "type": "object",
+      "required": [
+        "id",
+        "kind",
+        "skills",
+        "level",
+        "content_status",
+        "license"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "kind": {
+          "type": "string"
+        },
+        "skills": {
+          "$ref": "#/definitions/skills"
+        },
+        "level": {
+          "$ref": "#/definitions/level"
+        },
+        "content_status": {
+          "$ref": "#/definitions/contentStatus"
+        },
+        "license": {
+          "$ref": "#/definitions/license"
+        }
+      }
+    },
+    "question": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "prompt",
+        "options",
+        "answer",
+        "explanation"
+      ],
+      "properties": {
+        "prompt": {
+          "$ref": "#/definitions/nonEmpty"
+        },
+        "options": {
+          "$ref": "#/definitions/options"
+        },
+        "answer": {
+          "$ref": "#/definitions/nonEmpty"
+        },
+        "explanation": {
+          "$ref": "#/definitions/localizedText"
+        }
+      }
+    },
+    "item": {
+      "allOf": [
+        {
+          "$ref": "#/definitions/itemBase"
+        },
+        {
+          "oneOf": [
+            {
+              "required": [
+                "kind",
+                "phrase",
+                "example"
+              ],
+              "properties": {
+                "id": true,
+                "kind": {
+                  "const": "phrase"
+                },
+                "skills": true,
+                "level": true,
+                "content_status": true,
+                "license": true,
+                "phrase": {
+                  "$ref": "#/definitions/nonEmpty"
+                },
+                "example": {
+                  "$ref": "#/definitions/nonEmpty"
+                },
+                "note": {
+                  "$ref": "#/definitions/localizedText"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object"
+            },
+            {
+              "required": [
+                "kind",
+                "title",
+                "explanation",
+                "examples"
+              ],
+              "properties": {
+                "id": true,
+                "kind": {
+                  "const": "grammar-note"
+                },
+                "skills": true,
+                "level": true,
+                "content_status": true,
+                "license": true,
+                "title": {
+                  "$ref": "#/definitions/nonEmpty"
+                },
+                "explanation": {
+                  "$ref": "#/definitions/localizedText"
+                },
+                "examples": {
+                  "$ref": "#/definitions/stringList"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object"
+            },
+            {
+              "required": [
+                "kind",
+                "title",
+                "lines"
+              ],
+              "properties": {
+                "id": true,
+                "kind": {
+                  "const": "dialogue"
+                },
+                "skills": true,
+                "level": true,
+                "content_status": true,
+                "license": true,
+                "title": {
+                  "$ref": "#/definitions/nonEmpty"
+                },
+                "lines": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "speaker",
+                      "text"
+                    ],
+                    "properties": {
+                      "speaker": {
+                        "$ref": "#/definitions/nonEmpty"
+                      },
+                      "text": {
+                        "$ref": "#/definitions/nonEmpty"
+                      }
+                    }
+                  }
+                }
+              },
+              "additionalProperties": false,
+              "type": "object"
+            },
+            {
+              "required": [
+                "kind",
+                "prompt",
+                "options",
+                "answer",
+                "explanation"
+              ],
+              "properties": {
+                "id": true,
+                "kind": {
+                  "const": "multiple-choice"
+                },
+                "skills": true,
+                "level": true,
+                "content_status": true,
+                "license": true,
+                "prompt": {
+                  "$ref": "#/definitions/nonEmpty"
+                },
+                "options": {
+                  "$ref": "#/definitions/options"
+                },
+                "answer": {
+                  "$ref": "#/definitions/nonEmpty"
+                },
+                "explanation": {
+                  "$ref": "#/definitions/localizedText"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object"
+            },
+            {
+              "required": [
+                "kind",
+                "sentence",
+                "options",
+                "answer",
+                "explanation"
+              ],
+              "properties": {
+                "id": true,
+                "kind": {
+                  "const": "gap-fill"
+                },
+                "skills": true,
+                "level": true,
+                "content_status": true,
+                "license": true,
+                "sentence": {
+                  "type": "string",
+                  "pattern": "___"
+                },
+                "options": {
+                  "$ref": "#/definitions/options"
+                },
+                "answer": {
+                  "$ref": "#/definitions/nonEmpty"
+                },
+                "explanation": {
+                  "$ref": "#/definitions/localizedText"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object"
+            },
+            {
+              "required": [
+                "kind",
+                "prompt",
+                "pairs",
+                "explanation"
+              ],
+              "properties": {
+                "id": true,
+                "kind": {
+                  "const": "matching"
+                },
+                "skills": true,
+                "level": true,
+                "content_status": true,
+                "license": true,
+                "prompt": {
+                  "$ref": "#/definitions/nonEmpty"
+                },
+                "pairs": {
+                  "type": "array",
+                  "minItems": 2,
+                  "items": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                      "left",
+                      "right"
+                    ],
+                    "properties": {
+                      "left": {
+                        "$ref": "#/definitions/nonEmpty"
+                      },
+                      "right": {
+                        "$ref": "#/definitions/nonEmpty"
+                      }
+                    }
+                  }
+                },
+                "explanation": {
+                  "$ref": "#/definitions/localizedText"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object"
+            },
+            {
+              "required": [
+                "kind",
+                "prompt",
+                "segments",
+                "explanation"
+              ],
+              "properties": {
+                "id": true,
+                "kind": {
+                  "const": "ordering"
+                },
+                "skills": true,
+                "level": true,
+                "content_status": true,
+                "license": true,
+                "prompt": {
+                  "$ref": "#/definitions/nonEmpty"
+                },
+                "segments": {
+                  "type": "array",
+                  "minItems": 3,
+                  "items": {
+                    "$ref": "#/definitions/nonEmpty"
+                  }
+                },
+                "explanation": {
+                  "$ref": "#/definitions/localizedText"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object"
+            },
+            {
+              "required": [
+                "kind",
+                "title",
+                "text",
+                "questions"
+              ],
+              "properties": {
+                "id": true,
+                "kind": {
+                  "const": "reading"
+                },
+                "skills": true,
+                "level": true,
+                "content_status": true,
+                "license": true,
+                "title": {
+                  "$ref": "#/definitions/nonEmpty"
+                },
+                "text": {
+                  "$ref": "#/definitions/nonEmpty"
+                },
+                "questions": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "$ref": "#/definitions/question"
+                  }
+                }
+              },
+              "additionalProperties": false,
+              "type": "object"
+            },
+            {
+              "required": [
+                "kind",
+                "title",
+                "transcript",
+                "questions"
+              ],
+              "properties": {
+                "id": true,
+                "kind": {
+                  "const": "listening"
+                },
+                "skills": true,
+                "level": true,
+                "content_status": true,
+                "license": true,
+                "title": {
+                  "$ref": "#/definitions/nonEmpty"
+                },
+                "transcript": {
+                  "$ref": "#/definitions/nonEmpty"
+                },
+                "questions": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "$ref": "#/definitions/question"
+                  }
+                }
+              },
+              "additionalProperties": false,
+              "type": "object"
+            },
+            {
+              "required": [
+                "kind",
+                "prompt",
+                "preparationHints",
+                "modelAnswer",
+                "selfCheck"
+              ],
+              "properties": {
+                "id": true,
+                "kind": {
+                  "const": "speaking"
+                },
+                "skills": true,
+                "level": true,
+                "content_status": true,
+                "license": true,
+                "prompt": {
+                  "$ref": "#/definitions/localizedText"
+                },
+                "preparationHints": {
+                  "$ref": "#/definitions/stringList"
+                },
+                "modelAnswer": {
+                  "$ref": "#/definitions/nonEmpty"
+                },
+                "selfCheck": {
+                  "$ref": "#/definitions/localizedList"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object"
+            },
+            {
+              "required": [
+                "kind",
+                "question",
+                "modelAnswers",
+                "usefulPhrases",
+                "selfCheck"
+              ],
+              "properties": {
+                "id": true,
+                "kind": {
+                  "const": "interview-question"
+                },
+                "skills": true,
+                "level": true,
+                "content_status": true,
+                "license": true,
+                "question": {
+                  "$ref": "#/definitions/nonEmpty"
+                },
+                "modelAnswers": {
+                  "$ref": "#/definitions/stringList"
+                },
+                "usefulPhrases": {
+                  "$ref": "#/definitions/stringList"
+                },
+                "selfCheck": {
+                  "$ref": "#/definitions/localizedList"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object"
+            },
+            {
+              "required": [
+                "kind",
+                "task",
+                "model",
+                "checklist"
+              ],
+              "properties": {
+                "id": true,
+                "kind": {
+                  "const": "writing-task"
+                },
+                "skills": true,
+                "level": true,
+                "content_status": true,
+                "license": true,
+                "task": {
+                  "$ref": "#/definitions/localizedText"
+                },
+                "model": {
+                  "$ref": "#/definitions/nonEmpty"
+                },
+                "checklist": {
+                  "$ref": "#/definitions/localizedList"
+                }
+              },
+              "additionalProperties": false,
+              "type": "object"
+            }
+          ],
+          "discriminator": {
+            "propertyName": "kind"
+          },
+          "type": "object"
+        }
+      ]
+    },
+    "activity": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "type",
+        "title",
+        "instructions",
+        "skills",
+        "estimatedMinutes",
+        "items"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "type": {
+          "enum": [
+            "lesson",
+            "exercise",
+            "reading",
+            "listening",
+            "speaking",
+            "interview-practice",
+            "writing-checklist"
+          ]
+        },
+        "title": {
+          "$ref": "#/definitions/nonEmpty"
+        },
+        "instructions": {
+          "$ref": "#/definitions/localizedText"
+        },
+        "skills": {
+          "$ref": "#/definitions/skills"
+        },
+        "estimatedMinutes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 60
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/item"
+          }
+        }
+      }
+    },
+    "unit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "title",
+        "summary",
+        "estimatedMinutes",
+        "activities"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/definitions/id"
+        },
+        "title": {
+          "$ref": "#/definitions/nonEmpty"
+        },
+        "summary": {
+          "$ref": "#/definitions/localizedText"
+        },
+        "estimatedMinutes": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 240
+        },
+        "activities": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/definitions/activity"
+          }
+        }
+      }
+    }
+  }
+}

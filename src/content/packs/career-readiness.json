@@ -1,0 +1,348 @@
+{
+  "id": "career-readiness",
+  "pathway": "career-readiness",
+  "title": "Career Readiness",
+  "description": {
+    "en": "English for introducing yourself professionally, job interviews, workplace communication and emails.",
+    "uz": "Oʻzingizni kasbiy tanishtirish, ish suhbati, ish joyidagi muloqot va elektron xatlar uchun ingliz tili.",
+    "ru": "Английский для профессионального представления, собеседований, рабочего общения и писем."
+  },
+  "level": "elementary",
+  "content_status": "placeholder",
+  "license": "placeholder",
+  "units": [
+    {
+      "id": "cr-01-professional-self-introduction",
+      "title": "Professional self-introduction",
+      "summary": {
+        "en": "Introduce yourself at work or in an interview: your role, experience and strengths.",
+        "uz": "Ish joyida yoki suhbatda oʻzingizni tanishtiring: lavozimingiz, tajribangiz va kuchli tomonlaringiz.",
+        "ru": "Представьтесь на работе или на собеседовании: должность, опыт и сильные стороны."
+      },
+      "estimatedMinutes": 40,
+      "activities": [
+        {
+          "id": "cr-01-a1-lesson",
+          "type": "lesson",
+          "title": "Key phrases: talking about yourself at work",
+          "instructions": {
+            "en": "Read the phrases and the example dialogue. Notice how each sentence gives one clear fact.",
+            "uz": "Iboralar va namunaviy suhbatni oʻqing. Har bir gap bitta aniq faktni berishiga eʼtibor bering.",
+            "ru": "Прочитайте фразы и пример диалога. Обратите внимание: каждое предложение даёт один ясный факт."
+          },
+          "skills": ["vocabulary", "grammar", "interaction"],
+          "estimatedMinutes": 10,
+          "items": [
+            {
+              "id": "cr-01-a1-p1",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "I work as a ...",
+              "example": "I work as a receptionist at a hotel in Bukhara."
+            },
+            {
+              "id": "cr-01-a1-p2",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "I have ... years of experience in ...",
+              "example": "I have two years of experience in customer service.",
+              "note": {
+                "en": "Use 'experience' without 'an' or 'the' when you talk about work history.",
+                "uz": "Ish tajribasi haqida gapirganda 'experience' soʻzini 'an' yoki 'the'siz ishlating.",
+                "ru": "Говоря об опыте работы, используйте 'experience' без 'an' и 'the'."
+              }
+            },
+            {
+              "id": "cr-01-a1-p3",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "I'm good at ...",
+              "example": "I'm good at solving problems quickly."
+            },
+            {
+              "id": "cr-01-a1-p4",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "I studied ... at ...",
+              "example": "I studied economics at Tashkent State University."
+            },
+            {
+              "id": "cr-01-a1-p5",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "I'm responsible for ...",
+              "example": "I'm responsible for welcoming guests and answering the phone."
+            },
+            {
+              "id": "cr-01-a1-p6",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "I'd like to ...",
+              "example": "I'd like to work in an international company."
+            },
+            {
+              "id": "cr-01-a1-g1",
+              "kind": "grammar-note",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "Present simple for jobs and routines",
+              "explanation": {
+                "en": "Use the present simple for facts about your job and things you do regularly. With he, she and it, add -s to the verb: she works, he answers.",
+                "uz": "Ishingiz haqidagi faktlar va muntazam qiladigan ishlar uchun present simple ishlatiladi. He, she va it bilan feʼlga -s qoʻshiladi: she works, he answers.",
+                "ru": "Используйте present simple для фактов о работе и регулярных действий. С he, she, it добавляйте -s к глаголу: she works, he answers."
+              },
+              "examples": [
+                "I work at a hotel.",
+                "She answers emails every morning.",
+                "We help customers with their orders.",
+                "He speaks three languages."
+              ]
+            },
+            {
+              "id": "cr-01-a1-d1",
+              "kind": "dialogue",
+              "skills": ["interaction", "vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "First day at a new job",
+              "lines": [
+                { "speaker": "Manager", "text": "Welcome to the team! Could you tell us a little about yourself?" },
+                { "speaker": "Sardor", "text": "Of course. My name is Sardor, and I'm the new sales assistant." },
+                { "speaker": "Manager", "text": "Great. What did you do before?" },
+                { "speaker": "Sardor", "text": "I worked at a mobile phone shop for two years. I'm good at talking to customers." },
+                { "speaker": "Manager", "text": "That's useful here. What would you like to learn?" },
+                { "speaker": "Sardor", "text": "I'd like to learn more about your products and improve my English." }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cr-01-a2-exercises",
+          "type": "exercise",
+          "title": "Practice: talking about your work",
+          "instructions": {
+            "en": "Choose or complete the answers. You will see an explanation after each one.",
+            "uz": "Javoblarni tanlang yoki toʻldiring. Har biridan keyin izoh koʻrasiz.",
+            "ru": "Выберите или дополните ответы. После каждого вы увидите объяснение."
+          },
+          "skills": ["grammar", "vocabulary"],
+          "estimatedMinutes": 8,
+          "items": [
+            {
+              "id": "cr-01-a2-q1",
+              "kind": "multiple-choice",
+              "skills": ["vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Which sentence is the best start for a professional self-introduction?",
+              "options": [
+                "My name is Nodira and I work as an accountant.",
+                "Hi, what's up?",
+                "I don't like my old job."
+              ],
+              "answer": "My name is Nodira and I work as an accountant.",
+              "explanation": {
+                "en": "A professional introduction starts with your name and your role. The other options are too informal or negative.",
+                "uz": "Kasbiy tanishuv ismingiz va lavozimingizdan boshlanadi. Boshqa variantlar juda norasmiy yoki salbiy.",
+                "ru": "Профессиональное представление начинается с имени и должности. Другие варианты слишком неформальны или негативны."
+              }
+            },
+            {
+              "id": "cr-01-a2-q2",
+              "kind": "gap-fill",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "sentence": "Every morning she ___ the customers' emails.",
+              "options": ["answer", "answers", "answering"],
+              "answer": "answers",
+              "explanation": {
+                "en": "With 'she' in the present simple, the verb takes -s: she answers.",
+                "uz": "Present simple'da 'she' bilan feʼl -s oladi: she answers.",
+                "ru": "В present simple с 'she' глагол получает -s: she answers."
+              }
+            },
+            {
+              "id": "cr-01-a2-q3",
+              "kind": "matching",
+              "skills": ["vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Match the beginning of each sentence with its ending.",
+              "pairs": [
+                { "left": "I have three years of", "right": "experience in sales." },
+                { "left": "I'm responsible for", "right": "welcoming guests." },
+                { "left": "I'd like to", "right": "work abroad one day." }
+              ],
+              "explanation": {
+                "en": "'Experience in', 'responsible for' and 'would like to' are fixed combinations worth remembering.",
+                "uz": "'Experience in', 'responsible for' va 'would like to' — eslab qolishga arziydigan barqaror birikmalar.",
+                "ru": "'Experience in', 'responsible for' и 'would like to' — устойчивые сочетания, которые стоит запомнить."
+              }
+            },
+            {
+              "id": "cr-01-a2-q4",
+              "kind": "ordering",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Put the words in the right order.",
+              "segments": ["I", "work", "as", "a", "receptionist."],
+              "explanation": {
+                "en": "The usual order is subject, verb, then the rest: I work as a receptionist.",
+                "uz": "Odatiy tartib: ega, feʼl, keyin qolgani: I work as a receptionist.",
+                "ru": "Обычный порядок: подлежащее, глагол, затем остальное: I work as a receptionist."
+              }
+            }
+          ]
+        },
+        {
+          "id": "cr-01-a3-speaking",
+          "type": "speaking",
+          "title": "Speaking: a 30-second introduction",
+          "instructions": {
+            "en": "Prepare for one minute, then introduce yourself for about 30 seconds as if you were meeting a new manager.",
+            "uz": "Bir daqiqa tayyorlaning, soʻng yangi rahbar bilan uchrashayotgandek 30 soniya atrofida oʻzingizni tanishtiring.",
+            "ru": "Подготовьтесь одну минуту, затем представьтесь примерно за 30 секунд, как будто вы встречаете нового руководителя."
+          },
+          "skills": ["speaking"],
+          "estimatedMinutes": 8,
+          "items": [
+            {
+              "id": "cr-01-a3-s1",
+              "kind": "speaking",
+              "skills": ["speaking", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": {
+                "en": "Introduce yourself professionally: your name, your current or last job, one thing you are good at, and what you would like to do next.",
+                "uz": "Oʻzingizni kasbiy tanishtiring: ismingiz, hozirgi yoki oxirgi ishingiz, bir kuchli tomoningiz va keyin nima qilmoqchi ekaningiz.",
+                "ru": "Представьтесь профессионально: имя, текущая или последняя работа, одна сильная сторона и чем вы хотели бы заниматься дальше."
+              },
+              "preparationHints": [
+                "Use 'I work as' or 'I worked as'.",
+                "Give one example of what you are good at.",
+                "Finish with 'I'd like to ...'."
+              ],
+              "modelAnswer": "My name is Sardor. I work as a sales assistant at an electronics shop. I'm good at explaining products clearly, and customers often come back to me. I'd like to join an international company and use my English every day.",
+              "selfCheck": [
+                {
+                  "en": "I said my name and my job.",
+                  "uz": "Ismim va ishimni aytdim.",
+                  "ru": "Я назвал(а) имя и работу."
+                },
+                {
+                  "en": "I gave one example of a strength.",
+                  "uz": "Kuchli tomonimga bitta misol keltirdim.",
+                  "ru": "Я привёл(а) один пример сильной стороны."
+                },
+                {
+                  "en": "I spoke for about 30 seconds without long pauses.",
+                  "uz": "Uzun pauzalarsiz 30 soniya atrofida gapirdim.",
+                  "ru": "Я говорил(а) около 30 секунд без долгих пауз."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cr-01-a4-interview",
+          "type": "interview-practice",
+          "title": "Guided interview practice: tell me about yourself",
+          "instructions": {
+            "en": "Answer each question in your own words, then compare with the model answers and tick the checklist. This is self-assessment, not a test result.",
+            "uz": "Har bir savolga oʻz soʻzlaringiz bilan javob bering, soʻng namunaviy javoblar bilan solishtiring va roʻyxatni belgilang. Bu oʻz-oʻzini baholash, test natijasi emas.",
+            "ru": "Ответьте на каждый вопрос своими словами, затем сравните с образцами и отметьте пункты списка. Это самооценка, а не результат теста."
+          },
+          "skills": ["speaking", "interaction"],
+          "estimatedMinutes": 14,
+          "items": [
+            {
+              "id": "cr-01-a4-i1",
+              "kind": "interview-question",
+              "skills": ["speaking", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "question": "Could you tell me a little about yourself?",
+              "modelAnswers": [
+                "My name is Nodira. I'm an accountant with three years of experience in a trading company. I'm careful with numbers and I enjoy working in a team.",
+                "I'm Jasur, a recent graduate in tourism. During my studies I worked part-time at a hostel, where I helped guests from many countries."
+              ],
+              "usefulPhrases": ["I have ... years of experience in ...", "I enjoy ...", "During my studies I ..."],
+              "selfCheck": [
+                { "en": "I mentioned my current or last job or studies.", "uz": "Hozirgi yoki oxirgi ishim yoki oʻqishimni aytdim.", "ru": "Я упомянул(а) текущую или последнюю работу или учёбу." },
+                { "en": "I gave an example, not only adjectives.", "uz": "Faqat sifatlar emas, misol ham keltirdim.", "ru": "Я привёл(а) пример, а не только прилагательные." },
+                { "en": "I kept it short: three or four sentences.", "uz": "Qisqa tutdim: uch-toʻrt gap.", "ru": "Я говорил(а) кратко: три-четыре предложения." }
+              ]
+            },
+            {
+              "id": "cr-01-a4-i2",
+              "kind": "interview-question",
+              "skills": ["speaking", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "question": "What are you good at?",
+              "modelAnswers": [
+                "I'm good at staying calm with difficult customers. Last year a guest lost his passport, and I helped him contact his embassy.",
+                "I'm good at learning new software quickly. In my last job I learned the booking system in one week."
+              ],
+              "usefulPhrases": ["I'm good at ...", "For example, ...", "In my last job I ..."],
+              "selfCheck": [
+                { "en": "I named one clear strength.", "uz": "Bitta aniq kuchli tomonimni aytdim.", "ru": "Я назвал(а) одну чёткую сильную сторону." },
+                { "en": "I gave a real example.", "uz": "Haqiqiy misol keltirdim.", "ru": "Я привёл(а) реальный пример." },
+                { "en": "I used full sentences.", "uz": "Toʻliq gaplardan foydalandim.", "ru": "Я использовал(а) полные предложения." }
+              ]
+            },
+            {
+              "id": "cr-01-a4-i3",
+              "kind": "interview-question",
+              "skills": ["speaking", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "question": "Why do you want to work here?",
+              "modelAnswers": [
+                "I'd like to work here because your hotel has many international guests, and I want to use my English every day.",
+                "Your company is growing fast, and I'd like to learn from an experienced team."
+              ],
+              "usefulPhrases": ["I'd like to work here because ...", "I want to ...", "I'd like to learn ..."],
+              "selfCheck": [
+                { "en": "I gave a reason connected to this company.", "uz": "Shu kompaniyaga bogʻliq sabab aytdim.", "ru": "Я назвал(а) причину, связанную с этой компанией." },
+                { "en": "I said what I want to learn or do.", "uz": "Nimani oʻrganmoqchi yoki qilmoqchi ekanimni aytdim.", "ru": "Я сказал(а), чему хочу научиться или что делать." },
+                { "en": "I sounded positive.", "uz": "Ijobiy ohangda gapirdim.", "ru": "Я звучал(а) позитивно." }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
