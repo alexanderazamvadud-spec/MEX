@@ -24,5 +24,13 @@
     "title": "Sahifa topilmadi",
     "body": "Havola notoʻgʻri yoki eskirgan boʻlishi mumkin.",
     "cta": "Bosh sahifaga"
+  },
+  "settings": {
+    "deleteData": "Maʼlumotlarimni oʻchirish",
+    "deleteConfirmBody": "Bu qurilmadagi profilingiz, natijalaringiz va mashq yozuvlaringiz oʻchiriladi. Buni qaytarib boʻlmaydi.",
+    "deleteConfirmYes": "Ha, hammasini oʻchirish",
+    "cancel": "Bekor qilish",
+    "deleted": "Maʼlumotlaringiz oʻchirildi.",
+    "privacyNote": "MEX natijalaringizni faqat shu qurilmada saqlaydi. Hech narsa serverga yuborilmaydi."
   }
 }

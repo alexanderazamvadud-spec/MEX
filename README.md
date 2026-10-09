@@ -20,6 +20,12 @@ npm run build
 npm run preview
 ```
 
+To run the unit tests:
+
+```bash
+npm test
+```
+
 To validate the learning content packs:
 
 ```bash
@@ -38,11 +44,12 @@ npm run check:contrast
 |---|---|
 | `src/app` | Root component and router |
 | `src/pages` | Screens |
-| `src/components/ui` | Reusable interface components (design system) |
+| `src/components` | Design-system components (`ui`), navigation, settings controls and icons |
+| `src/learner` | Learner data store kept on the device (see `docs/learner-data.md`) |
 | `src/content` | Content model, schema and placeholder content packs (see `docs/content-model.md`) |
 | `src/i18n` | Translation setup and locale files (`locales/en.json`, `uz.json`, `ru.json`) |
 | `src/styles` | Global styles, design tokens (`theme.css`) and the companion font |
-| `docs` | Design system and content model notes |
+| `docs` | Design system, content model and learner data notes |
 | `scripts` | Maintenance scripts |
 | `public` | Static assets copied to the site as-is |
 | `.github/workflows` | Build and deployment workflow |

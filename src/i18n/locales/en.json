@@ -23,5 +23,13 @@
     "title": "Page not found",
     "body": "The link may be wrong or out of date.",
     "cta": "Go to Home"
+  },
+  "settings": {
+    "deleteData": "Delete my data",
+    "deleteConfirmBody": "This removes your profile, progress and practice records from this device. It cannot be undone.",
+    "deleteConfirmYes": "Yes, delete everything",
+    "cancel": "Cancel",
+    "deleted": "Your data has been deleted.",
+    "privacyNote": "MEX keeps your progress only on this device. Nothing is sent to a server."
   }
 }

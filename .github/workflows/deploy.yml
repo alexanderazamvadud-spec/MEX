@@ -35,6 +35,9 @@ jobs:
       - name: Check learning content
         run: npm run check:content
 
+      - name: Run unit tests
+        run: npm test
+
       - name: Build the site
         run: npm run build
 

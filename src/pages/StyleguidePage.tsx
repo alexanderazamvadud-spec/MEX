@@ -3,9 +3,69 @@ import Button from '../components/ui/Button.tsx'
 import Card, { CardButton } from '../components/ui/Card.tsx'
 import PageContainer from '../components/ui/PageContainer.tsx'
 import Wordmark from '../components/ui/Wordmark.tsx'
+import { useLearner } from '../learner/useLearner.ts'
 
 // Development-only reference page for the design system. It is excluded from
 // production builds by the route guard in src/app/App.tsx.
+
+// Development-only view of the learner record, to test persistence and deletion.
+function StorageSection() {
+  const { record, update, reset, persistent } = useLearner()
+  const now = () => new Date().toISOString()
+  return (
+    <Section title="Learner storage (dev)">
+      <p className="text-small text-ink-muted">
+        persistent: {String(persistent)} · completions: {record.completions.length} · exercise results:{' '}
+        {record.exerciseResults.length} · self-assessments: {record.selfAssessments.length}
+      </p>
+      <div className="flex flex-wrap gap-3">
+        <Button
+          size="sm"
+          variant="secondary"
+          onClick={() =>
+            update((r) => ({
+              ...r,
+              completions: [
+                ...r.completions,
+                { pathway: 'general-english', unitId: 'ge-01-meeting-people', activityId: 'ge-01-a1-lesson', completedAt: now() },
+              ],
+            }))
+          }
+        >
+          Add sample completion
+        </Button>
+        <Button
+          size="sm"
+          variant="secondary"
+          onClick={() =>
+            update((r) => ({
+              ...r,
+              exerciseResults: [
+                ...r.exerciseResults,
+                {
+                  pathway: 'general-english',
+                  activityId: 'ge-01-a2-exercises',
+                  itemId: 'ge-01-a2-q1',
+                  skills: ['vocabulary'],
+                  correct: true,
+                  answeredAt: now(),
+                },
+              ],
+            }))
+          }
+        >
+          Add sample result
+        </Button>
+        <Button size="sm" variant="destructive" onClick={() => reset()}>
+          Reset store
+        </Button>
+      </div>
+      <pre className="overflow-x-auto rounded-panel bg-surface-soft p-4 text-[12px] leading-relaxed">
+        {JSON.stringify(record, null, 2)}
+      </pre>
+    </Section>
+  )
+}
 
 // Each swatch names a literal utility class so Tailwind emits the token variable.
 const colourTokens: Array<{ name: string; className: string }> = [
@@ -212,6 +272,8 @@ export default function StyleguidePage() {
           <Wordmark size="md" />
         </div>
       </Section>
+
+      <StorageSection />
     </PageContainer>
   )
 }

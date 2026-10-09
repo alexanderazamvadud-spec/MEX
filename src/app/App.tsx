@@ -1,7 +1,9 @@
 import { createHashRouter, RouterProvider, type RouteObject } from 'react-router'
+import LearnerProvider from '../learner/LearnerProvider.tsx'
 import AppShell from './AppShell.tsx'
 import NotFoundPage from '../pages/NotFoundPage.tsx'
 import PlaceholderPage from '../pages/PlaceholderPage.tsx'
+import SettingsPage from '../pages/SettingsPage.tsx'
 import StubPage from '../pages/StubPage.tsx'
 
 // Hash-based routing (/#/path) is used because GitHub Pages is a static host with no
@@ -14,7 +16,7 @@ const routes: RouteObject[] = [
       { path: '/home', element: <StubPage titleKey="nav.home" /> },
       { path: '/learn', element: <StubPage titleKey="nav.learn" /> },
       { path: '/progress', element: <StubPage titleKey="nav.progress" /> },
-      { path: '/settings', element: <StubPage titleKey="nav.settings" /> },
+      { path: '/settings', element: <SettingsPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],
   },
@@ -36,5 +38,9 @@ if (import.meta.env.DEV) {
 const router = createHashRouter(routes)
 
 export default function App() {
-  return <RouterProvider router={router} />
+  return (
+    <LearnerProvider>
+      <RouterProvider router={router} />
+    </LearnerProvider>
+  )
 }

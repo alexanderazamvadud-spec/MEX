@@ -16,9 +16,10 @@ export const LANGUAGE_NAMES: Record<SupportedLanguage, string> = {
   ru: 'Русский',
 }
 
-// Key under which the chosen interface language is remembered in the browser.
-// It stores one language code and no personal data.
-const STORAGE_KEY = 'mex.language'
+import { LANGUAGE_STORAGE_KEY } from './storageKey.ts'
+
+export { LANGUAGE_STORAGE_KEY }
+const STORAGE_KEY = LANGUAGE_STORAGE_KEY
 
 export function isSupportedLanguage(value: unknown): value is SupportedLanguage {
   return typeof value === 'string' && (SUPPORTED_LANGUAGES as readonly string[]).includes(value)
@@ -75,5 +76,20 @@ i18n.on('languageChanged', (language) => {
 })
 
 applyDocumentLanguage(i18n.language)
+
+// Keep tabs of the same browser in step: when another tab changes or deletes the
+// stored language (for example through "Delete my data"), follow it here too.
+if (typeof window !== 'undefined') {
+  window.addEventListener('storage', (event) => {
+    if (event.key !== null && event.key !== STORAGE_KEY) return
+    const next = event.key === null ? null : event.newValue
+    const target = isSupportedLanguage(next) ? next : DEFAULT_LANGUAGE
+    if (target !== i18n.language) {
+      i18n.changeLanguage(target).catch((error: unknown) => {
+        console.error('MEX could not follow the language change from another tab.', error)
+      })
+    }
+  })
+}
 
 export default i18n
