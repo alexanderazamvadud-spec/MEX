@@ -55,10 +55,14 @@ When storage is unavailable (`persistent` is false), the last onboarding step sh
 
 Home writes one thing: "Switch pathway", after an in-page confirmation, changes `profile.pathway` and `profile.updatedAt`. Progress is stored per pathway, so nothing else changes.
 
+## Learn screens (MVP-08)
+
+The pathway and unit overviews read only `completions`, through `src/learner/progress.ts`: a unit is Not started, In progress or Completed from the activities completed in that pathway, and shows "n of N activities completed". The unit overview marks the activities in Today's Mission only for the active pathway. Browsing another pathway never changes `profile.pathway`; these screens write nothing.
+
 ## Deleting data
 
 Settings offers "Delete my data": a confirmation step, then the record and language choice are removed and the interface returns to English. Texts live in the locale files under `settings.*`.
 
 ## Tests
 
-`npm test` runs the unit tests in `src/learner/localStore.test.ts` `src/learner/profile.test.ts` and `src/learner/home.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration). The deployment workflow runs them before the build.
+`npm test` runs the unit tests in `src/learner/localStore.test.ts` `src/learner/profile.test.ts` `src/learner/home.test.ts` and `src/learner/progress.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration). The deployment workflow runs them before the build.

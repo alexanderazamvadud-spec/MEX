@@ -1,10 +1,20 @@
+import { Link } from 'react-router'
 import { useTranslation } from 'react-i18next'
-import { isPlaceholder, type Activity, type ContentPack } from '../../content/index.ts'
+import { canOpen, isPlaceholder, type Activity, type ContentPack } from '../../content/index.ts'
 import HomeBlock from './HomeBlock.tsx'
 
 // Block 1: up to two recommended activities and a "Why this mission?" note.
-// There is no activity player yet, so activities are names only, with no Start button.
-export default function TodaysMission({ pack, mission }: { pack: ContentPack | null; mission: Activity[] }) {
+// Each activity links to its unit overview (MVP-08); there is no activity player yet,
+// so there is no Start button. The mission activities are all in the current unit.
+export default function TodaysMission({
+  pack,
+  unitId,
+  mission,
+}: {
+  pack: ContentPack | null
+  unitId: string | null
+  mission: Activity[]
+}) {
   const { t } = useTranslation()
   if (!pack) return <HomeBlock title={t('home.mission.title')} busy data-block="mission" />
 
@@ -18,12 +28,19 @@ export default function TodaysMission({ pack, mission }: { pack: ContentPack | n
         <>
           <ol className="flex flex-col gap-2">
             {mission.map((activity) => (
-              <li key={activity.id} className="rounded-panel bg-surface px-4 py-3 text-body font-bold">
-                {activity.title}
+              <li key={activity.id}>
+                <Link
+                  to={`/learn/${pack.pathway}/${unitId}`}
+                  className="flex min-h-11 items-center rounded-panel bg-surface px-4 py-3 text-body font-bold text-ink no-underline hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--focus-ring)"
+                >
+                  {activity.title}
+                </Link>
               </li>
             ))}
           </ol>
-          <p className="text-small text-ink-secondary">{t('home.mission.noPlayer')}</p>
+          {mission.some((activity) => !canOpen(activity)) ? (
+            <p className="text-small text-ink-secondary">{t('home.mission.noPlayer')}</p>
+          ) : null}
         </>
       ) : (
         <p className="text-body">{t('home.mission.unitFinished')}</p>

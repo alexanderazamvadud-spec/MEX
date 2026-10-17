@@ -164,6 +164,31 @@
       "none": "Hozircha hech narsa rejalashtirilmagan."
     }
   },
+  "learn": {
+    "intro": "Boʻlimlar va mashgʻulotlarni koʻrish uchun yoʻnalishni tanlang.",
+    "current": "Joriy yoʻnalishingiz",
+    "back": "Orqaga",
+    "units": "Boʻlimlar",
+    "status": {
+      "notStarted": "Boshlanmagan",
+      "inProgress": "Jarayonda",
+      "completed": "Tugallangan"
+    },
+    "activities": "Mashgʻulotlar",
+    "types": {
+      "lesson": "Dars",
+      "exercise": "Mashqlar",
+      "reading": "Oʻqish",
+      "listening": "Tinglash",
+      "speaking": "Gapirish",
+      "interviewPractice": "Ish suhbati mashqi",
+      "writingChecklist": "Yozma topshiriq"
+    },
+    "minutes": "Taxminan {{n}} daqiqa",
+    "done": "Bajarildi",
+    "mission": "Bugungi vazifa",
+    "opensSoon": "Tez orada ochiladi"
+  },
   "language": {
     "label": "Interfeys tili"
   },

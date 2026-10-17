@@ -4,10 +4,13 @@ import AppShell from './AppShell.tsx'
 import RequireProfile from './RequireProfile.tsx'
 import HomePage from '../pages/HomePage.tsx'
 import LandingPage from '../pages/LandingPage.tsx'
+import LearnPage from '../pages/LearnPage.tsx'
 import NotFoundPage from '../pages/NotFoundPage.tsx'
 import OnboardingPage from '../pages/OnboardingPage.tsx'
+import PathwayPage from '../pages/PathwayPage.tsx'
 import SettingsPage from '../pages/SettingsPage.tsx'
 import StubPage from '../pages/StubPage.tsx'
+import UnitPage from '../pages/UnitPage.tsx'
 
 // Hash-based routing (/#/path) is used because GitHub Pages is a static host with no
 // server-side routing: refreshing any hash URL always loads index.html, so deep links survive.
@@ -21,7 +24,9 @@ const routes: RouteObject[] = [
         element: <RequireProfile />,
         children: [
           { path: '/home', element: <HomePage /> },
-          { path: '/learn', element: <StubPage titleKey="nav.learn" /> },
+          { path: '/learn', element: <LearnPage /> },
+          { path: '/learn/:pathway', element: <PathwayPage /> },
+          { path: '/learn/:pathway/:unit', element: <UnitPage /> },
           { path: '/progress', element: <StubPage titleKey="nav.progress" /> },
         ],
       },

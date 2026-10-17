@@ -81,7 +81,7 @@ describe('HomePage', () => {
     expect(headings).toEqual([home.mission.title, home.readiness.title, home.pathway.title, home.next.title])
   })
 
-  it("lists the next two activities as Today's mission, labelled as sample content, with no Start button", async () => {
+  it("lists the next two activities as Today's mission, linked to their unit, labelled as sample content, with no Start button", async () => {
     const pack = await loadPack('general-english')
     renderHome(storeWith('general-english'))
     await screen.findByText(home.mission.noPlayer)
@@ -89,7 +89,11 @@ describe('HomePage', () => {
     const items = mission.getAllByRole('listitem').map((element) => element.textContent)
     expect(items).toEqual([pack.units[0].activities[0].title, pack.units[0].activities[1].title])
     expect(mission.getByText(home.sampleContent)).toBeTruthy()
-    expect(mission.queryByRole('link')).toBeNull()
+    const links = mission.getAllByRole('link')
+    expect(links.map((link) => link.getAttribute('href'))).toEqual([
+      `/learn/general-english/${pack.units[0].id}`,
+      `/learn/general-english/${pack.units[0].id}`,
+    ])
     expect(mission.queryAllByRole('button')).toHaveLength(0)
     expect(mission.getByText(home.mission.why).closest('details')).toBeTruthy()
     expect(mission.getByText(home.mission.whyBody)).toBeTruthy()
