@@ -7,7 +7,7 @@ import { withOnboardingProfile } from '../learner/profile.ts'
 import type { ActivityCompletion, LearnerStore } from '../learner/types.ts'
 import HomePage from './HomePage.tsx'
 import LearnPage from './LearnPage.tsx'
-import LessonPage from './LessonPage.tsx'
+import ActivityPage from './ActivityPage.tsx'
 import PathwayPage from './PathwayPage.tsx'
 import UnitPage from './UnitPage.tsx'
 
@@ -37,7 +37,7 @@ export function renderAt(path: string, store: LearnerStore) {
       { path: '/learn', element: <LearnPage /> },
       { path: '/learn/:pathway', element: <PathwayPage /> },
       { path: '/learn/:pathway/:unit', element: <UnitPage /> },
-      { path: '/learn/:pathway/:unit/:activity', element: <LessonPage /> },
+      { path: '/learn/:pathway/:unit/:activity', element: <ActivityPage /> },
     ],
     { initialEntries: [path] },
   )

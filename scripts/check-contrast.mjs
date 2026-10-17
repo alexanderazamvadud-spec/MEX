@@ -69,6 +69,18 @@ const pairs = [
   ['accent', 'primary', 3, 'saffron badge or icon on primary cards'],
   ['success-border', 'success-tint', 3, 'success panel border'],
   ['error-border', 'error-tint', 3, 'error panel border'],
+  // Exercise feedback (MVP-10): text, native explanations, dropdown outlines and focus on the
+  // right/wrong panels, and the check or cross in a marked option.
+  ['ink', 'success-tint', 4.5, 'text on right-answer panels'],
+  ['ink', 'error-tint', 4.5, 'text on wrong-answer panels'],
+  ['ink-secondary', 'success-tint', 4.5, 'native explanation on right-answer panels'],
+  ['ink-secondary', 'error-tint', 4.5, 'native explanation on wrong-answer panels'],
+  ['outline', 'success-tint', 3, 'dropdown outline on a right matching pair'],
+  ['outline', 'error-tint', 3, 'dropdown outline on a wrong matching pair'],
+  ['primary', 'success-tint', 3, 'focus ring on right-answer panels'],
+  ['primary', 'error-tint', 3, 'focus ring on wrong-answer panels'],
+  ['on-primary', 'success-border', 3, 'check icon in a right option'],
+  ['on-primary', 'error-border', 3, 'cross icon in a wrong option'],
 ]
 
 let failures = 0

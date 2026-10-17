@@ -105,9 +105,9 @@ describe('Unit overview', () => {
     expect(row(first.id).queryByText(learn.mission)).toBeNull()
     expect(row(second.id).getByText(learn.mission)).toBeTruthy()
     expect(row(third.id).getByText(learn.mission)).toBeTruthy()
-    // Lessons have a player since MVP-09: no "Opens soon", and the row links to the lesson.
+    // Lessons (MVP-09) and exercises (MVP-10) have a player: no "Opens soon", and the row links to it.
     for (const activity of unit.activities) {
-      if (activity.type === 'lesson') {
+      if (activity.type === 'lesson' || activity.type === 'exercise') {
         expect(row(activity.id).queryByText(learn.opensSoon)).toBeNull()
         expect(row(activity.id).getByRole('link').getAttribute('href')).toBe(
           `/learn/general-english/${unit.id}/${activity.id}`,
@@ -151,7 +151,7 @@ describe('Unit overview', () => {
     expect(screen.getByRole('heading', { level: 1 }).textContent).toBe(`Раздел 1: ${unit.title}`)
     expect(screen.getByText(unit.summary.ru!)).toBeTruthy()
     expect(screen.getAllByText(ru.learn.opensSoon)).toHaveLength(
-      unit.activities.filter((activity) => activity.type !== 'lesson').length,
+      unit.activities.filter((activity) => activity.type !== 'lesson' && activity.type !== 'exercise').length,
     )
   })
 })
@@ -159,8 +159,15 @@ describe('Unit overview', () => {
 describe("Today's mission on Home", () => {
   it('links a mission activity without a player to its unit overview', async () => {
     const pack = await loadPack('general-english')
-    const router = renderAt('/home', storeWith('general-english'))
-    const link = await screen.findByRole('link', { name: pack.units[0].activities[1].title })
+    const completions = pack.units[0].activities.slice(0, 2).map((activity) => ({
+      pathway: 'general-english' as const,
+      unitId: pack.units[0].id,
+      activityId: activity.id,
+      completedAt: '2026-10-02T00:00:00.000Z',
+    }))
+    // With the lesson and exercises done, the mission is reading and speaking, which have no player yet.
+    const router = renderAt('/home', storeWith('general-english', completions))
+    const link = await screen.findByRole('link', { name: pack.units[0].activities[2].title })
     fireEvent.click(link)
     expect(router.state.location.pathname).toBe(`/learn/general-english/${pack.units[0].id}`)
     expect(await screen.findByText(learn.activities)).toBeTruthy()

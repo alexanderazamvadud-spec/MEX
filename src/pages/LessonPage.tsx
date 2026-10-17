@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router'
+import { useNavigate } from 'react-router'
 import { useTranslation } from 'react-i18next'
 import BackLink from '../components/learn/BackLink.tsx'
 import { ACTIVITY_TYPE_KEYS } from '../components/learn/text.ts'
@@ -7,25 +7,20 @@ import NativeText from '../components/lesson/NativeText.tsx'
 import Badge from '../components/ui/Badge.tsx'
 import Button from '../components/ui/Button.tsx'
 import Switch from '../components/ui/Switch.tsx'
-import { canOpen, isPlaceholder, PATHWAY_IDS, type PathwayId } from '../content/index.ts'
+import { isPlaceholder } from '../content/index.ts'
 import type { ContentItem, PhraseItem } from '../content/types.ts'
-import { usePack } from '../content/usePack.ts'
 import { LANGUAGE_NAMES } from '../i18n/index.ts'
 import { explanationsOn, withCompletion, withNativeExplanations } from '../learner/lesson.ts'
 import { completedActivityIds } from '../learner/progress.ts'
 import { useLearner } from '../learner/useLearner.ts'
-import NotFoundPage from './NotFoundPage.tsx'
+import type { ActivityPageProps } from './activityPageProps.ts'
 
-// Lesson viewer (MVP-09, Scope v2 screen S8) at #/learn/:pathway/:unit/:activity, for
-// lesson activities: key phrases, grammar notes and dialogues in pack order. Teaching
+// Lesson viewer (MVP-09, Scope v2 screen S8), shown by ActivityPage at
+// #/learn/:pathway/:unit/:activity for lesson activities: key phrases, grammar notes and dialogues in pack order. Teaching
 // content stays English. With Uzbek or Russian as the interface language, a switch shows
 // that language's version of the instructions, notes and explanations under the English
 // (decision Q3: on by default for Beginner); with English there is nothing to translate,
 // so the switch is hidden. "Finish lesson" records one completion and returns to the unit.
-
-function isPathwayId(value: string | undefined): value is PathwayId {
-  return PATHWAY_IDS.includes(value as PathwayId)
-}
 
 type Section =
   | { kind: 'phrases'; items: PhraseItem[] }
@@ -47,19 +42,10 @@ function toSections(items: ContentItem[]): Section[] {
   return sections
 }
 
-export default function LessonPage() {
-  const { pathway, unit: unitId, activity: activityId } = useParams()
-  const valid = isPathwayId(pathway)
-  const pack = usePack(valid ? pathway : null)
+export default function LessonPage({ pathway, pack, unit, activity }: ActivityPageProps) {
   const { t, i18n } = useTranslation()
   const { record, update } = useLearner()
   const navigate = useNavigate()
-
-  if (!valid) return <NotFoundPage />
-  const unit = pack?.units.find((item) => item.id === unitId)
-  const activity = unit?.activities.find((item) => item.id === activityId)
-  if (pack && (!unit || !activity || activity.type !== 'lesson' || !canOpen(activity))) return <NotFoundPage />
-  if (!pack || !unit || !activity) return <div aria-busy="true" />
 
   const language = i18n.resolvedLanguage
   const nativeLanguage = language === 'uz' || language === 'ru' ? language : null
@@ -69,7 +55,6 @@ export default function LessonPage() {
   const unitPath = `/learn/${pathway}/${unit.id}`
 
   function finish() {
-    if (!unit || !activity || !valid) return
     const now = new Date().toISOString()
     update((current) => withCompletion(current, { pathway, unitId: unit.id, activityId: activity.id }, now))
     navigate(unitPath)

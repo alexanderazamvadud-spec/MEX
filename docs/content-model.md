@@ -41,6 +41,12 @@ Every exercise and comprehension question carries an `explanation` shown after t
 
 Teaching content (phrases, dialogues, texts, questions, model answers) is English. Instructions, explanations, summaries, prompts and self-check lines are `LocalizedText` objects: `en` is required, `uz` and `ru` are optional native-language versions. The learner can switch these on or off; the default is on for Beginner and off for other levels (owner decision Q3). In the lesson viewer (MVP-09) the native language is the interface language, the native version appears under the English, and the switch covers instructions, phrase notes and grammar explanations. Uzbek uses the Latin script with U+02BB (ʻ) in oʻ and gʻ and U+02BC (ʼ) for the tutuq belgisi (feʼl, maʼlumot); never an ASCII apostrophe or a typographic quotation mark. The check script does not enforce this yet, so authors must type the correct characters.
 
+## Exercise player (MVP-10)
+
+Exercise activities are played one item per screen at `#/learn/:pathway/:unit/:activity` (the same address as lessons; `ActivityPage` picks the player from the activity type). Multiple choice and gap-fill options keep pack order. Matching right-hand texts and ordering segments are shown in a fixed shuffled order (`shuffled` in `src/learner/exercise.ts`, seeded by the item id), never already solved. An item is correct only when the option, every pair, or the whole order is right. After Check the learner sees right or wrong, the right answer when wrong, and the item's `explanation`. Prompts and options stay English; the native switch adds the UZ/RU instructions and explanations.
+
+**Answer keys are public.** The `answer`, `pairs` and `segments` fields ship to the browser in the pack, so anyone can read them. The owner accepted this on 2026-10-17 only for placeholder exercises. Real MEX exercises must not be added this way: they need the protected-delivery decision C-04 (Scope v2, Section 6.3) first.
+
 ## Placeholder content rules (Scope v2, Section 5.3)
 
 - All Phase 1 content is written fresh for development and marked `content_status: "placeholder"` and `license: "placeholder"`.

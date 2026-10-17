@@ -199,6 +199,28 @@
     "dialogue": "Dialogue",
     "finish": "Finish lesson"
   },
+  "exercise": {
+    "progress": "Question {{n}} of {{total}}",
+    "check": "Check",
+    "next": "Next",
+    "seeResults": "See results",
+    "correct": "Correct",
+    "incorrect": "Not quite",
+    "answerIs": "The answer is: {{answer}}",
+    "chooseAnswer": "Choose an answer",
+    "fillGap": "Fill the gap",
+    "chooseMatch": "Choose a match",
+    "tapInOrder": "Tap the parts in order",
+    "startAgain": "Start again",
+    "score": "You got {{n}} of {{total}} right",
+    "practiceNote": "This is practice. It does not change your readiness.",
+    "finish": "Finish exercises",
+    "errors": {
+      "choose": "Choose an answer first.",
+      "match": "Match every item first.",
+      "place": "Place every part first."
+    }
+  },
   "language": {
     "label": "Interface language"
   },
