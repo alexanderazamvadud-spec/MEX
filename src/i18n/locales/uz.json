@@ -96,7 +96,7 @@
     "stepCounter": "{{n}}-qadam, jami 4",
     "language": {
       "question": "Tilingizni tanlang",
-      "hint": "Keyinroq Sozlamalarda oʻzgartirishingiz mumkin."
+      "hint": "Keyinroq uni yuqoridagi til tugmasi orqali oʻzgartirishingiz mumkin."
     },
     "level": {
       "question": "Hozir ingliz tilingiz qanday?",
@@ -133,6 +133,36 @@
       "chooseGoal": "Davom etish uchun kamida bitta maqsadni tanlang."
     },
     "storageNotice": "Hozir bu qurilmada natijalaringizni saqlab boʻlmaydi (masalan, maxfiy oynada). Oʻrganishni davom ettirishingiz mumkin, lekin MEXni yopganingizda natijalar yoʻqoladi."
+  },
+  "home": {
+    "sampleContent": "Namuna kontent",
+    "mission": {
+      "title": "Bugungi vazifa",
+      "why": "Nega aynan shu vazifa?",
+      "whyBody": "Bular joriy boʻlimingizdagi navbatdagi mashgʻulotlar. MEX vazifalarni oddiy, belgilangan qoidalar asosida tanlaydi.",
+      "noPlayer": "Mashgʻulotlar demoning keyingi versiyasida ochiladi.",
+      "unitFinished": "Siz bu boʻlimni tugatdingiz."
+    },
+    "readiness": {
+      "title": "Joriy tayyorgarlik",
+      "label": "Oʻz-oʻzini baholash",
+      "careerEmpty": "Siz hali oʻzingizni baholamadingiz. Suhbat va gapirish mashqlaridan soʻng qanchalik tayyor ekaningizni baholashingiz mumkin. Bu test natijasi emas, balki sizning shaxsiy fikringiz.",
+      "generalEnglish": "Tayyorgarlik «{{career}}» yoʻnalishining bir qismi. «{{general}}» boʻyicha natijalaringiz unga hisoblanmaydi."
+    },
+    "pathway": {
+      "title": "Joriy yoʻnalish",
+      "unit": "{{n}}-boʻlim: {{name}}",
+      "count": "{{total}} ta mashgʻulotdan {{done}} tasi bajarildi",
+      "switch": "Yoʻnalishni almashtirish",
+      "confirm": "«{{pathway}}» yoʻnalishiga oʻtasizmi? Ikkala yoʻnalishdagi natijalaringiz saqlanadi.",
+      "confirmYes": "Almashtirish",
+      "cancel": "Bekor qilish"
+    },
+    "next": {
+      "title": "Keyingi tadbir",
+      "line": "Bugungi vazifadan soʻng: {{activity}}",
+      "none": "Hozircha hech narsa rejalashtirilmagan."
+    }
   },
   "language": {
     "label": "Interfeys tili"

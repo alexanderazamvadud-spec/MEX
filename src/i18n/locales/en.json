@@ -95,7 +95,7 @@
     "stepCounter": "Step {{n}} of 4",
     "language": {
       "question": "Choose your language",
-      "hint": "You can change it later in Settings."
+      "hint": "You can change it later with the language button at the top."
     },
     "level": {
       "question": "How is your English now?",
@@ -132,6 +132,36 @@
       "chooseGoal": "Please choose at least one goal to continue."
     },
     "storageNotice": "Your progress can’t be saved on this device right now (for example, in a private window). You can keep learning, but your progress will be lost when you close MEX."
+  },
+  "home": {
+    "sampleContent": "Sample content",
+    "mission": {
+      "title": "Today's mission",
+      "why": "Why this mission?",
+      "whyBody": "These are the next activities in your current unit. MEX chooses missions with simple, fixed rules.",
+      "noPlayer": "Activities open in a later version of the demo.",
+      "unitFinished": "You have finished this unit."
+    },
+    "readiness": {
+      "title": "Current readiness",
+      "label": "Self-assessment",
+      "careerEmpty": "You haven't rated yourself yet. After interview and speaking practice, you can rate how ready you feel. This is your own view, not a test result.",
+      "generalEnglish": "Readiness is part of the {{career}} pathway. Your {{general}} progress does not count towards it."
+    },
+    "pathway": {
+      "title": "Current pathway",
+      "unit": "Unit {{n}}: {{name}}",
+      "count": "{{done}} of {{total}} activities completed",
+      "switch": "Switch pathway",
+      "confirm": "Switch to {{pathway}}? Your progress in both pathways is kept.",
+      "confirmYes": "Switch",
+      "cancel": "Cancel"
+    },
+    "next": {
+      "title": "Next event",
+      "line": "After today's mission: {{activity}}",
+      "none": "Nothing planned yet."
+    }
   },
   "language": {
     "label": "Interface language"
