@@ -82,7 +82,7 @@ Inputs and progress bars are added by the tasks that need them, using these toke
 
 ## App shell and navigation (MVP-03)
 
-- `AppShell` (layout route): `TopBar`, the screen inside `PageContainer`, then `BottomNav`. Screens: `#/home`, `#/learn`, `#/progress`, `#/settings`; any other hash path renders `NotFoundPage` inside the shell. `#/` is the public landing page and `#/onboarding` the onboarding screen (both outside the shell, see below). Home, Learn and Progress require a learner profile and send learners without one to onboarding.
+- `AppShell` (layout route): `TopBar`, the screen inside `PageContainer`, then `BottomNav`. Screens: `#/home`, `#/learn`, `#/progress`, `#/settings`; any other hash path renders `NotFoundPage` inside the shell. `#/` is the public landing page and `#/onboarding` the onboarding screen (both outside the shell, see below). Home is the dashboard (see below); Learn and Progress are still placeholders. Home, Learn and Progress require a learner profile and send learners without one to onboarding.
 - `TopBar`: the wordmark (links to Home, 44 px link box) and `LanguageMenu`, a 44 px pill showing the current language code, named "Interface language: UZ, Oʻzbekcha" (code plus name, so the visible code is part of the spoken name), that opens a panel with `LanguageButtons`. The panel closes after a choice, on Escape, or on a click outside; focus returns to the pill.
 - `LanguageButtons`: three pill buttons in a group named "Interface language"; the active one is primary blue, carries a checkmark and `aria-pressed="true"`, so the choice is never shown by colour alone.
 - `BottomNav`: four tabs with outline icons from `src/components/icons/NavIcons.tsx` and translated labels; 48 px targets; the active tab is primary blue with `aria-current="page"`; a 1 px divider on top. It stays at the bottom of the page column on every width in Phase 1.
@@ -105,6 +105,13 @@ Keep the real learning content out of the repository: `content-private/` is igno
 - One question per step as the screen's `h1`, with its hint below. Focus moves to the question after Next or Back. Next stays enabled; with nothing chosen it shows an error panel (`error-tint`, wording, `role="alert"`). Back and Next sit side by side from the `sm` breakpoint and stack on phones, Next on top.
 - `ChoiceCard` (`src/components/onboarding/ChoiceCard.tsx`): a whole soft card that is one native radio button or checkbox, visually hidden but kept for keyboard use and screen readers. Selected cards turn `surface-sky` and fill the round (radio) or square (checkbox) indicator with primary blue and a checkmark, so the choice is never shown by colour alone. At least 56 px tall; focus ring around the whole card.
 - The storage notice is a `warning-tint` panel on the last step, shown only when saving is impossible.
+
+## Home (MVP-07)
+
+- `#/home` inside the app shell: the screen `h1` ("Home"), then four `HomeBlock` cards (`src/components/home/`), in this order: Today's Mission, Current Readiness, Current Pathway, Next Event. Each is a soft card with a level-2 heading and, where it applies, a `sky` badge ("Sample content" for placeholder content, "Self-assessment" on readiness).
+- No saffron action on Home: activities cannot be opened yet, so the mission lists names only (white panels) with a note, and "Why this mission?" is a native `<details>` disclosure with a 44 px summary.
+- "Switch pathway" is a tertiary button; it opens an in-card confirmation (white panel, primary "Switch" and secondary "Cancel"). Focus moves into the confirmation and back to the button when it closes.
+- While the content pack loads, the pack-dependent blocks show their heading only, marked `aria-busy`.
 
 ## Development style guide
 

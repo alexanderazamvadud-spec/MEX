@@ -2,6 +2,7 @@ import { createHashRouter, RouterProvider, type RouteObject } from 'react-router
 import LearnerProvider from '../learner/LearnerProvider.tsx'
 import AppShell from './AppShell.tsx'
 import RequireProfile from './RequireProfile.tsx'
+import HomePage from '../pages/HomePage.tsx'
 import LandingPage from '../pages/LandingPage.tsx'
 import NotFoundPage from '../pages/NotFoundPage.tsx'
 import OnboardingPage from '../pages/OnboardingPage.tsx'
@@ -19,7 +20,7 @@ const routes: RouteObject[] = [
       {
         element: <RequireProfile />,
         children: [
-          { path: '/home', element: <StubPage titleKey="nav.home" /> },
+          { path: '/home', element: <HomePage /> },
           { path: '/learn', element: <StubPage titleKey="nav.learn" /> },
           { path: '/progress', element: <StubPage titleKey="nav.progress" /> },
         ],

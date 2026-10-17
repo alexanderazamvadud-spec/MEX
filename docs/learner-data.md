@@ -44,10 +44,21 @@ Home, Learn and Progress need a profile: `RequireProfile` (`src/app/RequireProfi
 
 When storage is unavailable (`persistent` is false), the last onboarding step shows the owner-approved notice `onboarding.storageNotice`.
 
+## Home (MVP-07)
+
+`#/home` reads the record and the active pathway's content pack and shows only the learner's real state; no figure is invented. The rules are pure functions in `src/learner/home.ts`:
+
+- **Current unit:** the first unit with an activity not yet completed (the last unit once everything is done). The Current Pathway block shows "n of N activities completed" for that unit, from `completions` of the active pathway only (curriculum layer).
+- **Today's Mission** (`fixedRuleProvider`, behind the `RecommendationProvider` type so MVP-16 can replace it): the next two activities not yet completed in the current unit, in content order.
+- **Next Event:** the next activity not yet completed after the mission, in this unit or a later one; otherwise "Nothing planned yet".
+- **Current Readiness:** Career Readiness only, labelled "Self-assessment". MVP-07 shows no figure; the rule for one is set when the self-assessment activities exist. General English learners see an explanation that their progress does not count towards readiness.
+
+Home writes one thing: "Switch pathway", after an in-page confirmation, changes `profile.pathway` and `profile.updatedAt`. Progress is stored per pathway, so nothing else changes.
+
 ## Deleting data
 
 Settings offers "Delete my data": a confirmation step, then the record and language choice are removed and the interface returns to English. Texts live in the locale files under `settings.*`.
 
 ## Tests
 
-`npm test` runs the unit tests in `src/learner/localStore.test.ts` and `src/learner/profile.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration). The deployment workflow runs them before the build.
+`npm test` runs the unit tests in `src/learner/localStore.test.ts` `src/learner/profile.test.ts` and `src/learner/home.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration). The deployment workflow runs them before the build.
