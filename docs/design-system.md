@@ -76,18 +76,28 @@ Rules: 12 px is the floor (owner decision). No all-caps and no italics for Uzbek
 - `Badge`: small pill label; variants accent, accent-tint, primary, sky, surface, success, error.
 - `Wordmark`: "MEX" in primary blue; sizes lg and md.
 - `PageContainer`: page column.
+- `ButtonLink`: a react-router `Link` styled like `Button` (variants primary, accent, secondary; sizes lg, md, sm). Use it when the control moves to another screen.
 
 Inputs and progress bars are added by the tasks that need them, using these tokens.
 
 ## App shell and navigation (MVP-03)
 
-- `AppShell` (layout route): `TopBar`, the screen inside `PageContainer`, then `BottomNav`. Screens: `#/home`, `#/learn`, `#/progress`, `#/settings`; any other hash path renders `NotFoundPage` inside the shell. `#/` keeps the placeholder until the landing page exists.
+- `AppShell` (layout route): `TopBar`, the screen inside `PageContainer`, then `BottomNav`. Screens: `#/home`, `#/learn`, `#/progress`, `#/settings`; any other hash path renders `NotFoundPage` inside the shell. `#/` is the public landing page (outside the shell, see below).
 - `TopBar`: the wordmark (links to Home, 44 px link box) and `LanguageMenu`, a 44 px pill showing the current language code, named "Interface language: UZ, Oʻzbekcha" (code plus name, so the visible code is part of the spoken name), that opens a panel with `LanguageButtons`. The panel closes after a choice, on Escape, or on a click outside; focus returns to the pill.
 - `LanguageButtons`: three pill buttons in a group named "Interface language"; the active one is primary blue, carries a checkmark and `aria-pressed="true"`, so the choice is never shown by colour alone.
 - `BottomNav`: four tabs with outline icons from `src/components/icons/NavIcons.tsx` and translated labels; 48 px targets; the active tab is primary blue with `aria-current="page"`; a 1 px divider on top. It stays at the bottom of the page column on every width in Phase 1.
 - Icons are inline SVG on a 24 px grid, 2.2 px stroke, decorative (`aria-hidden`), always paired with a text label. No icon library.
 
 Keep the real learning content out of the repository: `content-private/` is ignored by git for local drafts.
+
+## Landing page (MVP-06)
+
+- `#/` renders `LandingPage` without the app shell: its own header (wordmark, `LanguageMenu`, "Open the demo" link), then hero, two pathways, how MEX works, who MEX serves, prototype and privacy, and a footer.
+- The page column is wider than the app's: `max-w-landing` (1040 px, `--container-landing`), with the same 18 px gutter. Cards sit side by side from the `md` breakpoint; on phones everything stacks.
+- The hero is a primary-blue surface with the page's one saffron action ("Explore the MEX Demo"). Decoration is CSS only (circles in `primary-hover`); no images.
+- Both pathway cards use the same variant, size and heading level, so neither appears secondary.
+- "Discover the Pathways" scrolls to the pathways section and moves focus to its heading without touching the URL hash, which holds the route.
+- The page reads and writes no learner data and never redirects; returning learners use the demo link.
 
 ## Development style guide
 
