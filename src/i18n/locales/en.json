@@ -3,9 +3,93 @@
     "title": "MEX",
     "subtitle": "Modern Employability eXperience"
   },
-  "placeholder": {
-    "status": "Job Interview English — coming soon.",
-    "openApp": "Open the app preview"
+  "landing": {
+    "header": {
+      "demo": "Open the demo"
+    },
+    "hero": {
+      "badge": "Prototype",
+      "title": "Build English skills for life and work.",
+      "body": "MEX helps learners develop practical English communication and career-readiness skills through purposeful learning and real-world practice.",
+      "primaryCta": "Explore the MEX Demo",
+      "secondaryCta": "Discover the Pathways",
+      "demoNote": "This is an early demo, not a finished product. Lessons and practice are still being built."
+    },
+    "pathways": {
+      "label": "Two pathways",
+      "title": "Two learning pathways, one goal",
+      "intro": "MEX is built around two central pathways of equal importance.",
+      "generalEnglish": {
+        "name": "General English",
+        "body": "Build confidence in everyday communication, useful expressions, listening, and speaking."
+      },
+      "careerReadiness": {
+        "name": "Career Readiness",
+        "body": "Prepare for interviews, workplace conversations, presentations, and professional communication."
+      }
+    },
+    "how": {
+      "title": "How MEX works",
+      "intro": "The intended learner journey has three steps.",
+      "choose": {
+        "title": "Choose a pathway",
+        "body": "Start with General English or Career Readiness, depending on what you need now."
+      },
+      "practise": {
+        "title": "Practise relevant skills",
+        "body": "Work through short lessons, exercises and speaking practice built around real situations."
+      },
+      "track": {
+        "title": "Track your development",
+        "body": "See which skills you have practised and how your confidence grows over time."
+      },
+      "note": "This is how MEX is designed to work. In the current demo, these steps are still being built."
+    },
+    "audience": {
+      "title": "Who MEX serves",
+      "learners": {
+        "title": "Individual learners",
+        "body": "Students, jobseekers and working professionals who want practical English for everyday life and for work."
+      },
+      "employers": {
+        "title": "Employers",
+        "body": "Organisations that want candidates and staff to communicate confidently at work. Tools for employers are planned."
+      },
+      "institutions": {
+        "title": "Educational institutions",
+        "body": "Universities, colleges and training centres that want to add practical English and employability skills to their programmes. Tools for institutions are planned."
+      }
+    },
+    "status": {
+      "title": "What works today",
+      "intro": "MEX is a prototype in active development. Here is what you can try now and what is still planned.",
+      "availableTitle": "Available in this demo",
+      "available": {
+        "landing": "This introduction page",
+        "preview": "A preview of the app screens and navigation",
+        "languages": "The interface in English, Uzbek and Russian",
+        "delete": "“Delete my data” in Settings"
+      },
+      "plannedTitle": "Planned",
+      "planned": {
+        "lessons": "Lessons and practice for both pathways",
+        "progress": "Progress tracking by skill",
+        "coaching": "Advanced AI coaching",
+        "speaking": "Speaking assessments",
+        "recommendations": "Personalised recommendations"
+      },
+      "plannedNote": "Planned features are not available yet and may change."
+    },
+    "privacy": {
+      "title": "Your data in this prototype",
+      "body": "The demo stores learner progress only on this device, in this browser. Nothing is sent to a server. Clearing your browser data or switching devices means it is lost.",
+      "deleteHint": "You can delete your data at any time in Settings.",
+      "settingsLink": "Go to Settings"
+    },
+    "footer": {
+      "copyright": "© 2026 Alexis Team LLC. MEX — Modern Employability eXperience.",
+      "note": "Prototype. Not yet a launched product."
+    }
   },
   "language": {
     "label": "Interface language"

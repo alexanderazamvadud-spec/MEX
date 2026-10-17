@@ -4,9 +4,93 @@
     "title": "MEX",
     "subtitle": "Modern Employability eXperience"
   },
-  "placeholder": {
-    "status": "Ish suhbati uchun ingliz tili — tez kunda.",
-    "openApp": "Ilovani koʻrish"
+  "landing": {
+    "header": {
+      "demo": "Demoni ochish"
+    },
+    "hero": {
+      "badge": "Prototip",
+      "title": "Hayot va ish uchun ingliz tili koʻnikmalarini rivojlantiring.",
+      "body": "MEX oʻquvchilarga maqsadli taʼlim va real hayotiy amaliyot orqali ingliz tilida amaliy muloqot hamda karyeraga tayyorgarlik koʻnikmalarini rivojlantirishga yordam beradi.",
+      "primaryCta": "MEX demosini koʻrish",
+      "secondaryCta": "Yoʻnalishlar bilan tanishish",
+      "demoNote": "Bu dastlabki demo, tayyor mahsulot emas. Darslar va mashqlar hali ishlab chiqilmoqda."
+    },
+    "pathways": {
+      "label": "Ikki yoʻnalish",
+      "title": "Ikki taʼlim yoʻnalishi, bitta maqsad",
+      "intro": "MEX teng ahamiyatli ikki asosiy yoʻnalishga asoslangan.",
+      "generalEnglish": {
+        "name": "Umumiy ingliz tili",
+        "body": "Kundalik muloqot, foydali iboralar, tinglab tushunish va gapirishda ishonch hosil qiling."
+      },
+      "careerReadiness": {
+        "name": "Karyeraga tayyorgarlik",
+        "body": "Ish suhbatlari, ish joyidagi muloqot, taqdimotlar va professional muloqotga tayyorlaning."
+      }
+    },
+    "how": {
+      "title": "MEX qanday ishlaydi",
+      "intro": "Oʻquvchining rejalashtirilgan yoʻli uch bosqichdan iborat.",
+      "choose": {
+        "title": "Yoʻnalishni tanlang",
+        "body": "Hozir nima kerakligiga qarab «Umumiy ingliz tili» yoki «Karyeraga tayyorgarlik» yoʻnalishidan boshlang."
+      },
+      "practise": {
+        "title": "Kerakli koʻnikmalarni mashq qiling",
+        "body": "Real vaziyatlarga asoslangan qisqa darslar, mashqlar va nutq mashgʻulotlarini bajaring."
+      },
+      "track": {
+        "title": "Rivojlanishingizni kuzating",
+        "body": "Qaysi koʻnikmalarni mashq qilganingizni va ishonchingiz qanday oshib borayotganini koʻring."
+      },
+      "note": "MEX shunday ishlashi rejalashtirilgan. Joriy demoda bu bosqichlar hali ishlab chiqilmoqda."
+    },
+    "audience": {
+      "title": "MEX kimlar uchun",
+      "learners": {
+        "title": "Alohida oʻquvchilar",
+        "body": "Kundalik hayot va ish uchun amaliy ingliz tilini oʻrganmoqchi boʻlgan talabalar, ish izlovchilar va ishlayotgan mutaxassislar."
+      },
+      "employers": {
+        "title": "Ish beruvchilar",
+        "body": "Nomzodlar va xodimlarning ishda ishonch bilan muloqot qilishini istagan tashkilotlar. Ish beruvchilar uchun vositalar rejalashtirilgan."
+      },
+      "institutions": {
+        "title": "Taʼlim muassasalari",
+        "body": "Oʻz dasturlariga amaliy ingliz tili va ishga tayyorlik koʻnikmalarini qoʻshmoqchi boʻlgan universitetlar, kollejlar va oʻquv markazlari. Muassasalar uchun vositalar rejalashtirilgan."
+      }
+    },
+    "status": {
+      "title": "Hozir nima ishlaydi",
+      "intro": "MEX faol ishlab chiqilayotgan prototip. Quyida hozir nimani sinab koʻrish mumkinligi va nimalar rejalashtirilgani keltirilgan.",
+      "availableTitle": "Bu demoda mavjud",
+      "available": {
+        "landing": "Ushbu tanishtiruv sahifasi",
+        "preview": "Ilova sahifalari va navigatsiyasining dastlabki koʻrinishi",
+        "languages": "Ingliz, oʻzbek va rus tillaridagi interfeys",
+        "delete": "Sozlamalardagi «Maʼlumotlarimni oʻchirish»"
+      },
+      "plannedTitle": "Rejalashtirilgan",
+      "planned": {
+        "lessons": "Ikkala yoʻnalish uchun darslar va mashqlar",
+        "progress": "Koʻnikmalar boʻyicha rivojlanishni kuzatish",
+        "coaching": "Ilgʻor sunʼiy intellekt murabbiyligi",
+        "speaking": "Nutqni baholash",
+        "recommendations": "Shaxsiy tavsiyalar"
+      },
+      "plannedNote": "Rejalashtirilgan imkoniyatlar hali mavjud emas va oʻzgarishi mumkin."
+    },
+    "privacy": {
+      "title": "Ushbu prototipda maʼlumotlaringiz",
+      "body": "Demo oʻquvchi natijalarini faqat shu qurilmada, shu brauzerda saqlaydi. Hech narsa serverga yuborilmaydi. Brauzer maʼlumotlarini tozalasangiz yoki boshqa qurilmaga oʻtsangiz, ular yoʻqoladi.",
+      "deleteHint": "Maʼlumotlaringizni istalgan vaqtda Sozlamalarda oʻchirishingiz mumkin.",
+      "settingsLink": "Sozlamalarga oʻtish"
+    },
+    "footer": {
+      "copyright": "© 2026 Alexis Team LLC. MEX — Modern Employability eXperience.",
+      "note": "Prototip. Hali ishga tushirilgan mahsulot emas."
+    }
   },
   "language": {
     "label": "Interfeys tili"

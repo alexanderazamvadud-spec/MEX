@@ -125,6 +125,8 @@
    * Tailwind's built-in h-screen / w-screen / min-h-screen utilities. */
   --spacing-gutter: 18px;
   --container-page: 560px;
+  /* Wider column for the public landing page only (MVP-06); app screens keep --container-page. */
+  --container-landing: 1040px;
 }
 
 /*

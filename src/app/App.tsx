@@ -1,15 +1,15 @@
 import { createHashRouter, RouterProvider, type RouteObject } from 'react-router'
 import LearnerProvider from '../learner/LearnerProvider.tsx'
 import AppShell from './AppShell.tsx'
+import LandingPage from '../pages/LandingPage.tsx'
 import NotFoundPage from '../pages/NotFoundPage.tsx'
-import PlaceholderPage from '../pages/PlaceholderPage.tsx'
 import SettingsPage from '../pages/SettingsPage.tsx'
 import StubPage from '../pages/StubPage.tsx'
 
 // Hash-based routing (/#/path) is used because GitHub Pages is a static host with no
 // server-side routing: refreshing any hash URL always loads index.html, so deep links survive.
 const routes: RouteObject[] = [
-  { path: '/', element: <PlaceholderPage /> },
+  { path: '/', element: <LandingPage /> },
   {
     element: <AppShell />,
     children: [
