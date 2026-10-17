@@ -82,7 +82,7 @@ Inputs and progress bars are added by the tasks that need them, using these toke
 
 ## App shell and navigation (MVP-03)
 
-- `AppShell` (layout route): `TopBar`, the screen inside `PageContainer`, then `BottomNav`. Screens: `#/home`, `#/learn`, `#/progress`, `#/settings`; any other hash path renders `NotFoundPage` inside the shell. `#/` is the public landing page and `#/onboarding` the onboarding screen (both outside the shell, see below). Home is the dashboard (see below); Learn and Progress are still placeholders. Home, Learn and Progress require a learner profile and send learners without one to onboarding.
+- `AppShell` (layout route): `TopBar`, the screen inside `PageContainer`, then `BottomNav`. Screens: `#/home`, `#/learn`, `#/progress`, `#/settings`; any other hash path renders `NotFoundPage` inside the shell. `#/` is the public landing page and `#/onboarding` the onboarding screen (both outside the shell, see below). Home is the dashboard and Learn holds the pathway screens (see below); Progress is still a placeholder. Home, Learn and Progress require a learner profile and send learners without one to onboarding.
 - `TopBar`: the wordmark (links to Home, 44 px link box) and `LanguageMenu`, a 44 px pill showing the current language code, named "Interface language: UZ, Oʻzbekcha" (code plus name, so the visible code is part of the spoken name), that opens a panel with `LanguageButtons`. The panel closes after a choice, on Escape, or on a click outside; focus returns to the pill.
 - `LanguageButtons`: three pill buttons in a group named "Interface language"; the active one is primary blue, carries a checkmark and `aria-pressed="true"`, so the choice is never shown by colour alone.
 - `BottomNav`: four tabs with outline icons from `src/components/icons/NavIcons.tsx` and translated labels; 48 px targets; the active tab is primary blue with `aria-current="page"`; a 1 px divider on top. It stays at the bottom of the page column on every width in Phase 1.
@@ -112,6 +112,15 @@ Keep the real learning content out of the repository: `content-private/` is igno
 - No saffron action on Home: activities cannot be opened yet, so the mission lists names only (white panels) with a note, and "Why this mission?" is a native `<details>` disclosure with a 44 px summary.
 - "Switch pathway" is a tertiary button; it opens an in-card confirmation (white panel, primary "Switch" and secondary "Cancel"). Focus moves into the confirmation and back to the button when it closes.
 - While the content pack loads, the pack-dependent blocks show their heading only, marked `aria-busy`.
+
+## Learn screens (MVP-08)
+
+- `#/learn` (pathways hub): both pathways as identical `sky` link cards in the landing-page order, with the approved names and descriptions; only the active one carries a white "Your current pathway" badge.
+- `#/learn/:pathway` (pathway overview) and `#/learn/:pathway/:unit` (unit overview) start with a 44 px "Back" link to the parent screen. Unknown ids show the Not found screen inside the shell; the bottom navigation keeps Learn active.
+- `LinkCard` (`src/components/learn/LinkCard.tsx`): a whole soft or sky card that is one link (unit rows, pathway cards), with the card focus ring.
+- Unit rows show a status badge: Not started (white), In progress (sky), Completed (success).
+- Activity rows show title, type and minutes, and badges for Completed (success), Today's mission (sky) and "Opens soon" (white). A row is a link only when its activity type has a player (`PLAYABLE_ACTIVITY_TYPES` in `src/content/index.ts`); until then it is plain and carries "Opens soon". Adding a type to that set removes the label and makes the row a link.
+- Today's Mission on Home: each activity is a link to its unit overview.
 
 ## Development style guide
 

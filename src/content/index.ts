@@ -1,6 +1,6 @@
-import type { ContentItem, ContentPack, ContentStatus, Level, PathwayId } from './types.ts'
+import type { Activity, ActivityType, ContentItem, ContentPack, ContentStatus, Level, LocalizedText, PathwayId } from './types.ts'
 
-export type { Activity, ContentItem, ContentPack, ContentStatus, Level, LocalizedText, PathwayId, Skill, Unit } from './types.ts'
+export type { Activity, ActivityType, ContentItem, ContentPack, ContentStatus, Level, LocalizedText, PathwayId, Skill, Unit } from './types.ts'
 export { ITEM_KINDS_BY_ACTIVITY } from './types.ts'
 
 export const PATHWAY_IDS: readonly PathwayId[] = ['general-english', 'career-readiness']
@@ -24,6 +24,21 @@ export async function loadPack(pathway: PathwayId): Promise<ContentPack> {
   }
   const module = await loader()
   return module.default as ContentPack
+}
+
+// Activity types that have a player screen. Empty until the activity players are built
+// (MVP-09 onwards); each of those tasks adds its type here, and every "Opens soon" label
+// and "Activities open in a later version" note for that type then disappears by itself.
+export const PLAYABLE_ACTIVITY_TYPES: ReadonlySet<ActivityType> = new Set<ActivityType>()
+
+export function canOpen(activity: Pick<Activity, 'type'>): boolean {
+  return PLAYABLE_ACTIVITY_TYPES.has(activity.type)
+}
+
+/** The text in the interface language when the pack has it, otherwise the required English. */
+export function localized(text: LocalizedText, language: string | undefined): string {
+  if (language === 'uz' || language === 'ru') return text[language] ?? text.en
+  return text.en
 }
 
 /** Placeholder content must always be shown with a "Sample content" label. */

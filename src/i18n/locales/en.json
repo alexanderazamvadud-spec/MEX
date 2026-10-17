@@ -163,6 +163,31 @@
       "none": "Nothing planned yet."
     }
   },
+  "learn": {
+    "intro": "Choose a pathway to see its units and activities.",
+    "current": "Your current pathway",
+    "back": "Back",
+    "units": "Units",
+    "status": {
+      "notStarted": "Not started",
+      "inProgress": "In progress",
+      "completed": "Completed"
+    },
+    "activities": "Activities",
+    "types": {
+      "lesson": "Lesson",
+      "exercise": "Exercises",
+      "reading": "Reading",
+      "listening": "Listening",
+      "speaking": "Speaking",
+      "interviewPractice": "Interview practice",
+      "writingChecklist": "Writing task"
+    },
+    "minutes": "About {{n}} min",
+    "done": "Completed",
+    "mission": "Today's mission",
+    "opensSoon": "Opens soon"
+  },
   "language": {
     "label": "Interface language"
   },

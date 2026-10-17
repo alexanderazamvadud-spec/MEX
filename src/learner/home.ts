@@ -1,4 +1,5 @@
-import type { Activity, ContentPack, PathwayId, Unit } from '../content/index.ts'
+import type { Activity, ContentPack, Unit } from '../content/index.ts'
+import { completedActivityIds, unitCompletion } from './progress.ts'
 import type { ActivityCompletion } from './types.ts'
 
 // Home dashboard rules (MVP-07). Everything here is a pure function of the content pack
@@ -30,26 +31,18 @@ export interface UnitProgress {
   total: number
 }
 
-function completedIds(pathway: PathwayId, completions: readonly ActivityCompletion[]): Set<string> {
-  return new Set(completions.filter((item) => item.pathway === pathway).map((item) => item.activityId))
-}
-
 /**
  * The current unit is the first unit that still has an activity not completed.
  * When every unit is finished, it is the last unit. Null only for a pack with no units.
  */
 export function currentUnit({ pack, completions }: HomeInput): UnitProgress | null {
   if (pack.units.length === 0) return null
-  const done = completedIds(pack.pathway, completions)
+  const done = completedActivityIds(pack.pathway, completions)
   const index = pack.units.findIndex((unit) => unit.activities.some((activity) => !done.has(activity.id)))
   const position = index === -1 ? pack.units.length - 1 : index
   const unit = pack.units[position]
-  return {
-    unit,
-    number: position + 1,
-    done: unit.activities.filter((activity) => done.has(activity.id)).length,
-    total: unit.activities.length,
-  }
+  const { done: count, total } = unitCompletion(unit, done)
+  return { unit, number: position + 1, done: count, total }
 }
 
 /**
@@ -58,7 +51,7 @@ export function currentUnit({ pack, completions }: HomeInput): UnitProgress | nu
  * after them, in this unit or, if none is left here, in a later unit.
  */
 export const fixedRuleProvider: RecommendationProvider = ({ pack, completions }) => {
-  const done = completedIds(pack.pathway, completions)
+  const done = completedActivityIds(pack.pathway, completions)
   const progress = currentUnit({ pack, completions })
   if (!progress) return { mission: [], nextEvent: null }
 
