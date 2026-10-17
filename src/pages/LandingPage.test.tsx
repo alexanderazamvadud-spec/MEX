@@ -121,6 +121,12 @@ describe('LandingPage', () => {
     }
   })
 
+  it('claims only features that exist today: no AI, certificates or accounts', () => {
+    renderLanding()
+    const available = screen.getByRole('heading', { name: en.landing.status.availableTitle }).parentElement as HTMLElement
+    expect(available.textContent).not.toMatch(/\bAI\b|artificial intelligence|certificate|account|sign[- ]?in|log[- ]?in|assessment|recommendation/i)
+  })
+
   it('explains local storage and points to deletion in Settings', () => {
     renderLanding()
     expect(screen.getByText(en.landing.privacy.body)).toBeTruthy()
