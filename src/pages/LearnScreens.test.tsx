@@ -118,7 +118,8 @@ describe('Unit overview', () => {
         expect(row(activity.id).queryByRole('link')).toBeNull()
       }
     }
-    expect(screen.getByText(en.home.mission.noPlayer)).toBeTruthy()
+    // Every General English unit 1 activity has a player since MVP-12, so there is no note.
+    expect(screen.queryByText(en.home.mission.noPlayer)).toBeNull()
   })
 
   it("shows no Today's mission label when browsing the other pathway", async () => {
@@ -143,9 +144,10 @@ describe('Unit overview', () => {
   })
 
   it('updates at once when the language changes, keeping English titles', async () => {
-    const pack = await loadPack('general-english')
+    // Career Readiness still has an activity without a player (interview practice, MVP-13).
+    const pack = await loadPack('career-readiness')
     const unit = pack.units[0]
-    renderAt(`/learn/general-english/${unit.id}`, storeWith('general-english'))
+    renderAt(`/learn/career-readiness/${unit.id}`, storeWith('career-readiness'))
     await screen.findByText(learn.activities)
     await act(() => i18n.changeLanguage('ru'))
     expect(screen.getByRole('heading', { name: ru.learn.activities })).toBeTruthy()
@@ -154,24 +156,25 @@ describe('Unit overview', () => {
     expect(screen.getAllByText(ru.learn.opensSoon)).toHaveLength(
       unit.activities.filter((activity) => !canOpen(activity)).length,
     )
+    expect(screen.getByText(ru.home.mission.noPlayer)).toBeTruthy()
   })
 })
 
 describe("Today's mission on Home", () => {
   it('links a mission activity without a player to its unit overview', async () => {
-    const pack = await loadPack('general-english')
+    const pack = await loadPack('career-readiness')
     const completions = pack.units[0].activities.filter(canOpen).map((activity) => ({
-      pathway: 'general-english' as const,
+      pathway: 'career-readiness' as const,
       unitId: pack.units[0].id,
       activityId: activity.id,
       completedAt: '2026-10-02T00:00:00.000Z',
     }))
-    // With every playable activity done, the mission is speaking, which has no player yet.
-    const router = renderAt('/home', storeWith('general-english', completions))
-    const speaking = pack.units[0].activities.find((activity) => !canOpen(activity))!
-    const link = await screen.findByRole('link', { name: speaking.title })
+    // With every playable activity done, the mission is interview practice, which has no player yet.
+    const router = renderAt('/home', storeWith('career-readiness', completions))
+    const interview = pack.units[0].activities.find((activity) => !canOpen(activity))!
+    const link = await screen.findByRole('link', { name: interview.title })
     fireEvent.click(link)
-    expect(router.state.location.pathname).toBe(`/learn/general-english/${pack.units[0].id}`)
+    expect(router.state.location.pathname).toBe(`/learn/career-readiness/${pack.units[0].id}`)
     expect(await screen.findByText(learn.activities)).toBeTruthy()
   })
 })

@@ -235,6 +235,27 @@
     "noVoice": "This device has no English voice that works offline, so the text is shown instead.",
     "finish": "Finish listening"
   },
+  "speaking": {
+    "task": "1. The task",
+    "prepare": "2. Prepare",
+    "speak": "3. Speak",
+    "model": "4. Model answer",
+    "check": "5. Check yourself",
+    "startPreparing": "Start preparing",
+    "ready": "I'm ready",
+    "startSpeaking": "Start speaking",
+    "timeUp": "Time's up",
+    "record": "Record",
+    "recording": "Recording",
+    "stop": "Stop",
+    "recordAgain": "Record again",
+    "recordingNote": "Your recording stays on this device and is deleted when you leave this page.",
+    "unavailable": "Recording isn't available here. You can still practise by speaking aloud.",
+    "showModel": "Show the model answer",
+    "listenModel": "Listen to the model answer",
+    "selfNote": "You check this yourself. MEX does not listen to or score your speaking.",
+    "finish": "Finish speaking"
+  },
   "language": {
     "label": "Interface language"
   },

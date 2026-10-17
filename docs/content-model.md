@@ -49,6 +49,10 @@ Exercise activities are played one item per screen at `#/learn/:pathway/:unit/:a
 
 Reading and listening items use the same question flow as exercises: each `ComprehensionQuestion` is played as a multiple-choice item with the id `<item id>-q<n>` and the item's `skills` (`comprehensionItems` in `src/learner/exercise.ts`). The reading `text` stays above every question. The listening `transcript` is spoken by an on-device English voice (`src/learner/speech.ts`, decision Q5); a line break in the transcript starts a new paragraph when the text is shown. Text and transcripts stay English.
 
+## Speaking player (MVP-12)
+
+Each `speaking` item is one task on a single screen: the prompt, the `preparationHints`, a 60-second preparation timer and a 30-second speaking timer (guides only; they never block), optional on-device recording, the `modelAnswer` on request, and the `selfCheck` list as tick boxes. The prompt and self-check lines have UZ/RU versions under the native switch; hints and the model answer stay English. The model answer can be heard with the same on-device voice as listening, when one exists.
+
 **Answer keys are public.** The `answer`, `pairs` and `segments` fields, and the answers of reading and listening questions, ship to the browser in the pack, so anyone can read them. The owner accepted this on 2026-10-17 only for placeholder exercises. Real MEX exercises must not be added this way: they need the protected-delivery decision C-04 (Scope v2, Section 6.3) first.
 
 ## Placeholder content rules (Scope v2, Section 5.3)

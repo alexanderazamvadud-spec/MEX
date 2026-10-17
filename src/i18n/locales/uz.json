@@ -236,6 +236,27 @@
     "noVoice": "Bu qurilmada internetsiz ishlaydigan inglizcha ovoz yoʻq, shuning uchun matn koʻrsatiladi.",
     "finish": "Tinglashni yakunlash"
   },
+  "speaking": {
+    "task": "1. Topshiriq",
+    "prepare": "2. Tayyorlaning",
+    "speak": "3. Gapiring",
+    "model": "4. Namunaviy javob",
+    "check": "5. Oʻzingizni tekshiring",
+    "startPreparing": "Tayyorlanishni boshlash",
+    "ready": "Tayyorman",
+    "startSpeaking": "Gapirishni boshlash",
+    "timeUp": "Vaqt tugadi",
+    "record": "Yozib olish",
+    "recording": "Yozilmoqda",
+    "stop": "Toʻxtatish",
+    "recordAgain": "Qayta yozib olish",
+    "recordingNote": "Yozuvingiz shu qurilmada qoladi va bu sahifadan chiqqaningizda oʻchiriladi.",
+    "unavailable": "Bu yerda yozib olish imkoni yoʻq. Baribir ovoz chiqarib gapirib mashq qilishingiz mumkin.",
+    "showModel": "Namunaviy javobni koʻrsatish",
+    "listenModel": "Namunaviy javobni tinglash",
+    "selfNote": "Buni oʻzingiz tekshirasiz. MEX nutqingizni tinglamaydi va baholamaydi.",
+    "finish": "Gapirishni yakunlash"
+  },
   "language": {
     "label": "Interfeys tili"
   },

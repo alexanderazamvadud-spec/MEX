@@ -80,10 +80,16 @@ Exercise results never change readiness, and the results screen says so. Answers
 
 Reading and listening save results and completion exactly as exercises do. Each comprehension question is saved as `<item id>-q<n>` with the item's skills. When the listening player cannot speak (no on-device English voice, or speech fails) the learner answers from the text, so those results are saved with `reading` in place of `listening`. Speech uses only voices the browser marks as on-device, so the transcript is not sent anywhere; MEX relies on the browser's `localService` flag for this and cannot verify it.
 
+## Speaking practice (MVP-12)
+
+"Finish speaking" adds one `SelfAssessment` per item (`kind: "speaking"`, pathway, activity, item, the item's `skills`, one tick per self-check line, date) through `withSelfAssessment` in `src/learner/selfAssessment.ts`, then one completion. No box has to be ticked. Repeating the activity adds new entries and never changes earlier ones. No confidence rating is asked. Self-assessments are labelled as such and never change readiness on their own.
+
+**Recordings are never saved (decision Q7).** The microphone is requested only when the learner taps Record (`src/learner/recording.ts`) and is released as soon as recording stops, or after 2 minutes. The clip is an in-memory Blob used only for playback on this screen. It is never written to browser storage, never added to the learner record and never uploaded. Record again, Finish, or leaving the screen discards it. If the microphone is refused or recording is not supported, the screen says so and the learner practises aloud.
+
 ## Deleting data
 
 Settings offers "Delete my data": a confirmation step, then the record and language choice are removed and the interface returns to English. Texts live in the locale files under `settings.*`.
 
 ## Tests
 
-`npm test` runs the unit tests in `src/learner/localStore.test.ts` `src/learner/profile.test.ts` `src/learner/home.test.ts`, `src/learner/progress.test.ts`, `src/learner/lesson.test.ts`, `src/learner/exercise.test.ts` and `src/learner/speech.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration). The deployment workflow runs them before the build.
+`npm test` runs the unit tests in `src/learner/localStore.test.ts` `src/learner/profile.test.ts` `src/learner/home.test.ts`, `src/learner/progress.test.ts`, `src/learner/lesson.test.ts`, `src/learner/exercise.test.ts`, `src/learner/speech.test.ts`, `src/learner/selfAssessment.test.ts` and `src/learner/recording.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration). The deployment workflow runs them before the build.
