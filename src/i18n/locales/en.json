@@ -91,6 +91,48 @@
       "note": "Prototype. Not yet a launched product."
     }
   },
+  "onboarding": {
+    "stepCounter": "Step {{n}} of 4",
+    "language": {
+      "question": "Choose your language",
+      "hint": "You can change it later in Settings."
+    },
+    "level": {
+      "question": "How is your English now?",
+      "note": "Your own estimate. This is not a test.",
+      "beginner": {
+        "name": "Beginner",
+        "description": "I know a few words and simple phrases."
+      },
+      "elementary": {
+        "name": "Elementary",
+        "description": "I can have a simple conversation about everyday topics."
+      },
+      "intermediate": {
+        "name": "Intermediate",
+        "description": "I can talk about my work, studies and plans, with some mistakes."
+      }
+    },
+    "goals": {
+      "question": "What do you want English for?",
+      "hint": "Choose everything that applies.",
+      "everyday": "Everyday life",
+      "study": "Study",
+      "work": "Work"
+    },
+    "pathway": {
+      "question": "Where would you like to start?",
+      "hint": "You can switch pathways at any time."
+    },
+    "next": "Next",
+    "back": "Back",
+    "start": "Start learning",
+    "errors": {
+      "chooseOne": "Please choose one option to continue.",
+      "chooseGoal": "Please choose at least one goal to continue."
+    },
+    "storageNotice": "Your progress can’t be saved on this device right now (for example, in a private window). You can keep learning, but your progress will be lost when you close MEX."
+  },
   "language": {
     "label": "Interface language"
   },
