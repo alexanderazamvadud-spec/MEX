@@ -82,7 +82,7 @@ Inputs and progress bars are added by the tasks that need them, using these toke
 
 ## App shell and navigation (MVP-03)
 
-- `AppShell` (layout route): `TopBar`, the screen inside `PageContainer`, then `BottomNav`. Screens: `#/home`, `#/learn`, `#/progress`, `#/settings`; any other hash path renders `NotFoundPage` inside the shell. `#/` is the public landing page (outside the shell, see below).
+- `AppShell` (layout route): `TopBar`, the screen inside `PageContainer`, then `BottomNav`. Screens: `#/home`, `#/learn`, `#/progress`, `#/settings`; any other hash path renders `NotFoundPage` inside the shell. `#/` is the public landing page and `#/onboarding` the onboarding screen (both outside the shell, see below). Home, Learn and Progress require a learner profile and send learners without one to onboarding.
 - `TopBar`: the wordmark (links to Home, 44 px link box) and `LanguageMenu`, a 44 px pill showing the current language code, named "Interface language: UZ, Oʻzbekcha" (code plus name, so the visible code is part of the spoken name), that opens a panel with `LanguageButtons`. The panel closes after a choice, on Escape, or on a click outside; focus returns to the pill.
 - `LanguageButtons`: three pill buttons in a group named "Interface language"; the active one is primary blue, carries a checkmark and `aria-pressed="true"`, so the choice is never shown by colour alone.
 - `BottomNav`: four tabs with outline icons from `src/components/icons/NavIcons.tsx` and translated labels; 48 px targets; the active tab is primary blue with `aria-current="page"`; a 1 px divider on top. It stays at the bottom of the page column on every width in Phase 1.
@@ -98,6 +98,13 @@ Keep the real learning content out of the repository: `content-private/` is igno
 - Both pathway cards use the same variant, size and heading level, so neither appears secondary.
 - "Discover the Pathways" scrolls to the pathways section and moves focus to its heading without touching the URL hash, which holds the route.
 - The page reads and writes no learner data and never redirects; returning learners use the demo link.
+
+## Onboarding (MVP-06b)
+
+- `#/onboarding` is outside the app shell: wordmark and the step counter ("Step {n} of 4") in the header, no bottom navigation and no language pill (step 1 is the language). It uses the 560 px page column.
+- One question per step as the screen's `h1`, with its hint below. Focus moves to the question after Next or Back. Next stays enabled; with nothing chosen it shows an error panel (`error-tint`, wording, `role="alert"`). Back and Next sit side by side from the `sm` breakpoint and stack on phones, Next on top.
+- `ChoiceCard` (`src/components/onboarding/ChoiceCard.tsx`): a whole soft card that is one native radio button or checkbox, visually hidden but kept for keyboard use and screen readers. Selected cards turn `surface-sky` and fill the round (radio) or square (checkbox) indicator with primary blue and a checkmark, so the choice is never shown by colour alone. At least 56 px tall; focus ring around the whole card.
+- The storage notice is a `warning-tint` panel on the last step, shown only when saving is impossible.
 
 ## Development style guide
 

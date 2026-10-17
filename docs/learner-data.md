@@ -36,10 +36,18 @@ Screens never touch `localStorage` directly. `LearnerProvider` (wrapping the app
 
 Adding accounts later means implementing the same `LearnerStore` interface against a server and passing it to `LearnerProvider`; screens stay unchanged. `migrateRecord` upgrades older stored shapes when the schema version changes.
 
+## Onboarding (MVP-06b)
+
+`#/onboarding` asks four questions in order: interface language, self-reported level (plain words, labelled "Your own estimate. This is not a test."), goals (one or more), and first pathway (one; owner decision Q8: one active pathway at a time). The profile is written once, when the learner presses "Start learning", by `withOnboardingProfile` in `src/learner/profile.ts`; it replaces only `profile`, keeps every other part of the record, and keeps the first `createdAt` when a returning learner finishes again. Leaving early writes nothing, except the interface language, which is stored as soon as it is chosen. No pathway is preselected or recommended from the goals.
+
+Home, Learn and Progress need a profile: `RequireProfile` (`src/app/RequireProfile.tsx`) sends learners without one to `#/onboarding`. The landing page and Settings stay open to everyone, so "Delete my data" is always reachable.
+
+When storage is unavailable (`persistent` is false), the last onboarding step shows the owner-approved notice `onboarding.storageNotice`.
+
 ## Deleting data
 
 Settings offers "Delete my data": a confirmation step, then the record and language choice are removed and the interface returns to English. Texts live in the locale files under `settings.*`.
 
 ## Tests
 
-`npm test` runs the unit tests in `src/learner/localStore.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration). The deployment workflow runs them before the build.
+`npm test` runs the unit tests in `src/learner/localStore.test.ts` and `src/learner/profile.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration). The deployment workflow runs them before the build.

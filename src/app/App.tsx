@@ -1,8 +1,10 @@
 import { createHashRouter, RouterProvider, type RouteObject } from 'react-router'
 import LearnerProvider from '../learner/LearnerProvider.tsx'
 import AppShell from './AppShell.tsx'
+import RequireProfile from './RequireProfile.tsx'
 import LandingPage from '../pages/LandingPage.tsx'
 import NotFoundPage from '../pages/NotFoundPage.tsx'
+import OnboardingPage from '../pages/OnboardingPage.tsx'
 import SettingsPage from '../pages/SettingsPage.tsx'
 import StubPage from '../pages/StubPage.tsx'
 
@@ -10,12 +12,18 @@ import StubPage from '../pages/StubPage.tsx'
 // server-side routing: refreshing any hash URL always loads index.html, so deep links survive.
 const routes: RouteObject[] = [
   { path: '/', element: <LandingPage /> },
+  { path: '/onboarding', element: <OnboardingPage /> },
   {
     element: <AppShell />,
     children: [
-      { path: '/home', element: <StubPage titleKey="nav.home" /> },
-      { path: '/learn', element: <StubPage titleKey="nav.learn" /> },
-      { path: '/progress', element: <StubPage titleKey="nav.progress" /> },
+      {
+        element: <RequireProfile />,
+        children: [
+          { path: '/home', element: <StubPage titleKey="nav.home" /> },
+          { path: '/learn', element: <StubPage titleKey="nav.learn" /> },
+          { path: '/progress', element: <StubPage titleKey="nav.progress" /> },
+        ],
+      },
       { path: '/settings', element: <SettingsPage /> },
       { path: '*', element: <NotFoundPage /> },
     ],

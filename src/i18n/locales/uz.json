@@ -92,6 +92,48 @@
       "note": "Prototip. Hali ishga tushirilgan mahsulot emas."
     }
   },
+  "onboarding": {
+    "stepCounter": "{{n}}-qadam, jami 4",
+    "language": {
+      "question": "Tilingizni tanlang",
+      "hint": "Keyinroq Sozlamalarda oʻzgartirishingiz mumkin."
+    },
+    "level": {
+      "question": "Hozir ingliz tilingiz qanday?",
+      "note": "Oʻz bahoyingiz. Bu test emas.",
+      "beginner": {
+        "name": "Yangi boshlovchi",
+        "description": "Bir nechta soʻz va oddiy iboralarni bilaman."
+      },
+      "elementary": {
+        "name": "Boshlangʻich",
+        "description": "Kundalik mavzularda oddiy suhbat qura olaman."
+      },
+      "intermediate": {
+        "name": "Oʻrta",
+        "description": "Ish, oʻqish va rejalarim haqida xatolar bilan boʻlsa ham gapira olaman."
+      }
+    },
+    "goals": {
+      "question": "Ingliz tili sizga nima uchun kerak?",
+      "hint": "Mos keladiganlarning hammasini tanlang.",
+      "everyday": "Kundalik hayot",
+      "study": "Oʻqish",
+      "work": "Ish"
+    },
+    "pathway": {
+      "question": "Qayerdan boshlamoqchisiz?",
+      "hint": "Yoʻnalishni istalgan vaqtda oʻzgartirishingiz mumkin."
+    },
+    "next": "Keyingi",
+    "back": "Orqaga",
+    "start": "Oʻrganishni boshlash",
+    "errors": {
+      "chooseOne": "Davom etish uchun bitta variantni tanlang.",
+      "chooseGoal": "Davom etish uchun kamida bitta maqsadni tanlang."
+    },
+    "storageNotice": "Hozir bu qurilmada natijalaringizni saqlab boʻlmaydi (masalan, maxfiy oynada). Oʻrganishni davom ettirishingiz mumkin, lekin MEXni yopganingizda natijalar yoʻqoladi."
+  },
   "language": {
     "label": "Interfeys tili"
   },
