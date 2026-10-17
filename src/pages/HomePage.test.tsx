@@ -74,27 +74,28 @@ afterEach(() => {
 describe('HomePage', () => {
   it('shows the four blocks in the confirmed order', async () => {
     renderHome(storeWith('general-english'))
-    await screen.findByText(home.mission.noPlayer)
+    await screen.findByText(home.mission.why)
     const order = [...document.querySelectorAll('[data-block]')].map((element) => element.getAttribute('data-block'))
     expect(order).toEqual(['mission', 'readiness', 'pathway', 'next'])
     const headings = screen.getAllByRole('heading', { level: 2 }).map((element) => element.textContent)
     expect(headings).toEqual([home.mission.title, home.readiness.title, home.pathway.title, home.next.title])
   })
 
-  it("lists the next two activities as Today's mission, linked to the lesson or their unit, labelled as sample content, with no Start button", async () => {
+  it("lists the next two activities as Today's mission, linked to the activity or its unit, labelled as sample content, with no Start button", async () => {
     const pack = await loadPack('general-english')
     renderHome(storeWith('general-english'))
-    await screen.findByText(home.mission.noPlayer)
+    await screen.findByText(home.mission.why)
     const mission = block('mission')
     const items = mission.getAllByRole('listitem').map((element) => element.textContent)
     expect(items).toEqual([pack.units[0].activities[0].title, pack.units[0].activities[1].title])
     expect(mission.getByText(home.sampleContent)).toBeTruthy()
     const links = mission.getAllByRole('link')
-    // The first activity is a lesson, which has a player since MVP-09; the second does not yet.
+    // The first activity is a lesson (player since MVP-09) and the second an exercise (MVP-10).
     expect(links.map((link) => link.getAttribute('href'))).toEqual([
       `/learn/general-english/${pack.units[0].id}/${pack.units[0].activities[0].id}`,
-      `/learn/general-english/${pack.units[0].id}`,
+      `/learn/general-english/${pack.units[0].id}/${pack.units[0].activities[1].id}`,
     ])
+    expect(mission.queryByText(home.mission.noPlayer)).toBeNull()
     expect(mission.queryAllByRole('button')).toHaveLength(0)
     expect(mission.getByText(home.mission.why).closest('details')).toBeTruthy()
     expect(mission.getByText(home.mission.whyBody)).toBeTruthy()
@@ -102,13 +103,13 @@ describe('HomePage', () => {
 
   it('shows readiness as a self-assessment with no figure, for both pathways', async () => {
     renderHome(storeWith('career-readiness'))
-    await screen.findByText(home.mission.noPlayer)
+    await screen.findByText(home.mission.why)
     expect(block('readiness').getByText(home.readiness.label)).toBeTruthy()
     expect(block('readiness').getByText(home.readiness.careerEmpty)).toBeTruthy()
     cleanup()
 
     renderHome(storeWith('general-english'))
-    await screen.findByText(home.mission.noPlayer)
+    await screen.findByText(home.mission.why)
     const readiness = block('readiness')
     expect(readiness.getByText(home.readiness.label)).toBeTruthy()
     const text = readiness.getByText(/Readiness is part of/).textContent
@@ -127,7 +128,7 @@ describe('HomePage', () => {
         { pathway: 'general-english', unitId: first.id, activityId: first.activities[0].id, completedAt: '2026-10-02T00:00:00.000Z' },
       ]),
     )
-    await screen.findByText(home.mission.noPlayer)
+    await screen.findByText(home.mission.why)
     const pathway = block('pathway')
     expect(pathway.getByText('General English')).toBeTruthy()
     expect(pathway.getByText(`Unit 1: ${first.title}`)).toBeTruthy()
@@ -139,7 +140,7 @@ describe('HomePage', () => {
   it('names the next event as plain text', async () => {
     const pack = await loadPack('general-english')
     renderHome(storeWith('general-english'))
-    await screen.findByText(home.mission.noPlayer)
+    await screen.findByText(home.mission.why)
     const next = block('next')
     expect(next.getByText(`After today's mission: ${pack.units[0].activities[2].title}`)).toBeTruthy()
     expect(next.queryByRole('button')).toBeNull()
@@ -151,7 +152,7 @@ describe('HomePage', () => {
       { pathway: 'general-english', unitId: 'u', activityId: 'ge-01-a1-lesson', completedAt: '2026-10-02T00:00:00.000Z' },
     ]
     const store = renderHome(storeWith('general-english', completions))
-    await screen.findByText(home.mission.noPlayer)
+    await screen.findByText(home.mission.why)
 
     fireEvent.click(screen.getByRole('button', { name: home.pathway.switch }))
     expect(screen.getByText('Switch to Career Readiness? Your progress in both pathways is kept.')).toBeTruthy()
@@ -179,13 +180,13 @@ describe('HomePage', () => {
     const store = storeWith('general-english')
     const before = JSON.stringify(store.read())
     renderHome(store)
-    await screen.findByText(home.mission.noPlayer)
+    await screen.findByText(home.mission.why)
     expect(JSON.stringify(store.read())).toBe(before)
   })
 
   it('updates at once when the language changes', async () => {
     renderHome(storeWith('general-english'))
-    await screen.findByText(home.mission.noPlayer)
+    await screen.findByText(home.mission.why)
     await act(() => i18n.changeLanguage('ru'))
     expect(screen.getByRole('heading', { name: ru.home.mission.title })).toBeTruthy()
     expect(screen.getByText(ru.home.readiness.label)).toBeTruthy()

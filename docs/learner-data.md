@@ -66,10 +66,20 @@ The lesson screen writes two things through `src/learner/lesson.ts`:
 - **`preferences.nativeExplanations`:** set when the learner uses the explanation switch. While it is `null`, `explanationsOn` uses the level default (on for Beginner, decision Q3). The choice applies to every lesson.
 - **`completions`:** "Finish lesson" adds one `ActivityCompletion` (pathway, unit, activity, date) through `withCompletion`; finishing again keeps the first record. This is the curriculum layer only: lessons add nothing to exercise results, self-assessments or readiness.
 
+## Exercise player (MVP-10)
+
+The exercise screen writes three things through `src/learner/exercise.ts` and `src/learner/lesson.ts`:
+
+- **`exerciseResults`:** each Check adds one `ExerciseResult` (pathway, activity, item, the item's `skills`, `correct`, date) through `withExerciseResult`. This is the demonstrated-skills layer. There is one attempt per item; replaying an exercise adds new results and never changes or removes earlier ones (mastery history). Results are only saved here; the Progress screen (MVP-15) decides how they are shown.
+- **`completions`:** "Finish exercises" on the results screen adds one completion through `withCompletion`, whatever the score. Leaving before the results screen keeps the results already checked and does not complete the activity.
+- **`preferences.nativeExplanations`:** the same switch and preference as the lesson viewer.
+
+Exercise results never change readiness, and the results screen says so. Answers are checked in the browser against the pack, so the answer keys are public; this is acceptable only for placeholder exercises (see `docs/content-model.md`).
+
 ## Deleting data
 
 Settings offers "Delete my data": a confirmation step, then the record and language choice are removed and the interface returns to English. Texts live in the locale files under `settings.*`.
 
 ## Tests
 
-`npm test` runs the unit tests in `src/learner/localStore.test.ts` `src/learner/profile.test.ts` `src/learner/home.test.ts`, `src/learner/progress.test.ts` and `src/learner/lesson.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration). The deployment workflow runs them before the build.
+`npm test` runs the unit tests in `src/learner/localStore.test.ts` `src/learner/profile.test.ts` `src/learner/home.test.ts`, `src/learner/progress.test.ts`, `src/learner/lesson.test.ts` and `src/learner/exercise.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration). The deployment workflow runs them before the build.

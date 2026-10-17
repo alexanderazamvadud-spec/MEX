@@ -147,8 +147,8 @@ describe('LessonPage', () => {
     renderAt(`/learn/general-english/${unit.id}/nothing-here`, storeWith('general-english'))
     expect(await screen.findByRole('heading', { name: en.notFound.title })).toBeTruthy()
     cleanup()
-    const exercise = unit.activities.find((activity) => activity.type === 'exercise')!
-    renderAt(`/learn/general-english/${unit.id}/${exercise.id}`, storeWith('general-english'))
+    const reading = unit.activities.find((activity) => activity.type === 'reading')!
+    renderAt(`/learn/general-english/${unit.id}/${reading.id}`, storeWith('general-english'))
     expect(await screen.findByRole('heading', { name: en.notFound.title })).toBeTruthy()
   })
 })

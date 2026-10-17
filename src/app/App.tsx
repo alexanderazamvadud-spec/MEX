@@ -5,7 +5,7 @@ import RequireProfile from './RequireProfile.tsx'
 import HomePage from '../pages/HomePage.tsx'
 import LandingPage from '../pages/LandingPage.tsx'
 import LearnPage from '../pages/LearnPage.tsx'
-import LessonPage from '../pages/LessonPage.tsx'
+import ActivityPage from '../pages/ActivityPage.tsx'
 import NotFoundPage from '../pages/NotFoundPage.tsx'
 import OnboardingPage from '../pages/OnboardingPage.tsx'
 import PathwayPage from '../pages/PathwayPage.tsx'
@@ -28,7 +28,7 @@ const routes: RouteObject[] = [
           { path: '/learn', element: <LearnPage /> },
           { path: '/learn/:pathway', element: <PathwayPage /> },
           { path: '/learn/:pathway/:unit', element: <UnitPage /> },
-          { path: '/learn/:pathway/:unit/:activity', element: <LessonPage /> },
+          { path: '/learn/:pathway/:unit/:activity', element: <ActivityPage /> },
           { path: '/progress', element: <StubPage titleKey="nav.progress" /> },
         ],
       },

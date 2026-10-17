@@ -200,6 +200,28 @@
     "dialogue": "Suhbat",
     "finish": "Darsni yakunlash"
   },
+  "exercise": {
+    "progress": "Savol: {{n}} / {{total}}",
+    "check": "Tekshirish",
+    "next": "Keyingisi",
+    "seeResults": "Natijalarni koʻrish",
+    "correct": "Toʻgʻri",
+    "incorrect": "Unchalik toʻgʻri emas",
+    "answerIs": "Toʻgʻri javob: {{answer}}",
+    "chooseAnswer": "Javobni tanlang",
+    "fillGap": "Boʻsh joyni toʻldiring",
+    "chooseMatch": "Mosini tanlang",
+    "tapInOrder": "Qismlarni tartib bilan bosing",
+    "startAgain": "Qaytadan boshlash",
+    "score": "{{total}} tadan {{n}} tasi toʻgʻri",
+    "practiceNote": "Bu mashq. U tayyorgarligingizni oʻzgartirmaydi.",
+    "finish": "Mashqlarni yakunlash",
+    "errors": {
+      "choose": "Avval javobni tanlang.",
+      "match": "Avval har bir bandga mosini tanlang.",
+      "place": "Avval barcha qismlarni joylashtiring."
+    }
+  },
   "language": {
     "label": "Interfeys tili"
   },

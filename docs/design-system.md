@@ -129,6 +129,16 @@ Keep the real learning content out of the repository: `content-private/` is igno
 - The explanation switch sits in a soft panel above the instructions and only appears with Uzbek or Russian as the interface language. Native-language text appears under the English with a `track`-coloured left border.
 - "Finish lesson" is the screen's one saffron action (`accent`, lg).
 
+## Exercise player (MVP-10)
+
+- Same header as the lesson viewer, then the explanation switch (UZ/RU only), the instructions, "Question n of N" (label style), the item prompt as an h2 (`lang="en"`) and a hint ("Choose an answer", "Fill the gap", "Choose a match", "Tap the parts in order").
+- Multiple choice and gap-fill: `OptionCard`, a whole-card radio like the onboarding cards. After Check the right option turns `success-tint` with a filled check and a wrong choice `error-tint` with a filled cross. The gap-fill sentence shows its gap as a thick underline that the chosen option fills in primary blue.
+- Matching: one soft card per left-hand text with a native 44 px `select`. After Check each card turns success or error tint and says "Correct" or "Not quite. The answer is: ..." with a check or cross icon.
+- Ordering: an answer line (dashed outline) holding the placed parts as primary pills, the unplaced parts as `surface-sky` pills below, and "Start again" (tertiary, sm). No drag and drop.
+- Feedback panel: `success-tint` or `error-tint` card with a check or cross and "Correct" or "Not quite" (h3), the right answer when wrong, then the explanation; it takes focus after Check. Right and wrong are never shown by colour alone.
+- Check, Next and See results are primary lg buttons; the one saffron action is "Finish exercises" on the results screen, under a sky card with "You got n of N right" and the practice note.
+- New contrast pairs for these panels are in `scripts/check-contrast.mjs` (49 pairs).
+
 ## Development style guide
 
 `#/styleguide` shows every token and component. It exists only in development builds: the route and its code are excluded from production, although the utility classes it uses are still compiled into the production stylesheet (a few hundred bytes).
