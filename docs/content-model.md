@@ -39,7 +39,7 @@ Every exercise and comprehension question carries an `explanation` shown after t
 
 ## Languages
 
-Teaching content (phrases, dialogues, texts, questions, model answers) is English. Instructions, explanations, summaries, prompts and self-check lines are `LocalizedText` objects: `en` is required, `uz` and `ru` are optional native-language versions. The learner can switch these on or off; the default is on for Beginner and off for other levels (owner decision Q3). Uzbek uses the Latin script with U+02BB (ʻ) in oʻ and gʻ and U+02BC (ʼ) for the tutuq belgisi (feʼl, maʼlumot); never an ASCII apostrophe or a typographic quotation mark. The check script does not enforce this yet, so authors must type the correct characters.
+Teaching content (phrases, dialogues, texts, questions, model answers) is English. Instructions, explanations, summaries, prompts and self-check lines are `LocalizedText` objects: `en` is required, `uz` and `ru` are optional native-language versions. The learner can switch these on or off; the default is on for Beginner and off for other levels (owner decision Q3). In the lesson viewer (MVP-09) the native language is the interface language, the native version appears under the English, and the switch covers instructions, phrase notes and grammar explanations. Uzbek uses the Latin script with U+02BB (ʻ) in oʻ and gʻ and U+02BC (ʼ) for the tutuq belgisi (feʼl, maʼlumot); never an ASCII apostrophe or a typographic quotation mark. The check script does not enforce this yet, so authors must type the correct characters.
 
 ## Placeholder content rules (Scope v2, Section 5.3)
 

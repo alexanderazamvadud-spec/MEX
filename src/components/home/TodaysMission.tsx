@@ -4,8 +4,8 @@ import { canOpen, isPlaceholder, type Activity, type ContentPack } from '../../c
 import HomeBlock from './HomeBlock.tsx'
 
 // Block 1: up to two recommended activities and a "Why this mission?" note.
-// Each activity links to its unit overview (MVP-08); there is no activity player yet,
-// so there is no Start button. The mission activities are all in the current unit.
+// Each activity links to itself when it has a player (lessons, MVP-09), otherwise to its
+// unit overview (MVP-08). There is no Start button. The mission activities are all in the current unit.
 export default function TodaysMission({
   pack,
   unitId,
@@ -30,7 +30,7 @@ export default function TodaysMission({
             {mission.map((activity) => (
               <li key={activity.id}>
                 <Link
-                  to={`/learn/${pack.pathway}/${unitId}`}
+                  to={`/learn/${pack.pathway}/${unitId}${canOpen(activity) ? `/${activity.id}` : ''}`}
                   className="flex min-h-11 items-center rounded-panel bg-surface px-4 py-3 text-body font-bold text-ink no-underline hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--focus-ring)"
                 >
                   {activity.title}

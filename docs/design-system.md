@@ -119,8 +119,15 @@ Keep the real learning content out of the repository: `content-private/` is igno
 - `#/learn/:pathway` (pathway overview) and `#/learn/:pathway/:unit` (unit overview) start with a 44 px "Back" link to the parent screen. Unknown ids show the Not found screen inside the shell; the bottom navigation keeps Learn active.
 - `LinkCard` (`src/components/learn/LinkCard.tsx`): a whole soft or sky card that is one link (unit rows, pathway cards), with the card focus ring.
 - Unit rows show a status badge: Not started (white), In progress (sky), Completed (success).
-- Activity rows show title, type and minutes, and badges for Completed (success), Today's mission (sky) and "Opens soon" (white). A row is a link only when its activity type has a player (`PLAYABLE_ACTIVITY_TYPES` in `src/content/index.ts`); until then it is plain and carries "Opens soon". Adding a type to that set removes the label and makes the row a link.
-- Today's Mission on Home: each activity is a link to its unit overview.
+- Activity rows show title, type and minutes, and badges for Completed (success), Today's mission (sky) and "Opens soon" (white). A row is a link only when its activity type has a player (`PLAYABLE_ACTIVITY_TYPES` in `src/content/index.ts`; lessons since MVP-09); until then it is plain and carries "Opens soon". Adding a type to that set removes the label and makes the row a link.
+- Today's Mission on Home: each activity links to itself when it has a player, otherwise to its unit overview.
+
+## Lesson viewer (MVP-09)
+
+- `#/learn/:pathway/:unit/:activity` for lessons: Back link to the unit, badges ("Sample content", "Completed"), the activity title, type and minutes, then the instructions and one section per content kind in pack order: "Key phrases" (soft cards: phrase, Example, optional Note), "Grammar" (sky card: title, explanation, Examples list) and "Dialogue" (soft card: speaker in primary blue above each line). Teaching content carries `lang="en"`.
+- `Switch` (`src/components/ui/Switch.tsx`): a native checkbox with `role="switch"` inside a 44 px label, named by its label and described by its hint. On: primary track, white thumb on the right; off: white track with outline, grey thumb on the left, so the state is not shown by colour alone.
+- The explanation switch sits in a soft panel above the instructions and only appears with Uzbek or Russian as the interface language. Native-language text appears under the English with a `track`-coloured left border.
+- "Finish lesson" is the screen's one saffron action (`accent`, lg).
 
 ## Development style guide
 
