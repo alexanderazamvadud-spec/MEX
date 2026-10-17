@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { act, cleanup, fireEvent, screen, within } from '@testing-library/react'
 import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { loadPack } from '../content/index.ts'
+import { canOpen, loadPack } from '../content/index.ts'
 import i18n from '../i18n/index.ts'
 import en from '../i18n/locales/en.json'
 import ru from '../i18n/locales/ru.json'
@@ -105,9 +105,10 @@ describe('Unit overview', () => {
     expect(row(first.id).queryByText(learn.mission)).toBeNull()
     expect(row(second.id).getByText(learn.mission)).toBeTruthy()
     expect(row(third.id).getByText(learn.mission)).toBeTruthy()
-    // Lessons (MVP-09) and exercises (MVP-10) have a player: no "Opens soon", and the row links to it.
+    // Lessons (MVP-09), exercises (MVP-10), reading and listening (MVP-11) have a player:
+    // no "Opens soon", and the row links to it.
     for (const activity of unit.activities) {
-      if (activity.type === 'lesson' || activity.type === 'exercise') {
+      if (canOpen(activity)) {
         expect(row(activity.id).queryByText(learn.opensSoon)).toBeNull()
         expect(row(activity.id).getByRole('link').getAttribute('href')).toBe(
           `/learn/general-english/${unit.id}/${activity.id}`,
@@ -151,7 +152,7 @@ describe('Unit overview', () => {
     expect(screen.getByRole('heading', { level: 1 }).textContent).toBe(`Раздел 1: ${unit.title}`)
     expect(screen.getByText(unit.summary.ru!)).toBeTruthy()
     expect(screen.getAllByText(ru.learn.opensSoon)).toHaveLength(
-      unit.activities.filter((activity) => activity.type !== 'lesson' && activity.type !== 'exercise').length,
+      unit.activities.filter((activity) => !canOpen(activity)).length,
     )
   })
 })
@@ -159,15 +160,16 @@ describe('Unit overview', () => {
 describe("Today's mission on Home", () => {
   it('links a mission activity without a player to its unit overview', async () => {
     const pack = await loadPack('general-english')
-    const completions = pack.units[0].activities.slice(0, 2).map((activity) => ({
+    const completions = pack.units[0].activities.filter(canOpen).map((activity) => ({
       pathway: 'general-english' as const,
       unitId: pack.units[0].id,
       activityId: activity.id,
       completedAt: '2026-10-02T00:00:00.000Z',
     }))
-    // With the lesson and exercises done, the mission is reading and speaking, which have no player yet.
+    // With every playable activity done, the mission is speaking, which has no player yet.
     const router = renderAt('/home', storeWith('general-english', completions))
-    const link = await screen.findByRole('link', { name: pack.units[0].activities[2].title })
+    const speaking = pack.units[0].activities.find((activity) => !canOpen(activity))!
+    const link = await screen.findByRole('link', { name: speaking.title })
     fireEvent.click(link)
     expect(router.state.location.pathname).toBe(`/learn/general-english/${pack.units[0].id}`)
     expect(await screen.findByText(learn.activities)).toBeTruthy()

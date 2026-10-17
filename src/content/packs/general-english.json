@@ -19,7 +19,7 @@
         "uz": "Salomlashing, oʻzingizni tanishtiring va boshqalar haqida oddiy savollar bering.",
         "ru": "Поздоровайтесь, представьтесь и задайте простые вопросы о других людях."
       },
-      "estimatedMinutes": 35,
+      "estimatedMinutes": 41,
       "activities": [
         {
           "id": "ge-01-a1-lesson",
@@ -272,6 +272,62 @@
                     "en": "The last sentence says they had tea together on Saturday.",
                     "uz": "Oxirgi gapda ular shanba kuni birga choy ichgani aytilgan.",
                     "ru": "В последнем предложении сказано, что они пили чай вместе в субботу."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ge-01-a5-listening",
+          "type": "listening",
+          "title": "Listening: meeting a new colleague",
+          "instructions": {
+            "en": "Listen to the conversation, then answer the questions. You can listen as many times as you like.",
+            "uz": "Suhbatni tinglang, soʻng savollarga javob bering. Xohlagancha qayta tinglashingiz mumkin.",
+            "ru": "Послушайте разговор, затем ответьте на вопросы. Слушать можно сколько угодно раз."
+          },
+          "skills": ["listening"],
+          "estimatedMinutes": 6,
+          "items": [
+            {
+              "id": "ge-01-a5-l1",
+              "kind": "listening",
+              "skills": ["listening", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "A new colleague",
+              "transcript": "Aziz: Good morning. Are you the new designer?\nDilnoza: Yes, I am. My name is Dilnoza. Nice to meet you.\nAziz: Nice to meet you too, Dilnoza. I'm Aziz. I work in the sales team.\nDilnoza: Where is the sales team?\nAziz: On the second floor, next to the kitchen. Where are you from?\nDilnoza: I'm from Samarkand, but I live in Tashkent now.\nAziz: Welcome to the team. Let's have lunch together at one o'clock.",
+              "questions": [
+                {
+                  "prompt": "What is Dilnoza's job?",
+                  "options": ["A designer", "A salesperson", "A teacher"],
+                  "answer": "A designer",
+                  "explanation": {
+                    "en": "Aziz asks if she is the new designer, and she says yes.",
+                    "uz": "Aziz undan yangi dizayner ekanini soʻraydi va u «ha» deydi.",
+                    "ru": "Азиз спрашивает, новый ли она дизайнер, и она отвечает «да»."
+                  }
+                },
+                {
+                  "prompt": "Where is the sales team?",
+                  "options": ["On the first floor", "On the second floor", "Next to the lift"],
+                  "answer": "On the second floor",
+                  "explanation": {
+                    "en": "Aziz says the sales team is on the second floor, next to the kitchen.",
+                    "uz": "Aziz savdo boʻlimi ikkinchi qavatda, oshxona yonida ekanini aytadi.",
+                    "ru": "Азиз говорит, что отдел продаж на втором этаже, рядом с кухней."
+                  }
+                },
+                {
+                  "prompt": "Where is Dilnoza from?",
+                  "options": ["Tashkent", "Bukhara", "Samarkand"],
+                  "answer": "Samarkand",
+                  "explanation": {
+                    "en": "She is from Samarkand, but she lives in Tashkent now.",
+                    "uz": "U Samarqanddan, lekin hozir Toshkentda yashaydi.",
+                    "ru": "Она из Самарканда, но сейчас живёт в Ташкенте."
                   }
                 }
               ]

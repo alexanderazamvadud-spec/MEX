@@ -76,10 +76,14 @@ The exercise screen writes three things through `src/learner/exercise.ts` and `s
 
 Exercise results never change readiness, and the results screen says so. Answers are checked in the browser against the pack, so the answer keys are public; this is acceptable only for placeholder exercises (see `docs/content-model.md`).
 
+## Reading and listening (MVP-11)
+
+Reading and listening save results and completion exactly as exercises do. Each comprehension question is saved as `<item id>-q<n>` with the item's skills. When the listening player cannot speak (no on-device English voice, or speech fails) the learner answers from the text, so those results are saved with `reading` in place of `listening`. Speech uses only voices the browser marks as on-device, so the transcript is not sent anywhere; MEX relies on the browser's `localService` flag for this and cannot verify it.
+
 ## Deleting data
 
 Settings offers "Delete my data": a confirmation step, then the record and language choice are removed and the interface returns to English. Texts live in the locale files under `settings.*`.
 
 ## Tests
 
-`npm test` runs the unit tests in `src/learner/localStore.test.ts` `src/learner/profile.test.ts` `src/learner/home.test.ts`, `src/learner/progress.test.ts`, `src/learner/lesson.test.ts` and `src/learner/exercise.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration). The deployment workflow runs them before the build.
+`npm test` runs the unit tests in `src/learner/localStore.test.ts` `src/learner/profile.test.ts` `src/learner/home.test.ts`, `src/learner/progress.test.ts`, `src/learner/lesson.test.ts`, `src/learner/exercise.test.ts` and `src/learner/speech.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration). The deployment workflow runs them before the build.

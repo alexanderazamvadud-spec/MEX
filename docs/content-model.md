@@ -45,7 +45,11 @@ Teaching content (phrases, dialogues, texts, questions, model answers) is Englis
 
 Exercise activities are played one item per screen at `#/learn/:pathway/:unit/:activity` (the same address as lessons; `ActivityPage` picks the player from the activity type). Multiple choice and gap-fill options keep pack order. Matching right-hand texts and ordering segments are shown in a fixed shuffled order (`shuffled` in `src/learner/exercise.ts`, seeded by the item id), never already solved. An item is correct only when the option, every pair, or the whole order is right. After Check the learner sees right or wrong, the right answer when wrong, and the item's `explanation`. Prompts and options stay English; the native switch adds the UZ/RU instructions and explanations.
 
-**Answer keys are public.** The `answer`, `pairs` and `segments` fields ship to the browser in the pack, so anyone can read them. The owner accepted this on 2026-10-17 only for placeholder exercises. Real MEX exercises must not be added this way: they need the protected-delivery decision C-04 (Scope v2, Section 6.3) first.
+## Reading and listening players (MVP-11)
+
+Reading and listening items use the same question flow as exercises: each `ComprehensionQuestion` is played as a multiple-choice item with the id `<item id>-q<n>` and the item's `skills` (`comprehensionItems` in `src/learner/exercise.ts`). The reading `text` stays above every question. The listening `transcript` is spoken by an on-device English voice (`src/learner/speech.ts`, decision Q5); a line break in the transcript starts a new paragraph when the text is shown. Text and transcripts stay English.
+
+**Answer keys are public.** The `answer`, `pairs` and `segments` fields, and the answers of reading and listening questions, ship to the browser in the pack, so anyone can read them. The owner accepted this on 2026-10-17 only for placeholder exercises. Real MEX exercises must not be added this way: they need the protected-delivery decision C-04 (Scope v2, Section 6.3) first.
 
 ## Placeholder content rules (Scope v2, Section 5.3)
 
@@ -65,7 +69,7 @@ Exercise activities are played one item per screen at `#/learn/:pathway/:unit/:a
 
 | Pack | Unit | Activities |
 |---|---|---|
-| general-english | ge-01-meeting-people | lesson (6 phrases, grammar note, dialogue), exercise set (4 items), reading (3 questions), speaking prompt |
+| general-english | ge-01-meeting-people | lesson (6 phrases, grammar note, dialogue), exercise set (4 items), reading (3 questions), listening (3 questions, added in MVP-11), speaking prompt |
 | career-readiness | cr-01-professional-self-introduction | lesson (6 phrases, grammar note, dialogue), exercise set (4 items), speaking prompt, interview practice (3 questions) |
 
 The remaining approved unit topics (General English: Daily routines, Shopping and services, Talking about past experiences; Career Readiness: Job interview basics, Workplace communication, Professional emails) are added by later tasks.
