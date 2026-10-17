@@ -1,4 +1,4 @@
-import type { GapFillItem, MatchingItem, MultipleChoiceItem, OrderingItem } from '../content/types.ts'
+import type { GapFillItem, ListeningItem, MatchingItem, MultipleChoiceItem, OrderingItem, ReadingItem } from '../content/types.ts'
 import type { ExerciseResult, LearnerRecord } from './types.ts'
 
 // Exercise player rules (MVP-10). Answers are checked on the device against the pack;
@@ -19,6 +19,26 @@ export type Answer =
 
 export function isExerciseItem(item: { kind: string }): item is ExerciseItem {
   return item.kind === 'multiple-choice' || item.kind === 'gap-fill' || item.kind === 'matching' || item.kind === 'ordering'
+}
+
+/**
+ * The comprehension questions of a reading or listening item as multiple-choice items
+ * (MVP-11), so they use the same player. Questions have no ids of their own, so each is
+ * saved as the item id plus its number ("ge-01-a3-r1-q1"), with the item's skills.
+ */
+export function comprehensionItems(item: ReadingItem | ListeningItem): MultipleChoiceItem[] {
+  return item.questions.map((question, index) => ({
+    id: `${item.id}-q${index + 1}`,
+    kind: 'multiple-choice',
+    skills: item.skills,
+    level: item.level,
+    content_status: item.content_status,
+    license: item.license,
+    prompt: question.prompt,
+    options: question.options,
+    answer: question.answer,
+    explanation: question.explanation,
+  }))
 }
 
 export function emptyAnswer(item: ExerciseItem): Answer {

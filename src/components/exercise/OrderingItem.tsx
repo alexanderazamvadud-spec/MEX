@@ -34,6 +34,7 @@ export default function OrderingItem({ item, answer, onChange, checked }: ItemVi
     <div className="flex flex-col gap-4">
       <ol
         lang="en"
+        aria-label={t('exercise.yourAnswer')}
         className="flex min-h-16 flex-wrap items-center gap-2 rounded-card border-2 border-dashed border-outline bg-surface p-3"
       >
         {placed.map((segment, index) => (

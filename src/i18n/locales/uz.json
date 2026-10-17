@@ -201,6 +201,7 @@
     "finish": "Darsni yakunlash"
   },
   "exercise": {
+    "toggleHint": "Koʻrsatmalar va tushuntirishlarning tarjimasini koʻrsatadi.",
     "progress": "Savol: {{n}} / {{total}}",
     "check": "Tekshirish",
     "next": "Keyingisi",
@@ -213,6 +214,7 @@
     "chooseMatch": "Mosini tanlang",
     "tapInOrder": "Qismlarni tartib bilan bosing",
     "startAgain": "Qaytadan boshlash",
+    "yourAnswer": "Sizning javobingiz",
     "score": "{{total}} tadan {{n}} tasi toʻgʻri",
     "practiceNote": "Bu mashq. U tayyorgarligingizni oʻzgartirmaydi.",
     "finish": "Mashqlarni yakunlash",
@@ -221,6 +223,18 @@
       "match": "Avval har bir bandga mosini tanlang.",
       "place": "Avval barcha qismlarni joylashtiring."
     }
+  },
+  "reading": {
+    "finish": "Oʻqishni yakunlash"
+  },
+  "listening": {
+    "listen": "Tinglash",
+    "listenSlowly": "Sekin tinglash",
+    "stop": "Toʻxtatish",
+    "showText": "Matnni koʻrsatish",
+    "hideText": "Matnni yashirish",
+    "noVoice": "Bu qurilmada internetsiz ishlaydigan inglizcha ovoz yoʻq, shuning uchun matn koʻrsatiladi.",
+    "finish": "Tinglashni yakunlash"
   },
   "language": {
     "label": "Interfeys tili"

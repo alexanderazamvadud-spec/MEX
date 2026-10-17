@@ -133,7 +133,7 @@ describe('LessonPage', () => {
     await screen.findByRole('heading', { level: 1, name: lesson.title })
     fireEvent.click(screen.getByRole('button', { name: en.lesson.finish }))
     await act(() => router.navigate('/home'))
-    await screen.findByText(en.home.mission.noPlayer)
+    await screen.findByText(en.home.mission.why)
     const mission = within(document.querySelector<HTMLElement>('[data-block="mission"]')!)
     expect(mission.getAllByRole('listitem').map((item) => item.textContent)).toEqual([
       unit.activities[1].title,
@@ -147,8 +147,8 @@ describe('LessonPage', () => {
     renderAt(`/learn/general-english/${unit.id}/nothing-here`, storeWith('general-english'))
     expect(await screen.findByRole('heading', { name: en.notFound.title })).toBeTruthy()
     cleanup()
-    const reading = unit.activities.find((activity) => activity.type === 'reading')!
-    renderAt(`/learn/general-english/${unit.id}/${reading.id}`, storeWith('general-english'))
+    const speaking = unit.activities.find((activity) => activity.type === 'speaking')!
+    renderAt(`/learn/general-english/${unit.id}/${speaking.id}`, storeWith('general-english'))
     expect(await screen.findByRole('heading', { name: en.notFound.title })).toBeTruthy()
   })
 })

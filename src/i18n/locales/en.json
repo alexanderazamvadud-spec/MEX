@@ -200,6 +200,7 @@
     "finish": "Finish lesson"
   },
   "exercise": {
+    "toggleHint": "Shows a translation of the instructions and explanations.",
     "progress": "Question {{n}} of {{total}}",
     "check": "Check",
     "next": "Next",
@@ -212,6 +213,7 @@
     "chooseMatch": "Choose a match",
     "tapInOrder": "Tap the parts in order",
     "startAgain": "Start again",
+    "yourAnswer": "Your answer",
     "score": "You got {{n}} of {{total}} right",
     "practiceNote": "This is practice. It does not change your readiness.",
     "finish": "Finish exercises",
@@ -220,6 +222,18 @@
       "match": "Match every item first.",
       "place": "Place every part first."
     }
+  },
+  "reading": {
+    "finish": "Finish reading"
+  },
+  "listening": {
+    "listen": "Listen",
+    "listenSlowly": "Listen slowly",
+    "stop": "Stop",
+    "showText": "Show the text",
+    "hideText": "Hide the text",
+    "noVoice": "This device has no English voice that works offline, so the text is shown instead.",
+    "finish": "Finish listening"
   },
   "language": {
     "label": "Interface language"

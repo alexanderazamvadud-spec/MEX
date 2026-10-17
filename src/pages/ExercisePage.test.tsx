@@ -191,6 +191,7 @@ describe('ExercisePage', () => {
 
     answerOrdering(ordering.segments.slice(0, 2))
     const line = screen.getAllByRole('list').at(-2)!
+    expect(screen.getByRole('list', { name: text.yourAnswer })).toBe(line)
     expect(within(line).getAllByRole('button').map((button) => button.textContent)).toEqual(ordering.segments.slice(0, 2))
     fireEvent.click(within(line).getByRole('button', { name: ordering.segments[0] }))
     expect(within(line).getAllByRole('button').map((button) => button.textContent)).toEqual([ordering.segments[1]])
@@ -290,6 +291,7 @@ describe('ExercisePage', () => {
     expect(feedback.getByText(choice.explanation.uz!)).toBeTruthy()
     // Prompts and options stay English.
     expect(screen.getByRole('heading', { level: 2 }).getAttribute('lang')).toBe('en')
+    expect(screen.getByText(uz.exercise.toggleHint)).toBeTruthy()
 
     fireEvent.click(screen.getByRole('switch'))
     expect(store.read().preferences.nativeExplanations).toBe(false)

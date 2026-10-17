@@ -138,6 +138,14 @@ Keep the real learning content out of the repository: `content-private/` is igno
 - Feedback panel: `success-tint` or `error-tint` card with a check or cross and "Correct" or "Not quite" (h3), the right answer when wrong, then the explanation; it takes focus after Check. Right and wrong are never shown by colour alone.
 - Check, Next and See results are primary lg buttons; the one saffron action is "Finish exercises" on the results screen, under a sky card with "You got n of N right" and the practice note.
 - New contrast pairs for these panels are in `scripts/check-contrast.mjs` (49 pairs).
+- The explanation switch on question screens uses the hint "Shows a translation of the instructions and explanations." (MVP-11). The ordering answer line is named "Your answer" for screen readers.
+
+## Reading and listening (MVP-11)
+
+- Reading: the text sits in a soft card (`TextCard`: h2 title, one paragraph per line) between the instructions and the question, on every question screen.
+- Listening: "Listen" (primary md) and "Listen slowly" (secondary md); while speaking, a single "Stop" (primary md). "Show the text" / "Hide the text" (tertiary sm, `aria-expanded`) reveals the transcript in a `TextCard`.
+- No on-device voice or a speech error: an info panel (`info-tint`, `role="status"`) with the honest note, followed by the transcript. No player buttons are shown.
+- "Finish reading" and "Finish listening" are the one saffron action, on the results screen.
 
 ## Development style guide
 
