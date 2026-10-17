@@ -105,9 +105,17 @@ describe('Unit overview', () => {
     expect(row(first.id).queryByText(learn.mission)).toBeNull()
     expect(row(second.id).getByText(learn.mission)).toBeTruthy()
     expect(row(third.id).getByText(learn.mission)).toBeTruthy()
+    // Lessons have a player since MVP-09: no "Opens soon", and the row links to the lesson.
     for (const activity of unit.activities) {
-      expect(row(activity.id).getByText(learn.opensSoon)).toBeTruthy()
-      expect(row(activity.id).queryByRole('link')).toBeNull()
+      if (activity.type === 'lesson') {
+        expect(row(activity.id).queryByText(learn.opensSoon)).toBeNull()
+        expect(row(activity.id).getByRole('link').getAttribute('href')).toBe(
+          `/learn/general-english/${unit.id}/${activity.id}`,
+        )
+      } else {
+        expect(row(activity.id).getByText(learn.opensSoon)).toBeTruthy()
+        expect(row(activity.id).queryByRole('link')).toBeNull()
+      }
     }
     expect(screen.getByText(en.home.mission.noPlayer)).toBeTruthy()
   })
@@ -142,15 +150,17 @@ describe('Unit overview', () => {
     expect(screen.getByRole('heading', { name: ru.learn.activities })).toBeTruthy()
     expect(screen.getByRole('heading', { level: 1 }).textContent).toBe(`Раздел 1: ${unit.title}`)
     expect(screen.getByText(unit.summary.ru!)).toBeTruthy()
-    expect(screen.getAllByText(ru.learn.opensSoon)).toHaveLength(unit.activities.length)
+    expect(screen.getAllByText(ru.learn.opensSoon)).toHaveLength(
+      unit.activities.filter((activity) => activity.type !== 'lesson').length,
+    )
   })
 })
 
 describe("Today's mission on Home", () => {
-  it('links each mission activity to its unit overview', async () => {
+  it('links a mission activity without a player to its unit overview', async () => {
     const pack = await loadPack('general-english')
     const router = renderAt('/home', storeWith('general-english'))
-    const link = await screen.findByRole('link', { name: pack.units[0].activities[0].title })
+    const link = await screen.findByRole('link', { name: pack.units[0].activities[1].title })
     fireEvent.click(link)
     expect(router.state.location.pathname).toBe(`/learn/general-english/${pack.units[0].id}`)
     expect(await screen.findByText(learn.activities)).toBeTruthy()

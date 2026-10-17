@@ -188,6 +188,17 @@
     "mission": "Today's mission",
     "opensSoon": "Opens soon"
   },
+  "lesson": {
+    "toggle": "Explanations in {{language}}",
+    "toggleHint": "Shows a translation of the instructions, notes and grammar explanations.",
+    "phrases": "Key phrases",
+    "example": "Example",
+    "note": "Note",
+    "grammar": "Grammar",
+    "examples": "Examples",
+    "dialogue": "Dialogue",
+    "finish": "Finish lesson"
+  },
   "language": {
     "label": "Interface language"
   },

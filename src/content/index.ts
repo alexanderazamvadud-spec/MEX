@@ -26,10 +26,10 @@ export async function loadPack(pathway: PathwayId): Promise<ContentPack> {
   return module.default as ContentPack
 }
 
-// Activity types that have a player screen. Empty until the activity players are built
-// (MVP-09 onwards); each of those tasks adds its type here, and every "Opens soon" label
-// and "Activities open in a later version" note for that type then disappears by itself.
-export const PLAYABLE_ACTIVITY_TYPES: ReadonlySet<ActivityType> = new Set<ActivityType>()
+// Activity types that have a player screen: lessons since MVP-09. Each later player task
+// adds its type here, and every "Opens soon" label and "Activities open in a later version"
+// note for that type then disappears by itself.
+export const PLAYABLE_ACTIVITY_TYPES: ReadonlySet<ActivityType> = new Set<ActivityType>(['lesson'])
 
 export function canOpen(activity: Pick<Activity, 'type'>): boolean {
   return PLAYABLE_ACTIVITY_TYPES.has(activity.type)

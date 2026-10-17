@@ -7,17 +7,22 @@ import { withOnboardingProfile } from '../learner/profile.ts'
 import type { ActivityCompletion, LearnerStore } from '../learner/types.ts'
 import HomePage from './HomePage.tsx'
 import LearnPage from './LearnPage.tsx'
+import LessonPage from './LessonPage.tsx'
 import PathwayPage from './PathwayPage.tsx'
 import UnitPage from './UnitPage.tsx'
 
 // Shared helpers for the Learn screen tests (not a test file itself).
 
-export function storeWith(pathway: PathwayId, completions: ActivityCompletion[] = []): LearnerStore {
+export function storeWith(
+  pathway: PathwayId,
+  completions: ActivityCompletion[] = [],
+  level: 'beginner' | 'elementary' | 'intermediate' = 'beginner',
+): LearnerStore {
   const store = createLocalLearnerStore({ storage: null })
   store.update((current) => ({
     ...withOnboardingProfile(
       current,
-      { interfaceLanguage: 'en', level: 'beginner', goals: ['study'], pathway },
+      { interfaceLanguage: 'en', level, goals: ['study'], pathway },
       '2026-10-01T00:00:00.000Z',
     ),
     completions,
@@ -32,7 +37,7 @@ export function renderAt(path: string, store: LearnerStore) {
       { path: '/learn', element: <LearnPage /> },
       { path: '/learn/:pathway', element: <PathwayPage /> },
       { path: '/learn/:pathway/:unit', element: <UnitPage /> },
-      { path: '/learn/:pathway/:unit/:activity', element: <p>Activity screen</p> },
+      { path: '/learn/:pathway/:unit/:activity', element: <LessonPage /> },
     ],
     { initialEntries: [path] },
   )
