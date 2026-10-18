@@ -156,6 +156,14 @@ Keep the real learning content out of the repository: `content-private/` is igno
 - Self-check: one `ChoiceCard` tick box per line (English title, native line as the description).
 - "Finish speaking" is the one saffron action, at the bottom.
 
+## Interview practice (MVP-13)
+
+- One question per screen. The question sits in a sky card: "Question n of 3" (small, secondary), the question as an h2 in English, and "Listen to the question" (secondary md) only with an on-device voice. The question takes focus when the learner moves to the next one.
+- Sections (h3): Useful phrases (English list), Your answer (a text area with a 2 px outline border and the "saved only on this device" note, then the MVP-12 recorder in a sky card), Model answers ("Show the model answers", secondary md, then "Example 1" and "Example 2" cards), Check yourself (the self-note and `ChoiceCard` tick boxes).
+- Confidence: a fieldset with the question as its legend and five pill radio buttons (1 to 5, at least 44 px high), labelled "Not yet" under 1 and "Ready" under 5. The chosen one is filled primary.
+- "Next question" is primary lg; on the last question "Finish interview practice" is the one saffron action.
+- The header shows "Sample content" and the "Self-assessment" badge, as on speaking.
+
 ## Development style guide
 
 `#/styleguide` shows every token and component. It exists only in development builds: the route and its code are excluded from production, although the utility classes it uses are still compiled into the production stylesheet (a few hundred bytes).

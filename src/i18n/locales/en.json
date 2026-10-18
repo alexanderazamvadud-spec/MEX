@@ -256,6 +256,24 @@
     "selfNote": "You check this yourself. MEX does not listen to or score your speaking.",
     "finish": "Finish speaking"
   },
+  "interview": {
+    "questionOf": "Question {{n}} of {{total}}",
+    "listen": "Listen to the question",
+    "phrases": "Useful phrases",
+    "answer": "Your answer",
+    "typeLabel": "Type your answer (optional)",
+    "savedNote": "Your typed answer is saved only on this device. You can delete it in Settings.",
+    "models": "Model answers",
+    "showModels": "Show the model answers",
+    "example": "Example {{n}}",
+    "check": "Check yourself",
+    "selfNote": "You check this yourself. MEX does not read, listen to or score your answers.",
+    "confidence": "How ready do you feel to answer this in a real interview?",
+    "notYet": "Not yet",
+    "ready": "Ready",
+    "next": "Next question",
+    "finish": "Finish interview practice"
+  },
   "language": {
     "label": "Interface language"
   },

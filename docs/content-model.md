@@ -53,6 +53,10 @@ Reading and listening items use the same question flow as exercises: each `Compr
 
 Each `speaking` item is one task on a single screen: the prompt, the `preparationHints`, a 60-second preparation timer and a 30-second speaking timer (guides only; they never block), optional on-device recording, the `modelAnswer` on request, and the `selfCheck` list as tick boxes. The prompt and self-check lines have UZ/RU versions under the native switch; hints and the model answer stay English. The model answer can be heard with the same on-device voice as listening, when one exists.
 
+## Interview practice player (MVP-13)
+
+Each `interview-question` item is one screen ("Question 1 of 3"): the `question` (heard with an on-device English voice when one exists), the `usefulPhrases`, a typed answer and the MVP-12 recorder, both optional, the two `modelAnswers` on request, the `selfCheck` list as tick boxes, and an optional 1 to 5 confidence. The question, phrases and model answers stay English; the native switch adds the UZ/RU instructions and self-check lines.
+
 **Answer keys are public.** The `answer`, `pairs` and `segments` fields, and the answers of reading and listening questions, ship to the browser in the pack, so anyone can read them. The owner accepted this on 2026-10-17 only for placeholder exercises. Real MEX exercises must not be added this way: they need the protected-delivery decision C-04 (Scope v2, Section 6.3) first.
 
 ## Placeholder content rules (Scope v2, Section 5.3)

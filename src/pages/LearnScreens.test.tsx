@@ -1,11 +1,19 @@
 // @vitest-environment jsdom
 import { act, cleanup, fireEvent, screen, within } from '@testing-library/react'
-import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { canOpen, loadPack } from '../content/index.ts'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { canOpen, loadPack, type ContentPack } from '../content/index.ts'
 import i18n from '../i18n/index.ts'
 import en from '../i18n/locales/en.json'
 import ru from '../i18n/locales/ru.json'
 import { renderAt, storeWith } from './learnTestUtils.tsx'
+
+// Interview practice opens since MVP-13, so a test-only writing activity stands in for an
+// activity without a player.
+vi.mock('../content/packs/career-readiness.json', async (importOriginal) => {
+  const { withUnplayableActivity } = await import('./testPacks.ts')
+  const actual = await importOriginal<{ default: ContentPack }>()
+  return { default: withUnplayableActivity(actual.default) }
+})
 
 const learn = en.learn
 
@@ -144,7 +152,7 @@ describe('Unit overview', () => {
   })
 
   it('updates at once when the language changes, keeping English titles', async () => {
-    // Career Readiness still has an activity without a player (interview practice, MVP-13).
+    // Career Readiness unit 1 has the test-only writing activity, which has no player.
     const pack = await loadPack('career-readiness')
     const unit = pack.units[0]
     renderAt(`/learn/career-readiness/${unit.id}`, storeWith('career-readiness'))
@@ -169,10 +177,10 @@ describe("Today's mission on Home", () => {
       activityId: activity.id,
       completedAt: '2026-10-02T00:00:00.000Z',
     }))
-    // With every playable activity done, the mission is interview practice, which has no player yet.
+    // With every playable activity done, the mission is the test-only writing activity.
     const router = renderAt('/home', storeWith('career-readiness', completions))
-    const interview = pack.units[0].activities.find((activity) => !canOpen(activity))!
-    const link = await screen.findByRole('link', { name: interview.title })
+    const writing = pack.units[0].activities.find((activity) => !canOpen(activity))!
+    const link = await screen.findByRole('link', { name: writing.title })
     fireEvent.click(link)
     expect(router.state.location.pathname).toBe(`/learn/career-readiness/${pack.units[0].id}`)
     expect(await screen.findByText(learn.activities)).toBeTruthy()

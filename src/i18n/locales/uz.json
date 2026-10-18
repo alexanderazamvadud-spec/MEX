@@ -257,6 +257,24 @@
     "selfNote": "Buni oʻzingiz tekshirasiz. MEX nutqingizni tinglamaydi va baholamaydi.",
     "finish": "Gapirishni yakunlash"
   },
+  "interview": {
+    "questionOf": "Savol {{n}} / {{total}}",
+    "listen": "Savolni tinglash",
+    "phrases": "Foydali iboralar",
+    "answer": "Sizning javobingiz",
+    "typeLabel": "Javobingizni yozing (ixtiyoriy)",
+    "savedNote": "Yozgan javobingiz faqat shu qurilmada saqlanadi. Uni Sozlamalarda oʻchirishingiz mumkin.",
+    "models": "Namunaviy javoblar",
+    "showModels": "Namunaviy javoblarni koʻrsatish",
+    "example": "Namuna {{n}}",
+    "check": "Oʻzingizni tekshiring",
+    "selfNote": "Buni oʻzingiz tekshirasiz. MEX javoblaringizni oʻqimaydi, tinglamaydi va baholamaydi.",
+    "confidence": "Haqiqiy suhbatda bu savolga javob berishga qanchalik tayyorsiz?",
+    "notYet": "Hali emas",
+    "ready": "Tayyorman",
+    "next": "Keyingi savol",
+    "finish": "Suhbat mashqini yakunlash"
+  },
   "language": {
     "label": "Interfeys tili"
   },
