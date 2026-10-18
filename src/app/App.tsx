@@ -10,7 +10,7 @@ import NotFoundPage from '../pages/NotFoundPage.tsx'
 import OnboardingPage from '../pages/OnboardingPage.tsx'
 import PathwayPage from '../pages/PathwayPage.tsx'
 import SettingsPage from '../pages/SettingsPage.tsx'
-import StubPage from '../pages/StubPage.tsx'
+import ProgressPage from '../pages/ProgressPage.tsx'
 import UnitPage from '../pages/UnitPage.tsx'
 
 // Hash-based routing (/#/path) is used because GitHub Pages is a static host with no
@@ -29,7 +29,7 @@ const routes: RouteObject[] = [
           { path: '/learn/:pathway', element: <PathwayPage /> },
           { path: '/learn/:pathway/:unit', element: <UnitPage /> },
           { path: '/learn/:pathway/:unit/:activity', element: <ActivityPage /> },
-          { path: '/progress', element: <StubPage titleKey="nav.progress" /> },
+          { path: '/progress', element: <ProgressPage /> },
         ],
       },
       { path: '/settings', element: <SettingsPage /> },

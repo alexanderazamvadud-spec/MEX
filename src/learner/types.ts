@@ -55,7 +55,18 @@ export interface SelfAssessment {
   answerText?: string
   selfCheck: boolean[]
   confidence?: Confidence
+  /** The interview practice run this answer belongs to (MVP-15). Older records have none. */
+  sessionId?: string
   recordedAt: string
+}
+
+/** One interview practice run the learner ended with Finish (MVP-15). Readiness counts these. */
+export interface PracticeSession {
+  id: string
+  kind: 'interview'
+  pathway: PathwayId
+  activityId: string
+  finishedAt: string
 }
 
 export interface UsefulnessRating {
@@ -77,6 +88,7 @@ export interface LearnerRecord {
   exerciseResults: ExerciseResult[]
   selfAssessments: SelfAssessment[]
   usefulnessRatings: UsefulnessRating[]
+  practiceSessions: PracticeSession[]
   updatedAt: string | null
 }
 
@@ -89,6 +101,7 @@ export function createEmptyRecord(): LearnerRecord {
     exerciseResults: [],
     selfAssessments: [],
     usefulnessRatings: [],
+    practiceSessions: [],
     updatedAt: null,
   }
 }

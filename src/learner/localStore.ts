@@ -55,6 +55,7 @@ export function migrateRecord(raw: unknown): LearnerRecord {
     exerciseResults: isArray(data.exerciseResults) ? (data.exerciseResults as LearnerRecord['exerciseResults']) : [],
     selfAssessments: isArray(data.selfAssessments) ? (data.selfAssessments as LearnerRecord['selfAssessments']) : [],
     usefulnessRatings: isArray(data.usefulnessRatings) ? (data.usefulnessRatings as LearnerRecord['usefulnessRatings']) : [],
+    practiceSessions: isArray(data.practiceSessions) ? (data.practiceSessions as LearnerRecord['practiceSessions']) : [],
     updatedAt: typeof data.updatedAt === 'string' ? data.updatedAt : null,
   }
 }

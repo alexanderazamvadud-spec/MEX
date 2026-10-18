@@ -145,8 +145,10 @@
     "readiness": {
       "title": "Current readiness",
       "label": "Self-assessment",
-      "careerEmpty": "You haven't rated yourself yet. After interview and speaking practice, you can rate how ready you feel. This is your own view, not a test result.",
-      "generalEnglish": "Readiness is part of the {{career}} pathway. Your {{general}} progress does not count towards it."
+      "careerEmpty": "Finish interview practice sessions in Career Readiness to build your level. This is your own view, not a test result.",
+      "generalEnglish": "Readiness is part of the {{career}} pathway. Your {{general}} progress does not count towards it.",
+      "based": "Based on your finished interview practice sessions: {{n}}. This is your own view, not a test result.",
+      "seeProgress": "See your progress"
     },
     "pathway": {
       "title": "Current pathway",
@@ -279,6 +281,48 @@
     "thanks": "Thanks. Your rating is saved only on this device.",
     "next": "Next activity",
     "backToUnit": "Back to unit"
+  },
+  "progress": {
+    "intro": "Your progress has three parts. Each one is shown on its own and never added together.",
+    "curriculum": {
+      "title": "What you have finished",
+      "body": "Activities and units you have completed in each pathway.",
+      "activities": "{{done}} of {{total}} activities completed",
+      "units": "{{done}} of {{total}} units completed"
+    },
+    "skills": {
+      "title": "What you got right",
+      "body": "Your answers in checked exercises in both pathways, by skill. If you answer a question again, your latest answer counts.",
+      "right": "{{right}} of {{answered}} questions right",
+      "none": "Not practised yet",
+      "names": {
+        "vocabulary": "Vocabulary",
+        "grammar": "Grammar",
+        "reading": "Reading",
+        "listening": "Listening"
+      }
+    },
+    "readiness": {
+      "title": "How ready you feel"
+    }
+  },
+  "readiness": {
+    "levels": {
+      "gettingStarted": "Getting started",
+      "building": "Building",
+      "confident": "Confident"
+    },
+    "current": "Current level",
+    "how": "Your level is based on how many interview practice sessions you have finished and, in your 3 most recent sessions, how confident you felt and how many self-check boxes you ticked.",
+    "ownView": "This is your own view, not a test result.",
+    "highest": "Highest reached: {{level}}",
+    "highestOn": "Highest reached: {{level}}, on {{date}}",
+    "sessions": "Interview practice sessions finished: {{n}}",
+    "confidence": "Average confidence in your recent sessions: {{value}} of 5",
+    "notRated": "Average confidence in your recent sessions: not rated yet",
+    "ticked": "Self-check boxes ticked in your recent sessions: {{ticked}} of {{boxes}}",
+    "speaking": "Speaking practice in Career Readiness: {{n}} done",
+    "speakingNote": "Speaking practice is shown as supporting evidence. It does not change your level."
   },
   "language": {
     "label": "Interface language"

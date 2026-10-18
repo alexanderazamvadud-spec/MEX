@@ -17,7 +17,7 @@ import { LANGUAGE_NAMES } from '../i18n/index.ts'
 import { explanationsOn, withCompletion, withNativeExplanations } from '../learner/lesson.ts'
 import { completedActivityIds } from '../learner/progress.ts'
 import { browserRecording } from '../learner/recording.ts'
-import { MAX_ANSWER_LENGTH, newSelfAssessmentId, withSelfAssessment } from '../learner/selfAssessment.ts'
+import { MAX_ANSWER_LENGTH, newPracticeSessionId, newSelfAssessmentId, withPracticeSession, withSelfAssessment } from '../learner/selfAssessment.ts'
 import type { Confidence } from '../learner/types.ts'
 import { useLearner } from '../learner/useLearner.ts'
 import type { ActivityPageProps } from './activityPageProps.ts'
@@ -171,6 +171,8 @@ export default function InterviewPracticePage({ pathway, pack, unit, activity }:
   const { t, i18n } = useTranslation()
   const { record, update } = useLearner()
   const [done, setDone] = useState(false)
+  // One id per practice run, so readiness (MVP-15) can count finished sessions.
+  const [sessionId] = useState(() => newPracticeSessionId(new Date().toISOString()))
   const items = activity.items.filter((item): item is InterviewQuestionItem => item.kind === 'interview-question')
   const [index, setIndex] = useState(0)
   const [answers, setAnswers] = useState<Answer[]>(() =>
@@ -201,9 +203,12 @@ export default function InterviewPracticePage({ pathway, pack, unit, activity }:
         ...(text ? { answerText: text } : {}),
         selfCheck: answer.checks,
         ...(answer.confidence ? { confidence: answer.confidence } : {}),
+        sessionId,
         recordedAt: now,
       })
-      return finish ? withCompletion(next, { pathway, unitId: unit.id, activityId: activity.id }, now) : next
+      if (!finish) return next
+      const finished = withPracticeSession(next, { id: sessionId, kind: 'interview', pathway, activityId: activity.id, finishedAt: now })
+      return withCompletion(finished, { pathway, unitId: unit.id, activityId: activity.id }, now)
     })
     if (finish) setDone(true)
     else setIndex(index + 1)

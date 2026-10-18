@@ -138,6 +138,12 @@ describe('migrateRecord', () => {
     expect(migrated.exerciseResults).toEqual([])
     expect(migrated.preferences).toEqual({ nativeExplanations: null })
     expect(migrated.profile).toBeNull()
+    expect(migrated.practiceSessions).toEqual([])
+  })
+
+  it('keeps saved practice sessions (MVP-15)', () => {
+    const session = { id: 's1', kind: 'interview', pathway: 'career-readiness', activityId: 'a', finishedAt: 'x' }
+    expect(migrateRecord({ schemaVersion: 1, practiceSessions: [session] }).practiceSessions).toEqual([session])
   })
 
   it('treats records from a newer schema as empty', () => {

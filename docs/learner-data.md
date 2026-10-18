@@ -27,8 +27,9 @@ Storage is shared by every tab of the same browser. The store listens for change
 | `exerciseResults` | Auto-checked answers with item id, skills and correct/incorrect | Demonstrated skills |
 | `selfAssessments` | Speaking, interview and writing practice: typed answer, self-check ticks, confidence 1 to 5 | Self-assessed readiness |
 | `usefulnessRatings` | "Was this useful?" 1 to 5 per activity | Pilot feedback |
+| `practiceSessions` | Finished interview practice runs: id, pathway, activity, finish time (MVP-15) | Readiness evidence |
 
-Rules: records are appended, never rewritten, so history is kept even when later results are weaker; readiness and skill figures are computed by later tasks from these raw facts; MEX never collects identifying fields (name, email, phone number, device identifier). Typed practice answers (`answerText`) are free text and may contain whatever the learner writes, including their name; they stay on the device and are removed by "Delete my data". Any future feature that sends answers off the device needs its own privacy decision by the owner.
+Rules: records are appended, never rewritten, so history is kept even when later results are weaker; readiness and skill figures are computed from these raw facts on the device (MVP-15) and never stored; MEX never collects identifying fields (name, email, phone number, device identifier). Typed practice answers (`answerText`) are free text and may contain whatever the learner writes, including their name; they stay on the device and are removed by "Delete my data". Any future feature that sends answers off the device needs its own privacy decision by the owner.
 
 ## Access
 
@@ -51,7 +52,7 @@ When storage is unavailable (`persistent` is false), the last onboarding step sh
 - **Current unit:** the first unit with an activity not yet completed (the last unit once everything is done). The Current Pathway block shows "n of N activities completed" for that unit, from `completions` of the active pathway only (curriculum layer).
 - **Today's Mission** (`fixedRuleProvider`, behind the `RecommendationProvider` type so MVP-16 can replace it): the next two activities not yet completed in the current unit, in content order.
 - **Next Event:** the next activity not yet completed after the mission, in this unit or a later one; otherwise "Nothing planned yet".
-- **Current Readiness:** Career Readiness only, labelled "Self-assessment". MVP-07 shows no figure; the rule for one is set when the self-assessment activities exist. General English learners see an explanation that their progress does not count towards readiness.
+- **Current Readiness:** Career Readiness only, labelled "Self-assessment". Since MVP-15 it shows the readiness level (see below), the number of finished sessions, "Highest reached" when it is higher than the current level, and a link to Progress. General English learners see an explanation that their progress does not count towards readiness, and no level.
 
 Home writes one thing: "Switch pathway", after an in-page confirmation, changes `profile.pathway` and `profile.updatedAt`. Progress is stored per pathway, so nothing else changes.
 
@@ -90,11 +91,21 @@ Reading and listening save results and completion exactly as exercises do. Each 
 
 "Next question" and "Finish interview practice" each add one `SelfAssessment` for the question on screen (`kind: "interview-question"`, pathway, activity, item, the item's `skills`, one tick per self-check line, date) through `withSelfAssessment`. A typed answer is saved as `answerText`, trimmed and at most 1,000 characters (`MAX_ANSWER_LENGTH`); a blank answer saves no `answerText`. A chosen confidence (1 to 5) is saved as `confidence`; none chosen saves none. Finish also adds one completion. Leaving half-way keeps the questions already saved and does not complete the activity; repeats add new entries. Recordings follow the MVP-12 rules and are never saved.
 
-**Typed answers stay on this device.** They are personal text, kept only in this browser's storage for possible later feedback (Scope v2, Section 5.4), never sent anywhere, and removed by "Delete my data". Readiness on Home does not change; how these entries are summarised is decided in the Progress task (MVP-15).
+**Typed answers stay on this device.** They are personal text, kept only in this browser's storage for possible later feedback (Scope v2, Section 5.4), never sent anywhere, and removed by "Delete my data". Since MVP-15 each run has a session id (`sessionId` on every answer of the run), and Finish also adds one `practiceSessions` entry; a run left half-way has no entry and is not counted.
 
 ## Activity summary and "Was this useful?" (MVP-14)
 
 Every activity ends on the summary. The summary itself writes only `usefulnessRatings`, through `withUsefulnessRating` in `src/learner/usefulness.ts`: `{activityId, rating 1–5, ratedAt}`. The rating is optional and saved on the first tap; a later tap on the same summary changes that entry (same `ratedAt`), and a later visit adds a new one. Ratings are feedback about the content, kept on this device only, removed by "Delete my data", and not used by Today's Mission, progress or readiness.
+
+## Progress and readiness (MVP-15)
+
+`#/progress` shows the three layers of Scope v2 Section 3 as separate sections, never added into one number:
+
+- **Curriculum completion:** per pathway, activities and units completed (`completions`, `unitCompletion`).
+- **Demonstrated skills:** `demonstratedSkills` in `src/learner/skills.ts`, from `exerciseResults` only, across both pathways: for vocabulary, grammar, reading and listening, "n of N questions right", where the latest answer to each question counts. Speaking and writing never appear here.
+- **Readiness:** `readiness` in `src/learner/readiness.ts`, labelled "Self-assessment", Career Readiness only.
+
+**Readiness rules (owner decision 2026-10-18, PILOT SETTINGS to be reviewed after the pilot; `READINESS_PILOT_SETTINGS`):** only finished Career Readiness interview practice sessions count. Getting started: fewer than 2 sessions. Building: at least 2. Confident: at least 4, and in the 3 most recent sessions an average confidence of at least 4 of 5 (rated questions only; none rated means not Confident) and at least 75% of all self-check boxes ticked. The level is recalculated each time and can go down. "Highest reached" replays the sessions in order and keeps the best level and the date it was first reached; it is never erased except by "Delete my data". General English data, unfinished runs and answers saved before MVP-15 (no session id) are never counted. Speaking practice in Career Readiness is shown as "n done" (distinct finished runs) as supporting evidence and does not change the level during the pilot. The rules ship in the public site bundle; the owner accepted this for the pilot.
 
 ## Deleting data
 
@@ -102,4 +113,4 @@ Settings offers "Delete my data": a confirmation step, then the record and langu
 
 ## Tests
 
-`npm test` runs the unit tests in `src/learner/localStore.test.ts` `src/learner/profile.test.ts` `src/learner/home.test.ts`, `src/learner/progress.test.ts`, `src/learner/lesson.test.ts`, `src/learner/exercise.test.ts`, `src/learner/speech.test.ts`, `src/learner/selfAssessment.test.ts`, `src/learner/recording.test.ts` and `src/learner/usefulness.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration). The deployment workflow runs them before the build.
+`npm test` runs the unit tests in `src/learner/localStore.test.ts` `src/learner/profile.test.ts` `src/learner/home.test.ts`, `src/learner/progress.test.ts`, `src/learner/lesson.test.ts`, `src/learner/exercise.test.ts`, `src/learner/speech.test.ts`, `src/learner/selfAssessment.test.ts`, `src/learner/recording.test.ts`, `src/learner/usefulness.test.ts`, `src/learner/readiness.test.ts` and `src/learner/skills.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration, every readiness threshold boundary). The deployment workflow runs them before the build.

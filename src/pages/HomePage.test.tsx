@@ -10,6 +10,7 @@ import LearnerProvider from '../learner/LearnerProvider.tsx'
 import { createLocalLearnerStore } from '../learner/localStore.ts'
 import { withOnboardingProfile } from '../learner/profile.ts'
 import type { ActivityCompletion, LearnerStore } from '../learner/types.ts'
+import { session, withSessions } from '../learner/readinessTestData.ts'
 import HomePage from './HomePage.tsx'
 
 const home = en.home
@@ -101,14 +102,38 @@ describe('HomePage', () => {
     expect(mission.getByText(home.mission.whyBody)).toBeTruthy()
   })
 
-  it('shows readiness as a self-assessment with no figure, for both pathways', async () => {
+  it('shows Getting started for a new Career Readiness learner, with a link to Progress', async () => {
     renderHome(storeWith('career-readiness'))
     await screen.findByText(home.mission.why)
-    expect(block('readiness').getByText(home.readiness.label)).toBeTruthy()
-    expect(block('readiness').getByText(home.readiness.careerEmpty)).toBeTruthy()
-    cleanup()
+    const readiness = block('readiness')
+    expect(readiness.getByText(home.readiness.label)).toBeTruthy()
+    expect(readiness.getByText(en.readiness.levels.gettingStarted)).toBeTruthy()
+    expect(readiness.getByText(home.readiness.careerEmpty)).toBeTruthy()
+    const link = readiness.getByRole('link', { name: home.readiness.seeProgress })
+    expect(link.getAttribute('href')).toBe('/progress')
+    expect(link.className).not.toContain('bg-accent')
+  })
 
-    renderHome(storeWith('general-english'))
+  it('shows the level from finished interview sessions, and Highest reached only when higher', async () => {
+    const store = storeWith('career-readiness')
+    store.update((current) => withSessions([session(5, 3), session(5, 3), session(5, 3), session(5, 3)], current))
+    renderHome(store)
+    await screen.findByText(home.mission.why)
+    expect(block('readiness').getByText(en.readiness.levels.confident)).toBeTruthy()
+    expect(block('readiness').getByText('Based on your finished interview practice sessions: 4. This is your own view, not a test result.')).toBeTruthy()
+    expect(document.querySelector('[data-block="readiness"] [data-highest]')).toBeNull()
+
+    act(() => {
+      store.update((current) => withSessions([session(5, 3), session(5, 3), session(5, 3), session(5, 3), session(1, 0)], { ...current, selfAssessments: [], practiceSessions: [] }))
+    })
+    expect(block('readiness').getByText(en.readiness.levels.building)).toBeTruthy()
+    expect(block('readiness').getByText('Highest reached: Confident')).toBeTruthy()
+  })
+
+  it('keeps the General English message, and General English learners see no level', async () => {
+    const store = storeWith('general-english')
+    store.update((current) => withSessions([session(5, 3), session(5, 3)], current))
+    renderHome(store)
     await screen.findByText(home.mission.why)
     const readiness = block('readiness')
     expect(readiness.getByText(home.readiness.label)).toBeTruthy()
@@ -118,6 +143,7 @@ describe('HomePage', () => {
     )
     expect(document.querySelector('[data-block="readiness"]')?.textContent).not.toMatch(/\d/)
     expect(readiness.queryAllByRole('button')).toHaveLength(0)
+    expect(readiness.queryAllByRole('link')).toHaveLength(0)
   })
 
   it('shows the current unit and the completed count from saved data', async () => {
