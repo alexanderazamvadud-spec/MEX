@@ -5,16 +5,8 @@ import TextCard from '../components/questions/TextCard.tsx'
 import Button from '../components/ui/Button.tsx'
 import type { ListeningItem, Skill } from '../content/types.ts'
 import { comprehensionItems } from '../learner/exercise.ts'
-import {
-  browserSpeech,
-  isStopError,
-  NORMAL_RATE,
-  pickVoice,
-  SLOW_RATE,
-  VOICE_WAIT_MS,
-  type SpeechEngine,
-  type VoiceLike,
-} from '../learner/speech.ts'
+import { browserSpeech, isStopError, NORMAL_RATE, SLOW_RATE } from '../learner/speech.ts'
+import { useOnDeviceVoice } from '../learner/useOnDeviceVoice.ts'
 import type { ActivityPageProps } from './activityPageProps.ts'
 
 // Listening player (MVP-11, Scope v2 screen S11, decision Q5). The transcript is spoken by
@@ -22,36 +14,6 @@ import type { ActivityPageProps } from './activityPageProps.ts'
 // "Show the text" reveals the transcript at any time. When the device has no on-device
 // English voice, or speaking fails, the transcript is shown with an honest note instead of
 // the player, and answers are saved as reading rather than listening, since the learner read.
-
-type VoiceState = { status: 'checking' } | { status: 'ready'; voice: VoiceLike } | { status: 'none' }
-
-function useOnDeviceVoice(engine: SpeechEngine | null): VoiceState {
-  const [state, setState] = useState<VoiceState>(() => {
-    if (!engine) return { status: 'none' }
-    const voices = engine.getVoices()
-    if (voices.length === 0) return { status: 'checking' }
-    const voice = pickVoice(voices)
-    return voice ? { status: 'ready', voice } : { status: 'none' }
-  })
-
-  useEffect(() => {
-    if (!engine || state.status !== 'checking') return
-    function decide() {
-      const voice = pickVoice(engine!.getVoices())
-      setState(voice ? { status: 'ready', voice } : { status: 'none' })
-    }
-    const unsubscribe = engine.onVoicesChanged(() => {
-      if (engine.getVoices().length > 0) decide()
-    })
-    const timer = window.setTimeout(decide, VOICE_WAIT_MS)
-    return () => {
-      unsubscribe()
-      window.clearTimeout(timer)
-    }
-  }, [engine, state.status])
-
-  return state
-}
 
 function asReading(skills: Skill[]): Skill[] {
   return [...new Set(skills.map((skill) => (skill === 'listening' ? 'reading' : skill)))]

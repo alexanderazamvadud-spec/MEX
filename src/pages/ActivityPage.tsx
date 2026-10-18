@@ -6,10 +6,11 @@ import LessonPage from './LessonPage.tsx'
 import ListeningPage from './ListeningPage.tsx'
 import NotFoundPage from './NotFoundPage.tsx'
 import ReadingPage from './ReadingPage.tsx'
+import SpeakingPage from './SpeakingPage.tsx'
 
 // #/learn/:pathway/:unit/:activity (MVP-10): finds the activity in its pack and shows the
 // player for its type: the lesson viewer (S8), the exercise player (S9), or the reading
-// (S10) or listening (S11) player. An unknown
+// (S10) or listening (S11) player, or speaking practice (S12). An unknown
 // address, or an activity type without a player yet, shows Not found.
 
 function isPathwayId(value: string | undefined): value is PathwayId {
@@ -34,5 +35,6 @@ export default function ActivityPage() {
   if (activity.type === 'exercise') return <ExercisePage key={key} {...props} />
   if (activity.type === 'reading') return <ReadingPage key={key} {...props} />
   if (activity.type === 'listening') return <ListeningPage key={key} {...props} />
+  if (activity.type === 'speaking') return <SpeakingPage key={key} {...props} />
   return <NotFoundPage />
 }

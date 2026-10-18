@@ -147,8 +147,9 @@ describe('LessonPage', () => {
     renderAt(`/learn/general-english/${unit.id}/nothing-here`, storeWith('general-english'))
     expect(await screen.findByRole('heading', { name: en.notFound.title })).toBeTruthy()
     cleanup()
-    const speaking = unit.activities.find((activity) => activity.type === 'speaking')!
-    renderAt(`/learn/general-english/${unit.id}/${speaking.id}`, storeWith('general-english'))
+    const career = (await loadPack('career-readiness')).units[0]
+    const interview = career.activities.find((activity) => activity.type === 'interview-practice')!
+    renderAt(`/learn/career-readiness/${career.id}/${interview.id}`, storeWith('career-readiness'))
     expect(await screen.findByRole('heading', { name: en.notFound.title })).toBeTruthy()
   })
 })

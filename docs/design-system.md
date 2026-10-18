@@ -147,6 +147,15 @@ Keep the real learning content out of the repository: `content-private/` is igno
 - No on-device voice or a speech error: an info panel (`info-tint`, `role="status"`) with the honest note, followed by the transcript. No player buttons are shown.
 - "Finish reading" and "Finish listening" are the one saffron action, on the results screen.
 
+## Speaking practice (MVP-12)
+
+- One screen with five sections (h2): The task, Prepare, Speak, Model answer, Check yourself. The header shows "Sample content" and a "Self-assessment" badge; the Check section starts with the line saying MEX does not listen to or score the learner's speaking.
+- Timers show `m:ss` (`role="timer"`), with "Time's up" announced through `role="status"`. "Start preparing" (primary md) turns into "I'm ready" (tertiary) while running; "Start speaking" (primary md).
+- Recording: the note "Your recording stays on this device…" above "Record" (primary md). While recording, a pulsing dot, "Recording m:ss" and "Stop" (primary md). Afterwards a native audio player and "Record again" (secondary md). Not available: an info panel (`info-tint`, `role="status"`).
+- Model answer: "Show the model answer" (secondary md), then the English text and, with an on-device voice, "Listen to the model answer".
+- Self-check: one `ChoiceCard` tick box per line (English title, native line as the description).
+- "Finish speaking" is the one saffron action, at the bottom.
+
 ## Development style guide
 
 `#/styleguide` shows every token and component. It exists only in development builds: the route and its code are excluded from production, although the utility classes it uses are still compiled into the production stylesheet (a few hundred bytes).
