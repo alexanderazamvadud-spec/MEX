@@ -132,7 +132,7 @@ describe('ListeningPage with an on-device English voice', () => {
     expect(store.read().exerciseResults.map((result) => [result.itemId, result.skills])).toEqual(
       item.questions.map((_, index) => [`${item.id}-q${index + 1}`, item.skills]),
     )
-    fireEvent.click(screen.getByRole('button', { name: text.finish }))
+    expect(screen.getByRole('heading', { level: 2, name: en.summary.completed })).toBeTruthy()
     expect(store.read().completions).toMatchObject([{ unitId: unit.id, activityId: activity.id }])
   })
 

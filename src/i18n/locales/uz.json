@@ -217,15 +217,11 @@
     "yourAnswer": "Sizning javobingiz",
     "score": "{{total}} tadan {{n}} tasi toʻgʻri",
     "practiceNote": "Bu mashq. U tayyorgarligingizni oʻzgartirmaydi.",
-    "finish": "Mashqlarni yakunlash",
     "errors": {
       "choose": "Avval javobni tanlang.",
       "match": "Avval har bir bandga mosini tanlang.",
       "place": "Avval barcha qismlarni joylashtiring."
     }
-  },
-  "reading": {
-    "finish": "Oʻqishni yakunlash"
   },
   "listening": {
     "listen": "Tinglash",
@@ -233,8 +229,7 @@
     "stop": "Toʻxtatish",
     "showText": "Matnni koʻrsatish",
     "hideText": "Matnni yashirish",
-    "noVoice": "Bu qurilmada internetsiz ishlaydigan inglizcha ovoz yoʻq, shuning uchun matn koʻrsatiladi.",
-    "finish": "Tinglashni yakunlash"
+    "noVoice": "Bu qurilmada internetsiz ishlaydigan inglizcha ovoz yoʻq, shuning uchun matn koʻrsatiladi."
   },
   "speaking": {
     "task": "1. Topshiriq",
@@ -274,6 +269,17 @@
     "ready": "Tayyorman",
     "next": "Keyingi savol",
     "finish": "Suhbat mashqini yakunlash"
+  },
+  "summary": {
+    "completed": "Mashgʻulot yakunlandi",
+    "lessonRecap": "Siz asosiy iboralar, grammatika va dialog bilan ishladingiz.",
+    "selfCheckRecap": "Siz {{total}} ta bandan {{n}} tasini belgiladingiz. Bu test natijasi emas, oʻz fikringiz.",
+    "useful": "Bu mashgʻulot siz uchun foydali boʻldimi?",
+    "notUseful": "Foydali emas",
+    "veryUseful": "Juda foydali",
+    "thanks": "Rahmat. Bahoyingiz faqat shu qurilmada saqlanadi.",
+    "next": "Keyingi mashgʻulot",
+    "backToUnit": "Boʻlimga qaytish"
   },
   "language": {
     "label": "Interfeys tili"

@@ -136,7 +136,7 @@ Keep the real learning content out of the repository: `content-private/` is igno
 - Matching: one soft card per left-hand text with a native 44 px `select`. After Check each card turns success or error tint and says "Correct" or "Not quite. The answer is: ..." with a check or cross icon.
 - Ordering: an answer line (dashed outline) holding the placed parts as primary pills, the unplaced parts as `surface-sky` pills below, and "Start again" (tertiary, sm). No drag and drop.
 - Feedback panel: `success-tint` or `error-tint` card with a check or cross and "Correct" or "Not quite" (h3), the right answer when wrong, then the explanation; it takes focus after Check. Right and wrong are never shown by colour alone.
-- Check, Next and See results are primary lg buttons; the one saffron action is "Finish exercises" on the results screen, under a sky card with "You got n of N right" and the practice note.
+- Check, Next and See results are primary lg buttons. Since MVP-14 the results screen is the activity summary (see below).
 - New contrast pairs for these panels are in `scripts/check-contrast.mjs` (49 pairs).
 - The explanation switch on question screens uses the hint "Shows a translation of the instructions and explanations." (MVP-11). The ordering answer line is named "Your answer" for screen readers.
 
@@ -145,7 +145,7 @@ Keep the real learning content out of the repository: `content-private/` is igno
 - Reading: the text sits in a soft card (`TextCard`: h2 title, one paragraph per line) between the instructions and the question, on every question screen.
 - Listening: "Listen" (primary md) and "Listen slowly" (secondary md); while speaking, a single "Stop" (primary md). "Show the text" / "Hide the text" (tertiary sm, `aria-expanded`) reveals the transcript in a `TextCard`.
 - No on-device voice or a speech error: an info panel (`info-tint`, `role="status"`) with the honest note, followed by the transcript. No player buttons are shown.
-- "Finish reading" and "Finish listening" are the one saffron action, on the results screen.
+- Reading and listening end on the activity summary, like exercises (MVP-14).
 
 ## Speaking practice (MVP-12)
 
@@ -163,6 +163,13 @@ Keep the real learning content out of the repository: `content-private/` is igno
 - Confidence: a fieldset with the question as its legend and five pill radio buttons (1 to 5, at least 44 px high), labelled "Not yet" under 1 and "Ready" under 5. The chosen one is filled primary.
 - "Next question" is primary lg; on the last question "Finish interview practice" is the one saffron action.
 - The header shows "Sample content" and the "Self-assessment" badge, as on speaking.
+
+## Activity summary (MVP-14)
+
+- Shown in place of the activity when it ends: after Finish (lesson, speaking, interview) or after the last question (exercises, reading, listening). The same header as the activity, with the "Completed" badge (and "Self-assessment" on speaking and interview).
+- A success-tint card with the h2 "Activity completed" (success text, takes focus) and the recap: the practice score and note, the lesson line, or "You ticked n of N checks…".
+- "Was this activity useful to you?": the shared `RatingScale` (five pill radio buttons, at least 44 px high, "Not useful" under 1 and "Very useful" under 5; also used for interview confidence). Optional; after a tap a small status line thanks the learner.
+- "Next activity" (accent lg link) and "Back to unit" (secondary lg link). On the unit's last activity only "Back to unit", as the saffron action.
 
 ## Development style guide
 

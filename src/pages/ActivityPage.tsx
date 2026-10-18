@@ -31,9 +31,10 @@ export default function ActivityPage() {
   if (!pack || !unit || !activity) return <div aria-busy="true" />
 
   const props = { pathway, pack, unit, activity }
-  if (activity.type === 'lesson') return <LessonPage {...props} />
-  // The question players are keyed by activity so a new activity always starts at question 1.
+  // Every player is keyed by activity so a new activity always starts at its beginning, not on
+  // the previous activity's summary (MVP-14 "Next activity").
   const key = `${pathway}/${activity.id}`
+  if (activity.type === 'lesson') return <LessonPage key={key} {...props} />
   if (activity.type === 'exercise') return <ExercisePage key={key} {...props} />
   if (activity.type === 'reading') return <ReadingPage key={key} {...props} />
   if (activity.type === 'listening') return <ListeningPage key={key} {...props} />

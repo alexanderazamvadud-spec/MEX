@@ -73,11 +73,12 @@ describe('ReadingPage', () => {
       const isLast = index === item.questions.length - 1
       fireEvent.click(screen.getByRole('button', { name: isLast ? en.exercise.seeResults : en.exercise.next }))
     })
-    expect(screen.getByRole('heading', { level: 2, name: `You got 3 of 3 right` })).toBeTruthy()
+    expect(screen.getByRole('heading', { level: 2, name: en.summary.completed })).toBeTruthy()
+    expect(screen.getByText(`You got 3 of 3 right`)).toBeTruthy()
     expect(screen.getByText(en.exercise.practiceNote)).toBeTruthy()
-    fireEvent.click(screen.getByRole('button', { name: en.reading.finish }))
     expect(store.read().completions).toMatchObject([{ unitId: unit.id, activityId: activity.id }])
     expect(store.read().exerciseResults.map((result) => result.itemId)).toEqual(['q1', 'q2', 'q3'].map((q) => `${item.id}-${q}`))
+    fireEvent.click(screen.getByRole('link', { name: en.summary.backToUnit }))
     expect(await screen.findByRole('heading', { level: 1, name: `Unit 1: ${unit.title}` })).toBeTruthy()
   })
 

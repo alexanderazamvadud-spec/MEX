@@ -216,15 +216,11 @@
     "yourAnswer": "Your answer",
     "score": "You got {{n}} of {{total}} right",
     "practiceNote": "This is practice. It does not change your readiness.",
-    "finish": "Finish exercises",
     "errors": {
       "choose": "Choose an answer first.",
       "match": "Match every item first.",
       "place": "Place every part first."
     }
-  },
-  "reading": {
-    "finish": "Finish reading"
   },
   "listening": {
     "listen": "Listen",
@@ -232,8 +228,7 @@
     "stop": "Stop",
     "showText": "Show the text",
     "hideText": "Hide the text",
-    "noVoice": "This device has no English voice that works offline, so the text is shown instead.",
-    "finish": "Finish listening"
+    "noVoice": "This device has no English voice that works offline, so the text is shown instead."
   },
   "speaking": {
     "task": "1. The task",
@@ -273,6 +268,17 @@
     "ready": "Ready",
     "next": "Next question",
     "finish": "Finish interview practice"
+  },
+  "summary": {
+    "completed": "Activity completed",
+    "lessonRecap": "You worked through the key phrases, grammar and dialogue.",
+    "selfCheckRecap": "You ticked {{n}} of {{total}} checks. This is your own view, not a test result.",
+    "useful": "Was this activity useful to you?",
+    "notUseful": "Not useful",
+    "veryUseful": "Very useful",
+    "thanks": "Thanks. Your rating is saved only on this device.",
+    "next": "Next activity",
+    "backToUnit": "Back to unit"
   },
   "language": {
     "label": "Interface language"

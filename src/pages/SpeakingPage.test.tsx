@@ -240,7 +240,10 @@ describe('SpeakingPage', () => {
     expect(first.completions).toMatchObject([{ unitId: unit.id, activityId: activity.id }])
     expect(first.exerciseResults).toEqual([])
     expect(first.profile).toEqual(before.profile)
-    expect(await screen.findByRole('heading', { level: 1, name: `Unit 1: ${unit.title}` })).toBeTruthy()
+    // The summary recaps the ticks as the learner's own view (MVP-14).
+    expect(screen.getByRole('heading', { level: 2, name: en.summary.completed })).toBeTruthy()
+    expect(screen.getByText('You ticked 2 of 3 checks. This is your own view, not a test result.')).toBeTruthy()
+    expect(screen.getByText(en.home.readiness.label)).toBeTruthy()
     cleanup()
 
     // Nothing ticked is a valid, honest answer, and repeats add a new entry.

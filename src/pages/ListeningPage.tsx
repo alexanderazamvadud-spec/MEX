@@ -104,7 +104,6 @@ export default function ListeningPage(props: ActivityPageProps) {
     <QuestionPlayer
       {...props}
       items={listenings.flatMap(comprehensionItems)}
-      finishLabel={t('listening.finish')}
       intro={intro}
       skillsFor={(item) => (textOnly ? asReading(item.skills) : item.skills)}
     />

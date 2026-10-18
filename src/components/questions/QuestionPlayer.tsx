@@ -1,11 +1,11 @@
 import { useEffect, useId, useRef, useState, type ReactNode } from 'react'
-import { useNavigate } from 'react-router'
 import { useTranslation } from 'react-i18next'
 import ChoiceItem, { GapSentence } from '../exercise/ChoiceItem.tsx'
 import Feedback from '../exercise/Feedback.tsx'
 import MatchingItem from '../exercise/MatchingItem.tsx'
 import OrderingItem from '../exercise/OrderingItem.tsx'
 import BackLink from '../learn/BackLink.tsx'
+import ActivitySummary from '../summary/ActivitySummary.tsx'
 import { ACTIVITY_TYPE_KEYS } from '../learn/text.ts'
 import NativeText from '../lesson/NativeText.tsx'
 import Badge from '../ui/Badge.tsx'
@@ -31,8 +31,8 @@ import type { ActivityPageProps } from '../../pages/activityPageProps.ts'
 // listening players (MVP-11, S10 and S11). One question per screen: the learner answers and taps Check, which locks the
 // answer, shows right or wrong with the item's explanation, and saves one result with the
 // item's skills (demonstrated-skills layer; readiness never changes). One attempt per item;
-// replaying the exercise saves new results and keeps the old ones. The results screen shows
-// the score as practice, and the finish button records completion whatever the score.
+// replaying the exercise saves new results and keeps the old ones. After the last question the
+// activity summary (MVP-14) shows the score as practice and records completion whatever the score.
 // Leaving early keeps the saved results, does not complete the activity, and a return
 // starts again at question 1. Prompts and options stay English; the native toggle (Q3)
 // adds the UZ/RU instructions and explanations. `intro` (a reading text or the listening
@@ -72,18 +72,15 @@ export default function QuestionPlayer({
   unit,
   activity,
   items,
-  finishLabel,
   intro,
   skillsFor = (item) => item.skills,
 }: ActivityPageProps & {
   items: ExerciseItem[]
-  finishLabel: string
   intro?: ReactNode
   skillsFor?: (item: ExerciseItem) => Skill[]
 }) {
   const { t, i18n } = useTranslation()
   const { record, update } = useLearner()
-  const navigate = useNavigate()
   const [index, setIndex] = useState(0)
   const [steps, setSteps] = useState<Step[]>(() =>
     items.map((item) => ({ answer: emptyAnswer(item), checked: false, correct: false })),
@@ -138,15 +135,15 @@ export default function QuestionPlayer({
     setSteps((current) => current.map((entry, at) => (at === index ? { ...entry, checked: true, correct } : entry)))
   }
 
+  // After the last question the summary opens, and that is when the activity counts as completed.
   function next() {
-    if (index < items.length - 1) setIndex(index + 1)
-    else setFinished(true)
-  }
-
-  function finish() {
+    if (index < items.length - 1) {
+      setIndex(index + 1)
+      return
+    }
     const now = new Date().toISOString()
     update((current) => withCompletion(current, { pathway, unitId: unit.id, activityId: activity.id }, now))
-    navigate(unitPath)
+    setFinished(true)
   }
 
   const header = (
@@ -170,20 +167,18 @@ export default function QuestionPlayer({
   if (finished || !item || !step) {
     const right = steps.filter((entry) => entry.correct).length
     return (
-      <div className="flex flex-col gap-5">
-        {header}
-        <section aria-labelledby={headingId} className="flex flex-col gap-3 rounded-card bg-surface-sky p-5">
-          <h2 id={headingId} ref={headingRef} tabIndex={-1} className="text-h2">
-            {t('exercise.score', { n: right, total: items.length })}
-          </h2>
-          <p className="text-body">{t('exercise.practiceNote')}</p>
-        </section>
-        <div>
-          <Button variant="accent" size="lg" onClick={finish}>
-            {finishLabel}
-          </Button>
-        </div>
-      </div>
+      <ActivitySummary
+        pathway={pathway}
+        pack={pack}
+        unit={unit}
+        activity={activity}
+        recap={
+          <>
+            <p className="font-bold">{t('exercise.score', { n: right, total: items.length })}</p>
+            <p>{t('exercise.practiceNote')}</p>
+          </>
+        }
+      />
     )
   }
 
