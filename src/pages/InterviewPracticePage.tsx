@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import { useNavigate } from 'react-router'
 import { useTranslation } from 'react-i18next'
 import ConfidenceScale from '../components/interview/ConfidenceScale.tsx'
 import ListenButton from '../components/interview/ListenButton.tsx'
@@ -8,6 +7,7 @@ import { ACTIVITY_TYPE_KEYS } from '../components/learn/text.ts'
 import NativeText from '../components/lesson/NativeText.tsx'
 import ChoiceCard from '../components/onboarding/ChoiceCard.tsx'
 import Recorder from '../components/speaking/Recorder.tsx'
+import ActivitySummary from '../components/summary/ActivitySummary.tsx'
 import Badge from '../components/ui/Badge.tsx'
 import Button from '../components/ui/Button.tsx'
 import Switch from '../components/ui/Switch.tsx'
@@ -170,7 +170,7 @@ function QuestionScreen({
 export default function InterviewPracticePage({ pathway, pack, unit, activity }: ActivityPageProps) {
   const { t, i18n } = useTranslation()
   const { record, update } = useLearner()
-  const navigate = useNavigate()
+  const [done, setDone] = useState(false)
   const items = activity.items.filter((item): item is InterviewQuestionItem => item.kind === 'interview-question')
   const [index, setIndex] = useState(0)
   const [answers, setAnswers] = useState<Answer[]>(() =>
@@ -205,8 +205,22 @@ export default function InterviewPracticePage({ pathway, pack, unit, activity }:
       })
       return finish ? withCompletion(next, { pathway, unitId: unit.id, activityId: activity.id }, now) : next
     })
-    if (finish) navigate(unitPath)
+    if (finish) setDone(true)
     else setIndex(index + 1)
+  }
+
+  if (done) {
+    const ticked = answers.flatMap((answer) => answer.checks).filter(Boolean).length
+    return (
+      <ActivitySummary
+        pathway={pathway}
+        pack={pack}
+        unit={unit}
+        activity={activity}
+        selfAssessment
+        recap={<p>{t('summary.selfCheckRecap', { n: ticked, total: answers.flatMap((answer) => answer.checks).length })}</p>}
+      />
+    )
   }
 
   if (!item) return null

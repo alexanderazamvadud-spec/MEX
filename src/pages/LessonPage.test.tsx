@@ -112,12 +112,15 @@ describe('LessonPage', () => {
     expect(nativeTexts()[0]).toBe(career.lesson.instructions.ru)
   })
 
-  it('records one completion on Finish lesson and returns to the unit', async () => {
+  it('records one completion on Finish lesson, shows the summary, and returns to the unit', async () => {
     const { lesson, unit, path } = await firstLesson()
     const store = storeWith('general-english')
     const router = renderAt(path, store)
     await screen.findByRole('heading', { level: 1, name: lesson.title })
     fireEvent.click(screen.getByRole('button', { name: en.lesson.finish }))
+    expect(screen.getByRole('heading', { level: 2, name: en.summary.completed })).toBeTruthy()
+    expect(screen.getByText(en.summary.lessonRecap)).toBeTruthy()
+    fireEvent.click(screen.getByRole('link', { name: en.summary.backToUnit }))
     expect(router.state.location.pathname).toBe(`/learn/general-english/${unit.id}`)
     const completions = store.read().completions
     expect(completions).toHaveLength(1)

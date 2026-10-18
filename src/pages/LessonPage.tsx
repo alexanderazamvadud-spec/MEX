@@ -1,9 +1,10 @@
-import { useNavigate } from 'react-router'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import BackLink from '../components/learn/BackLink.tsx'
 import { ACTIVITY_TYPE_KEYS } from '../components/learn/text.ts'
 import { Dialogue, GrammarNote, PhraseList } from '../components/lesson/LessonSections.tsx'
 import NativeText from '../components/lesson/NativeText.tsx'
+import ActivitySummary from '../components/summary/ActivitySummary.tsx'
 import Badge from '../components/ui/Badge.tsx'
 import Button from '../components/ui/Button.tsx'
 import Switch from '../components/ui/Switch.tsx'
@@ -45,7 +46,7 @@ function toSections(items: ContentItem[]): Section[] {
 export default function LessonPage({ pathway, pack, unit, activity }: ActivityPageProps) {
   const { t, i18n } = useTranslation()
   const { record, update } = useLearner()
-  const navigate = useNavigate()
+  const [done, setDone] = useState(false)
 
   const language = i18n.resolvedLanguage
   const nativeLanguage = language === 'uz' || language === 'ru' ? language : null
@@ -57,7 +58,13 @@ export default function LessonPage({ pathway, pack, unit, activity }: ActivityPa
   function finish() {
     const now = new Date().toISOString()
     update((current) => withCompletion(current, { pathway, unitId: unit.id, activityId: activity.id }, now))
-    navigate(unitPath)
+    setDone(true)
+  }
+
+  if (done) {
+    return (
+      <ActivitySummary pathway={pathway} pack={pack} unit={unit} activity={activity} recap={<p>{t('summary.lessonRecap')}</p>} />
+    )
   }
 
   return (

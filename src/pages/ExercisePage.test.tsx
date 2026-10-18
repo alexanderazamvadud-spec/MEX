@@ -204,15 +204,16 @@ describe('ExercisePage', () => {
     expect(screen.getByRole('button', { name: text.seeResults })).toBeTruthy()
   })
 
-  it('shows the score as practice and completes the activity on Finish, without touching readiness', async () => {
+  it('ends on the summary with the score as practice, completing the activity without touching readiness', async () => {
     const items = await firstExercise()
     const store = storeWith('general-english')
     const before = store.read()
     await playAllCorrect(store, items.path, items)
 
-    expect(screen.getByRole('heading', { level: 2, name: 'You got 4 of 4 right' })).toBeTruthy()
+    // The results screen is the activity summary (MVP-14): completion is recorded when it opens.
+    expect(screen.getByRole('heading', { level: 2, name: en.summary.completed })).toBeTruthy()
+    expect(screen.getByText('You got 4 of 4 right')).toBeTruthy()
     expect(screen.getByText(text.practiceNote)).toBeTruthy()
-    expect(store.read().completions).toEqual([])
     const results = store.read().exerciseResults
     expect(results.map((result) => [result.itemId, result.correct])).toEqual(
       [items.choice, items.gap, items.matching, items.ordering].map((item) => [item.id, true]),
@@ -221,11 +222,11 @@ describe('ExercisePage', () => {
       [items.choice, items.gap, items.matching, items.ordering].map((item) => item.skills),
     )
 
-    fireEvent.click(screen.getByRole('button', { name: text.finish }))
     const after = store.read()
     expect(after.completions).toMatchObject([{ pathway: 'general-english', unitId: items.unit.id, activityId: items.exercise.id }])
     expect(after.profile).toEqual(before.profile)
     expect(after.selfAssessments).toEqual([])
+    fireEvent.click(screen.getByRole('link', { name: en.summary.backToUnit }))
     expect(await screen.findByRole('heading', { level: 1, name: `Unit 1: ${items.unit.title}` })).toBeTruthy()
   })
 
@@ -246,14 +247,12 @@ describe('ExercisePage', () => {
     answerOrdering(items.ordering.segments)
     check()
     fireEvent.click(screen.getByRole('button', { name: text.seeResults }))
-    expect(screen.getByRole('heading', { level: 2, name: 'You got 3 of 4 right' })).toBeTruthy()
-    fireEvent.click(screen.getByRole('button', { name: text.finish }))
+    expect(screen.getByText('You got 3 of 4 right')).toBeTruthy()
     expect(store.read().completions).toHaveLength(1)
     const firstRun = store.read().exerciseResults
     cleanup()
 
     await playAllCorrect(store, items.path, items)
-    fireEvent.click(screen.getByRole('button', { name: text.finish }))
     const record = store.read()
     expect(record.exerciseResults).toHaveLength(8)
     expect(record.exerciseResults.slice(0, 4)).toEqual(firstRun)

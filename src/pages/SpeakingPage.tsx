@@ -1,11 +1,11 @@
 import { useCallback, useState } from 'react'
-import { useNavigate } from 'react-router'
 import { useTranslation } from 'react-i18next'
 import BackLink from '../components/learn/BackLink.tsx'
 import { ACTIVITY_TYPE_KEYS } from '../components/learn/text.ts'
 import NativeText from '../components/lesson/NativeText.tsx'
 import ChoiceCard from '../components/onboarding/ChoiceCard.tsx'
 import Countdown from '../components/speaking/Countdown.tsx'
+import ActivitySummary from '../components/summary/ActivitySummary.tsx'
 import ModelAnswer from '../components/speaking/ModelAnswer.tsx'
 import Recorder from '../components/speaking/Recorder.tsx'
 import Badge from '../components/ui/Badge.tsx'
@@ -130,7 +130,7 @@ function SpeakingTask({
 export default function SpeakingPage({ pathway, pack, unit, activity }: ActivityPageProps) {
   const { t, i18n } = useTranslation()
   const { record, update } = useLearner()
-  const navigate = useNavigate()
+  const [done, setDone] = useState(false)
   const items = activity.items.filter((item): item is SpeakingItem => item.kind === 'speaking')
   const [checks, setChecks] = useState<boolean[][]>(() => items.map((item) => item.selfCheck.map(() => false)))
 
@@ -159,7 +159,21 @@ export default function SpeakingPage({ pathway, pack, unit, activity }: Activity
       })
       return withCompletion(next, { pathway, unitId: unit.id, activityId: activity.id }, now)
     })
-    navigate(unitPath)
+    setDone(true)
+  }
+
+  if (done) {
+    const ticked = checks.flat().filter(Boolean).length
+    return (
+      <ActivitySummary
+        pathway={pathway}
+        pack={pack}
+        unit={unit}
+        activity={activity}
+        selfAssessment
+        recap={<p>{t('summary.selfCheckRecap', { n: ticked, total: checks.flat().length })}</p>}
+      />
+    )
   }
 
   return (

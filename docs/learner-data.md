@@ -71,7 +71,7 @@ The lesson screen writes two things through `src/learner/lesson.ts`:
 The exercise screen writes three things through `src/learner/exercise.ts` and `src/learner/lesson.ts`:
 
 - **`exerciseResults`:** each Check adds one `ExerciseResult` (pathway, activity, item, the item's `skills`, `correct`, date) through `withExerciseResult`. This is the demonstrated-skills layer. There is one attempt per item; replaying an exercise adds new results and never changes or removes earlier ones (mastery history). Results are only saved here; the Progress screen (MVP-15) decides how they are shown.
-- **`completions`:** "Finish exercises" on the results screen adds one completion through `withCompletion`, whatever the score. Leaving before the results screen keeps the results already checked and does not complete the activity.
+- **`completions`:** opening the results screen (the activity summary since MVP-14) adds one completion through `withCompletion`, whatever the score. Leaving before it keeps the results already checked and does not complete the activity.
 - **`preferences.nativeExplanations`:** the same switch and preference as the lesson viewer.
 
 Exercise results never change readiness, and the results screen says so. Answers are checked in the browser against the pack, so the answer keys are public; this is acceptable only for placeholder exercises (see `docs/content-model.md`).
@@ -92,10 +92,14 @@ Reading and listening save results and completion exactly as exercises do. Each 
 
 **Typed answers stay on this device.** They are personal text, kept only in this browser's storage for possible later feedback (Scope v2, Section 5.4), never sent anywhere, and removed by "Delete my data". Readiness on Home does not change; how these entries are summarised is decided in the Progress task (MVP-15).
 
+## Activity summary and "Was this useful?" (MVP-14)
+
+Every activity ends on the summary. The summary itself writes only `usefulnessRatings`, through `withUsefulnessRating` in `src/learner/usefulness.ts`: `{activityId, rating 1–5, ratedAt}`. The rating is optional and saved on the first tap; a later tap on the same summary changes that entry (same `ratedAt`), and a later visit adds a new one. Ratings are feedback about the content, kept on this device only, removed by "Delete my data", and not used by Today's Mission, progress or readiness.
+
 ## Deleting data
 
 Settings offers "Delete my data": a confirmation step, then the record and language choice are removed and the interface returns to English. Texts live in the locale files under `settings.*`.
 
 ## Tests
 
-`npm test` runs the unit tests in `src/learner/localStore.test.ts` `src/learner/profile.test.ts` `src/learner/home.test.ts`, `src/learner/progress.test.ts`, `src/learner/lesson.test.ts`, `src/learner/exercise.test.ts`, `src/learner/speech.test.ts`, `src/learner/selfAssessment.test.ts` and `src/learner/recording.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration). The deployment workflow runs them before the build.
+`npm test` runs the unit tests in `src/learner/localStore.test.ts` `src/learner/profile.test.ts` `src/learner/home.test.ts`, `src/learner/progress.test.ts`, `src/learner/lesson.test.ts`, `src/learner/exercise.test.ts`, `src/learner/speech.test.ts`, `src/learner/selfAssessment.test.ts`, `src/learner/recording.test.ts` and `src/learner/usefulness.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration). The deployment workflow runs them before the build.
