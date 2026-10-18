@@ -86,6 +86,12 @@ Reading and listening save results and completion exactly as exercises do. Each 
 
 **Recordings are never saved (decision Q7).** The microphone is requested only when the learner taps Record (`src/learner/recording.ts`) and is released as soon as recording stops, or after 2 minutes. The clip is an in-memory Blob used only for playback on this screen. It is never written to browser storage, never added to the learner record and never uploaded. Record again, Finish, or leaving the screen discards it. If the microphone is refused or recording is not supported, the screen says so and the learner practises aloud.
 
+## Interview practice (MVP-13)
+
+"Next question" and "Finish interview practice" each add one `SelfAssessment` for the question on screen (`kind: "interview-question"`, pathway, activity, item, the item's `skills`, one tick per self-check line, date) through `withSelfAssessment`. A typed answer is saved as `answerText`, trimmed and at most 1,000 characters (`MAX_ANSWER_LENGTH`); a blank answer saves no `answerText`. A chosen confidence (1 to 5) is saved as `confidence`; none chosen saves none. Finish also adds one completion. Leaving half-way keeps the questions already saved and does not complete the activity; repeats add new entries. Recordings follow the MVP-12 rules and are never saved.
+
+**Typed answers stay on this device.** They are personal text, kept only in this browser's storage for possible later feedback (Scope v2, Section 5.4), never sent anywhere, and removed by "Delete my data". Readiness on Home does not change; how these entries are summarised is decided in the Progress task (MVP-15).
+
 ## Deleting data
 
 Settings offers "Delete my data": a confirmation step, then the record and language choice are removed and the interface returns to English. Texts live in the locale files under `settings.*`.

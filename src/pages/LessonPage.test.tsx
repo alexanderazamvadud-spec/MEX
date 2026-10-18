@@ -1,13 +1,21 @@
 // @vitest-environment jsdom
 import { act, cleanup, fireEvent, screen, within } from '@testing-library/react'
-import { afterEach, beforeEach, describe, expect, it } from 'vitest'
-import { loadPack, type Activity } from '../content/index.ts'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { canOpen, loadPack, type Activity, type ContentPack } from '../content/index.ts'
 import type { DialogueItem, GrammarNoteItem, PhraseItem } from '../content/types.ts'
 import i18n from '../i18n/index.ts'
 import en from '../i18n/locales/en.json'
 import ru from '../i18n/locales/ru.json'
 import uz from '../i18n/locales/uz.json'
 import { renderAt, storeWith } from './learnTestUtils.tsx'
+
+// Interview practice opens since MVP-13, so a test-only writing activity stands in for an
+// activity without a player.
+vi.mock('../content/packs/career-readiness.json', async (importOriginal) => {
+  const { withUnplayableActivity } = await import('./testPacks.ts')
+  const actual = await importOriginal<{ default: ContentPack }>()
+  return { default: withUnplayableActivity(actual.default) }
+})
 
 async function firstLesson(pathway: 'general-english' | 'career-readiness' = 'general-english') {
   const pack = await loadPack(pathway)
@@ -148,8 +156,8 @@ describe('LessonPage', () => {
     expect(await screen.findByRole('heading', { name: en.notFound.title })).toBeTruthy()
     cleanup()
     const career = (await loadPack('career-readiness')).units[0]
-    const interview = career.activities.find((activity) => activity.type === 'interview-practice')!
-    renderAt(`/learn/career-readiness/${career.id}/${interview.id}`, storeWith('career-readiness'))
+    const writing = career.activities.find((activity) => !canOpen(activity))!
+    renderAt(`/learn/career-readiness/${career.id}/${writing.id}`, storeWith('career-readiness'))
     expect(await screen.findByRole('heading', { name: en.notFound.title })).toBeTruthy()
   })
 })

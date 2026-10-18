@@ -2,6 +2,7 @@ import { useParams } from 'react-router'
 import { canOpen, PATHWAY_IDS, type PathwayId } from '../content/index.ts'
 import { usePack } from '../content/usePack.ts'
 import ExercisePage from './ExercisePage.tsx'
+import InterviewPracticePage from './InterviewPracticePage.tsx'
 import LessonPage from './LessonPage.tsx'
 import ListeningPage from './ListeningPage.tsx'
 import NotFoundPage from './NotFoundPage.tsx'
@@ -10,7 +11,8 @@ import SpeakingPage from './SpeakingPage.tsx'
 
 // #/learn/:pathway/:unit/:activity (MVP-10): finds the activity in its pack and shows the
 // player for its type: the lesson viewer (S8), the exercise player (S9), or the reading
-// (S10) or listening (S11) player, or speaking practice (S12). An unknown
+// (S10) or listening (S11) player, speaking practice (S12) or guided interview practice
+// (S13). An unknown
 // address, or an activity type without a player yet, shows Not found.
 
 function isPathwayId(value: string | undefined): value is PathwayId {
@@ -36,5 +38,6 @@ export default function ActivityPage() {
   if (activity.type === 'reading') return <ReadingPage key={key} {...props} />
   if (activity.type === 'listening') return <ListeningPage key={key} {...props} />
   if (activity.type === 'speaking') return <SpeakingPage key={key} {...props} />
+  if (activity.type === 'interview-practice') return <InterviewPracticePage key={key} {...props} />
   return <NotFoundPage />
 }

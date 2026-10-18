@@ -27,7 +27,8 @@ export async function loadPack(pathway: PathwayId): Promise<ContentPack> {
 }
 
 // Activity types that have a player screen: lessons since MVP-09, exercises since
-// MVP-10, reading and listening since MVP-11, speaking since MVP-12.
+// MVP-10, reading and listening since MVP-11, speaking since MVP-12, interview practice
+// since MVP-13.
 // Each later player task adds its type here, and every "Opens soon" label and
 // "Activities open in a later version" note for that type then disappears by itself.
 export const PLAYABLE_ACTIVITY_TYPES: ReadonlySet<ActivityType> = new Set<ActivityType>([
@@ -36,6 +37,7 @@ export const PLAYABLE_ACTIVITY_TYPES: ReadonlySet<ActivityType> = new Set<Activi
   'reading',
   'listening',
   'speaking',
+  'interview-practice',
 ])
 
 export function canOpen(activity: Pick<Activity, 'type'>): boolean {
