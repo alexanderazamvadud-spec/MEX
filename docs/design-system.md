@@ -176,7 +176,7 @@ Keep the real learning content out of the repository: `content-private/` is igno
 - `#/progress`: the screen `h1` ("Progress"), a one-line intro, then three soft cards in this order, each with a level-2 heading and a one-line description: "What you have finished", "What you got right", "How ready you feel" (with the `sky` "Self-assessment" badge, the only one on the screen).
 - Completion and skill rows use a thin decorative bar (`MeterBar`: primary fill on the light track, `aria-hidden`); the text beside it always carries the figures. No percentages and no grades.
 - Readiness shows "Current level" and the level name (h3 style, primary), the one-sentence explanation, "This is your own view, not a test result.", "Highest reached" with its date, and the evidence list. Averages are shown with one decimal, rounded down so a value below 4 never reads as "4.0".
-- Read-only: no saffron action and no buttons. On Home, the readiness block adds a secondary sm link "See your progress"; the saffron mission action stays the only accent action there.
+- Read-only: no saffron action and no buttons. On Home, the readiness block adds a secondary sm link "See your progress"; Home still has no saffron action.
 
 ## Development style guide
 
