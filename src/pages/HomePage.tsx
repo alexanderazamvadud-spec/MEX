@@ -5,7 +5,7 @@ import NextEvent from '../components/home/NextEvent.tsx'
 import TodaysMission from '../components/home/TodaysMission.tsx'
 import type { PathwayId } from '../content/index.ts'
 import { usePack } from '../content/usePack.ts'
-import { currentUnit, fixedRuleProvider, type RecommendationProvider } from '../learner/home.ts'
+import { currentUnit, fixedRuleProvider, homeInput, type RecommendationProvider } from '../learner/home.ts'
 import { useLearner } from '../learner/useLearner.ts'
 
 // Home dashboard (MVP-07, Scope v2 screen S4): Today's Mission, Current Readiness,
@@ -21,7 +21,7 @@ export default function HomePage({ provider = fixedRuleProvider }: { provider?: 
   // RequireProfile guarantees a profile; this only guards against a reset while open.
   if (!pathway) return null
 
-  const input = pack ? { pack, completions: record.completions } : null
+  const input = pack ? homeInput(pack, record) : null
   const plan = input ? provider(input) : { mission: [], nextEvent: null }
   const progress = input ? currentUnit(input) : null
 
@@ -35,7 +35,7 @@ export default function HomePage({ provider = fixedRuleProvider }: { provider?: 
   return (
     <div className="flex flex-col gap-4">
       <h1 className="text-h1">{t('nav.home')}</h1>
-      <TodaysMission pack={pack} unitId={progress?.unit.id ?? null} mission={plan.mission} />
+      <TodaysMission pack={pack} mission={plan.mission} />
       <CurrentReadiness pathway={pathway} />
       <CurrentPathway pathway={pathway} pack={pack} progress={progress} onSwitch={switchTo} />
       <NextEvent pack={pack} nextEvent={plan.nextEvent} />

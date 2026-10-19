@@ -1,22 +1,18 @@
 import type { Activity, ContentPack, Unit } from '../content/index.ts'
+import { planMission, type MissionInput, type MissionItem } from './mission.ts'
 import { completedActivityIds, unitCompletion } from './progress.ts'
-import type { ActivityCompletion } from './types.ts'
+import type { LearnerRecord } from './types.ts'
 
 // Home dashboard rules (MVP-07). Everything here is a pure function of the content pack
 // and the saved completions, so Home shows only the learner's real state and never
-// invented figures. The mission rule sits behind RecommendationProvider so MVP-16 can
-// replace it without changing the screen; Phase 1 uses fixed rules only, no AI.
+// invented figures. The mission rules sit behind RecommendationProvider; since MVP-16
+// they are the owner's fixed rules in mission.ts. Phase 1 uses fixed rules only, no AI.
 
-const MISSION_SIZE = 2
-
-export interface HomeInput {
-  pack: ContentPack
-  completions: readonly ActivityCompletion[]
-}
+export type HomeInput = MissionInput
 
 export interface MissionPlan {
-  /** Up to two activities, in content order. Empty when every activity is completed. */
-  mission: Activity[]
+  /** Up to two activities, each with the rule that chose it. Empty only when nothing fits. */
+  mission: MissionItem[]
   /** The next activity after the mission, or null when nothing else remains. */
   nextEvent: Activity | null
 }
@@ -45,22 +41,18 @@ export function currentUnit({ pack, completions }: HomeInput): UnitProgress | nu
   return { unit, number: position + 1, done: count, total }
 }
 
-/**
- * Fixed rule (approved for MVP-07): the mission is the next two activities not yet
- * completed in the current unit; the next event is the next activity not yet completed
- * after them, in this unit or, if none is left here, in a later unit.
- */
-export const fixedRuleProvider: RecommendationProvider = ({ pack, completions }) => {
-  const done = completedActivityIds(pack.pathway, completions)
-  const progress = currentUnit({ pack, completions })
-  if (!progress) return { mission: [], nextEvent: null }
+/** The owner's fixed mission rules (MVP-16); see mission.ts. */
+export const fixedRuleProvider: RecommendationProvider = (input) => {
+  const { items, nextEvent } = planMission(input)
+  return { mission: items, nextEvent }
+}
 
-  const remainingHere = progress.unit.activities.filter((activity) => !done.has(activity.id))
-  const mission = remainingHere.slice(0, MISSION_SIZE)
-  const later = pack.units
-    .slice(progress.number)
-    .flatMap((unit) => unit.activities)
-    .filter((activity) => !done.has(activity.id))
-  const nextEvent = remainingHere[MISSION_SIZE] ?? later[0] ?? null
-  return { mission, nextEvent }
+/** What the mission rules read from the learner's record; Home and the unit screen share it. */
+export function homeInput(pack: ContentPack, record: LearnerRecord): HomeInput {
+  return {
+    pack,
+    completions: record.completions,
+    exerciseResults: record.exerciseResults,
+    practiceSessions: record.practiceSessions,
+  }
 }

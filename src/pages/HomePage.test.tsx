@@ -87,7 +87,7 @@ describe('HomePage', () => {
     renderHome(storeWith('general-english'))
     await screen.findByText(home.mission.why)
     const mission = block('mission')
-    const items = mission.getAllByRole('listitem').map((element) => element.textContent)
+    const items = [...document.querySelectorAll('[data-block="mission"] [data-rule]')].map((element) => element.textContent)
     expect(items).toEqual([pack.units[0].activities[0].title, pack.units[0].activities[1].title])
     expect(mission.getByText(home.sampleContent)).toBeTruthy()
     const links = mission.getAllByRole('link')
@@ -100,6 +100,53 @@ describe('HomePage', () => {
     expect(mission.queryAllByRole('button')).toHaveLength(0)
     expect(mission.getByText(home.mission.why).closest('details')).toBeTruthy()
     expect(mission.getByText(home.mission.whyBody)).toBeTruthy()
+  })
+
+  it('explains each mission item with the rule that chose it, and shows the total time', async () => {
+    const pack = await loadPack('general-english')
+    const [first, second] = pack.units[0].activities
+    renderHome(storeWith('general-english'))
+    await screen.findByText(home.mission.why)
+    const mission = block('mission')
+    expect(mission.getByText(`About ${first.estimatedMinutes + second.estimatedMinutes} minutes in total`)).toBeTruthy()
+    const why = [...document.querySelectorAll('[data-block="mission"] [data-why] li')].map((item) => item.textContent)
+    expect(why).toEqual([`${first.title}: the next activity in Unit 1.`, `${second.title}: the next activity in Unit 1.`])
+    expect(mission.getByText(home.mission.whyBody)).toBeTruthy()
+  })
+
+  it('adds interview practice for a Career Readiness learner whose last session was over 7 days ago', async () => {
+    const pack = await loadPack('career-readiness')
+    const [lesson, exercises] = pack.units[0].activities
+    const interview = pack.units[0].activities.find((activity) => activity.type === 'interview-practice')!
+    const store = storeWith('career-readiness', [{ pathway: 'career-readiness', unitId: pack.units[0].id, activityId: lesson.id, completedAt: 't' }])
+    const finishedAt = new Date(Date.now() - 8 * 24 * 60 * 60 * 1000).toISOString()
+    store.update((current) => ({ ...current, practiceSessions: [{ id: 's1', kind: 'interview', pathway: 'career-readiness', activityId: interview.id, finishedAt }] }))
+    renderHome(store)
+    await screen.findByText(home.mission.why)
+    const why = [...document.querySelectorAll('[data-block="mission"] [data-why] li')].map((item) => item.textContent)
+    expect(why).toEqual([
+      `${exercises.title}: the next activity in Unit 1.`,
+      `${interview.title}: you have not done interview practice in the last 7 days.`,
+    ])
+  })
+
+  it('suggests repeating the lowest-scored activity once everything is finished', async () => {
+    const pack = await loadPack('general-english')
+    const unit = pack.units[0]
+    const reading = unit.activities.find((activity) => activity.type === 'reading')!
+    const store = storeWith('general-english', unit.activities.map((activity) => ({ pathway: 'general-english', unitId: unit.id, activityId: activity.id, completedAt: 't' })))
+    store.update((current) => ({
+      ...current,
+      exerciseResults: [
+        { pathway: 'general-english', activityId: reading.id, itemId: 'q1', skills: ['reading'], correct: false, answeredAt: 't' },
+        { pathway: 'general-english', activityId: reading.id, itemId: 'q2', skills: ['reading'], correct: true, answeredAt: 't' },
+      ],
+    }))
+    renderHome(store)
+    await screen.findByText(home.mission.why)
+    expect(block('mission').getByRole('link', { name: reading.title }).getAttribute('href')).toBe(`/learn/general-english/${unit.id}/${reading.id}`)
+    expect(block('mission').getByText(`${reading.title}: you have finished everything, and this is where your exercise score is lowest (1 of 2 right).`)).toBeTruthy()
+    expect(block('next').getByText(home.next.none)).toBeTruthy()
   })
 
   it('shows Getting started for a new Career Readiness learner, with a link to Progress', async () => {
@@ -159,7 +206,7 @@ describe('HomePage', () => {
     expect(pathway.getByText('General English')).toBeTruthy()
     expect(pathway.getByText(`Unit 1: ${first.title}`)).toBeTruthy()
     expect(pathway.getByText(`1 of ${first.activities.length} activities completed`)).toBeTruthy()
-    expect(block('mission').getAllByRole('listitem')[0].textContent).toBe(first.activities[1].title)
+    expect(document.querySelector('[data-block="mission"] [data-rule]')?.textContent).toBe(first.activities[1].title)
     expect(block('next').getByText(`After today's mission: ${first.activities[3].title}`)).toBeTruthy()
   })
 

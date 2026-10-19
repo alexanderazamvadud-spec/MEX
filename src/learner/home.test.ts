@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import type { Activity, ContentPack, Unit } from '../content/index.ts'
+import type { MissionItem } from './mission.ts'
 import { currentUnit, fixedRuleProvider } from './home.ts'
 import type { ActivityCompletion } from './types.ts'
 
@@ -26,7 +27,7 @@ function done(ids: string[], pathway: ActivityCompletion['pathway'] = 'general-e
   return ids.map((activityId) => ({ pathway, unitId: 'x', activityId, completedAt: '2026-10-17T00:00:00.000Z' }))
 }
 
-const ids = (list: Activity[]) => list.map((item) => item.id)
+const ids = (list: MissionItem[]) => list.map((item) => item.activity.id)
 
 describe('Home rules', () => {
   it('starts at the first unit with nothing completed', () => {
@@ -52,12 +53,12 @@ describe('Home rules', () => {
     expect(plan.nextEvent?.id).toBe('b1')
   })
 
-  it('moves to the next unit when a unit is finished', () => {
+  it('moves to the next unit when a unit is finished, starting it with its first activity (MVP-16)', () => {
     const completions = done(['a1', 'a2', 'a3', 'a4'])
     expect(currentUnit({ pack, completions })).toMatchObject({ number: 2, done: 0, total: 2 })
     const plan = fixedRuleProvider({ pack, completions })
-    expect(ids(plan.mission)).toEqual(['b1', 'b2'])
-    expect(plan.nextEvent).toBeNull()
+    expect(ids(plan.mission)).toEqual(['b1'])
+    expect(plan.nextEvent?.id).toBe('b2')
   })
 
   it('keeps the last unit and an empty mission when everything is completed', () => {

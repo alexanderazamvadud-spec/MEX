@@ -171,6 +171,11 @@ Keep the real learning content out of the repository: `content-private/` is igno
 - "Was this activity useful to you?": the shared `RatingScale` (five pill radio buttons, at least 44 px high, "Not useful" under 1 and "Very useful" under 5; also used for interview confidence). Optional; after a tap a small status line thanks the learner.
 - "Next activity" (accent lg link) and "Back to unit" (secondary lg link). On the unit's last activity only "Back to unit", as the saffron action.
 
+## Today's Mission (MVP-16)
+
+- The mission lists up to two activities as white link panels, then a small "About n minutes in total" line.
+- "Why this mission?" (native `<details>`, 44 px summary) shows one sentence per item naming the rule that chose it, then "MEX chooses missions with fixed rules, the same for every learner. No AI is used."
+
 ## Progress (MVP-15)
 
 - `#/progress`: the screen `h1` ("Progress"), a one-line intro, then three soft cards in this order, each with a level-2 heading and a one-line description: "What you have finished", "What you got right", "How ready you feel" (with the `sky` "Self-assessment" badge, the only one on the screen).

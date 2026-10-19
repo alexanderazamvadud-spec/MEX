@@ -145,8 +145,7 @@ describe('LessonPage', () => {
     fireEvent.click(screen.getByRole('button', { name: en.lesson.finish }))
     await act(() => router.navigate('/home'))
     await screen.findByText(en.home.mission.why)
-    const mission = within(document.querySelector<HTMLElement>('[data-block="mission"]')!)
-    expect(mission.getAllByRole('listitem').map((item) => item.textContent)).toEqual([
+    expect([...document.querySelectorAll('[data-block="mission"] [data-rule]')].map((item) => item.textContent)).toEqual([
       unit.activities[1].title,
       unit.activities[2].title,
     ])
