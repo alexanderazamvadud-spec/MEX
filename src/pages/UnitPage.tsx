@@ -5,7 +5,7 @@ import { ACTIVITY_TYPE_KEYS } from '../components/learn/text.ts'
 import Badge from '../components/ui/Badge.tsx'
 import { canOpen, isPlaceholder, localized, PATHWAY_IDS, type Activity, type PathwayId } from '../content/index.ts'
 import { usePack } from '../content/usePack.ts'
-import { fixedRuleProvider } from '../learner/home.ts'
+import { fixedRuleProvider, homeInput } from '../learner/home.ts'
 import { completedActivityIds } from '../learner/progress.ts'
 import { useLearner } from '../learner/useLearner.ts'
 import NotFoundPage from './NotFoundPage.tsx'
@@ -78,7 +78,7 @@ export default function UnitPage() {
   // Today's mission belongs to the active pathway only.
   const mission =
     pack && record.profile?.pathway === pathway
-      ? new Set(fixedRuleProvider({ pack, completions: record.completions }).mission.map((item) => item.id))
+      ? new Set(fixedRuleProvider(homeInput(pack, record)).mission.map((item) => item.activity.id))
       : new Set<string>()
 
   return (

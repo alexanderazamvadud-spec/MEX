@@ -138,9 +138,14 @@
     "mission": {
       "title": "Today's mission",
       "why": "Why this mission?",
-      "whyBody": "These are the next activities in your current unit. MEX chooses missions with simple, fixed rules.",
+      "whyBody": "MEX chooses missions with fixed rules, the same for every learner. No AI is used.",
+      "whyNext": "{{activity}}: the next activity in Unit {{unit}}.",
+      "whyNextUnit": "{{activity}}: you finished Unit {{finished}}, so this starts Unit {{unit}}.",
+      "whyInterview": "{{activity}}: you have not done interview practice in the last 7 days.",
+      "whyRepeat": "{{activity}}: you have finished everything, and this is where your exercise score is lowest ({{right}} of {{total}} right).",
       "noPlayer": "Activities open in a later version of the demo.",
-      "unitFinished": "You have finished this unit."
+      "unitFinished": "You have finished this unit.",
+      "total": "About {{n}} minutes in total"
     },
     "readiness": {
       "title": "Current readiness",

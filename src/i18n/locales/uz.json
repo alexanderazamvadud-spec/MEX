@@ -139,9 +139,14 @@
     "mission": {
       "title": "Bugungi vazifa",
       "why": "Nega aynan shu vazifa?",
-      "whyBody": "Bular joriy boʻlimingizdagi navbatdagi mashgʻulotlar. MEX vazifalarni oddiy, belgilangan qoidalar asosida tanlaydi.",
+      "whyBody": "MEX vazifalarni hamma oʻquvchilar uchun bir xil boʻlgan belgilangan qoidalar asosida tanlaydi. Sunʼiy intellekt ishlatilmaydi.",
+      "whyNext": "{{activity}}: {{unit}}-boʻlimdagi navbatdagi mashgʻulot.",
+      "whyNextUnit": "{{activity}}: siz {{finished}}-boʻlimni tugatdingiz, bu {{unit}}-boʻlimni boshlaydi.",
+      "whyInterview": "{{activity}}: soʻnggi 7 kunda ish suhbati mashqini bajarmadingiz.",
+      "whyRepeat": "{{activity}}: siz hamma narsani tugatdingiz, mashqlardagi eng past natijangiz shu yerda ({{total}} tadan {{right}} tasi toʻgʻri).",
       "noPlayer": "Mashgʻulotlar demoning keyingi versiyasida ochiladi.",
-      "unitFinished": "Siz bu boʻlimni tugatdingiz."
+      "unitFinished": "Siz bu boʻlimni tugatdingiz.",
+      "total": "Jami taxminan {{n}} daqiqa"
     },
     "readiness": {
       "title": "Joriy tayyorgarlik",

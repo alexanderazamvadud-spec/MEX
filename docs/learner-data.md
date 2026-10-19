@@ -50,8 +50,8 @@ When storage is unavailable (`persistent` is false), the last onboarding step sh
 `#/home` reads the record and the active pathway's content pack and shows only the learner's real state; no figure is invented. The rules are pure functions in `src/learner/home.ts`:
 
 - **Current unit:** the first unit with an activity not yet completed (the last unit once everything is done). The Current Pathway block shows "n of N activities completed" for that unit, from `completions` of the active pathway only (curriculum layer).
-- **Today's Mission** (`fixedRuleProvider`, behind the `RecommendationProvider` type so MVP-16 can replace it): the next two activities not yet completed in the current unit, in content order.
-- **Next Event:** the next activity not yet completed after the mission, in this unit or a later one; otherwise "Nothing planned yet".
+- **Today's Mission** (`fixedRuleProvider`, behind the `RecommendationProvider` type): the owner's fixed rules in `src/learner/mission.ts` (MVP-16, below).
+- **Next Event:** the next activity not yet completed and not in the mission, in this unit or a later one; otherwise "Nothing planned yet".
 - **Current Readiness:** Career Readiness only, labelled "Self-assessment". Since MVP-15 it shows the readiness level (see below), the number of finished sessions, "Highest reached" when it is higher than the current level, and a link to Progress. General English learners see an explanation that their progress does not count towards readiness, and no level.
 
 Home writes one thing: "Switch pathway", after an in-page confirmation, changes `profile.pathway` and `profile.updatedAt`. Progress is stored per pathway, so nothing else changes.
@@ -97,6 +97,15 @@ Reading and listening save results and completion exactly as exercises do. Each 
 
 Every activity ends on the summary. The summary itself writes only `usefulnessRatings`, through `withUsefulnessRating` in `src/learner/usefulness.ts`: `{activityId, rating 1–5, ratedAt}`. The rating is optional and saved on the first tap; a later tap on the same summary changes that entry (same `ratedAt`), and a later visit adds a new one. Ratings are feedback about the content, kept on this device only, removed by "Delete my data", and not used by Today's Mission, progress or readiness.
 
+## Today's Mission rules (MVP-16)
+
+Owner decision 2026-10-19; `MISSION_PILOT_SETTINGS` are pilot settings to be reviewed after the pilot. `planMission` reads `completions`, `exerciseResults`, `practiceSessions` and the time, and stores nothing. Each item carries the rule that chose it, and "Why this mission?" shows one sentence per item. No AI and no hidden values.
+
+1. **Default:** the next unfinished activities of the current unit. The first is always included; the second only if the total stays at or below 20 minutes. Home shows the total.
+2. **Next unit:** when a unit is finished and nothing in the next unit is completed yet, the mission is the next unit's first activity only.
+3. **Everything finished:** the scored activity (exercises, reading, listening) with the lowest score, using the latest answer per question; on a tie, the earlier activity in the pathway.
+4. **Interview (Career Readiness only):** once the learner has finished at least one interview session, and none in the last 7 × 24 hours by the device clock, the interview practice activity of the current unit (or the nearest earlier unit) takes the second slot, even beyond 20 minutes.
+
 ## Progress and readiness (MVP-15)
 
 `#/progress` shows the three layers of Scope v2 Section 3 as separate sections, never added into one number:
@@ -113,4 +122,4 @@ Settings offers "Delete my data": a confirmation step, then the record and langu
 
 ## Tests
 
-`npm test` runs the unit tests in `src/learner/localStore.test.ts` `src/learner/profile.test.ts` `src/learner/home.test.ts`, `src/learner/progress.test.ts`, `src/learner/lesson.test.ts`, `src/learner/exercise.test.ts`, `src/learner/speech.test.ts`, `src/learner/selfAssessment.test.ts`, `src/learner/recording.test.ts`, `src/learner/usefulness.test.ts`, `src/learner/readiness.test.ts` and `src/learner/skills.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration, every readiness threshold boundary). The deployment workflow runs them before the build.
+`npm test` runs the unit tests in `src/learner/localStore.test.ts` `src/learner/profile.test.ts` `src/learner/home.test.ts`, `src/learner/progress.test.ts`, `src/learner/lesson.test.ts`, `src/learner/exercise.test.ts`, `src/learner/speech.test.ts`, `src/learner/selfAssessment.test.ts`, `src/learner/recording.test.ts`, `src/learner/usefulness.test.ts`, `src/learner/readiness.test.ts`, `src/learner/skills.test.ts` and `src/learner/mission.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration, every readiness threshold boundary). The deployment workflow runs them before the build.
