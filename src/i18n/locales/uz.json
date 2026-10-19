@@ -146,8 +146,10 @@
     "readiness": {
       "title": "Joriy tayyorgarlik",
       "label": "Oʻz-oʻzini baholash",
-      "careerEmpty": "Siz hali oʻzingizni baholamadingiz. Suhbat va gapirish mashqlaridan soʻng qanchalik tayyor ekaningizni baholashingiz mumkin. Bu test natijasi emas, balki sizning shaxsiy fikringiz.",
-      "generalEnglish": "Tayyorgarlik «{{career}}» yoʻnalishining bir qismi. «{{general}}» boʻyicha natijalaringiz unga hisoblanmaydi."
+      "careerEmpty": "Darajangizni shakllantirish uchun «Karyeraga tayyorgarlik» yoʻnalishidagi ish suhbati mashqlarini tugating. Bu test natijasi emas, oʻz fikringiz.",
+      "generalEnglish": "Tayyorgarlik «{{career}}» yoʻnalishining bir qismi. «{{general}}» boʻyicha natijalaringiz unga hisoblanmaydi.",
+      "based": "Tugatilgan ish suhbati mashqlaringiz asosida: {{n}}. Bu test natijasi emas, oʻz fikringiz.",
+      "seeProgress": "Rivojlanishingizni koʻring"
     },
     "pathway": {
       "title": "Joriy yoʻnalish",
@@ -280,6 +282,48 @@
     "thanks": "Rahmat. Bahoyingiz faqat shu qurilmada saqlanadi.",
     "next": "Keyingi mashgʻulot",
     "backToUnit": "Boʻlimga qaytish"
+  },
+  "progress": {
+    "intro": "Rivojlanishingiz uch qismdan iborat. Har biri alohida koʻrsatiladi va hech qachon qoʻshib hisoblanmaydi.",
+    "curriculum": {
+      "title": "Nimalarni tugatdingiz",
+      "body": "Har bir yoʻnalishda tugatgan mashgʻulot va boʻlimlaringiz.",
+      "activities": "{{total}} ta mashgʻulotdan {{done}} tasi bajarildi",
+      "units": "{{total}} ta boʻlimdan {{done}} tasi tugallandi"
+    },
+    "skills": {
+      "title": "Nimani toʻgʻri bajardingiz",
+      "body": "Ikkala yoʻnalishdagi tekshiriladigan mashqlardagi javoblaringiz, koʻnikmalar boʻyicha. Savolga qayta javob bersangiz, oxirgi javobingiz hisoblanadi.",
+      "right": "{{answered}} ta savoldan {{right}} tasi toʻgʻri",
+      "none": "Hali mashq qilinmagan",
+      "names": {
+        "vocabulary": "Soʻz boyligi",
+        "grammar": "Grammatika",
+        "reading": "Oʻqish",
+        "listening": "Tinglash"
+      }
+    },
+    "readiness": {
+      "title": "Oʻzingizni qanchalik tayyor his qilasiz"
+    }
+  },
+  "readiness": {
+    "levels": {
+      "gettingStarted": "Boshlanish",
+      "building": "Rivojlanmoqda",
+      "confident": "Ishonchli"
+    },
+    "current": "Joriy daraja",
+    "how": "Darajangiz nechta ish suhbati mashqini tugatganingizga hamda oxirgi 3 ta mashqda oʻzingizni qanchalik ishonchli his qilganingiz va nechta bandni belgilaganingizga asoslanadi.",
+    "ownView": "Bu test natijasi emas, oʻz fikringiz.",
+    "highest": "Erishilgan eng yuqori daraja: {{level}}",
+    "highestOn": "Erishilgan eng yuqori daraja: {{level}}, {{date}}",
+    "sessions": "Tugatilgan ish suhbati mashqlari: {{n}}",
+    "confidence": "Oxirgi mashqlardagi oʻrtacha ishonch: 5 dan {{value}}",
+    "notRated": "Oxirgi mashqlardagi oʻrtacha ishonch: hali baholanmagan",
+    "ticked": "Oxirgi mashqlarda belgilangan bandlar: {{boxes}} tadan {{ticked}} tasi",
+    "speaking": "«Karyeraga tayyorgarlik» yoʻnalishidagi gapirish mashqlari: {{n}} ta bajarildi",
+    "speakingNote": "Gapirish mashqlari qoʻshimcha dalil sifatida koʻrsatiladi. Ular darajangizni oʻzgartirmaydi."
   },
   "language": {
     "label": "Interfeys tili"

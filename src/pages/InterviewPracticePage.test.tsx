@@ -127,6 +127,9 @@ describe('InterviewPracticePage', () => {
     fireEvent.click(button(text.finish))
     const after = store.read()
     expect(after.selfAssessments.map((entry) => entry.itemId)).toEqual(items.map((item) => item.id))
+    // One finished session (MVP-15), shared by every answer of this run.
+    expect(after.practiceSessions).toMatchObject([{ kind: 'interview', pathway: 'career-readiness', activityId: activity.id }])
+    expect(new Set(after.selfAssessments.map((entry) => entry.sessionId))).toEqual(new Set([after.practiceSessions[0].id]))
     expect(after.completions).toMatchObject([{ unitId: unit.id, activityId: activity.id }])
     expect(after.exerciseResults).toEqual([])
     expect(after.profile).toEqual(before.profile)
@@ -153,6 +156,9 @@ describe('InterviewPracticePage', () => {
     fireEvent.click(await screen.findByRole('button', { name: text.next }))
     expect(store.read().selfAssessments).toHaveLength(2)
     expect(store.read().selfAssessments[1].id).not.toBe(store.read().selfAssessments[0].id)
+    // Runs left half-way are separate runs and are not finished sessions.
+    expect(store.read().selfAssessments[1].sessionId).not.toBe(store.read().selfAssessments[0].sessionId)
+    expect(store.read().practiceSessions).toEqual([])
   })
 
   it('limits the typed answer to 1,000 characters', async () => {
