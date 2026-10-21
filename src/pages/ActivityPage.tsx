@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router'
 import { canOpen, PATHWAY_IDS, type PathwayId } from '../content/index.ts'
-import { usePack } from '../content/usePack.ts'
+import ContentLoadError from '../components/ui/ContentLoadError.tsx'
+import { usePackResult } from '../content/usePack.ts'
 import ExercisePage from './ExercisePage.tsx'
 import InterviewPracticePage from './InterviewPracticePage.tsx'
 import LessonPage from './LessonPage.tsx'
@@ -20,11 +22,13 @@ function isPathwayId(value: string | undefined): value is PathwayId {
 }
 
 export default function ActivityPage() {
+  const { t } = useTranslation()
   const { pathway, unit: unitId, activity: activityId } = useParams()
   const valid = isPathwayId(pathway)
-  const pack = usePack(valid ? pathway : null)
+  const { pack, failed } = usePackResult(valid ? pathway : null)
 
   if (!valid) return <NotFoundPage />
+  if (failed) return <ContentLoadError pageTitle={t('nav.learn')} />
   const unit = pack?.units.find((item) => item.id === unitId)
   const activity = unit?.activities.find((item) => item.id === activityId)
   if (pack && (!unit || !activity || !canOpen(activity))) return <NotFoundPage />

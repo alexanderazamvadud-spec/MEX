@@ -4,8 +4,9 @@ import MeterBar from '../components/progress/MeterBar.tsx'
 import ReadinessDetails from '../components/progress/ReadinessDetails.tsx'
 import Badge from '../components/ui/Badge.tsx'
 import Card from '../components/ui/Card.tsx'
+import ContentLoadError from '../components/ui/ContentLoadError.tsx'
 import { PATHWAY_IDS, type ContentPack, type PathwayId } from '../content/index.ts'
-import { usePack } from '../content/usePack.ts'
+import { usePackResult } from '../content/usePack.ts'
 import { completedActivityIds, unitCompletion } from '../learner/progress.ts'
 import { readiness } from '../learner/readiness.ts'
 import { demonstratedSkills } from '../learner/skills.ts'
@@ -39,7 +40,17 @@ function Layer({ title, badge, body, children, ...rest }: { title: string; badge
   )
 }
 
-function PathwayCompletion({ pathway, pack, completions }: { pathway: PathwayId; pack: ContentPack | null; completions: readonly ActivityCompletion[] }) {
+function PathwayCompletion({
+  pathway,
+  pack,
+  failed,
+  completions,
+}: {
+  pathway: PathwayId
+  pack: ContentPack | null
+  failed: boolean
+  completions: readonly ActivityCompletion[]
+}) {
   const { t } = useTranslation()
   const done = completedActivityIds(pathway, completions)
   const units = pack?.units ?? []
@@ -47,7 +58,7 @@ function PathwayCompletion({ pathway, pack, completions }: { pathway: PathwayId;
   const doneActivities = activities.filter((activity) => done.has(activity.id)).length
   const doneUnits = units.filter((unit) => unitCompletion(unit, done).status === 'completed').length
   return (
-    <li className="flex flex-col gap-1.5" data-pathway={pathway} aria-busy={!pack || undefined}>
+    <li className="flex flex-col gap-1.5" data-pathway={pathway} aria-busy={(!pack && !failed) || undefined}>
       <h3 className="text-body font-extrabold text-primary">{t(`landing.pathways.${PATHWAY_KEYS[pathway]}.name`)}</h3>
       {pack ? (
         <>
@@ -63,10 +74,10 @@ function PathwayCompletion({ pathway, pack, completions }: { pathway: PathwayId;
 export default function ProgressPage() {
   const { t } = useTranslation()
   const { record } = useLearner()
-  const packs: Record<PathwayId, ContentPack | null> = {
-    'general-english': usePack('general-english'),
-    'career-readiness': usePack('career-readiness'),
-  }
+  const general = usePackResult('general-english')
+  const career = usePackResult('career-readiness')
+  const results = { 'general-english': general, 'career-readiness': career }
+  const failed = general.failed || career.failed
   const current = record.profile?.pathway ?? PATHWAY_IDS[0]
   const order = [current, ...PATHWAY_IDS.filter((pathway) => pathway !== current)]
   const skills = demonstratedSkills(record.exerciseResults)
@@ -78,9 +89,10 @@ export default function ProgressPage() {
       <p className="text-body text-ink-secondary">{t('progress.intro')}</p>
 
       <Layer title={t('progress.curriculum.title')} body={t('progress.curriculum.body')} data-layer="curriculum">
+        {failed ? <ContentLoadError /> : null}
         <ul className="flex flex-col gap-4">
           {order.map((pathway) => (
-            <PathwayCompletion key={pathway} pathway={pathway} pack={packs[pathway]} completions={record.completions} />
+            <PathwayCompletion key={pathway} pathway={pathway} pack={results[pathway].pack} failed={results[pathway].failed} completions={record.completions} />
           ))}
         </ul>
       </Layer>

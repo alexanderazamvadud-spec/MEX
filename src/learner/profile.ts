@@ -47,3 +47,9 @@ export function withOnboardingProfile(
   }
   return { ...record, profile }
 }
+
+/** Returns the record with the active pathway changed; progress in both pathways is kept. */
+export function withPathway(record: LearnerRecord, pathway: PathwayId, now: string): LearnerRecord {
+  if (!record.profile || record.profile.pathway === pathway) return record
+  return { ...record, profile: { ...record.profile, pathway, updatedAt: now } }
+}

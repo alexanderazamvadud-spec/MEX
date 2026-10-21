@@ -16,10 +16,11 @@ export interface LocalStoreOptions {
 
 function resolveStorage(explicit: Storage | null | undefined): Storage | null {
   if (explicit === null) return null
-  const candidate = explicit ?? (typeof window !== 'undefined' ? window.localStorage : null)
-  if (!candidate) return null
-  // Private windows and blocked storage can throw on first use; probe once.
+  // Private windows and blocked storage can throw on first use, and when the browser
+  // blocks site data even reading window.localStorage throws; probe once.
   try {
+    const candidate = explicit ?? (typeof window !== 'undefined' ? window.localStorage : null)
+    if (!candidate) return null
     const probe = '__mex_probe__'
     candidate.setItem(probe, '1')
     candidate.removeItem(probe)

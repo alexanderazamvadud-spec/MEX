@@ -41,7 +41,7 @@ export default function DeleteDataControl() {
   }
 
   return (
-    <Card variant="soft" as="section" aria-labelledby={headingId}>
+    <Card variant="soft" as="section" className="gap-3 p-5" aria-labelledby={headingId}>
       <h2 id={headingId} className="text-h3">
         {t('settings.deleteData')}
       </h2>

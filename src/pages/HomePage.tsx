@@ -4,8 +4,10 @@ import CurrentReadiness from '../components/home/CurrentReadiness.tsx'
 import NextEvent from '../components/home/NextEvent.tsx'
 import TodaysMission from '../components/home/TodaysMission.tsx'
 import type { PathwayId } from '../content/index.ts'
-import { usePack } from '../content/usePack.ts'
+import ContentLoadError from '../components/ui/ContentLoadError.tsx'
+import { usePackResult } from '../content/usePack.ts'
 import { currentUnit, fixedRuleProvider, homeInput, type RecommendationProvider } from '../learner/home.ts'
+import { withPathway } from '../learner/profile.ts'
 import { useLearner } from '../learner/useLearner.ts'
 
 // Home dashboard (MVP-07, Scope v2 screen S4): Today's Mission, Current Readiness,
@@ -16,7 +18,7 @@ export default function HomePage({ provider = fixedRuleProvider }: { provider?: 
   const { t } = useTranslation()
   const { record, update } = useLearner()
   const pathway = record.profile?.pathway ?? null
-  const pack = usePack(pathway)
+  const { pack, failed } = usePackResult(pathway)
 
   // RequireProfile guarantees a profile; this only guards against a reset while open.
   if (!pathway) return null
@@ -27,18 +29,25 @@ export default function HomePage({ provider = fixedRuleProvider }: { provider?: 
 
   function switchTo(to: PathwayId) {
     const now = new Date().toISOString()
-    update((current) =>
-      current.profile ? { ...current, profile: { ...current.profile, pathway: to, updatedAt: now } } : current,
-    )
+    update((current) => withPathway(current, to, now))
   }
 
   return (
     <div className="flex flex-col gap-4">
       <h1 className="text-h1">{t('nav.home')}</h1>
-      <TodaysMission pack={pack} mission={plan.mission} />
-      <CurrentReadiness pathway={pathway} />
-      <CurrentPathway pathway={pathway} pack={pack} progress={progress} onSwitch={switchTo} />
-      <NextEvent pack={pack} nextEvent={plan.nextEvent} />
+      {failed ? (
+        <>
+          <ContentLoadError />
+          <CurrentReadiness pathway={pathway} />
+        </>
+      ) : (
+        <>
+          <TodaysMission pack={pack} mission={plan.mission} />
+          <CurrentReadiness pathway={pathway} />
+          <CurrentPathway pathway={pathway} pack={pack} progress={progress} onSwitch={switchTo} />
+          <NextEvent pack={pack} nextEvent={plan.nextEvent} />
+        </>
+      )}
     </div>
   )
 }

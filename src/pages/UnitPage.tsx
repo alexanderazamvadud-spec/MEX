@@ -4,7 +4,8 @@ import BackLink from '../components/learn/BackLink.tsx'
 import { ACTIVITY_TYPE_KEYS } from '../components/learn/text.ts'
 import Badge from '../components/ui/Badge.tsx'
 import { canOpen, isPlaceholder, localized, PATHWAY_IDS, type Activity, type PathwayId } from '../content/index.ts'
-import { usePack } from '../content/usePack.ts'
+import ContentLoadError from '../components/ui/ContentLoadError.tsx'
+import { usePackResult } from '../content/usePack.ts'
 import { fixedRuleProvider, homeInput } from '../learner/home.ts'
 import { completedActivityIds } from '../learner/progress.ts'
 import { useLearner } from '../learner/useLearner.ts'
@@ -65,11 +66,12 @@ function ActivityRow({
 export default function UnitPage() {
   const { pathway, unit: unitId } = useParams()
   const valid = isPathwayId(pathway)
-  const pack = usePack(valid ? pathway : null)
+  const { pack, failed } = usePackResult(valid ? pathway : null)
   const { t, i18n } = useTranslation()
   const { record } = useLearner()
 
   if (!valid) return <NotFoundPage />
+  if (failed) return <ContentLoadError pageTitle={t('nav.learn')} />
   const index = pack ? pack.units.findIndex((item) => item.id === unitId) : -1
   if (pack && index === -1) return <NotFoundPage />
   const unit = pack ? pack.units[index] : null
