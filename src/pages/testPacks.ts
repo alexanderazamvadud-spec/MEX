@@ -1,11 +1,11 @@
 import type { Activity, ContentPack } from '../content/index.ts'
 
-// Every activity in the real packs has a player since MVP-13, so tests of "Opens soon" and of
-// activities without a player add this test-only writing activity (its player is a later task)
-// to Career Readiness unit 1. The real content is not changed.
+// Every activity type has a player since MVP-16b, so tests of "Opens soon" and of activities
+// without a player add this test-only activity, with a type no player knows, to Career
+// Readiness unit 1. The real content is not changed.
 export const UNPLAYABLE_ACTIVITY: Activity = {
   id: 'test-writing',
-  type: 'writing-checklist',
+  type: 'test-without-player' as Activity['type'],
   title: 'Writing: a short email (test only)',
   instructions: { en: 'Write a short email.' },
   skills: ['writing'],

@@ -9,7 +9,7 @@ import ru from '../i18n/locales/ru.json'
 import uz from '../i18n/locales/uz.json'
 import { renderAt, storeWith } from './learnTestUtils.tsx'
 
-// Interview practice opens since MVP-13, so a test-only writing activity stands in for an
+// Every activity type has a player since MVP-16b, so a test-only activity stands in for an
 // activity without a player.
 vi.mock('../content/packs/career-readiness.json', async (importOriginal) => {
   const { withUnplayableActivity } = await import('./testPacks.ts')

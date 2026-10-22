@@ -385,6 +385,1151 @@
           ]
         }
       ]
+    },
+    {
+      "id": "ge-02-daily-routines",
+      "title": "Daily routines",
+      "summary": {
+        "en": "Talk about your day, your week and how often you do things.",
+        "uz": "Kuningiz, haftangiz va biror ishni qanchalik tez-tez qilishingiz haqida gapiring.",
+        "ru": "Расскажите о своём дне, неделе и о том, как часто вы что-то делаете."
+      },
+      "estimatedMinutes": 41,
+      "activities": [
+        {
+          "id": "ge-02-a1-lesson",
+          "type": "lesson",
+          "title": "Key phrases: my day",
+          "instructions": {
+            "en": "Read the phrases and the example dialogue. Say each phrase aloud.",
+            "uz": "Iboralar va namunaviy suhbatni oʻqing. Har bir iborani ovoz chiqarib ayting.",
+            "ru": "Прочитайте фразы и пример диалога. Произнесите каждую фразу вслух."
+          },
+          "skills": ["vocabulary", "grammar", "interaction"],
+          "estimatedMinutes": 10,
+          "items": [
+            {
+              "id": "ge-02-a1-p1",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "I usually get up at ...",
+              "example": "I usually get up at seven o'clock.",
+              "note": {
+                "en": "Use 'at' with clock times.",
+                "uz": "Soat vaqti bilan 'at' ishlatiladi.",
+                "ru": "С точным временем используйте 'at'."
+              }
+            },
+            {
+              "id": "ge-02-a1-p2",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "I have breakfast at home.",
+              "example": "I have breakfast at home with my family."
+            },
+            {
+              "id": "ge-02-a1-p3",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "I go to work by ...",
+              "example": "I go to work by bus. It takes twenty minutes.",
+              "note": {
+                "en": "Use 'by' with transport: by bus, by car, by metro. But say 'on foot'.",
+                "uz": "Transport bilan 'by' ishlatiladi: by bus, by car, by metro. Lekin 'on foot' deyiladi.",
+                "ru": "С транспортом используйте 'by': by bus, by car, by metro. Но говорят 'on foot'."
+              }
+            },
+            {
+              "id": "ge-02-a1-p4",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "What time do you finish work?",
+              "example": "What time do you finish work? At six."
+            },
+            {
+              "id": "ge-02-a1-p5",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "In the evening I ...",
+              "example": "In the evening I cook dinner and watch the news."
+            },
+            {
+              "id": "ge-02-a1-p6",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "at the weekend",
+              "example": "At the weekend I visit my grandparents.",
+              "note": {
+                "en": "British English says 'at the weekend'; American English says 'on the weekend'.",
+                "uz": "Britaniya ingliz tilida 'at the weekend', Amerika ingliz tilida 'on the weekend' deyiladi.",
+                "ru": "В британском английском говорят 'at the weekend', в американском — 'on the weekend'."
+              }
+            },
+            {
+              "id": "ge-02-a1-g1",
+              "kind": "grammar-note",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "Present simple and how often",
+              "explanation": {
+                "en": "Use the present simple for things you do regularly. With he, she and it, add -s to the verb: she works. Words like always, usually, often, sometimes and never go before the main verb: I usually walk to work.",
+                "uz": "Muntazam qiladigan ishlar uchun present simple ishlatiladi. He, she va it bilan feʼlga -s qoʻshiladi: she works. Always, usually, often, sometimes va never kabi soʻzlar asosiy feʼldan oldin keladi: I usually walk to work.",
+                "ru": "Present simple используют для того, что вы делаете регулярно. С he, she, it к глаголу добавляют -s: she works. Слова always, usually, often, sometimes, never стоят перед основным глаголом: I usually walk to work."
+              },
+              "examples": [
+                "I always drink tea in the morning.",
+                "He works at a bank.",
+                "We sometimes eat lunch in the park.",
+                "She never watches TV at night."
+              ]
+            },
+            {
+              "id": "ge-02-a1-d1",
+              "kind": "dialogue",
+              "skills": ["interaction", "vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "Two friends talk about their week",
+              "lines": [
+                { "speaker": "Malika", "text": "You look tired, Rustam. Are you busy at work?" },
+                { "speaker": "Rustam", "text": "Yes. I start at eight and I usually finish at seven." },
+                { "speaker": "Malika", "text": "That's a long day! How do you get to work?" },
+                { "speaker": "Rustam", "text": "By metro. And you? Do you still work from home?" },
+                { "speaker": "Malika", "text": "Only on Fridays. On other days I walk to the office." },
+                { "speaker": "Rustam", "text": "Lucky you. What do you do at the weekend?" },
+                { "speaker": "Malika", "text": "I often go to the market on Saturday and see friends on Sunday." }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ge-02-a2-exercises",
+          "type": "exercise",
+          "title": "Practice: daily routines",
+          "instructions": {
+            "en": "Choose or complete the answers. You will see an explanation after each one.",
+            "uz": "Javoblarni tanlang yoki toʻldiring. Har biridan keyin izoh koʻrasiz.",
+            "ru": "Выберите или дополните ответы. После каждого вы увидите объяснение."
+          },
+          "skills": ["grammar", "vocabulary"],
+          "estimatedMinutes": 8,
+          "items": [
+            {
+              "id": "ge-02-a2-q1",
+              "kind": "multiple-choice",
+              "skills": ["vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Which sentence is about a regular habit?",
+              "options": [
+                "I usually walk to work.",
+                "I am walking to work now.",
+                "I walked to work yesterday."
+              ],
+              "answer": "I usually walk to work.",
+              "explanation": {
+                "en": "'Usually' shows a habit, and habits use the present simple. The other sentences are about now and about yesterday.",
+                "uz": "'Usually' odatni bildiradi, odatlar esa present simple bilan aytiladi. Boshqa gaplar hozirgi payt va kecha haqida.",
+                "ru": "'Usually' показывает привычку, а привычки выражают через present simple. Другие предложения — о «сейчас» и о «вчера»."
+              }
+            },
+            {
+              "id": "ge-02-a2-q2",
+              "kind": "gap-fill",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "sentence": "My brother ___ at a hospital.",
+              "options": ["work", "works", "working"],
+              "answer": "works",
+              "explanation": {
+                "en": "'My brother' is he, so the present simple verb takes -s: works.",
+                "uz": "'My brother' — bu he, shuning uchun present simple feʼliga -s qoʻshiladi: works.",
+                "ru": "'My brother' — это he, поэтому глагол в present simple получает -s: works."
+              }
+            },
+            {
+              "id": "ge-02-a2-q3",
+              "kind": "matching",
+              "skills": ["vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Match each time of day with a usual activity.",
+              "pairs": [
+                { "left": "In the morning", "right": "I have breakfast." },
+                { "left": "At lunchtime", "right": "I eat a sandwich at my desk." },
+                { "left": "In the evening", "right": "I cook dinner." }
+              ],
+              "explanation": {
+                "en": "Breakfast is in the morning, lunch is in the middle of the day, and dinner is in the evening.",
+                "uz": "Nonushta ertalab, tushlik kun oʻrtasida, kechki ovqat esa kechqurun boʻladi.",
+                "ru": "Завтрак — утром, обед — в середине дня, ужин — вечером."
+              }
+            },
+            {
+              "id": "ge-02-a2-q4",
+              "kind": "ordering",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Put the words in the right order.",
+              "segments": ["I", "often", "go", "to", "the", "gym."],
+              "explanation": {
+                "en": "Words like 'often' go before the main verb: I often go to the gym.",
+                "uz": "'Often' kabi soʻzlar asosiy feʼldan oldin keladi: I often go to the gym.",
+                "ru": "Слова вроде 'often' стоят перед основным глаголом: I often go to the gym."
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge-02-a3-reading",
+          "type": "reading",
+          "title": "Reading: a baker's day",
+          "instructions": {
+            "en": "Read the short text, then answer the questions.",
+            "uz": "Qisqa matnni oʻqing, soʻng savollarga javob bering.",
+            "ru": "Прочитайте короткий текст, затем ответьте на вопросы."
+          },
+          "skills": ["reading"],
+          "estimatedMinutes": 8,
+          "items": [
+            {
+              "id": "ge-02-a3-r1",
+              "kind": "reading",
+              "skills": ["reading", "vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "A baker's day",
+              "text": "Sherzod is a baker in Namangan. His day starts very early. He gets up at four o'clock, drinks a cup of tea and walks to the bakery. He makes bread from five until nine. At nine the shop opens, and his sister Gulnora sells the bread to customers. Sherzod has lunch at eleven, because he is always hungry by then. In the afternoon he cleans the kitchen and orders flour for the next day. He gets home at three and sleeps for an hour. In the evening he plays with his children and goes to bed at nine. On Sundays the bakery is closed, so he sleeps late.",
+              "questions": [
+                {
+                  "prompt": "What time does Sherzod get up?",
+                  "options": ["At four o'clock", "At five o'clock", "At nine o'clock"],
+                  "answer": "At four o'clock",
+                  "explanation": {
+                    "en": "The text says he gets up at four o'clock.",
+                    "uz": "Matnda u soat toʻrtda turishi aytilgan.",
+                    "ru": "В тексте сказано, что он встаёт в четыре часа."
+                  }
+                },
+                {
+                  "prompt": "Who sells the bread?",
+                  "options": ["Sherzod", "His sister", "His children"],
+                  "answer": "His sister",
+                  "explanation": {
+                    "en": "His sister Gulnora sells the bread to customers.",
+                    "uz": "Singlisi Gulnora nonni xaridorlarga sotadi.",
+                    "ru": "Хлеб покупателям продаёт его сестра Гульнора."
+                  }
+                },
+                {
+                  "prompt": "Why does Sherzod sleep late on Sundays?",
+                  "options": ["He is ill.", "The bakery is closed.", "He works at night."],
+                  "answer": "The bakery is closed.",
+                  "explanation": {
+                    "en": "The last sentence says the bakery is closed on Sundays.",
+                    "uz": "Oxirgi gapda yakshanba kunlari novvoyxona yopiq ekani aytilgan.",
+                    "ru": "В последнем предложении сказано, что по воскресеньям пекарня закрыта."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ge-02-a5-listening",
+          "type": "listening",
+          "title": "Listening: planning a meeting",
+          "instructions": {
+            "en": "Listen to the conversation, then answer the questions. You can listen as many times as you like.",
+            "uz": "Suhbatni tinglang, soʻng savollarga javob bering. Xohlagancha qayta tinglashingiz mumkin.",
+            "ru": "Послушайте разговор, затем ответьте на вопросы. Слушать можно сколько угодно раз."
+          },
+          "skills": ["listening"],
+          "estimatedMinutes": 6,
+          "items": [
+            {
+              "id": "ge-02-a5-l1",
+              "kind": "listening",
+              "skills": ["listening", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "When are you free?",
+              "transcript": "Laylo: Hi Timur. Can we meet this week to practise English?\nTimur: Sure. I'm busy on Monday and Tuesday. I work late on those days.\nLaylo: What about Wednesday evening?\nTimur: On Wednesday I go to the gym at six. But I'm free after half past seven.\nLaylo: Great. Let's meet at eight at the café near the metro.\nTimur: Perfect. See you on Wednesday at eight.",
+              "questions": [
+                {
+                  "prompt": "Why is Timur busy on Monday and Tuesday?",
+                  "options": ["He works late.", "He goes to the gym.", "He visits his family."],
+                  "answer": "He works late.",
+                  "explanation": {
+                    "en": "Timur says he works late on Monday and Tuesday.",
+                    "uz": "Timur dushanba va seshanba kunlari kech ishlashini aytadi.",
+                    "ru": "Тимур говорит, что в понедельник и вторник работает допоздна."
+                  }
+                },
+                {
+                  "prompt": "What does Timur do on Wednesday at six?",
+                  "options": ["He meets Laylo.", "He goes to the gym.", "He finishes work."],
+                  "answer": "He goes to the gym.",
+                  "explanation": {
+                    "en": "He says he goes to the gym at six on Wednesday.",
+                    "uz": "U chorshanba kuni soat oltida sport zaliga borishini aytadi.",
+                    "ru": "Он говорит, что в среду в шесть идёт в спортзал."
+                  }
+                },
+                {
+                  "prompt": "Where will they meet?",
+                  "options": ["At the gym", "At a café near the metro", "At Timur's office"],
+                  "answer": "At a café near the metro",
+                  "explanation": {
+                    "en": "Laylo suggests the café near the metro, and Timur agrees.",
+                    "uz": "Laylo metro yonidagi kafeni taklif qiladi, Timur rozi boʻladi.",
+                    "ru": "Лайло предлагает кафе у метро, и Тимур соглашается."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ge-02-a4-speaking",
+          "type": "speaking",
+          "title": "Speaking: describe your day",
+          "instructions": {
+            "en": "Prepare for one minute, then speak for about 30 seconds. Afterwards, compare with the model answer and tick the checklist.",
+            "uz": "Bir daqiqa tayyorlaning, soʻng 30 soniya atrofida gapiring. Keyin namunaviy javob bilan solishtiring va roʻyxatni belgilang.",
+            "ru": "Подготовьтесь одну минуту, затем говорите около 30 секунд. После этого сравните с образцом и отметьте пункты списка."
+          },
+          "skills": ["speaking"],
+          "estimatedMinutes": 9,
+          "items": [
+            {
+              "id": "ge-02-a4-s1",
+              "kind": "speaking",
+              "skills": ["speaking", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": {
+                "en": "Describe a normal weekday: when you get up, how you travel, what you do during the day, and one thing you do in the evening.",
+                "uz": "Oddiy ish kuningizni tasvirlab bering: qachon turasiz, qanday borasiz, kun davomida nima qilasiz va kechqurun bitta nima qilasiz.",
+                "ru": "Опишите обычный будний день: когда вы встаёте, как добираетесь, что делаете днём и одно занятие вечером."
+              },
+              "preparationHints": [
+                "Use times: 'at seven', 'in the afternoon'.",
+                "Use 'usually' or 'often' at least once.",
+                "Keep the order of the day."
+              ],
+              "modelAnswer": "I usually get up at half past six. I have breakfast and then I go to work by bus. I work in an office from nine to five. At lunchtime I often eat with my colleagues. In the evening I cook dinner and call my parents.",
+              "selfCheck": [
+                {
+                  "en": "I said at least two times of day.",
+                  "uz": "Kamida ikkita vaqtni aytdim.",
+                  "ru": "Я назвал(а) хотя бы два времени дня."
+                },
+                {
+                  "en": "I used 'usually', 'often' or 'sometimes'.",
+                  "uz": "'Usually', 'often' yoki 'sometimes' ishlatdim.",
+                  "ru": "Я использовал(а) 'usually', 'often' или 'sometimes'."
+                },
+                {
+                  "en": "I used full sentences.",
+                  "uz": "Toʻliq gaplardan foydalandim.",
+                  "ru": "Я использовал(а) полные предложения."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ge-03-shopping-services",
+      "title": "Shopping and services",
+      "summary": {
+        "en": "Ask for things in shops, ask about prices and use simple services.",
+        "uz": "Doʻkonlarda narsalarni soʻrang, narxlarni soʻrang va oddiy xizmatlardan foydalaning.",
+        "ru": "Просите вещи в магазинах, спрашивайте цены и пользуйтесь простыми услугами."
+      },
+      "estimatedMinutes": 41,
+      "activities": [
+        {
+          "id": "ge-03-a1-lesson",
+          "type": "lesson",
+          "title": "Key phrases: in a shop",
+          "instructions": {
+            "en": "Read the phrases and the example dialogue. Say each phrase aloud.",
+            "uz": "Iboralar va namunaviy suhbatni oʻqing. Har bir iborani ovoz chiqarib ayting.",
+            "ru": "Прочитайте фразы и пример диалога. Произнесите каждую фразу вслух."
+          },
+          "skills": ["vocabulary", "grammar", "interaction"],
+          "estimatedMinutes": 10,
+          "items": [
+            {
+              "id": "ge-03-a1-p1",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Can I help you?",
+              "example": "Good morning. Can I help you?",
+              "note": {
+                "en": "Shop assistants often say this first.",
+                "uz": "Sotuvchilar koʻpincha birinchi boʻlib shunday deyishadi.",
+                "ru": "Продавцы часто говорят это первыми."
+              }
+            },
+            {
+              "id": "ge-03-a1-p2",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "I'm looking for ...",
+              "example": "I'm looking for a warm jacket."
+            },
+            {
+              "id": "ge-03-a1-p3",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "How much is this?",
+              "example": "Excuse me, how much is this scarf?"
+            },
+            {
+              "id": "ge-03-a1-p4",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Do you have this in ...?",
+              "example": "Do you have this in a bigger size?"
+            },
+            {
+              "id": "ge-03-a1-p5",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "I'd like ..., please.",
+              "example": "I'd like two kilos of apples, please.",
+              "note": {
+                "en": "'I'd like' is a polite way to say 'I want'.",
+                "uz": "'I'd like' — 'I want'ning muloyim shakli.",
+                "ru": "'I'd like' — вежливый способ сказать 'I want'."
+              }
+            },
+            {
+              "id": "ge-03-a1-p6",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Can I pay by card?",
+              "example": "Can I pay by card, or only in cash?"
+            },
+            {
+              "id": "ge-03-a1-g1",
+              "kind": "grammar-note",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "How much and how many",
+              "explanation": {
+                "en": "Use 'How much is ...?' for one thing and 'How much are ...?' for more than one. Use 'How many ...?' with things you can count: How many bags do you need?",
+                "uz": "Bitta narsa uchun 'How much is ...?', bir nechta narsa uchun 'How much are ...?' ishlatiladi. Sanaladigan narsalar bilan 'How many ...?' ishlatiladi: How many bags do you need?",
+                "ru": "Для одной вещи — 'How much is ...?', для нескольких — 'How much are ...?'. С исчисляемыми предметами — 'How many ...?': How many bags do you need?"
+              },
+              "examples": [
+                "How much is this book?",
+                "How much are these shoes?",
+                "How many apples would you like?",
+                "I'd like three, please."
+              ]
+            },
+            {
+              "id": "ge-03-a1-d1",
+              "kind": "dialogue",
+              "skills": ["interaction", "vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "At a clothes shop",
+              "lines": [
+                { "speaker": "Assistant", "text": "Hello. Can I help you?" },
+                { "speaker": "Nilufar", "text": "Yes, please. I'm looking for a winter coat." },
+                { "speaker": "Assistant", "text": "The coats are over here. What size are you?" },
+                { "speaker": "Nilufar", "text": "Medium, I think. How much is this blue one?" },
+                { "speaker": "Assistant", "text": "It's 650,000 sum. Would you like to try it on?" },
+                { "speaker": "Nilufar", "text": "Yes, please. Do you have it in black too?" },
+                { "speaker": "Assistant", "text": "Yes, we do. The fitting room is on the left." }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ge-03-a2-exercises",
+          "type": "exercise",
+          "title": "Practice: shopping",
+          "instructions": {
+            "en": "Choose or complete the answers. You will see an explanation after each one.",
+            "uz": "Javoblarni tanlang yoki toʻldiring. Har biridan keyin izoh koʻrasiz.",
+            "ru": "Выберите или дополните ответы. После каждого вы увидите объяснение."
+          },
+          "skills": ["grammar", "vocabulary"],
+          "estimatedMinutes": 8,
+          "items": [
+            {
+              "id": "ge-03-a2-q1",
+              "kind": "multiple-choice",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "You want to know the price of a phone case. What do you say?",
+              "options": ["How much is this?", "Can I help you?", "Where are you from?"],
+              "answer": "How much is this?",
+              "explanation": {
+                "en": "'How much is this?' asks for the price. 'Can I help you?' is what the shop assistant says.",
+                "uz": "'How much is this?' narxni soʻraydi. 'Can I help you?' esa sotuvchining gapi.",
+                "ru": "'How much is this?' — вопрос о цене. 'Can I help you?' говорит продавец."
+              }
+            },
+            {
+              "id": "ge-03-a2-q2",
+              "kind": "gap-fill",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "sentence": "How much ___ these shoes?",
+              "options": ["is", "are", "do"],
+              "answer": "are",
+              "explanation": {
+                "en": "'These shoes' is plural, so use 'are'.",
+                "uz": "'These shoes' koʻplikda, shuning uchun 'are' ishlatiladi.",
+                "ru": "'These shoes' — множественное число, поэтому 'are'."
+              }
+            },
+            {
+              "id": "ge-03-a2-q3",
+              "kind": "matching",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Match each question with the best answer.",
+              "pairs": [
+                { "left": "Can I pay by card?", "right": "Yes, of course." },
+                { "left": "Do you have this in a smaller size?", "right": "Sorry, this is the last one." },
+                { "left": "How many would you like?", "right": "Two, please." }
+              ],
+              "explanation": {
+                "en": "Each answer replies to the question: a yes or no, a size, or a number.",
+                "uz": "Har bir javob savolga mos: ha yoki yoʻq, oʻlcham yoki son.",
+                "ru": "Каждый ответ подходит к вопросу: да или нет, размер или число."
+              }
+            },
+            {
+              "id": "ge-03-a2-q4",
+              "kind": "ordering",
+              "skills": ["grammar", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Put the words in the right order to make a polite request.",
+              "segments": ["I'd", "like", "a", "small", "coffee,", "please."],
+              "explanation": {
+                "en": "A polite request starts with 'I'd like' and often ends with 'please'.",
+                "uz": "Muloyim iltimos 'I'd like' bilan boshlanadi va koʻpincha 'please' bilan tugaydi.",
+                "ru": "Вежливая просьба начинается с 'I'd like' и часто заканчивается словом 'please'."
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge-03-a3-reading",
+          "type": "reading",
+          "title": "Reading: a notice at the post office",
+          "instructions": {
+            "en": "Read the short text, then answer the questions.",
+            "uz": "Qisqa matnni oʻqing, soʻng savollarga javob bering.",
+            "ru": "Прочитайте короткий текст, затем ответьте на вопросы."
+          },
+          "skills": ["reading"],
+          "estimatedMinutes": 8,
+          "items": [
+            {
+              "id": "ge-03-a3-r1",
+              "kind": "reading",
+              "skills": ["reading", "vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "City Post Office: opening times and services",
+              "text": "City Post Office, Navoi Street.\nOpening times: Monday to Friday, 8:00 to 18:00. Saturday, 9:00 to 14:00. Closed on Sunday.\nSending parcels: bring your parcel open, so we can check it. Boxes are for sale at the front desk.\nPaying bills: you can pay electricity and water bills at window 3. Please bring your bill.\nCollecting a parcel: bring your passport and the text message with your parcel number.\nWe accept cash and bank cards. Free Wi-Fi is available in the waiting area.",
+              "questions": [
+                {
+                  "prompt": "When does the post office close on Saturday?",
+                  "options": ["At 14:00", "At 18:00", "It is closed all day."],
+                  "answer": "At 14:00",
+                  "explanation": {
+                    "en": "On Saturday it is open from 9:00 to 14:00.",
+                    "uz": "Shanba kuni u 9:00 dan 14:00 gacha ochiq.",
+                    "ru": "В субботу почта работает с 9:00 до 14:00."
+                  }
+                },
+                {
+                  "prompt": "Where can you pay a water bill?",
+                  "options": ["At the front desk", "At window 3", "In the waiting area"],
+                  "answer": "At window 3",
+                  "explanation": {
+                    "en": "The notice says you can pay electricity and water bills at window 3.",
+                    "uz": "Eʼlonda elektr va suv toʻlovlarini 3-darchada qilish mumkinligi aytilgan.",
+                    "ru": "В объявлении сказано, что счета за свет и воду оплачивают в окне 3."
+                  }
+                },
+                {
+                  "prompt": "What do you need to collect a parcel?",
+                  "options": ["A box and a bill", "Your passport and a text message", "Cash only"],
+                  "answer": "Your passport and a text message",
+                  "explanation": {
+                    "en": "To collect a parcel, bring your passport and the text message with the parcel number.",
+                    "uz": "Posilkani olish uchun pasport va posilka raqami yozilgan SMSni olib keling.",
+                    "ru": "Чтобы получить посылку, нужны паспорт и SMS с номером посылки."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ge-03-a5-listening",
+          "type": "listening",
+          "title": "Listening: at the market",
+          "instructions": {
+            "en": "Listen to the conversation, then answer the questions. You can listen as many times as you like.",
+            "uz": "Suhbatni tinglang, soʻng savollarga javob bering. Xohlagancha qayta tinglashingiz mumkin.",
+            "ru": "Послушайте разговор, затем ответьте на вопросы. Слушать можно сколько угодно раз."
+          },
+          "skills": ["listening"],
+          "estimatedMinutes": 6,
+          "items": [
+            {
+              "id": "ge-03-a5-l1",
+              "kind": "listening",
+              "skills": ["listening", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "Buying fruit",
+              "transcript": "Seller: Good afternoon! The grapes are very sweet today.\nZarina: How much are they?\nSeller: Twenty-five thousand sum a kilo.\nZarina: I'd like one kilo of grapes, please. And how much are the pears?\nSeller: Eighteen thousand a kilo.\nZarina: Then two kilos of pears too. Can I pay by card?\nSeller: Sorry, only cash here. There's a cash machine next to the bread shop.",
+              "questions": [
+                {
+                  "prompt": "How many kilos of pears does Zarina buy?",
+                  "options": ["One", "Two", "Three"],
+                  "answer": "Two",
+                  "explanation": {
+                    "en": "She says 'two kilos of pears too'.",
+                    "uz": "U 'two kilos of pears too' deydi.",
+                    "ru": "Она говорит 'two kilos of pears too'."
+                  }
+                },
+                {
+                  "prompt": "How much is a kilo of grapes?",
+                  "options": ["18,000 sum", "25,000 sum", "43,000 sum"],
+                  "answer": "25,000 sum",
+                  "explanation": {
+                    "en": "The seller says the grapes are twenty-five thousand sum a kilo.",
+                    "uz": "Sotuvchi uzumning kilosi yigirma besh ming soʻm deydi.",
+                    "ru": "Продавец говорит, что виноград стоит двадцать пять тысяч сумов за кило."
+                  }
+                },
+                {
+                  "prompt": "How can Zarina pay?",
+                  "options": ["By card", "Only in cash", "By phone"],
+                  "answer": "Only in cash",
+                  "explanation": {
+                    "en": "The seller says 'only cash here' and tells her where the cash machine is.",
+                    "uz": "Sotuvchi 'only cash here' deydi va bankomat qayerdaligini aytadi.",
+                    "ru": "Продавец говорит 'only cash here' и подсказывает, где банкомат."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ge-03-a4-speaking",
+          "type": "speaking",
+          "title": "Speaking: buy something you need",
+          "instructions": {
+            "en": "Prepare for one minute, then speak for about 30 seconds. Afterwards, compare with the model answer and tick the checklist.",
+            "uz": "Bir daqiqa tayyorlaning, soʻng 30 soniya atrofida gapiring. Keyin namunaviy javob bilan solishtiring va roʻyxatni belgilang.",
+            "ru": "Подготовьтесь одну минуту, затем говорите около 30 секунд. После этого сравните с образцом и отметьте пункты списка."
+          },
+          "skills": ["speaking"],
+          "estimatedMinutes": 9,
+          "items": [
+            {
+              "id": "ge-03-a4-s1",
+              "kind": "speaking",
+              "skills": ["speaking", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": {
+                "en": "You are in a shop. Ask for something you need, ask about the price and the size or colour, and ask how you can pay.",
+                "uz": "Siz doʻkondasiz. Kerakli narsani soʻrang, narxi va oʻlchami yoki rangi haqida soʻrang hamda qanday toʻlash mumkinligini soʻrang.",
+                "ru": "Вы в магазине. Попросите нужную вещь, спросите о цене и о размере или цвете, а также о способе оплаты."
+              },
+              "preparationHints": [
+                "Start with 'Excuse me, I'm looking for ...'.",
+                "Ask 'How much is it?'",
+                "End with 'Can I pay by card?'"
+              ],
+              "modelAnswer": "Excuse me, I'm looking for a pair of running shoes. Do you have these in size forty-two? How much are they? Great, I'll take them. Can I pay by card?",
+              "selfCheck": [
+                {
+                  "en": "I said what I am looking for.",
+                  "uz": "Nima qidirayotganimni aytdim.",
+                  "ru": "Я сказал(а), что ищу."
+                },
+                {
+                  "en": "I asked about the price.",
+                  "uz": "Narxini soʻradim.",
+                  "ru": "Я спросил(а) о цене."
+                },
+                {
+                  "en": "I used 'please' or 'excuse me'.",
+                  "uz": "'Please' yoki 'excuse me' ishlatdim.",
+                  "ru": "Я использовал(а) 'please' или 'excuse me'."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ge-04-past-experiences",
+      "title": "Talking about past experiences",
+      "summary": {
+        "en": "Talk about what you did, where you went and how it was.",
+        "uz": "Nima qilganingiz, qayerga borganingiz va qanday oʻtgani haqida gapiring.",
+        "ru": "Расскажите, что вы делали, куда ездили и как всё прошло."
+      },
+      "estimatedMinutes": 41,
+      "activities": [
+        {
+          "id": "ge-04-a1-lesson",
+          "type": "lesson",
+          "title": "Key phrases: talking about the past",
+          "instructions": {
+            "en": "Read the phrases and the example dialogue. Say each phrase aloud.",
+            "uz": "Iboralar va namunaviy suhbatni oʻqing. Har bir iborani ovoz chiqarib ayting.",
+            "ru": "Прочитайте фразы и пример диалога. Произнесите каждую фразу вслух."
+          },
+          "skills": ["vocabulary", "grammar", "interaction"],
+          "estimatedMinutes": 10,
+          "items": [
+            {
+              "id": "ge-04-a1-p1",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Last weekend I ...",
+              "example": "Last weekend I visited my cousins in Khiva."
+            },
+            {
+              "id": "ge-04-a1-p2",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "How was your trip?",
+              "example": "How was your trip? It was amazing!"
+            },
+            {
+              "id": "ge-04-a1-p3",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "What did you do?",
+              "example": "What did you do on holiday? We went to the mountains."
+            },
+            {
+              "id": "ge-04-a1-p4",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "... ago",
+              "example": "I started this job two years ago.",
+              "note": {
+                "en": "Put 'ago' after the time: two days ago, a month ago.",
+                "uz": "'Ago' vaqtdan keyin keladi: two days ago, a month ago.",
+                "ru": "'Ago' ставится после периода: two days ago, a month ago."
+              }
+            },
+            {
+              "id": "ge-04-a1-p5",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "It was ...",
+              "example": "The weather was hot, but the food was great."
+            },
+            {
+              "id": "ge-04-a1-p6",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Have you ever ...?",
+              "example": "Have you ever been to Samarkand? Yes, I went there last year.",
+              "note": {
+                "en": "Use this question about any time in your life. Answer with the past simple when you say when.",
+                "uz": "Bu savol hayotingizdagi istalgan vaqt haqida. Qachonligini aytganda past simple bilan javob bering.",
+                "ru": "Этот вопрос — о любом моменте жизни. Когда называете время, отвечайте в past simple."
+              }
+            },
+            {
+              "id": "ge-04-a1-g1",
+              "kind": "grammar-note",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "The past simple",
+              "explanation": {
+                "en": "Use the past simple for finished actions. Most verbs add -ed: work, worked. Some common verbs are irregular: go, went; have, had; see, saw. In questions and negatives use 'did' and the base verb: Did you go? I didn't go.",
+                "uz": "Tugallangan ishlar uchun past simple ishlatiladi. Koʻpchilik feʼllarga -ed qoʻshiladi: work, worked. Baʼzi koʻp ishlatiladigan feʼllar notoʻgʻri: go, went; have, had; see, saw. Savol va inkorda 'did' va feʼlning asosiy shakli ishlatiladi: Did you go? I didn't go.",
+                "ru": "Past simple используют для завершённых действий. Большинство глаголов получают -ed: work, worked. Некоторые частые глаголы неправильные: go, went; have, had; see, saw. В вопросах и отрицаниях — 'did' и начальная форма: Did you go? I didn't go."
+              },
+              "examples": [
+                "We watched a film yesterday.",
+                "She went to Bukhara last month.",
+                "Did you have a good time?",
+                "I didn't see him at the party."
+              ]
+            },
+            {
+              "id": "ge-04-a1-d1",
+              "kind": "dialogue",
+              "skills": ["interaction", "vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "Back at work after a holiday",
+              "lines": [
+                { "speaker": "Aziza", "text": "Welcome back, Bobur! How was your holiday?" },
+                { "speaker": "Bobur", "text": "It was great, thanks. We went to Chimgan for a week." },
+                { "speaker": "Aziza", "text": "Lovely. What did you do there?" },
+                { "speaker": "Bobur", "text": "We walked in the mountains every day, and my son rode a horse for the first time." },
+                { "speaker": "Aziza", "text": "Was the weather good?" },
+                { "speaker": "Bobur", "text": "It rained on the first day, but then it was sunny. Have you ever been there?" },
+                { "speaker": "Aziza", "text": "Yes, I went there with my family three years ago." }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ge-04-a2-exercises",
+          "type": "exercise",
+          "title": "Practice: past experiences",
+          "instructions": {
+            "en": "Choose or complete the answers. You will see an explanation after each one.",
+            "uz": "Javoblarni tanlang yoki toʻldiring. Har biridan keyin izoh koʻrasiz.",
+            "ru": "Выберите или дополните ответы. После каждого вы увидите объяснение."
+          },
+          "skills": ["grammar", "vocabulary"],
+          "estimatedMinutes": 8,
+          "items": [
+            {
+              "id": "ge-04-a2-q1",
+              "kind": "multiple-choice",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Which sentence is correct?",
+              "options": [
+                "I goed to the cinema yesterday.",
+                "I went to the cinema yesterday.",
+                "I go to the cinema yesterday."
+              ],
+              "answer": "I went to the cinema yesterday.",
+              "explanation": {
+                "en": "'Go' is irregular. Its past simple is 'went'.",
+                "uz": "'Go' notoʻgʻri feʼl. Uning past simple shakli 'went'.",
+                "ru": "'Go' — неправильный глагол. Его форма в past simple — 'went'."
+              }
+            },
+            {
+              "id": "ge-04-a2-q2",
+              "kind": "gap-fill",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "sentence": "___ you enjoy the concert last night?",
+              "options": ["Do", "Did", "Were"],
+              "answer": "Did",
+              "explanation": {
+                "en": "This question is about last night, so it uses 'did' and the base verb 'enjoy'.",
+                "uz": "Savol kecha kechqurun haqida, shuning uchun 'did' va asosiy shakl 'enjoy' ishlatiladi.",
+                "ru": "Вопрос о прошлом вечере, поэтому нужны 'did' и начальная форма 'enjoy'."
+              }
+            },
+            {
+              "id": "ge-04-a2-q3",
+              "kind": "matching",
+              "skills": ["vocabulary", "grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Match each verb with its past simple form.",
+              "pairs": [
+                { "left": "have", "right": "had" },
+                { "left": "see", "right": "saw" },
+                { "left": "buy", "right": "bought" }
+              ],
+              "explanation": {
+                "en": "These are common irregular verbs. Learn their past forms as pairs.",
+                "uz": "Bular koʻp ishlatiladigan notoʻgʻri feʼllar. Oʻtgan zamon shakllarini juftlik sifatida yodlang.",
+                "ru": "Это частые неправильные глаголы. Запоминайте их прошедшие формы парами."
+              }
+            },
+            {
+              "id": "ge-04-a2-q4",
+              "kind": "ordering",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Put the words in the right order.",
+              "segments": ["We", "visited", "Khiva", "two", "years", "ago."],
+              "explanation": {
+                "en": "'Ago' comes after the time: two years ago. The time phrase goes at the end.",
+                "uz": "'Ago' vaqtdan keyin keladi: two years ago. Vaqt iborasi gap oxirida turadi.",
+                "ru": "'Ago' идёт после периода: two years ago. Выражение времени стоит в конце."
+              }
+            }
+          ]
+        },
+        {
+          "id": "ge-04-a3-reading",
+          "type": "reading",
+          "title": "Reading: a trip to Samarkand",
+          "instructions": {
+            "en": "Read the short text, then answer the questions.",
+            "uz": "Qisqa matnni oʻqing, soʻng savollarga javob bering.",
+            "ru": "Прочитайте короткий текст, затем ответьте на вопросы."
+          },
+          "skills": ["reading"],
+          "estimatedMinutes": 8,
+          "items": [
+            {
+              "id": "ge-04-a3-r1",
+              "kind": "reading",
+              "skills": ["reading", "vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "My first trip to Samarkand",
+              "text": "Last spring my friend Madina and I took the fast train from Tashkent to Samarkand. The journey took only two hours. We arrived in the morning and went straight to the Registan. It was even more beautiful than in photos. In the afternoon we visited a paper workshop, where a master showed us how to make paper from mulberry trees. Madina bought a small notebook as a present for her mother. In the evening we ate plov at a small café and talked to a family from Italy. We stayed for two nights. It was a short trip, but I want to go back and see more.",
+              "questions": [
+                {
+                  "prompt": "How did they travel to Samarkand?",
+                  "options": ["By car", "By fast train", "By plane"],
+                  "answer": "By fast train",
+                  "explanation": {
+                    "en": "The first sentence says they took the fast train.",
+                    "uz": "Birinchi gapda ular tezyurar poyezdda borgani aytilgan.",
+                    "ru": "В первом предложении сказано, что они поехали на скоростном поезде."
+                  }
+                },
+                {
+                  "prompt": "What did Madina buy?",
+                  "options": ["A notebook", "A carpet", "Some plov"],
+                  "answer": "A notebook",
+                  "explanation": {
+                    "en": "Madina bought a small notebook for her mother.",
+                    "uz": "Madina onasiga kichik daftar sotib oldi.",
+                    "ru": "Мадина купила маме маленький блокнот."
+                  }
+                },
+                {
+                  "prompt": "How long did they stay?",
+                  "options": ["One night", "Two nights", "A week"],
+                  "answer": "Two nights",
+                  "explanation": {
+                    "en": "The text says 'We stayed for two nights.'",
+                    "uz": "Matnda 'We stayed for two nights' deyilgan.",
+                    "ru": "В тексте сказано: 'We stayed for two nights.'"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ge-04-a5-listening",
+          "type": "listening",
+          "title": "Listening: how was your weekend?",
+          "instructions": {
+            "en": "Listen to the conversation, then answer the questions. You can listen as many times as you like.",
+            "uz": "Suhbatni tinglang, soʻng savollarga javob bering. Xohlagancha qayta tinglashingiz mumkin.",
+            "ru": "Послушайте разговор, затем ответьте на вопросы. Слушать можно сколько угодно раз."
+          },
+          "skills": ["listening"],
+          "estimatedMinutes": 6,
+          "items": [
+            {
+              "id": "ge-04-a5-l1",
+              "kind": "listening",
+              "skills": ["listening", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "A busy weekend",
+              "transcript": "Kamron: Hi Shahlo. How was your weekend?\nShahlo: Busy! On Saturday I helped my aunt move to a new flat.\nKamron: That sounds tiring. Did you do anything fun?\nShahlo: Yes, on Sunday we went to a football match. Our team won two-one.\nKamron: Great! I stayed at home and finished a book.\nShahlo: Which book?\nKamron: A detective story. I started it last month and I finally finished it on Sunday night.",
+              "questions": [
+                {
+                  "prompt": "What did Shahlo do on Saturday?",
+                  "options": [
+                    "She watched football.",
+                    "She helped her aunt move.",
+                    "She read a book."
+                  ],
+                  "answer": "She helped her aunt move.",
+                  "explanation": {
+                    "en": "She says she helped her aunt move to a new flat on Saturday.",
+                    "uz": "U shanba kuni xolasiga yangi kvartiraga koʻchishda yordam berganini aytadi.",
+                    "ru": "Она говорит, что в субботу помогала тёте переехать в новую квартиру."
+                  }
+                },
+                {
+                  "prompt": "What was the score of the match?",
+                  "options": ["One-nil", "Two-one", "Two-two"],
+                  "answer": "Two-one",
+                  "explanation": {
+                    "en": "Shahlo says their team won two-one.",
+                    "uz": "Shahlo jamoasi ikki-bir hisobida yutganini aytadi.",
+                    "ru": "Шахло говорит, что их команда выиграла со счётом два-один."
+                  }
+                },
+                {
+                  "prompt": "When did Kamron start the book?",
+                  "options": ["On Sunday", "Last week", "Last month"],
+                  "answer": "Last month",
+                  "explanation": {
+                    "en": "Kamron says he started it last month.",
+                    "uz": "Kamron kitobni oʻtgan oy boshlaganini aytadi.",
+                    "ru": "Камрон говорит, что начал книгу в прошлом месяце."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ge-04-a4-speaking",
+          "type": "speaking",
+          "title": "Speaking: tell a friend about a trip",
+          "instructions": {
+            "en": "Prepare for one minute, then speak for about 30 seconds. Afterwards, compare with the model answer and tick the checklist.",
+            "uz": "Bir daqiqa tayyorlaning, soʻng 30 soniya atrofida gapiring. Keyin namunaviy javob bilan solishtiring va roʻyxatni belgilang.",
+            "ru": "Подготовьтесь одну минуту, затем говорите около 30 секунд. После этого сравните с образцом и отметьте пункты списка."
+          },
+          "skills": ["speaking"],
+          "estimatedMinutes": 9,
+          "items": [
+            {
+              "id": "ge-04-a4-s1",
+              "kind": "speaking",
+              "skills": ["speaking", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": {
+                "en": "A friend asks about a trip or a day out you enjoyed. Say where you went, when, what you did, and how it was.",
+                "uz": "Doʻstingiz sizga yoqqan sayohat yoki dam olish kuni haqida soʻrayapti. Qayerga, qachon borganingizni, nima qilganingizni va qanday oʻtganini ayting.",
+                "ru": "Друг спрашивает о поездке или выходном дне, который вам понравился. Расскажите, куда и когда вы ездили, что делали и как всё прошло."
+              },
+              "preparationHints": [
+                "Say when: 'last summer', 'two months ago'.",
+                "Use the past simple: went, saw, ate.",
+                "Finish with how it was: 'It was ...'."
+              ],
+              "modelAnswer": "Last summer I went to Lake Charvak with my family. We stayed in a small guest house for three days. We swam every morning and ate fresh fish in the evening. One day we walked up a hill and saw the whole lake. It was very relaxing, and I want to go again next year.",
+              "selfCheck": [
+                {
+                  "en": "I said where and when I went.",
+                  "uz": "Qayerga va qachon borganimni aytdim.",
+                  "ru": "Я сказал(а), куда и когда ездил(а)."
+                },
+                {
+                  "en": "I used at least three past simple verbs.",
+                  "uz": "Kamida uchta past simple feʼlini ishlatdim.",
+                  "ru": "Я использовал(а) хотя бы три глагола в past simple."
+                },
+                {
+                  "en": "I said how it was.",
+                  "uz": "Qanday oʻtganini aytdim.",
+                  "ru": "Я сказал(а), как всё прошло."
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

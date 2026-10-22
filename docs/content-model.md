@@ -33,7 +33,7 @@ Every item carries:
 | listening | `listening` (title, transcript to be read aloud, questions); no samples until decision Q5 |
 | speaking | `speaking` (prompt, preparation hints, model answer, self-check list) |
 | interview-practice | `interview-question` (question, model answers, useful phrases, self-check list) |
-| writing-checklist | `writing-task` (task, model, checklist) |
+| writing-checklist | `writing-task` (task, model email, checklist); played as "Writing practice" since MVP-16b |
 
 Every exercise and comprehension question carries an `explanation` shown after the answer.
 
@@ -64,10 +64,12 @@ Each `interview-question` item is one screen ("Question 1 of 3"): the `question`
 - All Phase 1 content is written fresh for development and marked `content_status: "placeholder"` and `license: "placeholder"`.
 - It must not be copied, paraphrased or reconstructed from MEX books or methodologies. Real content is delivered later by a method the owner approves; local drafts go in the ignored `content-private/` folder.
 - The interface shows a "Sample content" badge wherever placeholder content appears (`isPlaceholder()` in `src/content/index.ts`).
+- Since MVP-16b `npm run check:content` enforces this: in a pack whose status is placeholder, every item must have `content_status` and `license` set to `placeholder`.
+- Phase 1 has four placeholder units per pathway (MVP-16b), on the Scope v2 topics: General English (Introductions, Daily routines, Shopping and services, Past experiences) and Career Readiness (Introducing yourself professionally, Job interview basics, Workplace communication, Professional emails).
 
 ## Checking
 
-`npm run check:content` validates every pack against the schema and these extra rules: a pack exists for every pathway, ids unique within a pack, pack id and pathway equal to the file name, item kinds allowed for their activity type, every answer present among its options, exactly one `___` gap per gap-fill sentence, unique matching sides. Schema errors are reported first; the extra rules run once the schema passes. The deployment workflow runs the same check before building, so a broken pack cannot be published. To test a draft file outside the packs folder: `node scripts/check-content.mjs path/to/file.json` (the file-name rules are skipped for explicit files).
+`npm run check:content` validates every pack against the schema and these extra rules: a pack exists for every pathway, ids unique within a pack, pack id and pathway equal to the file name, item kinds allowed for their activity type, every answer present among its options, exactly one `___` gap per gap-fill sentence, unique matching sides, and placeholder status and licence on every item of a placeholder pack. Schema errors are reported first; the extra rules run once the schema passes. The deployment workflow runs the same check before building, so a broken pack cannot be published. To test a draft file outside the packs folder: `node scripts/check-content.mjs path/to/file.json` (the file-name rules are skipped for explicit files).
 
 ## Loading in the app
 

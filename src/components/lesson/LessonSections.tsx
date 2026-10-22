@@ -78,12 +78,13 @@ export function GrammarNote({ item, native }: { item: GrammarNoteItem; native: N
 export function Dialogue({ item }: { item: DialogueItem }) {
   const { t } = useTranslation()
   return (
-    <section aria-labelledby={`lesson-${item.id}`} className="flex flex-col gap-3" data-item={item.id}>
+    // The section name includes the dialogue title, so two dialogues in one lesson have different names (MVP-16b).
+    <section aria-labelledby={`lesson-${item.id} lesson-${item.id}-title`} className="flex flex-col gap-3" data-item={item.id}>
       <h2 id={`lesson-${item.id}`} className="text-h2">
         {t('lesson.dialogue')}
       </h2>
       <Card variant="soft" className="gap-3 p-5">
-        <h3 lang="en" className="text-h3">
+        <h3 id={`lesson-${item.id}-title`} lang="en" className="text-h3">
           {item.title}
         </h3>
         <ol lang="en" className="flex flex-col gap-3">

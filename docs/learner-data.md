@@ -25,7 +25,7 @@ Storage is shared by every tab of the same browser. The store listens for change
 | `preferences.nativeExplanations` | Toggle for Uzbek/Russian explanations; `null` means "default for the level" (on for Beginner) | Preference |
 | `completions` | Finished activities with content ids and time | Curriculum completion |
 | `exerciseResults` | Auto-checked answers with item id, skills and correct/incorrect | Demonstrated skills |
-| `selfAssessments` | Speaking, interview and writing practice: typed answer, self-check ticks, confidence 1 to 5 | Self-assessed readiness |
+| `selfAssessments` | Speaking, interview and writing practice (writing since MVP-16b): typed answer, self-check ticks, confidence 1 to 5 | Self-assessed readiness |
 | `usefulnessRatings` | "Was this useful?" 1 to 5 per activity | Pilot feedback |
 | `practiceSessions` | Finished interview practice runs: id, pathway, activity, finish time (MVP-15) | Readiness evidence |
 
@@ -92,6 +92,10 @@ Reading and listening save results and completion exactly as exercises do. Each 
 "Next question" and "Finish interview practice" each add one `SelfAssessment` for the question on screen (`kind: "interview-question"`, pathway, activity, item, the item's `skills`, one tick per self-check line, date) through `withSelfAssessment`. A typed answer is saved as `answerText`, trimmed and at most 1,000 characters (`MAX_ANSWER_LENGTH`); a blank answer saves no `answerText`. A chosen confidence (1 to 5) is saved as `confidence`; none chosen saves none. Finish also adds one completion. Leaving half-way keeps the questions already saved and does not complete the activity; repeats add new entries. Recordings follow the MVP-12 rules and are never saved.
 
 **Typed answers stay on this device.** They are personal text, kept only in this browser's storage for possible later feedback (Scope v2, Section 5.4), never sent anywhere, and removed by "Delete my data". Since MVP-15 each run has a session id (`sessionId` on every answer of the run), and Finish also adds one `practiceSessions` entry; a run left half-way has no entry and is not counted.
+
+## Writing practice (MVP-16b)
+
+"Finish writing practice" adds one `SelfAssessment` per writing task (`kind: "writing-task"`, pathway, activity, item, the item's `skills`, one tick per self-check line, date) through `withSelfAssessment`, then one completion. Typed text is optional: it is saved as `answerText`, trimmed and at most 2,000 characters (`MAX_WRITING_LENGTH`); a blank box saves no `answerText`. The text follows the same rules as interview answers: it stays in this browser's storage, is never sent anywhere and is removed by "Delete my data". Nothing is corrected or scored. Writing self-assessments do not count towards skills shown on Progress or towards readiness.
 
 ## Activity summary and "Was this useful?" (MVP-14)
 

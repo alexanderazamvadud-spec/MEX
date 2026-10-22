@@ -22,8 +22,8 @@ const PATHWAY_KEYS: Record<PathwayId, string> = {
 
 const HOW_STEPS = ['choose', 'practise', 'track'] as const
 const AUDIENCES = ['learners', 'employers', 'institutions'] as const
-const AVAILABLE_NOW = ['landing', 'preview', 'languages', 'delete'] as const
-const PLANNED = ['lessons', 'progress', 'coaching', 'speaking', 'recommendations'] as const
+const AVAILABLE_NOW = ['pathways', 'lessons', 'exercises', 'readingListening', 'speaking', 'interview', 'writing', 'mission', 'progress', 'languages', 'delete'] as const
+const PLANNED = ['coaching', 'recommendations', 'speaking', 'accounts', 'certificates'] as const
 
 // Wider than the app's 560 px column so sections can sit side by side on larger screens.
 function LandingContainer({ className = '', children }: { className?: string; children: ReactNode }) {
