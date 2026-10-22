@@ -108,6 +108,11 @@ for (const file of files) {
         items++
         seen(item.id, `item ${item.id}`)
         if (!allowed.includes(item.kind)) report(label, `item ${item.id} of kind "${item.kind}" is not allowed in a "${activity.type}" activity`)
+        // A placeholder pack may hold only placeholder items, so nothing real slips into
+        // the public sample content (content decision option A, MVP-16b).
+        if (pack.content_status === 'placeholder' && (item.content_status !== 'placeholder' || item.license !== 'placeholder')) {
+          report(label, `item ${item.id} must be marked placeholder (content_status and license) in a placeholder pack`)
+        }
         if (item.kind === 'multiple-choice' || item.kind === 'gap-fill') {
           if (!item.options.includes(item.answer)) report(label, `item ${item.id}: answer "${item.answer}" is not one of the options`)
         }

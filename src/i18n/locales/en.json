@@ -15,7 +15,7 @@
       "body": "MEX helps learners develop practical English communication and career-readiness skills through purposeful learning and real-world practice.",
       "primaryCta": "Explore the MEX Demo",
       "secondaryCta": "Discover the Pathways",
-      "demoNote": "This is an early demo, not a finished product. Lessons and practice are still being built."
+      "demoNote": "This is an early demo, not a finished product. All lessons are sample content for testing."
     },
     "pathways": {
       "label": "Two pathways",
@@ -45,7 +45,7 @@
         "title": "Track your development",
         "body": "See which skills you have practised and how your confidence grows over time."
       },
-      "note": "This is how MEX is designed to work. In the current demo, these steps are still being built."
+      "note": "You can try these steps in the demo with sample content."
     },
     "audience": {
       "title": "Who MEX serves",
@@ -67,18 +67,25 @@
       "intro": "MEX is a prototype in active development. Here is what you can try now and what is still planned.",
       "availableTitle": "Available in this demo",
       "available": {
-        "landing": "This introduction page",
-        "preview": "A preview of the app screens and navigation",
+        "pathways": "Two pathways with four sample units each",
+        "lessons": "Lessons with key phrases, grammar and dialogues",
+        "exercises": "Exercises with instant feedback and explanations",
+        "readingListening": "Reading and listening practice",
+        "speaking": "Speaking practice with an optional recording that stays on your device",
+        "interview": "Guided job interview practice",
+        "writing": "Email writing practice with a checklist",
+        "mission": "Today’s Mission, chosen by simple, transparent rules",
+        "progress": "Progress by pathway and skill, and a self-assessed readiness level",
         "languages": "The interface in English, Uzbek and Russian",
         "delete": "“Delete my data” in Settings"
       },
       "plannedTitle": "Planned",
       "planned": {
-        "lessons": "Lessons and practice for both pathways",
-        "progress": "Progress tracking by skill",
         "coaching": "Advanced AI coaching",
+        "recommendations": "AI-personalised learning recommendations",
         "speaking": "Speaking assessments",
-        "recommendations": "Personalised recommendations"
+        "accounts": "Learner accounts",
+        "certificates": "Certificates"
       },
       "plannedNote": "Planned features are not available yet and may change."
     },
@@ -190,7 +197,7 @@
       "listening": "Listening",
       "speaking": "Speaking",
       "interviewPractice": "Interview practice",
-      "writingChecklist": "Writing task"
+      "writingChecklist": "Writing practice"
     },
     "minutes": "About {{n}} min",
     "done": "Completed",
@@ -277,6 +284,16 @@
     "ready": "Ready",
     "next": "Next question",
     "finish": "Finish interview practice"
+  },
+  "writing": {
+    "yourEmail": "Your email",
+    "savedNote": "Optional. What you write stays on this device.",
+    "model": "Model email",
+    "showModel": "Show model email",
+    "hideModel": "Hide model email",
+    "check": "Check your email",
+    "checkNote": "Tick what your email does.",
+    "finish": "Finish writing practice"
   },
   "summary": {
     "completed": "Activity completed",

@@ -343,6 +343,1072 @@
           ]
         }
       ]
+    },
+    {
+      "id": "cr-02-job-interview-basics",
+      "title": "Job interview basics",
+      "summary": {
+        "en": "Answer common interview questions about your experience, clearly and politely.",
+        "uz": "Tajribangiz haqidagi keng tarqalgan suhbat savollariga aniq va muloyim javob bering.",
+        "ru": "Отвечайте на частые вопросы собеседования о вашем опыте ясно и вежливо."
+      },
+      "estimatedMinutes": 40,
+      "activities": [
+        {
+          "id": "cr-02-a1-lesson",
+          "type": "lesson",
+          "title": "Key phrases: answering interview questions",
+          "instructions": {
+            "en": "Read the phrases and the example dialogue. Notice how each sentence gives one clear fact.",
+            "uz": "Iboralar va namunaviy suhbatni oʻqing. Har bir gap bitta aniq faktni berishiga eʼtibor bering.",
+            "ru": "Прочитайте фразы и пример диалога. Обратите внимание: каждое предложение даёт один ясный факт."
+          },
+          "skills": ["vocabulary", "grammar", "interaction"],
+          "estimatedMinutes": 10,
+          "items": [
+            {
+              "id": "cr-02-a1-p1",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Thank you for inviting me.",
+              "example": "Good morning. Thank you for inviting me to this interview.",
+              "note": {
+                "en": "A polite way to start an interview.",
+                "uz": "Suhbatni muloyim boshlash usuli.",
+                "ru": "Вежливое начало собеседования."
+              }
+            },
+            {
+              "id": "cr-02-a1-p2",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "I have ... years of experience in ...",
+              "example": "I have four years of experience in customer service."
+            },
+            {
+              "id": "cr-02-a1-p3",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "I worked as ... for ...",
+              "example": "I worked as a cashier for two years.",
+              "note": {
+                "en": "Use 'for' with a length of time: for two years, for six months.",
+                "uz": "Davomiylik bilan 'for' ishlatiladi: for two years, for six months.",
+                "ru": "С длительностью используйте 'for': for two years, for six months."
+              }
+            },
+            {
+              "id": "cr-02-a1-p4",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "My main responsibility was ...",
+              "example": "My main responsibility was answering customer calls."
+            },
+            {
+              "id": "cr-02-a1-p5",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Could you repeat the question, please?",
+              "example": "Sorry, could you repeat the question, please?",
+              "note": {
+                "en": "It is fine to ask this if you did not hear or understand.",
+                "uz": "Eshitmagan yoki tushunmagan boʻlsangiz, shunday soʻrash mumkin.",
+                "ru": "Можно так спросить, если вы не расслышали или не поняли."
+              }
+            },
+            {
+              "id": "cr-02-a1-p6",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Do you have any questions for us?",
+              "example": "Do you have any questions for us? Yes, what does a normal day look like in this job?"
+            },
+            {
+              "id": "cr-02-a1-g1",
+              "kind": "grammar-note",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "Talking about your experience",
+              "explanation": {
+                "en": "Use the past simple for a job that has finished: I worked at a hotel for two years. Use the present simple for your job now: I work at a bank. Use 'for' with how long and 'in' with a year: in 2023.",
+                "uz": "Tugagan ish uchun past simple ishlatiladi: I worked at a hotel for two years. Hozirgi ishingiz uchun present simple: I work at a bank. Davomiylik bilan 'for', yil bilan 'in' ishlatiladi: in 2023.",
+                "ru": "Для завершённой работы — past simple: I worked at a hotel for two years. Для текущей работы — present simple: I work at a bank. С длительностью — 'for', с годом — 'in': in 2023."
+              },
+              "examples": [
+                "I work as a nurse at a city clinic.",
+                "I worked at a hotel for two years.",
+                "I finished university in 2023.",
+                "My main responsibility was training new staff."
+              ]
+            },
+            {
+              "id": "cr-02-a1-d1",
+              "kind": "dialogue",
+              "skills": ["interaction", "vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "The start of an interview",
+              "lines": [
+                { "speaker": "Interviewer", "text": "Good morning, Kamila. Please take a seat." },
+                { "speaker": "Kamila", "text": "Good morning. Thank you for inviting me." },
+                { "speaker": "Interviewer", "text": "Can you tell me about your last job?" },
+                { "speaker": "Kamila", "text": "I worked as an administrator at a dental clinic for three years." },
+                { "speaker": "Interviewer", "text": "What were your main responsibilities?" },
+                { "speaker": "Kamila", "text": "My main responsibility was booking appointments. I also answered patients' questions on the phone." },
+                { "speaker": "Interviewer", "text": "Thank you. Why did you leave?" },
+                { "speaker": "Kamila", "text": "The clinic moved to another city, and I wanted to stay in Tashkent." }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cr-02-a2-exercises",
+          "type": "exercise",
+          "title": "Practice: interview language",
+          "instructions": {
+            "en": "Choose or complete the answers. You will see an explanation after each one.",
+            "uz": "Javoblarni tanlang yoki toʻldiring. Har biridan keyin izoh koʻrasiz.",
+            "ru": "Выберите или дополните ответы. После каждого вы увидите объяснение."
+          },
+          "skills": ["grammar", "vocabulary"],
+          "estimatedMinutes": 8,
+          "items": [
+            {
+              "id": "cr-02-a2-q1",
+              "kind": "multiple-choice",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "You did not hear the interviewer's question. What do you say?",
+              "options": ["Could you repeat the question, please?", "What?", "I don't know."],
+              "answer": "Could you repeat the question, please?",
+              "explanation": {
+                "en": "This is polite and clear. 'What?' sounds rude in an interview.",
+                "uz": "Bu muloyim va aniq. Suhbatda 'What?' qoʻpol eshitiladi.",
+                "ru": "Это вежливо и понятно. 'What?' на собеседовании звучит грубо."
+              }
+            },
+            {
+              "id": "cr-02-a2-q2",
+              "kind": "gap-fill",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "sentence": "I worked as a waiter ___ two years.",
+              "options": ["for", "since", "ago"],
+              "answer": "for",
+              "explanation": {
+                "en": "Use 'for' with a length of time.",
+                "uz": "Davomiylik bilan 'for' ishlatiladi.",
+                "ru": "С длительностью используйте 'for'."
+              }
+            },
+            {
+              "id": "cr-02-a2-q3",
+              "kind": "matching",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Match each interview question with a good answer.",
+              "pairs": [
+                { "left": "Why did you leave your last job?", "right": "The company closed its office in our city." },
+                { "left": "What was your main responsibility?", "right": "I managed the stock in the warehouse." },
+                { "left": "When can you start?", "right": "From the first of next month." }
+              ],
+              "explanation": {
+                "en": "A good answer gives the exact information the question asks for: a reason, a task, or a date.",
+                "uz": "Yaxshi javob savol soʻragan aniq maʼlumotni beradi: sabab, vazifa yoki sana.",
+                "ru": "Хороший ответ даёт именно то, о чём спрашивают: причину, обязанность или дату."
+              }
+            },
+            {
+              "id": "cr-02-a2-q4",
+              "kind": "ordering",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Put the words in the right order.",
+              "segments": ["I", "have", "three", "years", "of", "experience", "in", "sales."],
+              "explanation": {
+                "en": "The phrase is 'I have ... years of experience in ...'.",
+                "uz": "Ibora shunday: 'I have ... years of experience in ...'.",
+                "ru": "Фраза строится так: 'I have ... years of experience in ...'."
+              }
+            }
+          ]
+        },
+        {
+          "id": "cr-02-a3-speaking",
+          "type": "speaking",
+          "title": "Speaking: your last job",
+          "instructions": {
+            "en": "Prepare for one minute, then talk for about 30 seconds as if you were answering an interviewer.",
+            "uz": "Bir daqiqa tayyorlaning, soʻng suhbatdoshga javob berayotgandek 30 soniya atrofida gapiring.",
+            "ru": "Подготовьтесь одну минуту, затем говорите около 30 секунд, как будто отвечаете интервьюеру."
+          },
+          "skills": ["speaking"],
+          "estimatedMinutes": 8,
+          "items": [
+            {
+              "id": "cr-02-a3-s1",
+              "kind": "speaking",
+              "skills": ["speaking", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": {
+                "en": "Describe your current or last job or studies: where, how long, your main responsibility, and one thing you learned.",
+                "uz": "Hozirgi yoki oxirgi ishingiz yoki oʻqishingizni tasvirlang: qayerda, qancha vaqt, asosiy vazifangiz va oʻrgangan bitta narsangiz.",
+                "ru": "Опишите текущую или последнюю работу или учёбу: где, как долго, основная обязанность и одна вещь, которой вы научились."
+              },
+              "preparationHints": [
+                "Use 'I work as' or 'I worked as ... for ...'.",
+                "Name one main responsibility.",
+                "Finish with 'I learned ...'."
+              ],
+              "modelAnswer": "I worked as a receptionist at a business hotel for two years. My main responsibility was checking guests in and out. I also solved problems with bookings. In that job I learned to stay calm when guests are unhappy.",
+              "selfCheck": [
+                {
+                  "en": "I said where I worked or studied and for how long.",
+                  "uz": "Qayerda ishlaganim yoki oʻqiganim va qancha vaqtligini aytdim.",
+                  "ru": "Я сказал(а), где работал(а) или учился(ась) и как долго."
+                },
+                {
+                  "en": "I named one main responsibility.",
+                  "uz": "Bitta asosiy vazifamni aytdim.",
+                  "ru": "Я назвал(а) одну основную обязанность."
+                },
+                {
+                  "en": "I used the past simple for finished jobs.",
+                  "uz": "Tugagan ish uchun past simple ishlatdim.",
+                  "ru": "Для завершённой работы я использовал(а) past simple."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cr-02-a4-interview",
+          "type": "interview-practice",
+          "title": "Guided interview practice: your experience",
+          "instructions": {
+            "en": "Answer each question in your own words, then compare with the model answers and tick the checklist. This is self-assessment, not a test result.",
+            "uz": "Har bir savolga oʻz soʻzlaringiz bilan javob bering, soʻng namunaviy javoblar bilan solishtiring va roʻyxatni belgilang. Bu oʻz-oʻzini baholash, test natijasi emas.",
+            "ru": "Ответьте на каждый вопрос своими словами, затем сравните с образцами и отметьте пункты списка. Это самооценка, а не результат теста."
+          },
+          "skills": ["speaking", "interaction"],
+          "estimatedMinutes": 14,
+          "items": [
+            {
+              "id": "cr-02-a4-i1",
+              "kind": "interview-question",
+              "skills": ["speaking", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "question": "Can you tell me about your work experience?",
+              "modelAnswers": [
+                "I have three years of experience in retail. I started as a sales assistant and last year I became a shift supervisor.",
+                "I'm a recent graduate, but I worked part-time in a call centre for one year while I studied."
+              ],
+              "usefulPhrases": [
+                "I have ... years of experience in ...",
+                "I started as ...",
+                "Last year I became ..."
+              ],
+              "selfCheck": [
+                {
+                  "en": "I gave the number of years or months.",
+                  "uz": "Yillar yoki oylar sonini aytdim.",
+                  "ru": "Я назвал(а) количество лет или месяцев."
+                },
+                {
+                  "en": "I named my role.",
+                  "uz": "Lavozimimni aytdim.",
+                  "ru": "Я назвал(а) свою должность."
+                },
+                {
+                  "en": "I kept it to three or four sentences.",
+                  "uz": "Uch-toʻrt gapda ayttim.",
+                  "ru": "Я уложился(ась) в три-четыре предложения."
+                }
+              ]
+            },
+            {
+              "id": "cr-02-a4-i2",
+              "kind": "interview-question",
+              "skills": ["speaking", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "question": "Why did you leave your last job?",
+              "modelAnswers": [
+                "My contract finished, and I'm now looking for a permanent position.",
+                "I enjoyed my job, but I want more responsibility and a chance to use my English."
+              ],
+              "usefulPhrases": [
+                "My contract finished ...",
+                "I'm looking for ...",
+                "I want a chance to ..."
+              ],
+              "selfCheck": [
+                {
+                  "en": "I gave a clear reason.",
+                  "uz": "Aniq sabab aytdim.",
+                  "ru": "Я назвал(а) понятную причину."
+                },
+                {
+                  "en": "I did not speak badly about my old employer.",
+                  "uz": "Eski ish beruvchim haqida yomon gapirmadim.",
+                  "ru": "Я не говорил(а) плохо о прежнем работодателе."
+                },
+                {
+                  "en": "I said what I want now.",
+                  "uz": "Hozir nimani xohlashimni aytdim.",
+                  "ru": "Я сказал(а), чего хочу сейчас."
+                }
+              ]
+            },
+            {
+              "id": "cr-02-a4-i3",
+              "kind": "interview-question",
+              "skills": ["speaking", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "question": "Tell me about a problem you solved at work or in your studies.",
+              "modelAnswers": [
+                "A customer received the wrong order. I apologised, found the right product in another shop and sent it the same day. The customer thanked us in a review.",
+                "Our group project was late because one person was ill. I made a new plan, shared the tasks and we finished on time."
+              ],
+              "usefulPhrases": [
+                "The problem was ...",
+                "First, I ... Then I ...",
+                "In the end, ..."
+              ],
+              "selfCheck": [
+                {
+                  "en": "I described the problem.",
+                  "uz": "Muammoni tasvirlab berdim.",
+                  "ru": "Я описал(а) проблему."
+                },
+                {
+                  "en": "I said what I did, step by step.",
+                  "uz": "Nima qilganimni bosqichma-bosqich aytdim.",
+                  "ru": "Я рассказал(а), что сделал(а), по шагам."
+                },
+                {
+                  "en": "I said how it ended.",
+                  "uz": "Qanday tugaganini aytdim.",
+                  "ru": "Я сказал(а), чем всё закончилось."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cr-03-workplace-communication",
+      "title": "Workplace communication with colleagues and clients",
+      "summary": {
+        "en": "Make polite requests and offers, and handle simple situations with colleagues and clients.",
+        "uz": "Muloyim iltimos va takliflar qiling, hamkasblar va mijozlar bilan oddiy vaziyatlarni hal qiling.",
+        "ru": "Вежливо просите и предлагайте помощь, справляйтесь с простыми ситуациями с коллегами и клиентами."
+      },
+      "estimatedMinutes": 35,
+      "activities": [
+        {
+          "id": "cr-03-a1-lesson",
+          "type": "lesson",
+          "title": "Key phrases: working with colleagues and clients",
+          "instructions": {
+            "en": "Read the phrases and the example dialogue. Notice how each sentence gives one clear fact.",
+            "uz": "Iboralar va namunaviy suhbatni oʻqing. Har bir gap bitta aniq faktni berishiga eʼtibor bering.",
+            "ru": "Прочитайте фразы и пример диалога. Обратите внимание: каждое предложение даёт один ясный факт."
+          },
+          "skills": ["vocabulary", "grammar", "interaction"],
+          "estimatedMinutes": 12,
+          "items": [
+            {
+              "id": "cr-03-a1-p1",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Could you help me with ...?",
+              "example": "Could you help me with this report, please?"
+            },
+            {
+              "id": "cr-03-a1-p2",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Would you like me to ...?",
+              "example": "Would you like me to send you the file?",
+              "note": {
+                "en": "Use this to offer help.",
+                "uz": "Yordam taklif qilish uchun ishlatiladi.",
+                "ru": "Так предлагают помощь."
+              }
+            },
+            {
+              "id": "cr-03-a1-p3",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "I'm afraid ...",
+              "example": "I'm afraid the manager is in a meeting right now.",
+              "note": {
+                "en": "A polite way to give bad news.",
+                "uz": "Yomon xabarni muloyim aytish usuli.",
+                "ru": "Вежливый способ сообщить плохую новость."
+              }
+            },
+            {
+              "id": "cr-03-a1-p4",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Let me check and get back to you.",
+              "example": "I'm not sure about the price. Let me check and get back to you."
+            },
+            {
+              "id": "cr-03-a1-p5",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Is ... convenient for you?",
+              "example": "Is Thursday at ten convenient for you?"
+            },
+            {
+              "id": "cr-03-a1-p6",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Thanks for letting me know.",
+              "example": "The delivery is late? Thanks for letting me know."
+            },
+            {
+              "id": "cr-03-a1-g1",
+              "kind": "grammar-note",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "Polite requests and offers",
+              "explanation": {
+                "en": "For a request, use 'Could you ...?' or 'Can you ...?' and the base verb. 'Could' is more polite. To offer help, use 'Would you like me to ...?' or 'Shall I ...?'.",
+                "uz": "Iltimos uchun 'Could you ...?' yoki 'Can you ...?' va feʼlning asosiy shakli ishlatiladi. 'Could' muloyimroq. Yordam taklif qilish uchun 'Would you like me to ...?' yoki 'Shall I ...?' ishlatiladi.",
+                "ru": "Для просьбы — 'Could you ...?' или 'Can you ...?' и начальная форма глагола. 'Could' вежливее. Чтобы предложить помощь — 'Would you like me to ...?' или 'Shall I ...?'."
+              },
+              "examples": [
+                "Could you send me the price list?",
+                "Can you call me back after lunch?",
+                "Would you like me to book a room?",
+                "Shall I print the contract?"
+              ]
+            },
+            {
+              "id": "cr-03-a1-d1",
+              "kind": "dialogue",
+              "skills": ["interaction", "vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "Asking a colleague for help",
+              "lines": [
+                { "speaker": "Diyor", "text": "Hi Feruza. Could you help me with the new booking system?" },
+                { "speaker": "Feruza", "text": "Of course. What's the problem?" },
+                { "speaker": "Diyor", "text": "I can't find where to change a customer's date." },
+                { "speaker": "Feruza", "text": "Click 'Edit' next to the name. Would you like me to show you?" },
+                { "speaker": "Diyor", "text": "Yes, please. Thanks a lot." }
+              ]
+            },
+            {
+              "id": "cr-03-a1-d2",
+              "kind": "dialogue",
+              "skills": ["interaction", "vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "A client asks about a delay",
+              "lines": [
+                { "speaker": "Client", "text": "Hello, I ordered office chairs last week. When will they arrive?" },
+                { "speaker": "Sevara", "text": "Thank you for calling. I'm afraid there is a delay at the factory." },
+                { "speaker": "Client", "text": "Oh no. We need them for Monday." },
+                { "speaker": "Sevara", "text": "I understand. Let me check with the warehouse and get back to you today." },
+                { "speaker": "Client", "text": "Thank you. Please call me before five." }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cr-03-a2-exercises",
+          "type": "exercise",
+          "title": "Practice: workplace communication",
+          "instructions": {
+            "en": "Choose or complete the answers. You will see an explanation after each one.",
+            "uz": "Javoblarni tanlang yoki toʻldiring. Har biridan keyin izoh koʻrasiz.",
+            "ru": "Выберите или дополните ответы. После каждого вы увидите объяснение."
+          },
+          "skills": ["grammar", "vocabulary"],
+          "estimatedMinutes": 8,
+          "items": [
+            {
+              "id": "cr-03-a2-q1",
+              "kind": "multiple-choice",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "A client asks a question and you don't know the answer. What is the best reply?",
+              "options": [
+                "Let me check and get back to you.",
+                "I don't know.",
+                "That's not my job."
+              ],
+              "answer": "Let me check and get back to you.",
+              "explanation": {
+                "en": "This is honest and professional, and it tells the client what will happen next.",
+                "uz": "Bu halol va professional javob, mijozga keyin nima boʻlishini aytadi.",
+                "ru": "Это честный и профессиональный ответ: клиент понимает, что будет дальше."
+              }
+            },
+            {
+              "id": "cr-03-a2-q2",
+              "kind": "gap-fill",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "sentence": "Would you like me ___ the meeting room?",
+              "options": ["book", "to book", "booking"],
+              "answer": "to book",
+              "explanation": {
+                "en": "After 'Would you like me', use 'to' and the base verb: to book.",
+                "uz": "'Would you like me'dan keyin 'to' va feʼlning asosiy shakli keladi: to book.",
+                "ru": "После 'Would you like me' идут 'to' и начальная форма: to book."
+              }
+            },
+            {
+              "id": "cr-03-a2-q3",
+              "kind": "matching",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Match each situation with what you say.",
+              "pairs": [
+                { "left": "You offer help.", "right": "Shall I print it for you?" },
+                { "left": "You give bad news politely.", "right": "I'm afraid the order is late." },
+                { "left": "You suggest a time.", "right": "Is two o'clock convenient for you?" }
+              ],
+              "explanation": {
+                "en": "Offers, polite bad news and suggestions each have their own typical phrase.",
+                "uz": "Taklif, muloyim yomon xabar va tavsiya — har birining oʻz odatiy iborasi bor.",
+                "ru": "У предложения помощи, вежливой плохой новости и предложения времени — свои типичные фразы."
+              }
+            },
+            {
+              "id": "cr-03-a2-q4",
+              "kind": "ordering",
+              "skills": ["grammar", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Put the words in the right order to make a polite request.",
+              "segments": ["Could", "you", "send", "me", "the", "report,", "please?"],
+              "explanation": {
+                "en": "A polite request: 'Could you' + base verb + the rest + 'please'.",
+                "uz": "Muloyim iltimos: 'Could you' + asosiy feʼl + qolgan qism + 'please'.",
+                "ru": "Вежливая просьба: 'Could you' + глагол + остальное + 'please'."
+              }
+            }
+          ]
+        },
+        {
+          "id": "cr-03-a5-listening",
+          "type": "listening",
+          "title": "Listening: a call with a client",
+          "instructions": {
+            "en": "Listen to the conversation, then answer the questions. You can listen as many times as you like.",
+            "uz": "Suhbatni tinglang, soʻng savollarga javob bering. Xohlagancha qayta tinglashingiz mumkin.",
+            "ru": "Послушайте разговор, затем ответьте на вопросы. Слушать можно сколько угодно раз."
+          },
+          "skills": ["listening"],
+          "estimatedMinutes": 6,
+          "items": [
+            {
+              "id": "cr-03-a5-l1",
+              "kind": "listening",
+              "skills": ["listening", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "Changing a meeting",
+              "transcript": "Nodir: Good morning, Green Line Logistics, Nodir speaking.\nMs Karimova: Hello Nodir, this is Dilfuza Karimova from Sun Foods. We have a meeting with your manager on Tuesday at eleven.\nNodir: Yes, I can see it here.\nMs Karimova: I'm afraid I can't come on Tuesday. Is Wednesday at the same time convenient?\nNodir: Let me check. Yes, Wednesday at eleven is free. Shall I send you a new invitation?\nMs Karimova: Yes, please. Thank you, Nodir.\nNodir: You're welcome. Have a nice day.",
+              "questions": [
+                {
+                  "prompt": "Why does Ms Karimova call?",
+                  "options": ["To order food", "To change a meeting", "To ask about a price"],
+                  "answer": "To change a meeting",
+                  "explanation": {
+                    "en": "She can't come on Tuesday and asks for another day.",
+                    "uz": "U seshanba kuni kela olmaydi va boshqa kunni soʻraydi.",
+                    "ru": "Она не может прийти во вторник и просит другой день."
+                  }
+                },
+                {
+                  "prompt": "When is the new meeting?",
+                  "options": ["Tuesday at eleven", "Wednesday at eleven", "Wednesday at ten"],
+                  "answer": "Wednesday at eleven",
+                  "explanation": {
+                    "en": "Nodir says Wednesday at eleven is free.",
+                    "uz": "Nodir chorshanba soat oʻn birda boʻsh ekanini aytadi.",
+                    "ru": "Нодир говорит, что среда в одиннадцать свободна."
+                  }
+                },
+                {
+                  "prompt": "What will Nodir send?",
+                  "options": ["A new invitation", "A price list", "A contract"],
+                  "answer": "A new invitation",
+                  "explanation": {
+                    "en": "He offers to send a new invitation, and she says yes.",
+                    "uz": "U yangi taklifnoma yuborishni taklif qiladi, u rozi boʻladi.",
+                    "ru": "Он предлагает отправить новое приглашение, и она соглашается."
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cr-03-a4-speaking",
+          "type": "speaking",
+          "title": "Speaking: ask a colleague for help",
+          "instructions": {
+            "en": "Prepare for one minute, then speak for about 30 seconds. Afterwards, compare with the model answer and tick the checklist.",
+            "uz": "Bir daqiqa tayyorlaning, soʻng 30 soniya atrofida gapiring. Keyin namunaviy javob bilan solishtiring va roʻyxatni belgilang.",
+            "ru": "Подготовьтесь одну минуту, затем говорите около 30 секунд. После этого сравните с образцом и отметьте пункты списка."
+          },
+          "skills": ["speaking"],
+          "estimatedMinutes": 9,
+          "items": [
+            {
+              "id": "cr-03-a4-s1",
+              "kind": "speaking",
+              "skills": ["speaking", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": {
+                "en": "You have a problem at work, for example with a printer, a program or a deadline. Ask a colleague for help, explain the problem, and thank them.",
+                "uz": "Ishda muammongiz bor, masalan printer, dastur yoki muddat bilan. Hamkasbingizdan yordam soʻrang, muammoni tushuntiring va minnatdorchilik bildiring.",
+                "ru": "У вас проблема на работе, например с принтером, программой или сроком. Попросите коллегу о помощи, объясните проблему и поблагодарите."
+              },
+              "preparationHints": [
+                "Start with 'Sorry to bother you, could you help me ...?'",
+                "Explain the problem in one or two sentences.",
+                "Finish with 'Thanks a lot' or 'I really appreciate it.'"
+              ],
+              "modelAnswer": "Hi Aziz, sorry to bother you. Could you help me with the printer? It shows an error and my document doesn't print. I need it for a meeting at three. Oh, that's easy! Thanks a lot, I really appreciate it.",
+              "selfCheck": [
+                {
+                  "en": "I used 'Could you ...?' or 'Can you ...?'.",
+                  "uz": "'Could you ...?' yoki 'Can you ...?' ishlatdim.",
+                  "ru": "Я использовал(а) 'Could you ...?' или 'Can you ...?'."
+                },
+                {
+                  "en": "I explained the problem clearly.",
+                  "uz": "Muammoni aniq tushuntirdim.",
+                  "ru": "Я понятно объяснил(а) проблему."
+                },
+                {
+                  "en": "I thanked my colleague.",
+                  "uz": "Hamkasbimga rahmat aytdim.",
+                  "ru": "Я поблагодарил(а) коллегу."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cr-04-professional-emails",
+      "title": "Professional emails",
+      "summary": {
+        "en": "Read and write short, clear emails for work.",
+        "uz": "Ish uchun qisqa va aniq xatlarni oʻqing va yozing.",
+        "ru": "Читайте и пишите короткие и понятные рабочие письма."
+      },
+      "estimatedMinutes": 38,
+      "activities": [
+        {
+          "id": "cr-04-a1-lesson",
+          "type": "lesson",
+          "title": "Key phrases: professional emails",
+          "instructions": {
+            "en": "Read the phrases and the example email exchange. Notice how each email opens and closes.",
+            "uz": "Iboralar va namunaviy xat almashinuvini oʻqing. Har bir xat qanday boshlanib, qanday tugashiga eʼtibor bering.",
+            "ru": "Прочитайте фразы и пример переписки. Обратите внимание, как каждое письмо начинается и заканчивается."
+          },
+          "skills": ["vocabulary", "grammar", "writing"],
+          "estimatedMinutes": 10,
+          "items": [
+            {
+              "id": "cr-04-a1-p1",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Dear Mr / Ms ...,",
+              "example": "Dear Ms Rahimova,",
+              "note": {
+                "en": "Use the family name. If you don't know the name, write 'Dear Sir or Madam,'.",
+                "uz": "Familiyani ishlating. Ismni bilmasangiz, 'Dear Sir or Madam,' deb yozing.",
+                "ru": "Используйте фамилию. Если имя неизвестно, пишите 'Dear Sir or Madam,'."
+              }
+            },
+            {
+              "id": "cr-04-a1-p2",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "I am writing to ...",
+              "example": "I am writing to ask about the job advertised on your website."
+            },
+            {
+              "id": "cr-04-a1-p3",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Please find attached ...",
+              "example": "Please find attached my CV and a copy of my diploma."
+            },
+            {
+              "id": "cr-04-a1-p4",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Could you please ...?",
+              "example": "Could you please confirm the date of the interview?"
+            },
+            {
+              "id": "cr-04-a1-p5",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "I look forward to hearing from you.",
+              "example": "Thank you for your time. I look forward to hearing from you.",
+              "note": {
+                "en": "A common polite ending before your name.",
+                "uz": "Ismingizdan oldingi odatiy muloyim yakun.",
+                "ru": "Обычная вежливая концовка перед подписью."
+              }
+            },
+            {
+              "id": "cr-04-a1-p6",
+              "kind": "phrase",
+              "skills": ["vocabulary", "interaction"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "phrase": "Kind regards,",
+              "example": "Kind regards,\nOtabek Yusupov",
+              "note": {
+                "en": "Write your full name on the next line.",
+                "uz": "Keyingi qatorga toʻliq ismingizni yozing.",
+                "ru": "На следующей строке напишите полное имя."
+              }
+            },
+            {
+              "id": "cr-04-a1-g1",
+              "kind": "grammar-note",
+              "skills": ["grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "The parts of a short email",
+              "explanation": {
+                "en": "A short professional email has five parts: a greeting (Dear ...,), the reason (I am writing to ...), the details, a polite ending (I look forward to hearing from you.), and your name after 'Kind regards,'. Use full forms like 'I am' instead of 'I'm' in formal emails.",
+                "uz": "Qisqa rasmiy xat besh qismdan iborat: salom (Dear ...,), sabab (I am writing to ...), tafsilotlar, muloyim yakun (I look forward to hearing from you.) va 'Kind regards,'dan keyin ismingiz. Rasmiy xatlarda 'I'm' oʻrniga 'I am' kabi toʻliq shakllarni ishlating.",
+                "ru": "Короткое деловое письмо состоит из пяти частей: приветствие (Dear ...,), причина (I am writing to ...), подробности, вежливая концовка (I look forward to hearing from you.) и имя после 'Kind regards,'. В официальных письмах пишите полные формы: 'I am' вместо 'I'm'."
+              },
+              "examples": [
+                "Dear Mr Karimov,",
+                "I am writing to confirm our meeting on Friday.",
+                "Could you please send me the address?",
+                "Kind regards, Laylo Saidova"
+              ]
+            },
+            {
+              "id": "cr-04-a1-d1",
+              "kind": "dialogue",
+              "skills": ["writing", "vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "An email exchange",
+              "lines": [
+                { "speaker": "Otabek", "text": "Dear Ms Rahimova, I am writing to apply for the position of office assistant. Please find attached my CV. Kind regards, Otabek Yusupov" },
+                { "speaker": "Ms Rahimova", "text": "Dear Otabek, Thank you for your application. Could you come for an interview on Monday at 10:00? Kind regards, Gulnora Rahimova" },
+                { "speaker": "Otabek", "text": "Dear Ms Rahimova, Thank you for the invitation. I can come on Monday at 10:00. I look forward to meeting you. Kind regards, Otabek Yusupov" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cr-04-a2-reading",
+          "type": "reading",
+          "title": "Reading: two model emails",
+          "instructions": {
+            "en": "Read the two emails, then answer the questions.",
+            "uz": "Ikkita xatni oʻqing, soʻng savollarga javob bering.",
+            "ru": "Прочитайте два письма, затем ответьте на вопросы."
+          },
+          "skills": ["reading"],
+          "estimatedMinutes": 8,
+          "items": [
+            {
+              "id": "cr-04-a2-r1",
+              "kind": "reading",
+              "skills": ["reading", "writing"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "title": "Two emails",
+              "text": "Email 1\nSubject: Question about the training course\nDear Sir or Madam,\nI am writing to ask about your English for Business course. Could you please tell me when the next course starts and how much it costs? I work full-time, so I am interested in evening classes.\nI look forward to hearing from you.\nKind regards,\nMadina Ergasheva\n\nEmail 2\nSubject: Re: Question about the training course\nDear Ms Ergasheva,\nThank you for your email. The next evening course starts on 3 March. Classes are on Tuesdays and Thursdays from 18:30 to 20:00. The price is 1,200,000 sum for eight weeks. Please find attached the course timetable.\nKind regards,\nJahongir Tursunov\nTraining Centre Manager",
+              "questions": [
+                {
+                  "prompt": "Why does Madina write the first email?",
+                  "options": [
+                    "To ask about a course",
+                    "To apply for a job",
+                    "To complain about a class"
+                  ],
+                  "answer": "To ask about a course",
+                  "explanation": {
+                    "en": "She writes 'I am writing to ask about your English for Business course.'",
+                    "uz": "U 'I am writing to ask about your English for Business course' deb yozadi.",
+                    "ru": "Она пишет: 'I am writing to ask about your English for Business course.'"
+                  }
+                },
+                {
+                  "prompt": "Why does Madina want evening classes?",
+                  "options": [
+                    "She studies in the morning.",
+                    "She works full-time.",
+                    "They are cheaper."
+                  ],
+                  "answer": "She works full-time.",
+                  "explanation": {
+                    "en": "She explains that she works full-time.",
+                    "uz": "U toʻliq stavkada ishlashini tushuntiradi.",
+                    "ru": "Она объясняет, что работает полный день."
+                  }
+                },
+                {
+                  "prompt": "What does Jahongir attach to his email?",
+                  "options": ["A contract", "A price list", "The course timetable"],
+                  "answer": "The course timetable",
+                  "explanation": {
+                    "en": "He writes 'Please find attached the course timetable.'",
+                    "uz": "U 'Please find attached the course timetable' deb yozadi.",
+                    "ru": "Он пишет: 'Please find attached the course timetable.'"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "cr-04-a3-exercises",
+          "type": "exercise",
+          "title": "Practice: building an email",
+          "instructions": {
+            "en": "Choose or complete the answers. You will see an explanation after each one.",
+            "uz": "Javoblarni tanlang yoki toʻldiring. Har biridan keyin izoh koʻrasiz.",
+            "ru": "Выберите или дополните ответы. После каждого вы увидите объяснение."
+          },
+          "skills": ["writing", "vocabulary"],
+          "estimatedMinutes": 8,
+          "items": [
+            {
+              "id": "cr-04-a3-q1",
+              "kind": "multiple-choice",
+              "skills": ["writing", "vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "You don't know the name of the person you are writing to. How do you start?",
+              "options": ["Dear Sir or Madam,", "Hi there!", "Hello friend,"],
+              "answer": "Dear Sir or Madam,",
+              "explanation": {
+                "en": "'Dear Sir or Madam,' is the formal greeting when you don't know the name.",
+                "uz": "Ismni bilmaganda rasmiy salom — 'Dear Sir or Madam,'.",
+                "ru": "'Dear Sir or Madam,' — официальное приветствие, когда имя неизвестно."
+              }
+            },
+            {
+              "id": "cr-04-a3-q2",
+              "kind": "gap-fill",
+              "skills": ["writing", "grammar"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "sentence": "I am writing ___ ask about the price of your services.",
+              "options": ["for", "to", "that"],
+              "answer": "to",
+              "explanation": {
+                "en": "The phrase is 'I am writing to' + base verb.",
+                "uz": "Ibora shunday: 'I am writing to' + feʼlning asosiy shakli.",
+                "ru": "Фраза: 'I am writing to' + начальная форма глагола."
+              }
+            },
+            {
+              "id": "cr-04-a3-q3",
+              "kind": "matching",
+              "skills": ["writing", "vocabulary"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Match each part of an email with an example.",
+              "pairs": [
+                { "left": "Greeting", "right": "Dear Mr Aliev," },
+                { "left": "Reason for writing", "right": "I am writing to confirm my order." },
+                { "left": "Polite ending", "right": "I look forward to hearing from you." }
+              ],
+              "explanation": {
+                "en": "Every short professional email has a greeting, a reason and a polite ending.",
+                "uz": "Har bir qisqa rasmiy xatda salom, sabab va muloyim yakun boʻladi.",
+                "ru": "В каждом коротком деловом письме есть приветствие, причина и вежливая концовка."
+              }
+            },
+            {
+              "id": "cr-04-a3-q4",
+              "kind": "ordering",
+              "skills": ["writing"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "prompt": "Put the parts of the email in the right order.",
+              "segments": [
+                "Dear Ms Usmonova,",
+                "I am writing to ask for a meeting next week.",
+                "Is Tuesday morning convenient for you?",
+                "Kind regards, Sardor"
+              ],
+              "explanation": {
+                "en": "Greeting first, then the reason, then the details, and your name last.",
+                "uz": "Avval salom, keyin sabab, soʻng tafsilotlar va oxirida ismingiz.",
+                "ru": "Сначала приветствие, затем причина, потом подробности, в конце — имя."
+              }
+            }
+          ]
+        },
+        {
+          "id": "cr-04-a4-writing",
+          "type": "writing-checklist",
+          "title": "Writing practice: ask for a day off",
+          "instructions": {
+            "en": "Read the task and write your email. Then compare it with the model email and tick what your email does. This is self-assessment: nothing checks or corrects your text.",
+            "uz": "Topshiriqni oʻqing va xatingizni yozing. Keyin uni namunaviy xat bilan solishtiring va xatingizda bor narsalarni belgilang. Bu oʻz-oʻzini baholash: matningizni hech narsa tekshirmaydi yoki tuzatmaydi.",
+            "ru": "Прочитайте задание и напишите письмо. Затем сравните его с образцом и отметьте, что есть в вашем письме. Это самооценка: текст никто не проверяет и не исправляет."
+          },
+          "skills": ["writing"],
+          "estimatedMinutes": 12,
+          "items": [
+            {
+              "id": "cr-04-a4-w1",
+              "kind": "writing-task",
+              "skills": ["writing"],
+              "level": "elementary",
+              "content_status": "placeholder",
+              "license": "placeholder",
+              "task": {
+                "en": "Write a short email to your manager, Mr Nazarov. Ask for a day off next Friday, give the reason, and say who can do your work that day.",
+                "uz": "Rahbaringiz janob Nazarovga qisqa xat yozing. Kelasi juma kuni dam olish kunini soʻrang, sababini ayting va oʻsha kuni ishingizni kim bajarishini yozing.",
+                "ru": "Напишите короткое письмо руководителю, господину Назарову. Попросите выходной в следующую пятницу, назовите причину и напишите, кто сделает вашу работу в этот день."
+              },
+              "model": "Subject: Request for a day off on Friday\n\nDear Mr Nazarov,\n\nI am writing to ask for a day off next Friday, 14 March. My sister is getting married that day, and I would like to be with my family.\n\nI have finished the weekly report, and Aziza has agreed to answer my calls and emails on Friday.\n\nCould you please let me know if this is possible?\n\nKind regards,\nDilshod Karimov",
+              "checklist": [
+                {
+                  "en": "I started with 'Dear ...,'.",
+                  "uz": "'Dear ...,' bilan boshladim.",
+                  "ru": "Я начал(а) с 'Dear ...,'."
+                },
+                {
+                  "en": "I said why I am writing.",
+                  "uz": "Nima uchun yozayotganimni aytdim.",
+                  "ru": "Я написал(а), зачем пишу."
+                },
+                {
+                  "en": "I gave the date and the reason.",
+                  "uz": "Sana va sababni yozdim.",
+                  "ru": "Я указал(а) дату и причину."
+                },
+                {
+                  "en": "I said who can do my work.",
+                  "uz": "Ishimni kim bajarishini yozdim.",
+                  "ru": "Я написал(а), кто сделает мою работу."
+                },
+                {
+                  "en": "I ended politely and wrote my name.",
+                  "uz": "Muloyim yakunladim va ismimni yozdim.",
+                  "ru": "Я вежливо закончил(а) и подписался(ась)."
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

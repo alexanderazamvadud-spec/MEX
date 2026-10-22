@@ -98,6 +98,7 @@ Keep the real learning content out of the repository: `content-private/` is igno
 - Both pathway cards use the same variant, size and heading level, so neither appears secondary.
 - "Discover the Pathways" scrolls to the pathways section and moves focus to its heading without touching the URL hash, which holds the route.
 - The page reads and writes no learner data and never redirects; returning learners use the demo link.
+- The prototype section lists "What works today" and "Planned" (MVP-16b): today lists both pathways, lessons, exercises, reading and listening, speaking practice, interview practice, writing practice, Today's Mission (chosen by simple, transparent rules), progress and readiness, three languages and Delete my data; planned lists AI coaching, AI-personalised learning recommendations, speaking assessment, learner accounts and certificates.
 
 ## Onboarding (MVP-06b)
 
@@ -164,9 +165,16 @@ Keep the real learning content out of the repository: `content-private/` is igno
 - "Next question" is primary lg; on the last question "Finish interview practice" is the one saffron action.
 - The header shows "Sample content" and the "Self-assessment" badge, as on speaking.
 
+## Writing practice (MVP-16b)
+
+- Same header as speaking: back link, "Sample content", "Self-assessment", the English title, the type and minutes line, and the native-language switch.
+- The task sits in a sky panel in English (lead size), with the native explanation below when explanations are on.
+- Sections (h2): Your email (a text area, 9 rows, 2,000 characters at most, with the note "Optional. What you write stays on this device."), Model email ("Show model email" / "Hide model email", secondary md with `aria-expanded`; the English model keeps its line breaks), Check your email (the note "Tick what your email does." and `ChoiceCard` tick boxes, English title and native description).
+- "Finish writing practice" is the one saffron action. Nothing is corrected; the summary shows "You ticked n of N checks…".
+
 ## Activity summary (MVP-14)
 
-- Shown in place of the activity when it ends: after Finish (lesson, speaking, interview) or after the last question (exercises, reading, listening). The same header as the activity, with the "Completed" badge (and "Self-assessment" on speaking and interview).
+- Shown in place of the activity when it ends: after Finish (lesson, speaking, interview, writing) or after the last question (exercises, reading, listening). The same header as the activity, with the "Completed" badge (and "Self-assessment" on speaking, interview and writing).
 - A success-tint card with the h2 "Activity completed" (success text, takes focus) and the recap: the practice score and note, the lesson line, or "You ticked n of N checks…".
 - "Was this activity useful to you?": the shared `RatingScale` (five pill radio buttons, at least 44 px high, "Not useful" under 1 and "Very useful" under 5; also used for interview confidence). Optional; after a tap a small status line thanks the learner.
 - "Next activity" (accent lg link) and "Back to unit" (secondary lg link). On the unit's last activity only "Back to unit", as the saffron action.

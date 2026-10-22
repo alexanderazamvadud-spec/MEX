@@ -134,7 +134,8 @@ describe('HomePage', () => {
     const pack = await loadPack('general-english')
     const unit = pack.units[0]
     const reading = unit.activities.find((activity) => activity.type === 'reading')!
-    const store = storeWith('general-english', unit.activities.map((activity) => ({ pathway: 'general-english', unitId: unit.id, activityId: activity.id, completedAt: 't' })))
+    const all = pack.units.flatMap((item) => item.activities.map((activity) => ({ pathway: 'general-english' as const, unitId: item.id, activityId: activity.id, completedAt: 't' })))
+    const store = storeWith('general-english', all)
     store.update((current) => ({
       ...current,
       exerciseResults: [

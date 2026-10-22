@@ -7,7 +7,7 @@ import en from '../i18n/locales/en.json'
 import ru from '../i18n/locales/ru.json'
 import { renderAt, storeWith } from './learnTestUtils.tsx'
 
-// Interview practice opens since MVP-13, so a test-only writing activity stands in for an
+// Every activity type has a player since MVP-16b, so a test-only activity stands in for an
 // activity without a player.
 vi.mock('../content/packs/career-readiness.json', async (importOriginal) => {
   const { withUnplayableActivity } = await import('./testPacks.ts')
@@ -81,7 +81,7 @@ describe('Pathway overview', () => {
 
   it('shows Not started for an untouched pathway and does not label it current', async () => {
     renderAt('/learn/career-readiness', storeWith('general-english'))
-    await screen.findByText(learn.status.notStarted)
+    expect(await screen.findAllByText(learn.status.notStarted)).toHaveLength(4)
     expect(screen.queryByText(learn.current)).toBeNull()
   })
 
@@ -152,7 +152,7 @@ describe('Unit overview', () => {
   })
 
   it('updates at once when the language changes, keeping English titles', async () => {
-    // Career Readiness unit 1 has the test-only writing activity, which has no player.
+    // Career Readiness unit 1 has the test-only activity, which has no player.
     const pack = await loadPack('career-readiness')
     const unit = pack.units[0]
     renderAt(`/learn/career-readiness/${unit.id}`, storeWith('career-readiness'))
@@ -177,7 +177,7 @@ describe("Today's mission on Home", () => {
       activityId: activity.id,
       completedAt: '2026-10-02T00:00:00.000Z',
     }))
-    // With every playable activity done, the mission is the test-only writing activity.
+    // With every playable activity done, the mission is the test-only activity.
     const router = renderAt('/home', storeWith('career-readiness', completions))
     const writing = pack.units[0].activities.find((activity) => !canOpen(activity))!
     const link = await screen.findByRole('link', { name: writing.title })

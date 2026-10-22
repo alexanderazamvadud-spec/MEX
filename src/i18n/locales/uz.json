@@ -16,7 +16,7 @@
       "body": "MEX oʻquvchilarga maqsadli taʼlim va real hayotiy amaliyot orqali ingliz tilida amaliy muloqot hamda karyeraga tayyorgarlik koʻnikmalarini rivojlantirishga yordam beradi.",
       "primaryCta": "MEX demosini koʻrish",
       "secondaryCta": "Yoʻnalishlar bilan tanishish",
-      "demoNote": "Bu dastlabki demo, tayyor mahsulot emas. Darslar va mashqlar hali ishlab chiqilmoqda."
+      "demoNote": "Bu dastlabki demo, tayyor mahsulot emas. Barcha darslar sinov uchun namuna kontentdir."
     },
     "pathways": {
       "label": "Ikki yoʻnalish",
@@ -46,7 +46,7 @@
         "title": "Rivojlanishingizni kuzating",
         "body": "Qaysi koʻnikmalarni mashq qilganingizni va ishonchingiz qanday oshib borayotganini koʻring."
       },
-      "note": "MEX shunday ishlashi rejalashtirilgan. Joriy demoda bu bosqichlar hali ishlab chiqilmoqda."
+      "note": "Bu bosqichlarni demoda namuna kontent bilan sinab koʻrishingiz mumkin."
     },
     "audience": {
       "title": "MEX kimlar uchun",
@@ -68,18 +68,25 @@
       "intro": "MEX faol ishlab chiqilayotgan prototip. Quyida hozir nimani sinab koʻrish mumkinligi va nimalar rejalashtirilgani keltirilgan.",
       "availableTitle": "Bu demoda mavjud",
       "available": {
-        "landing": "Ushbu tanishtiruv sahifasi",
-        "preview": "Ilova sahifalari va navigatsiyasining dastlabki koʻrinishi",
+        "pathways": "Har birida toʻrttadan namunaviy boʻlimga ega ikki yoʻnalish",
+        "lessons": "Asosiy iboralar, grammatika va suhbatlardan iborat darslar",
+        "exercises": "Darhol javob va izohli mashqlar",
+        "readingListening": "Oʻqish va tinglash mashqlari",
+        "speaking": "Ixtiyoriy yozuv bilan gapirish mashqi, yozuv qurilmangizda qoladi",
+        "interview": "Ish suhbatiga yoʻnaltirilgan mashq",
+        "writing": "Tekshiruv roʻyxati bilan xat yozish mashqi",
+        "mission": "Oddiy va ochiq qoidalar asosida tanlanadigan bugungi vazifa",
+        "progress": "Yoʻnalish va koʻnikmalar boʻyicha rivojlanish hamda oʻz-oʻzini baholashdagi tayyorlik darajasi",
         "languages": "Ingliz, oʻzbek va rus tillaridagi interfeys",
         "delete": "Sozlamalardagi «Maʼlumotlarimni oʻchirish»"
       },
       "plannedTitle": "Rejalashtirilgan",
       "planned": {
-        "lessons": "Ikkala yoʻnalish uchun darslar va mashqlar",
-        "progress": "Koʻnikmalar boʻyicha rivojlanishni kuzatish",
         "coaching": "Ilgʻor sunʼiy intellekt murabbiyligi",
+        "recommendations": "Sunʼiy intellekt asosidagi shaxsiy oʻquv tavsiyalari",
         "speaking": "Nutqni baholash",
-        "recommendations": "Shaxsiy tavsiyalar"
+        "accounts": "Foydalanuvchi akkauntlari",
+        "certificates": "Sertifikatlar"
       },
       "plannedNote": "Rejalashtirilgan imkoniyatlar hali mavjud emas va oʻzgarishi mumkin."
     },
@@ -191,7 +198,7 @@
       "listening": "Tinglash",
       "speaking": "Gapirish",
       "interviewPractice": "Ish suhbati mashqi",
-      "writingChecklist": "Yozma topshiriq"
+      "writingChecklist": "Yozish mashqi"
     },
     "minutes": "Taxminan {{n}} daqiqa",
     "done": "Bajarildi",
@@ -278,6 +285,16 @@
     "ready": "Tayyorman",
     "next": "Keyingi savol",
     "finish": "Suhbat mashqini yakunlash"
+  },
+  "writing": {
+    "yourEmail": "Sizning xatingiz",
+    "savedNote": "Ixtiyoriy. Yozganingiz faqat shu qurilmada qoladi.",
+    "model": "Namunaviy xat",
+    "showModel": "Namunaviy xatni koʻrsatish",
+    "hideModel": "Namunaviy xatni yashirish",
+    "check": "Xatingizni tekshiring",
+    "checkNote": "Xatingizda bor narsalarni belgilang.",
+    "finish": "Yozish mashqini tugatish"
   },
   "summary": {
     "completed": "Mashgʻulot yakunlandi",

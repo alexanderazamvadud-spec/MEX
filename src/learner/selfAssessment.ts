@@ -1,11 +1,14 @@
 import type { LearnerRecord, PracticeSession, SelfAssessment } from './types.ts'
 
-// Self-assessment layer (MVP-12, MVP-13): speaking and interview self-checks the learner
+// Self-assessment layer (MVP-12, MVP-13, MVP-16b): speaking, interview and writing self-checks the learner
 // ticks themselves, with an optional typed answer and confidence. These are
 // never called "assessed" or "demonstrated" and never change readiness on their own.
 
 /** Typed interview answers (MVP-13) are kept on this device only, and short so the record stays small. */
 export const MAX_ANSWER_LENGTH = 1000
+
+/** Typed emails in writing practice (MVP-16b) are longer than interview answers. */
+export const MAX_WRITING_LENGTH = 2000
 
 /** Adds one self-assessment. Earlier ones are history and are never changed or removed. */
 export function withSelfAssessment(record: LearnerRecord, entry: SelfAssessment): LearnerRecord {
