@@ -2,7 +2,9 @@
   "_status": "DRAFT - pending owner review",
   "app": {
     "title": "MEX",
-    "subtitle": "Modern Employability eXperience"
+    "subtitle": "Modern Employability eXperience",
+    "contentError": "MEX darslarni yuklay olmadi. Internet aloqasini tekshirib, qaytadan urinib koʻring.",
+    "tryAgain": "Qaytadan urinish"
   },
   "landing": {
     "header": {
@@ -339,9 +341,6 @@
     "progress": "Rivojlanish",
     "settings": "Sozlamalar"
   },
-  "stub": {
-    "comingSoon": "Bu sahifa keyingi bosqichda tayyor boʻladi."
-  },
   "notFound": {
     "title": "Sahifa topilmadi",
     "body": "Havola notoʻgʻri yoki eskirgan boʻlishi mumkin.",
@@ -353,6 +352,12 @@
     "deleteConfirmYes": "Ha, hammasini oʻchirish",
     "cancel": "Bekor qilish",
     "deleted": "Maʼlumotlaringiz oʻchirildi.",
-    "privacyNote": "MEX natijalaringizni faqat shu qurilmada saqlaydi. Hech narsa serverga yuborilmaydi."
+    "privacyNote": "MEX natijalaringizni faqat shu qurilmada saqlaydi. Hech narsa serverga yuborilmaydi.",
+    "pathwaySwitchTo": "«{{pathway}}» yoʻnalishiga oʻtish",
+    "explanationsTitle": "Tushuntirishlar",
+    "explanationsEnglish": "Tushuntirishlar interfeys <uz>Oʻzbekcha</uz> yoki <ru>Русский</ru> tilida boʻlganda mavjud.",
+    "aboutTitle": "Ilova haqida",
+    "aboutBody": "MEX pilot demosi. Kontent sinov uchun namuna kontentdir.",
+    "version": "Versiya {{version}} (yigʻma {{commit}}, {{date}})"
   }
 }

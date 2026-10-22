@@ -172,7 +172,8 @@ describe('SpeakingPage', () => {
     vi.useFakeTimers({ shouldAdvanceTime: false, toFake: ['setInterval', 'clearInterval', 'Date'] })
     const { path } = await speaking()
     renderAt(path, storeWith('general-english'))
-    await act(() => vi.advanceTimersByTimeAsync(0))
+    // Wait for the pack to load; only the interval timer is faked, so findBy still works.
+    await screen.findByRole('button', { name: text.startPreparing })
     const prepare = within(document.querySelector<HTMLElement>('[data-step="prepare"]')!)
     const speak = within(document.querySelector<HTMLElement>('[data-step="speak"]')!)
     expect(prepare.getByRole('timer').textContent).toBe('1:00')

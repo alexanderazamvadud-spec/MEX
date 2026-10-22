@@ -15,6 +15,9 @@
     font-size: var(--text-body);
     line-height: var(--text-body--line-height);
     font-weight: var(--text-body--font-weight);
+    /* At 200% zoom on a phone a long word can be wider than its card; let it break
+       instead of making the page scroll sideways (MVP-17 quality pass). */
+    overflow-wrap: anywhere;
   }
 
   a {
@@ -29,6 +32,12 @@
   :focus-visible {
     outline: 2px solid var(--focus-ring);
     outline-offset: 2px;
+  }
+
+  /* A screen's h1 receives focus after navigation only so screen readers start there;
+     it is not a control, so it shows no focus ring. */
+  main h1[tabindex='-1']:focus {
+    outline: none;
   }
 
   @media (prefers-reduced-motion: reduce) {

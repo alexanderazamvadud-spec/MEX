@@ -2,7 +2,9 @@
   "_status": "DRAFT - pending owner review",
   "app": {
     "title": "MEX",
-    "subtitle": "Modern Employability eXperience"
+    "subtitle": "Modern Employability eXperience",
+    "contentError": "MEX не удалось загрузить уроки. Проверьте подключение к интернету и попробуйте снова.",
+    "tryAgain": "Попробовать снова"
   },
   "landing": {
     "header": {
@@ -339,9 +341,6 @@
     "progress": "Прогресс",
     "settings": "Настройки"
   },
-  "stub": {
-    "comingSoon": "Этот экран появится на следующем этапе."
-  },
   "notFound": {
     "title": "Страница не найдена",
     "body": "Ссылка может быть неверной или устаревшей.",
@@ -353,6 +352,12 @@
     "deleteConfirmYes": "Да, удалить всё",
     "cancel": "Отмена",
     "deleted": "Ваши данные удалены.",
-    "privacyNote": "MEX хранит ваш прогресс только на этом устройстве. Ничего не отправляется на сервер."
+    "privacyNote": "MEX хранит ваш прогресс только на этом устройстве. Ничего не отправляется на сервер.",
+    "pathwaySwitchTo": "Перейти на «{{pathway}}»",
+    "explanationsTitle": "Пояснения",
+    "explanationsEnglish": "Пояснения доступны, когда интерфейс на языке <uz>Oʻzbekcha</uz> или <ru>Русский</ru>.",
+    "aboutTitle": "О приложении",
+    "aboutBody": "Пилотная демоверсия MEX. Материалы — примеры для тестирования.",
+    "version": "Версия {{version}} (сборка {{commit}}, {{date}})"
   }
 }

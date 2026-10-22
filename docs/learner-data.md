@@ -11,7 +11,7 @@ Everything lives in the learner's browser, in `localStorage`, under two keys:
 | `mex.learner` | One JSON document: the learner record below |
 | `mex.language` | The chosen interface language code |
 
-Nothing is sent anywhere. Clearing the browser, using a private window or switching devices loses the data; the pilot briefing must say so. If storage is blocked, or a write fails because it is full, the app keeps working in memory for the session and `persistent` becomes false; no screen shows a notice about this yet (its wording needs the owner's approval).
+Nothing is sent anywhere. Clearing the browser, using a private window or switching devices loses the data; the pilot briefing must say so. If storage is blocked, or a write fails because it is full, the app keeps working in memory for the session and `persistent` becomes false. This includes browsers that block site data, where even reading `window.localStorage` throws (fixed in MVP-17). The last onboarding step and Settings then show the owner-approved notice `onboarding.storageNotice`.
 
 Storage is shared by every tab of the same browser. The store listens for changes made in other tabs and re-reads the record, so "Delete my data" in one tab also clears what the other tabs show, and the language choice follows too. Two tabs writing at the same moment still save the whole document last-write-wins; the pilot briefing should ask learners to use MEX in one tab.
 
@@ -116,10 +116,21 @@ Owner decision 2026-10-19; `MISSION_PILOT_SETTINGS` are pilot settings to be rev
 
 **Readiness rules (owner decision 2026-10-18, PILOT SETTINGS to be reviewed after the pilot; `READINESS_PILOT_SETTINGS`):** only finished Career Readiness interview practice sessions count. Getting started: fewer than 2 sessions. Building: at least 2. Confident: at least 4, and in the 3 most recent sessions an average confidence of at least 4 of 5 (rated questions only; none rated means not Confident) and at least 75% of all self-check boxes ticked. The level is recalculated each time and can go down. "Highest reached" replays the sessions in order and keeps the best level and the date it was first reached; it is never erased except by "Delete my data". General English data, unfinished runs and answers saved before MVP-15 (no session id) are never counted. Speaking practice in Career Readiness is shown as "n done" (distinct finished runs) as supporting evidence and does not change the level during the pilot. The rules ship in the public site bundle; the owner accepted this for the pilot.
 
+## Settings (MVP-17)
+
+`#/settings` writes only values that already exist:
+
+- **Interface language:** the language buttons store `mex.language` at once. The profile's saved onboarding language is not changed.
+- **Current pathway** (shown only when there is a profile): "Switch to …", after the same in-card confirmation as Home, changes `profile.pathway` and `profile.updatedAt` (`withPathway` in `src/learner/profile.ts`, used by Home too).
+- **Explanations:** the switch writes `preferences.nativeExplanations`, the same preference the lesson and exercise screens use. In an English interface it is hidden and a line says explanations need the Uzbek or Russian interface.
+- **About:** the version comes from `package.json`; the commit and build date are added at build time (`__MEX_BUILD__` in `vite.config.ts`, read through `src/buildInfo.ts`). Nothing is stored.
+
+When a content pack cannot load (for example the connection dropped after the app opened), Home, the Learn screens, activities and Progress show "MEX could not load the lessons…" with "Try again", which reloads the page. Saved data is not touched. If the device is offline on the very first visit, the app itself cannot load, so no MEX message can appear.
+
 ## Deleting data
 
 Settings offers "Delete my data": a confirmation step, then the record and language choice are removed and the interface returns to English. Texts live in the locale files under `settings.*`.
 
 ## Tests
 
-`npm test` runs the unit tests in `src/learner/localStore.test.ts` `src/learner/profile.test.ts` `src/learner/home.test.ts`, `src/learner/progress.test.ts`, `src/learner/lesson.test.ts`, `src/learner/exercise.test.ts`, `src/learner/speech.test.ts`, `src/learner/selfAssessment.test.ts`, `src/learner/recording.test.ts`, `src/learner/usefulness.test.ts`, `src/learner/readiness.test.ts`, `src/learner/skills.test.ts` and `src/learner/mission.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable storage, failed writes, changes from other tabs, migration, every readiness threshold boundary). The deployment workflow runs them before the build.
+`npm test` runs the unit tests in `src/learner/localStore.test.ts` `src/learner/profile.test.ts` `src/learner/home.test.ts`, `src/learner/progress.test.ts`, `src/learner/lesson.test.ts`, `src/learner/exercise.test.ts`, `src/learner/speech.test.ts`, `src/learner/selfAssessment.test.ts`, `src/learner/recording.test.ts`, `src/learner/usefulness.test.ts`, `src/learner/readiness.test.ts`, `src/learner/skills.test.ts` and `src/learner/mission.test.ts` (empty start, persistence, notifications and unsubscribe, reset, corrupt data, unavailable or blocked storage, failed writes, changes from other tabs, migration, every readiness threshold boundary). The deployment workflow runs them before the build.

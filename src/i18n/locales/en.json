@@ -1,7 +1,9 @@
 {
   "app": {
     "title": "MEX",
-    "subtitle": "Modern Employability eXperience"
+    "subtitle": "Modern Employability eXperience",
+    "contentError": "MEX could not load the lessons. Check your internet connection and try again.",
+    "tryAgain": "Try again"
   },
   "landing": {
     "header": {
@@ -338,9 +340,6 @@
     "progress": "Progress",
     "settings": "Settings"
   },
-  "stub": {
-    "comingSoon": "This screen is coming in a later task."
-  },
   "notFound": {
     "title": "Page not found",
     "body": "The link may be wrong or out of date.",
@@ -352,6 +351,12 @@
     "deleteConfirmYes": "Yes, delete everything",
     "cancel": "Cancel",
     "deleted": "Your data has been deleted.",
-    "privacyNote": "MEX keeps your progress only on this device. Nothing is sent to a server."
+    "privacyNote": "MEX keeps your progress only on this device. Nothing is sent to a server.",
+    "pathwaySwitchTo": "Switch to {{pathway}}",
+    "explanationsTitle": "Explanations",
+    "explanationsEnglish": "Explanations are available when the interface is in <uz>Oʻzbekcha</uz> or <ru>Русский</ru>.",
+    "aboutTitle": "About",
+    "aboutBody": "MEX pilot demo. Content is sample content for testing.",
+    "version": "Version {{version}} (build {{commit}}, {{date}})"
   }
 }

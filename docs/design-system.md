@@ -82,7 +82,7 @@ Inputs and progress bars are added by the tasks that need them, using these toke
 
 ## App shell and navigation (MVP-03)
 
-- `AppShell` (layout route): `TopBar`, the screen inside `PageContainer`, then `BottomNav`. Screens: `#/home`, `#/learn`, `#/progress`, `#/settings`; any other hash path renders `NotFoundPage` inside the shell. `#/` is the public landing page and `#/onboarding` the onboarding screen (both outside the shell, see below). Home is the dashboard and Learn holds the pathway screens (see below); Progress is still a placeholder. Home, Learn and Progress require a learner profile and send learners without one to onboarding.
+- `AppShell` (layout route): `TopBar`, the screen inside `PageContainer`, then `BottomNav`. Screens: `#/home`, `#/learn`, `#/progress`, `#/settings`; any other hash path renders `NotFoundPage` inside the shell. `#/` is the public landing page and `#/onboarding` the onboarding screen (both outside the shell, see below). Home is the dashboard, Learn holds the pathway screens, Progress shows the three layers and Settings the learner's choices (see below). Home, Learn and Progress require a learner profile and send learners without one to onboarding.
 - `TopBar`: the wordmark (links to Home, 44 px link box) and `LanguageMenu`, a 44 px pill showing the current language code, named "Interface language: UZ, Oʻzbekcha" (code plus name, so the visible code is part of the spoken name), that opens a panel with `LanguageButtons`. The panel closes after a choice, on Escape, or on a click outside; focus returns to the pill.
 - `LanguageButtons`: three pill buttons in a group named "Interface language"; the active one is primary blue, carries a checkmark and `aria-pressed="true"`, so the choice is never shown by colour alone.
 - `BottomNav`: four tabs with outline icons from `src/components/icons/NavIcons.tsx` and translated labels; 48 px targets; the active tab is primary blue with `aria-current="page"`; a 1 px divider on top. It stays at the bottom of the page column on every width in Phase 1.
@@ -182,6 +182,21 @@ Keep the real learning content out of the repository: `content-private/` is igno
 - Completion and skill rows use a thin decorative bar (`MeterBar`: primary fill on the light track, `aria-hidden`); the text beside it always carries the figures. No percentages and no grades.
 - Readiness shows "Current level" and the level name (h3 style, primary), the one-sentence explanation, "This is your own view, not a test result.", "Highest reached" with its date, and the evidence list. Averages are shown with one decimal, rounded down so a value below 4 never reads as "4.0".
 - Read-only: no saffron action and no buttons. On Home, the readiness block adds a secondary sm link "See your progress"; Home still has no saffron action.
+
+## Settings (MVP-17)
+
+- `#/settings`: the screen `h1`, then soft cards (`p-5`, level-2 headings) in this order: "Interface language" (`LanguageButtons`), "Current pathway" (the name in h3 style and a tertiary "Switch to …" with the shared `PathwaySwitch` confirmation, as on Home), "Explanations" (the `Switch`, or in an English interface one line naming Oʻzbekcha and Русский, each with its own `lang`), "Delete my data" (privacy note and the destructive button), "About" (one line, then the version in small secondary text). No saffron action.
+- When the device cannot save, the warning-tinted storage notice sits just above "Delete my data".
+
+## Content-load message (MVP-17)
+
+- `ContentLoadError`: a soft card with `role="alert"`, the message and a primary sm "Try again" (reloads the page). Home keeps its h1 and the readiness block below it; Progress shows it inside "What you have finished" and keeps the other two cards; the Learn screens and activities show the "Learn" h1 above it. Nothing stays marked as busy.
+
+## Quality pass (MVP-17)
+
+- After moving to another screen inside the app, focus goes to the new screen's `h1` (no focus ring on the heading, since it is not a control), and the tab title names the section ("Learn · MEX").
+- Long words may break (`overflow-wrap: anywhere` on `body`), so nothing scrolls sideways at 200% zoom on a 390 px phone.
+- Checked in Chromium on every screen at 360 × 740, 390 × 844, 412 × 915, 844 × 390, 320 × 640, 1280 × 800 and 1440 × 900 in EN, UZ and RU: no horizontal scroll, every target at least 44 px, at most one saffron action, one h1 and no skipped heading level, axe-core with no violations, reduced motion, and no external requests. Screen readers are checked on a real phone (owner checklist).
 
 ## Development style guide
 

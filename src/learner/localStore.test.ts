@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 import { LANGUAGE_STORAGE_KEY } from '../i18n/storageKey.ts'
 import { LEARNER_STORAGE_KEY, createLocalLearnerStore, migrateRecord } from './localStore.ts'
 import { LEARNER_SCHEMA_VERSION, createEmptyRecord } from './types.ts'
@@ -85,6 +85,23 @@ describe('createLocalLearnerStore', () => {
     expect(next.preferences.nativeExplanations).toBe(true)
     expect(store.read().preferences.nativeExplanations).toBe(true)
     expect(() => store.reset()).not.toThrow()
+  })
+
+  it('works in memory when the browser blocks site data and reading localStorage throws', () => {
+    const blocked = {}
+    Object.defineProperty(blocked, 'localStorage', {
+      get() {
+        throw new Error('SecurityError: access denied')
+      },
+    })
+    vi.stubGlobal('window', blocked)
+    try {
+      const store = createLocalLearnerStore({ now: fixedNow, changeEvents: null })
+      expect(store.persistent).toBe(false)
+      expect(store.update((record) => record)).toBeTruthy()
+    } finally {
+      vi.unstubAllGlobals()
+    }
   })
 
   it('keeps working when a write fails and reports that data is no longer persistent', () => {

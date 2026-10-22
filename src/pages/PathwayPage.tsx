@@ -5,7 +5,8 @@ import LinkCard from '../components/learn/LinkCard.tsx'
 import { PATHWAY_KEYS } from '../components/learn/text.ts'
 import Badge, { type BadgeVariant } from '../components/ui/Badge.tsx'
 import { isPlaceholder, localized, PATHWAY_IDS, type PathwayId } from '../content/index.ts'
-import { usePack } from '../content/usePack.ts'
+import ContentLoadError from '../components/ui/ContentLoadError.tsx'
+import { usePackResult } from '../content/usePack.ts'
 import { completedActivityIds, unitCompletion, type UnitStatus } from '../learner/progress.ts'
 import { useLearner } from '../learner/useLearner.ts'
 import NotFoundPage from './NotFoundPage.tsx'
@@ -27,11 +28,12 @@ function isPathwayId(value: string | undefined): value is PathwayId {
 export default function PathwayPage() {
   const { pathway } = useParams()
   const valid = isPathwayId(pathway)
-  const pack = usePack(valid ? pathway : null)
+  const { pack, failed } = usePackResult(valid ? pathway : null)
   const { t, i18n } = useTranslation()
   const { record } = useLearner()
 
   if (!valid) return <NotFoundPage />
+  if (failed) return <ContentLoadError pageTitle={t('nav.learn')} />
 
   const done = completedActivityIds(pathway, record.completions)
   const name = t(`landing.pathways.${PATHWAY_KEYS[pathway]}.name`)
