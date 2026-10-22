@@ -14,6 +14,7 @@ function renderLanding() {
       { path: '/', element: <LandingPage /> },
       { path: '/home', element: <p>Home screen</p> },
       { path: '/settings', element: <p>Settings screen</p> },
+      { path: '/terms', element: <p>Terms screen</p> },
     ],
     { initialEntries: ['/'] },
   )
@@ -64,7 +65,7 @@ describe('LandingPage', () => {
     ])
     expect(screen.getByRole('banner')).toBeTruthy()
     expect(screen.getByRole('contentinfo').textContent).toContain(
-      '© 2026 Alexis Team LLC. MEX — Modern Employability eXperience.',
+      '© 2026 Alexis Team LLC. All rights reserved. MEX — Modern Employability eXperience. The lessons in this pilot are sample content for testing.',
     )
   })
 
@@ -103,7 +104,7 @@ describe('LandingPage', () => {
   it('links only to existing screens and offers no sign-up or onboarding', () => {
     renderLanding()
     const targets = new Set(screen.getAllByRole('link').map((link) => link.getAttribute('href')))
-    expect([...targets].sort()).toEqual(['/home', '/settings'])
+    expect([...targets].sort()).toEqual(['/home', '/settings', '/terms'])
     expect(document.body.textContent).not.toMatch(/sign up|sign in|log in|register|onboarding/i)
   })
 

@@ -132,6 +132,7 @@ describe('SettingsPage', () => {
     const version = document.querySelector('[data-version]')?.textContent ?? ''
     expect(version).toMatch(/^Version 0\.1\.0 \(build [0-9a-z]+, \d{1,2} [A-Z][a-z]+ \d{4}\)$/)
     expect(section('about').getByText(en.settings.aboutBody)).toBeTruthy()
+    expect(section('about').getByRole('link', { name: en.legal.link }).getAttribute('href')).toBe('/terms')
   })
 
   it('shows the storage notice only when the device cannot save', () => {

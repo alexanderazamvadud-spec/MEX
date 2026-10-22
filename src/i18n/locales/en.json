@@ -96,7 +96,8 @@
       "settingsLink": "Go to Settings"
     },
     "footer": {
-      "copyright": "© 2026 Alexis Team LLC. MEX — Modern Employability eXperience.",
+      "copyright": "© 2026 Alexis Team LLC. All rights reserved. MEX — Modern Employability eXperience.",
+      "sample": "The lessons in this pilot are sample content for testing.",
       "note": "Prototype. Not yet a launched product."
     }
   },
@@ -375,5 +376,67 @@
     "aboutTitle": "About",
     "aboutBody": "MEX pilot demo. Content is sample content for testing.",
     "version": "Version {{version}} (build {{commit}}, {{date}})"
+  },
+  "legal": {
+    "link": "Terms and privacy",
+    "title": "Terms and privacy",
+    "termsTitle": "Terms of use",
+    "privacyTitle": "Privacy",
+    "copyright": "© 2026 Alexis Team LLC. All rights reserved. MEX — Modern Employability eXperience. The lessons in this pilot are sample content for testing.",
+    "terms": {
+      "pilot": {
+        "title": "A pilot, not a finished product.",
+        "body": "MEX is an early demo, tested with a small group of learners. It is free. It may change, stop working or contain mistakes."
+      },
+      "sample": {
+        "title": "Sample content.",
+        "body": "All lessons are sample content written for testing. They are not a full course and do not prepare you for any exam."
+      },
+      "assessment": {
+        "title": "No assessment.",
+        "body": "MEX does not test, grade or certify your English. Exercise results are practice feedback only. Readiness and the ticks you give are your own self-assessment. Nothing in MEX is a qualification, a certificate or a statement to employers."
+      },
+      "ai": {
+        "title": "No artificial intelligence.",
+        "body": "MEX does not use AI. Your speaking, interview answers and emails are not checked by a person or by a computer. Listening uses your device’s own voice."
+      },
+      "use": {
+        "title": "Your use.",
+        "body": "You may use MEX for your own learning during the pilot. Please do not copy, sell or republish the app or its content."
+      },
+      "guarantee": {
+        "title": "No guarantee.",
+        "body": "MEX is provided as it is, without any promise of results. Alexis Team LLC is not responsible for decisions you make based on it."
+      }
+    },
+    "privacy": {
+      "account": {
+        "title": "No account.",
+        "body": "MEX does not ask for your name, email address or phone number."
+      },
+      "device": {
+        "title": "Your data stays on this device.",
+        "body": "Your choices, progress, typed answers, ticks and ratings are saved only in this browser on this device. MEX sends none of it to us or to anyone else."
+      },
+      "recordings": {
+        "title": "Recordings are never saved.",
+        "body": "The microphone is used only when you tap Record, and the recording is gone when you leave the screen."
+      },
+      "tracking": {
+        "title": "No tracking.",
+        "body": "MEX has no analytics, advertising or tracking cookies."
+      },
+      "hosting": {
+        "title": "Hosting.",
+        "body": "The site is hosted on GitHub Pages. When you open it, GitHub may record technical information such as your IP address, under GitHub’s own privacy statement."
+      },
+      "delete": {
+        "title": "Deleting your data.",
+        "body": "Settings, Delete my data removes everything. Clearing your browser data also removes it."
+      }
+    },
+    "contact": "Questions:",
+    "contactLink": "Telegram {{handle}}",
+    "opensNewTab": "(opens in a new tab)"
   }
 }

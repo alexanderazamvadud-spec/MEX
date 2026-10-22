@@ -43,7 +43,7 @@ describe('locale files', () => {
   it('keep the product name and footer identical in every language', () => {
     for (const locale of [en, uz, ru]) {
       expect(locale.app.subtitle).toBe('Modern Employability eXperience')
-      expect(locale.landing.footer.copyright).toBe('© 2026 Alexis Team LLC. MEX — Modern Employability eXperience.')
+      expect(locale.landing.footer.copyright).toBe('© 2026 Alexis Team LLC. All rights reserved. MEX — Modern Employability eXperience.')
     }
   })
 

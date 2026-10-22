@@ -131,6 +131,10 @@ Owner decision 2026-10-19; `MISSION_PILOT_SETTINGS` are pilot settings to be rev
 
 When a content pack cannot load (for example the connection dropped after the app opened), Home, the Learn screens, activities and Progress show "MEX could not load the lessons…" with "Try again", which reloads the page. Saved data is not touched. If the device is offline on the very first visit, the app itself cannot load, so no MEX message can appear.
 
+## Terms and privacy (MVP-18)
+
+`#/terms` reads and writes no learner data. Its privacy section states the rules in this document in plain words: no account, everything saved only in this browser, recordings never saved, no analytics or tracking cookies, the GitHub Pages host may log technical information such as IP addresses, and "Delete my data" removes everything. A change to what MEX stores must update that text too.
+
 ## Deleting data
 
 Settings offers "Delete my data": a confirmation step, then the record and language choice are removed and the interface returns to English. Texts live in the locale files under `settings.*`.
