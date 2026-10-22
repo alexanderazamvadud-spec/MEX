@@ -65,6 +65,7 @@ Each `interview-question` item is one screen ("Question 1 of 3"): the `question`
 - It must not be copied, paraphrased or reconstructed from MEX books or methodologies. Real content is delivered later by a method the owner approves; local drafts go in the ignored `content-private/` folder.
 - The interface shows a "Sample content" badge wherever placeholder content appears (`isPlaceholder()` in `src/content/index.ts`).
 - Since MVP-16b `npm run check:content` enforces this: in a pack whose status is placeholder, every item must have `content_status` and `license` set to `placeholder`.
+- Since MVP-18 the test `src/pages/SampleContentLabels.test.tsx` renders Home, the pathway overview, every unit overview and every activity of both packs in EN, UZ and RU, and fails if any of them lacks the "Sample content" label while the pack is placeholder.
 - Phase 1 has four placeholder units per pathway (MVP-16b), on the Scope v2 topics: General English (Introductions, Daily routines, Shopping and services, Past experiences) and Career Readiness (Introducing yourself professionally, Job interview basics, Workplace communication, Professional emails).
 
 ## Checking

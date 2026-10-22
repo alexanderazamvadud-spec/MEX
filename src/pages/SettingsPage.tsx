@@ -1,3 +1,4 @@
+import { Link } from 'react-router'
 import { Trans, useTranslation } from 'react-i18next'
 import { BUILD_INFO } from '../buildInfo.ts'
 import PathwaySwitch from '../components/home/PathwaySwitch.tsx'
@@ -73,6 +74,15 @@ export default function SettingsPage() {
 
       <SettingsSection title={t('settings.aboutTitle')} data-section="about">
         <p className="text-body">{t('settings.aboutBody')}</p>
+        <div>
+          <Link
+            to="/terms"
+            state={{ from: '/settings' }}
+            className="inline-flex min-h-11 items-center rounded-pill text-body underline underline-offset-2"
+          >
+            {t('legal.link')}
+          </Link>
+        </div>
         <p className="text-small text-ink-secondary" data-version>
           {t('settings.version', { version: BUILD_INFO.version, commit: BUILD_INFO.commit, date: formatDay(`${BUILD_INFO.date}T12:00:00`, language) })}
         </p>

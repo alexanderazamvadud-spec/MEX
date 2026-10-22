@@ -205,8 +205,19 @@ export default function LandingPage() {
 
       <footer className="border-t border-divider">
         <LandingContainer className="flex flex-col gap-1 py-6 text-small text-ink-secondary">
-          <p>{t('landing.footer.copyright')}</p>
+          <p>
+            {t('landing.footer.copyright')} {t('landing.footer.sample')}
+          </p>
           <p>{t('landing.footer.note')}</p>
+          <div>
+            <Link
+              to="/terms"
+              state={{ from: '/' }}
+              className="inline-flex min-h-11 items-center rounded-pill underline underline-offset-2"
+            >
+              {t('legal.link')}
+            </Link>
+          </div>
         </LandingContainer>
       </footer>
     </div>

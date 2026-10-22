@@ -10,6 +10,7 @@ import NotFoundPage from '../pages/NotFoundPage.tsx'
 import OnboardingPage from '../pages/OnboardingPage.tsx'
 import PathwayPage from '../pages/PathwayPage.tsx'
 import SettingsPage from '../pages/SettingsPage.tsx'
+import TermsPage from '../pages/TermsPage.tsx'
 import ProgressPage from '../pages/ProgressPage.tsx'
 import UnitPage from '../pages/UnitPage.tsx'
 
@@ -18,6 +19,7 @@ import UnitPage from '../pages/UnitPage.tsx'
 const routes: RouteObject[] = [
   { path: '/', element: <LandingPage /> },
   { path: '/onboarding', element: <OnboardingPage /> },
+  { path: '/terms', element: <TermsPage /> },
   {
     element: <AppShell />,
     children: [

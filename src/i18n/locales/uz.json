@@ -97,7 +97,8 @@
       "settingsLink": "Sozlamalarga oʻtish"
     },
     "footer": {
-      "copyright": "© 2026 Alexis Team LLC. MEX — Modern Employability eXperience.",
+      "copyright": "© 2026 Alexis Team LLC. All rights reserved. MEX — Modern Employability eXperience.",
+      "sample": "Ushbu pilotdagi darslar sinov uchun namuna kontentdir.",
       "note": "Prototip. Hali ishga tushirilgan mahsulot emas."
     }
   },
@@ -376,5 +377,67 @@
     "aboutTitle": "Ilova haqida",
     "aboutBody": "MEX pilot demosi. Kontent sinov uchun namuna kontentdir.",
     "version": "Versiya {{version}} (yigʻma {{commit}}, {{date}})"
+  },
+  "legal": {
+    "link": "Shartlar va maxfiylik",
+    "title": "Foydalanish shartlari va maxfiylik",
+    "termsTitle": "Foydalanish shartlari",
+    "privacyTitle": "Maxfiylik",
+    "copyright": "© 2026 Alexis Team LLC. Barcha huquqlar himoyalangan. MEX — Modern Employability eXperience. Ushbu pilotdagi darslar sinov uchun namuna kontentdir.",
+    "terms": {
+      "pilot": {
+        "title": "Tayyor mahsulot emas, pilot.",
+        "body": "MEX — kichik oʻquvchilar guruhida sinovdan oʻtkazilayotgan dastlabki demo. U bepul. U oʻzgarishi, ishlamay qolishi yoki xatolarga ega boʻlishi mumkin."
+      },
+      "sample": {
+        "title": "Namuna kontent.",
+        "body": "Barcha darslar sinov uchun yozilgan namuna kontentdir. Ular toʻliq kurs emas va hech qanday imtihonga tayyorlamaydi."
+      },
+      "assessment": {
+        "title": "Baholash yoʻq.",
+        "body": "MEX ingliz tilingizni sinamaydi, baholamaydi va sertifikatlamaydi. Mashq natijalari faqat mashq uchun beriladigan javobdir. Tayyorlik darajasi va siz qoʻygan belgilar — oʻz-oʻzingizni baholashingiz. MEXdagi hech narsa malaka, sertifikat yoki ish beruvchilar uchun maʼlumotnoma emas."
+      },
+      "ai": {
+        "title": "Sunʼiy intellekt yoʻq.",
+        "body": "MEX sunʼiy intellektdan foydalanmaydi. Nutqingizni, suhbat javoblaringizni va xatlaringizni na odam, na kompyuter tekshiradi. Tinglash mashqi qurilmangizning oʻz ovozidan foydalanadi."
+      },
+      "use": {
+        "title": "Foydalanish.",
+        "body": "Pilot davomida MEXdan oʻz oʻqishingiz uchun foydalanishingiz mumkin. Iltimos, ilova yoki uning kontentini nusxalamang, sotmang va qayta nashr qilmang."
+      },
+      "guarantee": {
+        "title": "Kafolat yoʻq.",
+        "body": "MEX hech qanday natija vaʼdasisiz, boricha taqdim etiladi. Alexis Team LLC uning asosida qabul qilgan qarorlaringiz uchun javobgar emas."
+      }
+    },
+    "privacy": {
+      "account": {
+        "title": "Akkaunt yoʻq.",
+        "body": "MEX ismingizni, elektron pochta manzilingizni yoki telefon raqamingizni soʻramaydi."
+      },
+      "device": {
+        "title": "Maʼlumotlaringiz shu qurilmada qoladi.",
+        "body": "Tanlovlaringiz, natijalaringiz, yozgan javoblaringiz, belgilaringiz va baholaringiz faqat shu qurilmadagi shu brauzerda saqlanadi. MEX ularning hech birini bizga yoki boshqa birovga yubormaydi."
+      },
+      "recordings": {
+        "title": "Ovoz yozuvlari hech qachon saqlanmaydi.",
+        "body": "Mikrofon faqat «Yozib olish» tugmasini bosganingizda ishlatiladi va ekrandan chiqqaningizda yozuv yoʻqoladi."
+      },
+      "tracking": {
+        "title": "Kuzatuv yoʻq.",
+        "body": "MEXda analitika, reklama yoki kuzatuv cookie-fayllari yoʻq."
+      },
+      "hosting": {
+        "title": "Xosting.",
+        "body": "Sayt GitHub Pages xizmatida joylashgan. Saytni ochganingizda GitHub oʻz maxfiylik bayonotiga muvofiq IP manzilingiz kabi texnik maʼlumotlarni qayd etishi mumkin."
+      },
+      "delete": {
+        "title": "Maʼlumotlaringizni oʻchirish.",
+        "body": "Sozlamalardagi «Maʼlumotlarimni oʻchirish» hammasini oʻchiradi. Brauzer maʼlumotlarini tozalash ham ularni oʻchiradi."
+      }
+    },
+    "contact": "Savollar uchun:",
+    "contactLink": "Telegram {{handle}}",
+    "opensNewTab": "(yangi varaqda ochiladi)"
   }
 }

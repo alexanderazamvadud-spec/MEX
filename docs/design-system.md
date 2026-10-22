@@ -100,6 +100,13 @@ Keep the real learning content out of the repository: `content-private/` is igno
 - The page reads and writes no learner data and never redirects; returning learners use the demo link.
 - The prototype section lists "What works today" and "Planned" (MVP-16b): today lists both pathways, lessons, exercises, reading and listening, speaking practice, interview practice, writing practice, Today's Mission (chosen by simple, transparent rules), progress and readiness, three languages and Delete my data; planned lists AI coaching, AI-personalised learning recommendations, speaking assessment, learner accounts and certificates.
 
+## Terms and privacy (MVP-18)
+
+- `#/terms` renders `TermsPage` outside the app shell, like the landing page: wordmark and `LanguageMenu` in the header, the 560 px page column, no bottom navigation.
+- Back link, the h1 "Terms and privacy", the copyright notice, then two h2 sections: "Terms of use" (numbered list) and "Privacy" (bulleted list). Each item starts with its title in bold. The last privacy item links to the owner's Telegram contact in a new tab, with an "opens in a new tab" note for screen readers.
+- Linked from the landing footer and from Settings, About. Back returns to the screen the link was on (passed as router state), or to the landing page.
+- The landing footer reads "© 2026 Alexis Team LLC. All rights reserved. MEX — Modern Employability eXperience." (the same in every language) followed by the translated "The lessons in this pilot are sample content for testing.", then the prototype note and the "Terms and privacy" link.
+
 ## Onboarding (MVP-06b)
 
 - `#/onboarding` is outside the app shell: wordmark and the step counter ("Step {n} of 4") in the header, no bottom navigation and no language pill (step 1 is the language). It uses the 560 px page column.
