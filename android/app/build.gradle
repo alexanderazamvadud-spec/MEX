@@ -34,6 +34,7 @@ android {
                 keyAlias 'mexdebug'
                 keyPassword System.getenv('MEX_DEBUG_KEYSTORE_PASSWORD')
                 // All three schemes: some manufacturers' installers (e.g. MagicOS) reject v2-only APKs.
+                // Gradle ignores v1 for minSdk 24+, so the workflow re-signs MEX.apk with apksigner.
                 enableV1Signing true
                 enableV2Signing true
                 enableV3Signing true

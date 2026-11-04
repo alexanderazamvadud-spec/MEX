@@ -75,6 +75,18 @@ jobs:
       - name: Name the APK MEX.apk
         run: cp android/app/build/outputs/apk/debug/*.apk MEX.apk
 
+      # Android Gradle Plugin leaves out the v1 (JAR) signature when minSdk is 24 or higher,
+      # and some manufacturers' installers (e.g. MagicOS) refuse such APKs. Re-sign the finished,
+      # already zip-aligned APK with the same fixed debug key and all three schemes.
+      - name: Sign MEX.apk with the v1, v2 and v3 schemes
+        if: env.HAS_DEBUG_KEY == 'true'
+        env:
+          MEX_DEBUG_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_DEBUG_KEYSTORE_PASSWORD }}
+        run: |
+          BUILD_TOOLS="$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -n 1)"
+          "$BUILD_TOOLS/apksigner" sign             --ks "$MEX_DEBUG_KEYSTORE" --ks-type PKCS12 --ks-key-alias mexdebug             --ks-pass env:MEX_DEBUG_KEYSTORE_PASSWORD --key-pass env:MEX_DEBUG_KEYSTORE_PASSWORD             --v1-signing-enabled true --v2-signing-enabled true --v3-signing-enabled true             --out MEX-signed.apk MEX.apk
+          mv MEX-signed.apk MEX.apk
+
       # Never publish an APK that a phone would refuse: check alignment, every signature
       # scheme and the package flags with the Android build tools, and fail the run otherwise.
       - name: Verify the APK (alignment, signatures, package)
@@ -99,7 +111,7 @@ jobs:
         uses: actions/upload-artifact@v7
         with:
           name: MEX-debug-apk
-          path: android/app/build/outputs/apk/debug/*.apk
+          path: MEX.apk
 
       # Rolling release: the same tag and file name every time, so
       # https://github.com/alexanderazamvadud-spec/MEX/releases/latest/download/MEX.apk never changes.
