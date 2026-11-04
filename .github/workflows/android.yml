@@ -97,12 +97,19 @@ jobs:
           if ! "$BUILD_TOOLS/zipalign" -c -v 4 MEX.apk > zipalign.txt; then tail -n 20 zipalign.txt; echo "::error::MEX.apk is not zip-aligned."; exit 1; fi
           tail -n 1 zipalign.txt
           "$BUILD_TOOLS/apksigner" verify --verbose --print-certs MEX.apk | tee apksigner.txt
-          for scheme in v1 v2 v3; do
+          # apksigner only evaluates the v1 (JAR) signature when asked about Android versions that
+          # use it, so v1 is checked in a second pass as if for min SDK 18.
+          "$BUILD_TOOLS/apksigner" verify --verbose --min-sdk-version 18 MEX.apk | tee apksigner-v1.txt
+          for scheme in v2 v3; do
             if ! grep -qE "^Verified using $scheme scheme .*: true$" apksigner.txt; then
               echo "::error::MEX.apk is not signed with the $scheme scheme; some phones would refuse to install it."
               exit 1
             fi
           done
+          if ! grep -qE "^Verified using v1 scheme .*: true$" apksigner-v1.txt; then
+            echo "::error::MEX.apk has no valid v1 (JAR) signature; some manufacturers' installers would refuse it."
+            exit 1
+          fi
           "$BUILD_TOOLS/aapt2" dump badging MEX.apk > badging.txt
           grep -E "^package:|SdkVersion|testOnly|application-debuggable|^uses-permission" badging.txt || true
           if grep -q "testOnly" badging.txt; then echo "::error::MEX.apk is marked test-only and would not install from a download."; exit 1; fi
