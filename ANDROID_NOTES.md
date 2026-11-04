@@ -30,7 +30,8 @@ https://github.com/alexanderazamvadud-spec/MEX/releases/latest/download/MEX.apk
   - Splash screen: blue with the MEX mark, hidden as soon as the app has started.
 - **Touch.** No tap-highlight flash; controls are not text-selectable (reading content is); text fields use 16 px or more; no overscroll bounce.
 - **Signing and versions.** One fixed debug key (GitHub secrets `ANDROID_DEBUG_KEYSTORE_BASE64` and `ANDROID_DEBUG_KEYSTORE_PASSWORD`), so each new APK installs as an update and keeps the learner's progress. versionCode is the GitHub run number; versionName is 0.1.0 until a `v*` tag.
-- **Workflow.** `.github/workflows/android.yml` builds on every push to main, on `v*` tags and on demand, uploads the artifact `MEX-debug-apk`, and replaces `MEX.apk` on the `latest-build` release.
+- **Workflow.** `.github/workflows/android.yml` builds on every push to main, on `v*` tags and on demand, verifies the APK with the Android build tools (alignment, v1/v2/v3 signatures, not test-only), uploads the artifact `MEX-debug-apk`, and replaces `MEX.apk` on the `latest-build` release.
+- **Icon and splash** (approved 2026-11-04): white Manrope ExtraBold "MEX" on `#1F57C3`. Sources in `assets/`; all Android sizes generated with `npx @capacitor/assets generate --android`.
 
 ## 2. Build it yourself
 
@@ -68,6 +69,8 @@ One line per root cause found while building the Android app.
 - Android 15+ ignores status-bar colours (apps always draw edge-to-edge), so the blue status bar is painted by CSS behind a transparent bar; the native colour still applies on Android 14 and older.
 - `npx cap add android` needs the `@capacitor/android` package, which the instruction's install list left out; added (8.6.0) with the owner's approval.
 - `vite preview` serves the website base path (`/MEX/`) unless started with `--mode android`; the local check of the Android build uses `npx vite preview --mode android --outDir dist-android`.
+- **APK refused on an Honor X9d (Android 16, MagicOS): "package is invalid".** `apksigner verify` (build-tools 37.0.0) showed the APK was valid but signed with the **v2 scheme only** (v1, v3, v3.1, v4 all false): Android Gradle Plugin drops v1 for minSdk 24+ and does not add v3 by default. It was zip-aligned, not test-only, had no native libraries, and targeted SDK 36 with min SDK 24. Most likely cause: the MagicOS package installer also checks the v1 or v3 schemes. This can't be confirmed without the phone's install log. Fix: sign with v1, v2 and v3 explicitly (`enableV1Signing`/`enableV2Signing`/`enableV3Signing` in `android/app/build.gradle`). The workflow now runs `zipalign -c`, `apksigner verify --verbose --print-certs` and `aapt2 dump badging`, and fails, without publishing, unless the APK is aligned, verified with all three schemes and not test-only.
+- The first verification step piped `zipalign -c` into `tail`, which would have hidden a failure; it now checks the exit code.
 
 ## 6. Needs a real phone to verify
 
@@ -79,6 +82,5 @@ One line per root cause found while building the Android app.
 
 ## 7. Open items
 
-- App icon and splash screen: the proposed white "MEX" on `#1F57C3` awaits the owner's approval; until then the APK uses Capacitor's default icon and splash.
 - Read-aloud in the app needs a text-to-speech plugin (later task, owner decision).
 - `DECISIONS.md` (owner rulings) is kept local, like `CLAUDE.md`, while the repository is public.

@@ -79,12 +79,20 @@ jobs:
       # scheme and the package flags with the Android build tools, and fail the run otherwise.
       - name: Verify the APK (alignment, signatures, package)
         run: |
+          set -o pipefail
           BUILD_TOOLS="$(ls -d "$ANDROID_HOME"/build-tools/* | sort -V | tail -n 1)"
           echo "Build tools: $BUILD_TOOLS"
-          "$BUILD_TOOLS/zipalign" -c -v 4 MEX.apk | tail -n 1
-          "$BUILD_TOOLS/apksigner" verify --verbose --print-certs MEX.apk
+          if ! "$BUILD_TOOLS/zipalign" -c -v 4 MEX.apk > zipalign.txt; then tail -n 20 zipalign.txt; echo "::error::MEX.apk is not zip-aligned."; exit 1; fi
+          tail -n 1 zipalign.txt
+          "$BUILD_TOOLS/apksigner" verify --verbose --print-certs MEX.apk | tee apksigner.txt
+          for scheme in v1 v2 v3; do
+            if ! grep -qE "^Verified using $scheme scheme .*: true$" apksigner.txt; then
+              echo "::error::MEX.apk is not signed with the $scheme scheme; some phones would refuse to install it."
+              exit 1
+            fi
+          done
           "$BUILD_TOOLS/aapt2" dump badging MEX.apk > badging.txt
-          grep -E "^package:|^sdkVersion|^targetSdkVersion|testOnly|application-debuggable|^uses-permission" badging.txt || true
+          grep -E "^package:|SdkVersion|testOnly|application-debuggable|^uses-permission" badging.txt || true
           if grep -q "testOnly" badging.txt; then echo "::error::MEX.apk is marked test-only and would not install from a download."; exit 1; fi
 
       - name: Upload the APK as a build artifact
