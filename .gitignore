@@ -44,3 +44,6 @@ dist-android/
 *.jks
 *.keystore
 *.p12
+
+# Owner decisions log, kept local like CLAUDE.md while the repository is public
+DECISIONS.md

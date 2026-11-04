@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- MEX primary blue: status bar and accents on Android 14 and older (APK-01). -->
+    <color name="colorPrimary">#1F57C3</color>
+    <color name="colorPrimaryDark">#1F57C3</color>
+    <color name="colorAccent">#F6BE2C</color>
+</resources>
