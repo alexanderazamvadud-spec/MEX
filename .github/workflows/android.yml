@@ -1,0 +1,133 @@
+name: Android APK
+
+# Builds the MEX Android app (APK-01) with Capacitor and publishes MEX.apk.
+# Separate from deploy.yml, which publishes the website to GitHub Pages.
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  workflow_dispatch:
+
+# Needed to create and update the GitHub releases that carry MEX.apk.
+permissions:
+  contents: write
+
+concurrency:
+  group: android-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  apk:
+    runs-on: ubuntu-latest
+    env:
+      # Every build gets a unique, increasing versionCode; versionName follows a v* tag.
+      MEX_VERSION_CODE: ${{ github.run_number }}
+      MEX_VERSION_NAME: ${{ startsWith(github.ref, 'refs/tags/v') && github.ref_name || '0.1.0' }}
+      HAS_DEBUG_KEY: ${{ secrets.ANDROID_DEBUG_KEYSTORE_BASE64 != '' }}
+      HAS_RELEASE_KEY: ${{ secrets.ANDROID_KEYSTORE_BASE64 != '' }}
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v7
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Capacitor 8 needs JDK 21.
+      - name: Set up Java
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v6
+
+      - name: Build the web app for Android
+        run: npm run build:android
+
+      - name: Copy the web app into the Android project
+        run: npx cap sync android
+
+      - name: Make the Gradle wrapper executable
+        run: chmod +x android/gradlew
+
+      # One fixed debug key (secret), so every APK has the same signature and installs
+      # as an update without wiping the learner's progress.
+      - name: Restore the debug signing key
+        if: env.HAS_DEBUG_KEY == 'true'
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ANDROID_DEBUG_KEYSTORE_BASE64 }}
+        run: |
+          echo "$KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/mex-debug.p12"
+          echo "MEX_DEBUG_KEYSTORE=$RUNNER_TEMP/mex-debug.p12" >> "$GITHUB_ENV"
+
+      - name: Build the debug APK
+        env:
+          MEX_DEBUG_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_DEBUG_KEYSTORE_PASSWORD }}
+        run: cd android && ./gradlew assembleDebug --stacktrace
+
+      - name: Name the APK MEX.apk
+        run: cp android/app/build/outputs/apk/debug/*.apk MEX.apk
+
+      - name: Upload the APK as a build artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: MEX-debug-apk
+          path: android/app/build/outputs/apk/debug/*.apk
+
+      # Rolling release: the same tag and file name every time, so
+      # https://github.com/alexanderazamvadud-spec/MEX/releases/latest/download/MEX.apk never changes.
+      - name: Publish MEX.apk to the latest-build release
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: latest-build
+          name: MEX latest build
+          body: |
+            Latest Android build of MEX from the main branch (debug build, versionCode ${{ github.run_number }}).
+            Commit: ${{ github.sha }}
+
+            Install: open https://github.com/alexanderazamvadud-spec/MEX/releases/latest/download/MEX.apk on an Android phone, download it, open the file and allow "Install unknown apps" for your browser when asked.
+          files: MEX.apk
+          overwrite_files: true
+          prerelease: false
+          make_latest: 'true'
+
+      - name: Publish a versioned release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v3
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: MEX ${{ github.ref_name }}
+          files: MEX.apk
+          make_latest: 'false'
+
+      # Optional signed release build: runs only when all release-key secrets exist.
+      - name: Restore the release signing key
+        if: env.HAS_RELEASE_KEY == 'true'
+        env:
+          KEYSTORE_BASE64: ${{ secrets.ANDROID_KEYSTORE_BASE64 }}
+        run: |
+          echo "$KEYSTORE_BASE64" | base64 --decode > "$RUNNER_TEMP/mex-release.jks"
+          echo "MEX_RELEASE_KEYSTORE=$RUNNER_TEMP/mex-release.jks" >> "$GITHUB_ENV"
+
+      - name: Build the signed release APK
+        if: env.HAS_RELEASE_KEY == 'true'
+        env:
+          MEX_RELEASE_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+          MEX_RELEASE_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+          MEX_RELEASE_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+        run: cd android && ./gradlew assembleRelease --stacktrace
+
+      - name: Upload the signed release APK
+        if: env.HAS_RELEASE_KEY == 'true'
+        uses: actions/upload-artifact@v7
+        with:
+          name: MEX-release-apk
+          path: android/app/build/outputs/apk/release/*.apk

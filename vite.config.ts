@@ -18,11 +18,17 @@ function commit(): string {
 }
 
 // The site is published by GitHub Pages under https://alexanderazamvadud-spec.github.io/MEX/,
-// so every built asset URL must start with /MEX/.
-export default defineConfig({
-  base: '/MEX/',
-  plugins: [react(), tailwindcss()],
-  define: {
-    __MEX_BUILD__: JSON.stringify({ version, commit: commit(), date: new Date().toISOString().slice(0, 10) }),
-  },
+// so every built asset URL must start with /MEX/. The Android app (APK-01) serves the same
+// files from the root of its own web view, so its build (`vite build --mode android`, run by
+// `npm run build:android`) uses relative URLs and writes to dist-android/ instead of dist/.
+export default defineConfig(({ mode }) => {
+  const android = mode === 'android'
+  return {
+    base: android ? './' : '/MEX/',
+    build: android ? { outDir: 'dist-android' } : undefined,
+    plugins: [react(), tailwindcss()],
+    define: {
+      __MEX_BUILD__: JSON.stringify({ version, commit: commit(), date: new Date().toISOString().slice(0, 10) }),
+    },
+  }
 })

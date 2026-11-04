@@ -13,7 +13,7 @@ const items = [
 export default function BottomNav() {
   const { t } = useTranslation()
   return (
-    <nav className="sticky bottom-0 border-t border-divider bg-surface">
+    <nav className="mex-bottom-nav sticky bottom-0 border-t border-divider bg-surface pb-[env(safe-area-inset-bottom)]">
       <ul className="mx-auto flex w-full max-w-page justify-around px-gutter">
         {items.map(({ to, key, Icon }) => (
           <li key={to} className="flex-1">

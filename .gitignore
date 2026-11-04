@@ -38,3 +38,9 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+
+# Android app (APK-01): the Android web build and signing keys never go into the repository
+dist-android/
+*.jks
+*.keystore
+*.p12

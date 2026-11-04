@@ -38,6 +38,14 @@ To check colour contrast after a token change:
 npm run check:contrast
 ```
 
+## Android app
+
+MEX is also packaged as an Android app with Capacitor. GitHub Actions builds it on every push to `main` and publishes the newest APK at:
+
+https://github.com/alexanderazamvadud-spec/MEX/releases/latest/download/MEX.apk
+
+How it is built, installed and released: [ANDROID_NOTES.md](ANDROID_NOTES.md).
+
 ## Folder structure
 
 | Folder | Contents |
