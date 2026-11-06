@@ -9,21 +9,21 @@ const items = [
   { to: '/settings', key: 'nav.settings', Icon: SettingsIcon },
 ] as const
 
-// Bottom navigation: four tabs, 48 px targets, active tab in primary blue and aria-current="page".
+// Bottom navigation (74 px bar, DESIGN-02): four tabs, 66 px targets, 13 px labels, active tab in primary blue and aria-current="page".
 export default function BottomNav() {
   const { t } = useTranslation()
   return (
     <nav className="mex-bottom-nav sticky bottom-0 border-t border-divider bg-surface pb-[env(safe-area-inset-bottom)]">
-      <ul className="mx-auto flex w-full max-w-page justify-around px-gutter">
+      <ul className="mx-auto flex w-full max-w-page justify-around px-gutter pb-2">
         {items.map(({ to, key, Icon }) => (
           <li key={to} className="flex-1">
             <NavLink
               to={to}
               className={({ isActive }) =>
                 [
-                  'flex min-h-12 flex-col items-center justify-center gap-0.5 pt-1.5 pb-1 text-[12px] font-bold no-underline',
+                  'flex min-h-[66px] flex-col items-center justify-center gap-1 text-[13px] no-underline',
                   'rounded-panel focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-(--focus-ring)',
-                  isActive ? 'text-primary' : 'text-ink-muted hover:text-ink',
+                  isActive ? 'font-extrabold text-primary' : 'font-bold text-ink-secondary hover:text-ink',
                 ].join(' ')
               }
             >

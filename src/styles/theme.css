@@ -1,6 +1,8 @@
 /*
- * MEX design tokens: "Bright Start" (CONFIRMED by the owner, 2026-10-08; the
- * derived hover tints, accent-hover and outline values confirmed 2026-10-09).
+ * MEX design tokens. Brand: "Bright Start" (CONFIRMED by the owner, 2026-10-08):
+ * blue #1F57C3 and Manrope. Visual style: the app mockup ("MEX App Mockup.html"),
+ * CONFIRMED by the owner for DESIGN-02 (2026-11-06): grey canvas with white cards,
+ * 12 to 16 px corners, 14 px buttons, darker ink and an orange alert tint.
  * See docs/design-system.md for the usage rules.
  * Tokens are named by role, so a dark theme can later override the same
  * variables under a [data-theme="dark"] selector without touching components.
@@ -38,68 +40,72 @@
 
   --font-sans: 'MEX Apostrophes', 'Manrope Variable', 'Segoe UI', Roboto, 'Noto Sans', system-ui, sans-serif;
 
-  /* Brand */
+  /* Brand. Saffron accents were retired in DESIGN-02 (the app mockup has none). */
   --color-primary: #1F57C3;
-  --color-primary-hover: #16418F;
-  --color-accent: #F6BE2C;
-  --color-accent-hover: #E0A410;
+  --color-primary-hover: #163F8F;
 
-  /* Surfaces */
+  /* Surfaces. The page is a light grey canvas; cards are white on it (DESIGN-02). */
+  --color-canvas: #F5F7FB;
   --color-surface: #FFFFFF;
-  --color-surface-soft: #F2F5FC;
-  --color-surface-soft-hover: #E4EAF7;
-  --color-surface-sky: #EAF0FC;
+  /* "soft" keeps its name for the default card, which is now white on the canvas. */
+  --color-surface-soft: #FFFFFF;
+  --color-surface-soft-hover: #EEF0F5;
+  /* Neutral fill: disabled buttons, number circles, inactive states. */
+  --color-surface-muted: #EEF0F5;
+  --color-surface-sky: #E6EEFB;
   --color-surface-sky-hover: #DCE6F9;
-  --color-accent-tint: #FFF4D6;
-  --color-accent-tint-hover: #FFE9B8;
+  /* Orange alert tint (replaces the saffron tint, DESIGN-02). */
+  --color-accent-tint: #FFF1E0;
+  --color-accent-tint-hover: #FFE4C2;
 
   /* Text */
-  --color-ink: #121826;
-  --color-ink-secondary: #485066;
-  --color-ink-muted: #5A6275;
+  --color-ink: #0F1B33;
+  --color-ink-secondary: #4A5670;
+  --color-ink-muted: #4A5670;
   --color-on-primary: #FFFFFF;
   --color-on-primary-muted: #D6E2FA;
-  --color-on-accent: #121826;
-  --color-on-accent-tint: #7A5A00;
+  --color-on-accent-tint: #6B3600;
 
   /* Lines and tracks */
-  --color-divider: #E6EBF5;
+  --color-divider: #DCE3F0;
+  /* Text-field and indicator outlines stay darker than the mockup's #DCE3F0 so they meet 3:1. */
   --color-outline: #76829B;
-  --color-track: #D3DEF5;
-  --color-track-on-primary: #16418F;
+  --color-dash-line: #A9B4C8;
+  --color-track: #DCE3F0;
+  --color-track-on-primary: #163F8F;
 
   /* Feedback */
-  --color-success-tint: #E3F4E8;
-  --color-success-border: #1E7B3A;
-  --color-success-text: #17602F;
+  --color-success-tint: #E3F3EA;
+  --color-success-border: #1E7B4F;
+  --color-success-text: #1E5E3E;
   --color-error-tint: #FDE8E4;
   --color-error-tint-hover: #F9D5CE;
   --color-error-border: #B8442C;
-  --color-error-text: #8A2A17;
-  --color-warning-tint: #FFF4D6;
-  --color-warning-text: #7A5A00;
-  --color-info-tint: #EAF0FC;
+  --color-error-text: #A3261B;
+  --color-warning-tint: #FFF1E0;
+  --color-warning-text: #6B3600;
+  --color-info-tint: #E6EEFB;
   --color-info-text: #1F57C3;
 
-  /* Type scale (12 px floor). Each entry carries its line-height, tracking and weight. */
-  --text-label: 12px;
+  /* Type scale (12 px floor; DESIGN-02 sizes from the app mockup). Each entry carries its line-height, tracking and weight. */
+  --text-label: 13px;
   --text-label--line-height: 1.3;
   --text-label--letter-spacing: 0.08em;
   --text-label--font-weight: 700;
-  --text-small: 13px;
+  --text-small: 14px;
   --text-small--line-height: 1.45;
   --text-small--font-weight: 600;
-  --text-body: 15px;
+  --text-body: 16px;
   --text-body--line-height: 1.5;
   --text-body--font-weight: 600;
   --text-lead: 17px;
   --text-lead--line-height: 1.4;
   --text-lead--font-weight: 600;
-  --text-h3: 20px;
+  --text-h3: 18px;
   --text-h3--line-height: 1.25;
   --text-h3--letter-spacing: -0.01em;
   --text-h3--font-weight: 800;
-  --text-h2: 24px;
+  --text-h2: 22px;
   --text-h2--line-height: 1.2;
   --text-h2--letter-spacing: -0.02em;
   --text-h2--font-weight: 800;
@@ -107,7 +113,7 @@
   --text-h1--line-height: 1.2;
   --text-h1--letter-spacing: -0.02em;
   --text-h1--font-weight: 800;
-  --text-display: 30px;
+  --text-display: 28px;
   --text-display--line-height: 1.15;
   --text-display--letter-spacing: -0.02em;
   --text-display--font-weight: 800;
@@ -117,13 +123,16 @@
   --text-wordmark--font-weight: 800;
 
   /* Shape */
-  --radius-card: 24px;
-  --radius-panel: 20px;
+  --radius-card: 16px;
+  --radius-panel: 12px;
   --radius-pill: 9999px;
+  /* Buttons (58 / 54 / 44 px tall) and small choice chips such as the 1 to 5 scale. */
+  --radius-button: 14px;
+  --radius-chip: 10px;
 
   /* Layout. Named "gutter", not "screen": a --spacing-screen token would override
    * Tailwind's built-in h-screen / w-screen / min-h-screen utilities. */
-  --spacing-gutter: 18px;
+  --spacing-gutter: 20px;
   --container-page: 560px;
   /* Wider column for the public landing page only (MVP-06); app screens keep --container-page. */
   --container-landing: 1040px;
@@ -132,7 +141,6 @@
 /*
  * Focus ring colour follows the surface around the control: primary blue on
  * light surfaces, white inside primary-blue surfaces (set by the Card component).
- * Saffron is never used for rings or lines on light surfaces (1.7:1).
  */
 :root {
   --focus-ring: var(--color-primary);

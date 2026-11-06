@@ -45,7 +45,7 @@ export default function PathwaySwitch({
         tabIndex={-1}
         role="group"
         aria-labelledby={bodyId}
-        className="flex flex-col gap-3 rounded-panel bg-surface p-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--focus-ring)"
+        className="flex flex-col gap-3 rounded-panel bg-canvas p-4 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--focus-ring)"
       >
         <p id={bodyId} className="text-body">
           {t('home.pathway.confirm', { pathway: otherName })}

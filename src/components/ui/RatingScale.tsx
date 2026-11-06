@@ -1,6 +1,6 @@
 import type { Confidence } from '../../learner/types.ts'
 
-// A 1 to 5 scale of native radio buttons styled as pills, with a label under each end
+// A 1 to 5 scale of native radio buttons styled as chips (10 px corners, DESIGN-02), with a label under each end
 // (MVP-13 confidence, MVP-14 usefulness). Optional: nothing is chosen until the learner taps.
 const LEVELS: Confidence[] = [1, 2, 3, 4, 5]
 
@@ -27,11 +27,11 @@ export default function RatingScale({
           <label
             key={level}
             className={
-              'flex min-h-11 flex-1 cursor-pointer items-center justify-center rounded-pill border-2 text-body font-extrabold ' +
+              'flex min-h-11 flex-1 cursor-pointer items-center justify-center rounded-chip border text-body font-bold ' +
               'transition-colors duration-150 motion-reduce:transition-none ' +
               'has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-(--focus-ring) ' +
               (value === level
-                ? 'border-primary bg-primary text-on-primary'
+                ? 'border-primary bg-surface-sky font-extrabold text-primary-hover shadow-[inset_0_0_0_1px_var(--color-primary)]'
                 : 'border-outline bg-surface hover:bg-surface-soft-hover')
             }
           >

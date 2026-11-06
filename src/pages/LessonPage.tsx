@@ -112,7 +112,7 @@ export default function LessonPage({ pathway, pack, unit, activity }: ActivityPa
       )}
 
       <div>
-        <Button variant="accent" size="lg" onClick={finish}>
+        <Button variant="primary" size="lg" fullWidth onClick={finish}>
           {t('lesson.finish')}
         </Button>
       </div>

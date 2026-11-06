@@ -16,7 +16,7 @@ import NotFoundPage from './NotFoundPage.tsx'
 // never mistaken for the learner's self-reported level. Browsing never switches pathway.
 
 const STATUS_BADGE: Record<UnitStatus, BadgeVariant> = {
-  notStarted: 'surface',
+  notStarted: 'neutral',
   inProgress: 'sky',
   completed: 'success',
 }

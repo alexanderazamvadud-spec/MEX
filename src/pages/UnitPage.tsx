@@ -42,7 +42,7 @@ function ActivityRow({
       <span className="flex flex-wrap gap-2 empty:hidden">
         {completed ? <Badge variant="success">{t('learn.done')}</Badge> : null}
         {inMission ? <Badge variant="sky">{t('learn.mission')}</Badge> : null}
-        {!open ? <Badge variant="surface">{t('learn.opensSoon')}</Badge> : null}
+        {!open ? <Badge variant="neutral">{t('learn.opensSoon')}</Badge> : null}
       </span>
     </>
   )

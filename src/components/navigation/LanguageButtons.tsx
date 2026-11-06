@@ -40,7 +40,7 @@ export default function LanguageButtons({
           <Button
             key={language}
             size="sm"
-            variant={active ? 'primary' : 'secondary'}
+            variant={active ? 'selected' : 'secondary'}
             lang={language}
             aria-pressed={active}
             onClick={() => handleSelect(language)}

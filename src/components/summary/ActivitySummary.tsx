@@ -14,7 +14,7 @@ import type { ActivityPageProps } from '../../pages/activityPageProps.ts'
 // The activity summary (MVP-14, Scope v2 screen S14), shown in place of an activity once the
 // learner finishes it; the player has already recorded completion. It recaps the activity
 // (`recap`, supplied by the player), asks the optional "Was this useful?" 1-5 question and
-// offers the next activity in the unit (the saffron action) or the unit. The rating is saved
+// offers the next activity in the unit (the main, blue action) or the unit. The rating is saved
 // on the first tap and changed in place on a later tap; it never blocks leaving.
 export default function ActivitySummary({
   pathway,
@@ -80,18 +80,18 @@ export default function ActivitySummary({
         </p>
       </section>
 
-      <div className="flex flex-wrap gap-3">
+      <div className="flex flex-col gap-3">
         {next ? (
           <>
-            <ButtonLink to={`/learn/${pathway}/${unit.id}/${next.id}`} variant="accent" size="lg">
+            <ButtonLink to={`/learn/${pathway}/${unit.id}/${next.id}`} variant="primary" size="lg" fullWidth>
               {t('summary.next')}
             </ButtonLink>
-            <ButtonLink to={unitPath} variant="secondary" size="lg">
+            <ButtonLink to={unitPath} variant="secondary" size="lg" fullWidth>
               {t('summary.backToUnit')}
             </ButtonLink>
           </>
         ) : (
-          <ButtonLink to={unitPath} variant="accent" size="lg">
+          <ButtonLink to={unitPath} variant="primary" size="lg" fullWidth>
             {t('summary.backToUnit')}
           </ButtonLink>
         )}

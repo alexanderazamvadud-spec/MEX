@@ -250,11 +250,11 @@ export default function QuestionPlayer({
 
       <div>
         {checked ? (
-          <Button variant="primary" size="lg" onClick={next}>
+          <Button variant="primary" size="lg" fullWidth onClick={next}>
             {isLast ? t('exercise.seeResults') : t('exercise.next')}
           </Button>
         ) : (
-          <Button variant="primary" size="lg" onClick={check}>
+          <Button variant="primary" size="lg" fullWidth onClick={check}>
             {t('exercise.check')}
           </Button>
         )}

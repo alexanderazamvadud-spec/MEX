@@ -159,7 +159,7 @@ describe('HomePage', () => {
     expect(readiness.getByText(home.readiness.careerEmpty)).toBeTruthy()
     const link = readiness.getByRole('link', { name: home.readiness.seeProgress })
     expect(link.getAttribute('href')).toBe('/progress')
-    expect(link.className).not.toContain('bg-accent')
+    expect(link.className).not.toContain('bg-primary')
   })
 
   it('shows the level from finished interview sessions, and Highest reached only when higher', async () => {

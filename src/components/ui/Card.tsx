@@ -2,7 +2,7 @@ import type { ButtonHTMLAttributes, HTMLAttributes, ReactNode } from 'react'
 
 export type CardVariant = 'soft' | 'sky' | 'primary' | 'accent-tint'
 
-// 24 px corners, no border, no shadow. Tinted surfaces separate cards from the white page.
+// 16 px corners, no border, no shadow (DESIGN-02): white cards on the grey canvas.
 const baseClasses = 'flex flex-col gap-2.5 rounded-card p-4'
 
 const variantClasses: Record<CardVariant, string> = {

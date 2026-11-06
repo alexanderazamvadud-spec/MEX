@@ -10,7 +10,7 @@ import HomeBlock from './HomeBlock.tsx'
 // There is no Start button.
 export default function TodaysMission({ pack, mission }: { pack: ContentPack | null; mission: MissionItem[] }) {
   const { t } = useTranslation()
-  if (!pack) return <HomeBlock title={t('home.mission.title')} busy data-block="mission" />
+  if (!pack) return <HomeBlock title={t('home.mission.title')} variant="primary" busy data-block="mission" />
 
   function why({ activity, reason }: MissionItem): string {
     switch (reason.rule) {
@@ -28,6 +28,7 @@ export default function TodaysMission({ pack, mission }: { pack: ContentPack | n
   return (
     <HomeBlock
       title={t('home.mission.title')}
+      variant="primary"
       badge={isPlaceholder(pack.content_status) ? t('home.sampleContent') : undefined}
       data-block="mission"
     >
@@ -45,16 +46,16 @@ export default function TodaysMission({ pack, mission }: { pack: ContentPack | n
               </li>
             ))}
           </ol>
-          <p className="text-small text-ink-secondary">{t('home.mission.total', { n: totalMinutes(mission) })}</p>
+          <p className="text-small text-on-primary-muted">{t('home.mission.total', { n: totalMinutes(mission) })}</p>
           {mission.some((item) => !canOpen(item.activity)) ? (
-            <p className="text-small text-ink-secondary">{t('home.mission.noPlayer')}</p>
+            <p className="text-small text-on-primary-muted">{t('home.mission.noPlayer')}</p>
           ) : null}
         </>
       ) : (
         <p className="text-body">{t('home.mission.unitFinished')}</p>
       )}
       <details className="group">
-        <summary className="inline-flex min-h-11 cursor-pointer items-center rounded-pill text-body font-bold text-primary underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--focus-ring)">
+        <summary className="inline-flex min-h-11 cursor-pointer items-center rounded-pill text-body font-bold text-on-primary underline underline-offset-2 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--focus-ring)">
           {t('home.mission.why')}
         </summary>
         <div className="flex flex-col gap-2 pt-1">
@@ -65,7 +66,7 @@ export default function TodaysMission({ pack, mission }: { pack: ContentPack | n
               ))}
             </ul>
           ) : null}
-          <p className="text-body text-ink-secondary">{t('home.mission.whyBody')}</p>
+          <p className="text-body text-on-primary-muted">{t('home.mission.whyBody')}</p>
         </div>
       </details>
     </HomeBlock>

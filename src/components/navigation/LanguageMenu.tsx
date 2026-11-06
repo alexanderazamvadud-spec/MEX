@@ -55,7 +55,7 @@ export default function LanguageMenu() {
         onClick={() => setOpen((value) => !value)}
         className={
           'inline-flex min-h-11 min-w-11 items-center justify-center rounded-pill bg-surface-sky px-4 text-[13px] font-extrabold ' +
-          'uppercase text-primary transition-colors duration-150 hover:bg-track motion-reduce:transition-none ' +
+          'uppercase text-primary-hover transition-colors duration-150 hover:bg-surface-sky-hover motion-reduce:transition-none ' +
           'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--focus-ring)'
         }
       >

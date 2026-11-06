@@ -82,7 +82,7 @@ function SpeakingTask({
               {t('speaking.ready')}
             </Button>
           ) : (
-            <Button variant="primary" size="md" onClick={() => setTimer('prepare')}>
+            <Button variant="secondary" size="md" onClick={() => setTimer('prepare')}>
               {t('speaking.startPreparing')}
             </Button>
           )}
@@ -93,7 +93,7 @@ function SpeakingTask({
         <StepHeading id={id('speak')}>{t('speaking.speak')}</StepHeading>
         <Countdown seconds={SPEAK_SECONDS} running={timer === 'speak'} onDone={stopTimer} />
         <div>
-          <Button variant="primary" size="md" onClick={() => setTimer('speak')} disabled={timer === 'speak'}>
+          <Button variant="secondary" size="md" onClick={() => setTimer('speak')} disabled={timer === 'speak'}>
             {t('speaking.startSpeaking')}
           </Button>
         </div>
@@ -224,7 +224,7 @@ export default function SpeakingPage({ pathway, pack, unit, activity }: Activity
       ))}
 
       <div>
-        <Button variant="accent" size="lg" onClick={finish}>
+        <Button variant="primary" size="lg" fullWidth onClick={finish}>
           {t('speaking.finish')}
         </Button>
       </div>

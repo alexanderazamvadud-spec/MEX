@@ -21,16 +21,17 @@ export default function OptionCard({
   disabled: boolean
   onSelect: () => void
 }) {
+  // Thin border; the chosen or marked option gets a 2 px coloured border (DESIGN-02).
   const background =
     mark === 'right'
-      ? 'bg-success-tint'
+      ? 'border-success-border bg-success-tint shadow-[inset_0_0_0_1px_var(--color-success-border)]'
       : mark === 'wrong'
-        ? 'bg-error-tint'
+        ? 'border-error-border bg-error-tint shadow-[inset_0_0_0_1px_var(--color-error-border)]'
         : selected
-          ? 'bg-surface-sky'
+          ? 'border-primary bg-surface-sky shadow-[inset_0_0_0_1px_var(--color-primary)]'
           : disabled
-            ? 'bg-surface-soft'
-            : 'bg-surface-soft hover:bg-surface-soft-hover'
+            ? 'border-divider bg-surface'
+            : 'border-divider bg-surface hover:bg-surface-soft-hover'
   const indicator =
     mark === 'right'
       ? 'border-success-border bg-success-border text-on-primary'
@@ -43,7 +44,7 @@ export default function OptionCard({
     <label
       data-mark={mark ?? undefined}
       className={[
-        'flex min-h-14 items-start gap-3 rounded-card p-4 transition-colors duration-150 motion-reduce:transition-none',
+        'flex min-h-[54px] items-start gap-3 rounded-panel border px-4 py-3.5 transition-colors duration-150 motion-reduce:transition-none',
         'has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-(--focus-ring)',
         disabled ? 'cursor-default' : 'cursor-pointer',
         background,

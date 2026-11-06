@@ -50,7 +50,7 @@ describe('Activity summary', () => {
     expect(screen.getByText(text.notUseful)).toBeTruthy()
     expect(screen.getByText(text.veryUseful)).toBeTruthy()
     expect(screen.queryByText(text.thanks)).toBeNull()
-    expect(document.querySelectorAll('[data-summary] .bg-accent')).toHaveLength(1)
+    expect(document.querySelectorAll('[data-summary] a.bg-primary, [data-summary] button.bg-primary')).toHaveLength(1)
   })
 
   it('leaves without a rating, saving none', async () => {

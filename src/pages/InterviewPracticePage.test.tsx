@@ -134,9 +134,9 @@ describe('InterviewPracticePage', () => {
     expect(after.exerciseResults).toEqual([])
     expect(after.profile).toEqual(before.profile)
     expect(screen.getByText('You ticked 1 of 9 checks. This is your own view, not a test result.')).toBeTruthy()
-    // The last activity of the unit: Back to unit is the saffron action.
+    // The last activity of the unit: Back to unit is the screen's one main (blue) action.
     const back = screen.getByRole('link', { name: en.summary.backToUnit })
-    expect(back.className).toContain('bg-accent')
+    expect(back.className).toContain('bg-primary')
     expect(screen.queryByRole('link', { name: en.summary.next })).toBeNull()
     fireEvent.click(back)
     expect(await screen.findByRole('heading', { level: 1, name: `Unit 1: ${unit.title}` })).toBeTruthy()

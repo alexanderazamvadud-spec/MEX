@@ -90,10 +90,10 @@ export default function LandingPage() {
               </h1>
               <p className="text-lead text-on-primary-muted">{t('landing.hero.body')}</p>
               <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
-                <ButtonLink to="/home" variant="accent" size="lg">
+                <ButtonLink to="/home" variant="inverse" size="lg">
                   {t('landing.hero.primaryCta')}
                 </ButtonLink>
-                <Button variant="secondary" size="lg" onClick={showPathways}>
+                <Button variant="outline-inverse" size="lg" onClick={showPathways}>
                   {t('landing.hero.secondaryCta')}
                 </Button>
               </div>

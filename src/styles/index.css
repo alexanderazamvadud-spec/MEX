@@ -5,7 +5,8 @@
 @layer base {
   html {
     font-family: var(--font-sans);
-    background-color: var(--color-surface);
+    /* Light grey canvas behind white cards (DESIGN-02). */
+    background-color: var(--color-canvas);
     color: var(--color-ink);
     -webkit-text-size-adjust: 100%;
   }

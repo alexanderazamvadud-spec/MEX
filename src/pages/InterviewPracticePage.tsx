@@ -278,11 +278,11 @@ export default function InterviewPracticePage({ pathway, pack, unit, activity }:
 
       <div>
         {last ? (
-          <Button variant="accent" size="lg" onClick={() => save(true)}>
+          <Button variant="primary" size="lg" fullWidth onClick={() => save(true)}>
             {t('interview.finish')}
           </Button>
         ) : (
-          <Button variant="primary" size="lg" onClick={() => save(false)}>
+          <Button variant="primary" size="lg" fullWidth onClick={() => save(false)}>
             {t('interview.next')}
           </Button>
         )}

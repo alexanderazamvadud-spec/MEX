@@ -71,10 +71,10 @@ function StorageSection() {
 const colourTokens: Array<{ name: string; className: string }> = [
   { name: 'primary', className: 'bg-primary' },
   { name: 'primary-hover', className: 'bg-primary-hover' },
-  { name: 'accent', className: 'bg-accent' },
-  { name: 'accent-hover', className: 'bg-accent-hover' },
+  { name: 'canvas', className: 'bg-canvas' },
   { name: 'surface', className: 'bg-surface' },
   { name: 'surface-soft', className: 'bg-surface-soft' },
+  { name: 'surface-muted', className: 'bg-surface-muted' },
   { name: 'surface-sky', className: 'bg-surface-sky' },
   { name: 'accent-tint', className: 'bg-accent-tint' },
   { name: 'ink', className: 'bg-ink' },
@@ -83,6 +83,7 @@ const colourTokens: Array<{ name: string; className: string }> = [
   { name: 'on-primary-muted', className: 'bg-on-primary-muted' },
   { name: 'divider', className: 'bg-divider' },
   { name: 'outline', className: 'bg-outline' },
+  { name: 'dash-line', className: 'bg-dash-line' },
   { name: 'track', className: 'bg-track' },
   { name: 'track-on-primary', className: 'bg-track-on-primary' },
   { name: 'success-tint', className: 'bg-success-tint' },
@@ -178,14 +179,14 @@ export default function StyleguidePage() {
       <Section title="Buttons">
         <div className="flex flex-wrap items-center gap-3">
           <Button>Primary</Button>
-          <Button variant="accent">Accent</Button>
+          <Button variant="inverse">Inverse</Button>
           <Button variant="secondary">Secondary</Button>
           <Button variant="tertiary">Tertiary</Button>
           <Button variant="destructive">Destructive</Button>
         </div>
         <div className="flex flex-wrap items-center gap-3">
-          <Button size="lg">Large 56</Button>
-          <Button size="md">Medium 52</Button>
+          <Button size="lg">Large 58</Button>
+          <Button size="md">Medium 54</Button>
           <Button size="sm">Small 44</Button>
         </div>
         <div className="flex flex-wrap items-center gap-3">
@@ -194,7 +195,7 @@ export default function StyleguidePage() {
             Disabled
           </Button>
           <Button loading>Loading</Button>
-          <Button variant="accent" loading>
+          <Button variant="secondary" loading>
             Loading
           </Button>
         </div>
@@ -207,7 +208,7 @@ export default function StyleguidePage() {
       <Section title="Badges">
         <div className="flex flex-wrap items-center gap-2">
           <Badge>Sample content</Badge>
-          <Badge variant="accent">Unit 2 of 4</Badge>
+          <Badge variant="surface">Unit 2 of 4</Badge>
           <Badge variant="primary">Primary</Badge>
           <Badge variant="sky">Self-assessment</Badge>
           <Badge variant="success">Correct</Badge>
@@ -219,14 +220,14 @@ export default function StyleguidePage() {
         <Card variant="primary" className="p-[18px]">
           <div className="flex items-center justify-between gap-2">
             <span className="text-label uppercase text-on-primary-muted">Today's Mission</span>
-            <Badge variant="accent">12 min</Badge>
+            <Badge variant="surface">12 min</Badge>
           </div>
           <p className="text-h3">Introducing yourself: phrases + one speaking task</p>
-          <div className="h-2.5 rounded-pill bg-track-on-primary" aria-hidden="true">
-            <div className="h-2.5 w-2/5 rounded-pill bg-accent" />
+          <div className="h-2 rounded-[4px] bg-track-on-primary" aria-hidden="true">
+            <div className="h-2 w-2/5 rounded-[4px] bg-on-primary" />
           </div>
           <div className="flex items-center justify-between gap-3">
-            <Button variant="accent" size="sm">
+            <Button variant="inverse" size="sm">
               Start mission
             </Button>
             <span className="text-small text-on-primary">Why this mission?</span>
@@ -235,11 +236,11 @@ export default function StyleguidePage() {
         <Card variant="soft">
           <div className="flex items-center justify-between gap-2">
             <span className="text-label uppercase text-ink-muted">Current Pathway</span>
-            <Badge variant="surface">Self-assessment</Badge>
+            <Badge variant="sky">Self-assessment</Badge>
           </div>
           <p className="text-lead font-extrabold">General English · Unit 2</p>
-          <div className="h-2.5 rounded-pill bg-track" aria-hidden="true">
-            <div className="h-2.5 w-2/5 rounded-pill bg-primary" />
+          <div className="h-2 rounded-[4px] bg-track" aria-hidden="true">
+            <div className="h-2 w-2/5 rounded-[4px] bg-primary" />
           </div>
           <p className="text-small text-ink-secondary">6 of 15 activities completed</p>
         </Card>

@@ -68,13 +68,13 @@ afterEach(() => {
 })
 
 describe('SettingsPage', () => {
-  it('shows the parts in the approved order, with no saffron action', () => {
+  it('shows the parts in the approved order, with no main (blue) action', () => {
     renderSettings(storeWith('general-english'))
     expect(screen.getByRole('heading', { level: 1, name: en.nav.settings })).toBeTruthy()
     const headings = screen.getAllByRole('heading', { level: 2 }).map((heading) => heading.textContent)
     expect(headings).toEqual([en.language.label, en.home.pathway.title, en.settings.explanationsTitle, en.settings.deleteData, en.settings.aboutTitle])
     expect(screen.getByText(en.settings.privacyNote)).toBeTruthy()
-    expect(document.querySelector('.bg-accent')).toBeNull()
+    expect(document.querySelector('a.bg-primary, button.bg-primary')).toBeNull()
     expect(screen.queryByText(/coming in a later task/)).toBeNull()
   })
 

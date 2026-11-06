@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router'
 import { useTranslation } from 'react-i18next'
 import LanguageButtons from '../components/navigation/LanguageButtons.tsx'
 import ChoiceCard from '../components/onboarding/ChoiceCard.tsx'
+import MeterBar from '../components/progress/MeterBar.tsx'
 import Button from '../components/ui/Button.tsx'
 import PageContainer from '../components/ui/PageContainer.tsx'
 import Wordmark from '../components/ui/Wordmark.tsx'
@@ -162,8 +163,10 @@ export default function OnboardingPage() {
       <PageContainer>
         <header className="flex min-h-14 items-center justify-between gap-3 py-2">
           <Wordmark size="md" />
-          <p className="text-small text-ink-secondary">{t('onboarding.stepCounter', { n: step + 1 })}</p>
+          <p className="text-small font-bold text-ink-secondary">{t('onboarding.stepCounter', { n: step + 1 })}</p>
         </header>
+        {/* The step bar repeats the counter visually (DESIGN-02); MeterBar is hidden from screen readers. */}
+        <MeterBar value={step + 1} total={STEP_COUNT} />
       </PageContainer>
       <main className="flex-1">
         <PageContainer className="py-4">

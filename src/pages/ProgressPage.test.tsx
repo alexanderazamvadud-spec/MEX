@@ -82,8 +82,8 @@ describe('ProgressPage', () => {
     expect(readiness.getByText('Speaking practice in Career Readiness: 0 done')).toBeTruthy()
     expect(readiness.getByText(en.readiness.speakingNote)).toBeTruthy()
 
-    // Read-only: no saffron action and no buttons.
-    expect(document.querySelector('.bg-accent')).toBeNull()
+    // Read-only: no main (blue) action and no buttons.
+    expect(document.querySelector('a.bg-primary, button.bg-primary')).toBeNull()
     expect(screen.queryAllByRole('button')).toHaveLength(0)
   })
 

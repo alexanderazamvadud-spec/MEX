@@ -214,7 +214,7 @@ export default function WritingPracticePage({ pathway, pack, unit, activity }: A
       ))}
 
       <div>
-        <Button variant="accent" size="lg" onClick={finish}>
+        <Button variant="primary" size="lg" fullWidth onClick={finish}>
           {t('writing.finish')}
         </Button>
       </div>

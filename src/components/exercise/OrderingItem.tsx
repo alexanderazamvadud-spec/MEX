@@ -8,9 +8,10 @@ import type { ItemViewProps } from './types.ts'
 // Ordering (MVP-10): the parts are shown in a fixed shuffled order as buttons. Tapping one
 // adds it to the answer line, tapping a placed part puts it back, and "Start again" clears
 // the line. There is no drag and drop, so it works by keyboard and screen reader too.
+// Look (DESIGN-02): 12 px chips; placed parts blue, unplaced parts white with a thin border.
 
 const partClasses =
-  'inline-flex min-h-11 items-center rounded-pill px-4 text-body font-bold transition-colors duration-150 motion-reduce:transition-none ' +
+  'inline-flex min-h-12 items-center rounded-panel px-4 text-lead font-bold transition-colors duration-150 motion-reduce:transition-none ' +
   'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-(--focus-ring) disabled:cursor-default'
 
 export default function OrderingItem({ item, answer, onChange, checked }: ItemViewProps<Ordering>) {
@@ -35,7 +36,7 @@ export default function OrderingItem({ item, answer, onChange, checked }: ItemVi
       <ol
         lang="en"
         aria-label={t('exercise.yourAnswer')}
-        className="flex min-h-16 flex-wrap items-center gap-2 rounded-card border-2 border-dashed border-outline bg-surface p-3"
+        className="flex min-h-16 flex-wrap items-center gap-2 rounded-card border-2 border-dashed border-dash-line bg-surface p-3"
       >
         {placed.map((segment, index) => (
           <li key={`${segment}-${index}`}>
@@ -59,7 +60,7 @@ export default function OrderingItem({ item, answer, onChange, checked }: ItemVi
                   <button
                     type="button"
                     onClick={() => onChange({ kind: 'ordering', values: [...placed, part.segment] })}
-                    className={`${partClasses} bg-surface-sky text-primary hover:bg-track`}
+                    className={`${partClasses} border border-divider bg-surface text-ink hover:bg-surface-soft-hover`}
                   >
                     {part.segment}
                   </button>

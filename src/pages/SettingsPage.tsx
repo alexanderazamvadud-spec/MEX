@@ -16,7 +16,7 @@ import { useLearner } from '../learner/useLearner.ts'
 
 // Settings (MVP-17, Scope v2 screen S16): interface language, active pathway, the
 // native-explanation switch, the learner's data and About, in that order. Nothing here
-// is the screen's main step, so it has no saffron action. Settings is open without a
+// is the screen's main step, so it has no main (blue) action. Settings is open without a
 // profile (so "Delete my data" can confirm its result), and then the pathway part is hidden.
 export default function SettingsPage() {
   const { t, i18n } = useTranslation()

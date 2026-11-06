@@ -15,7 +15,7 @@ import { useLearner } from '../learner/useLearner.ts'
 
 // Progress screen (MVP-15, Scope v2 screen S15 and section 3): curriculum completion,
 // demonstrated skills and readiness, always as three separate sections and never added
-// into one number. Read-only, so it has no saffron action.
+// into one number. Read-only, so it has no main (blue) action.
 
 const PATHWAY_KEYS: Record<PathwayId, string> = {
   'general-english': 'generalEnglish',

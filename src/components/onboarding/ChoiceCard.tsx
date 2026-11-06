@@ -25,8 +25,9 @@ export default function ChoiceCard({
   return (
     <label
       className={
-        'flex min-h-14 cursor-pointer items-start gap-3 rounded-card p-4 transition-colors duration-150 motion-reduce:transition-none ' +
-        'bg-surface-soft hover:bg-surface-soft-hover has-checked:bg-surface-sky has-checked:hover:bg-surface-sky-hover ' +
+        // 12 px corners and a thin border; the chosen card gets a 2 px blue border on the blue tint (DESIGN-02).
+        'flex min-h-[54px] cursor-pointer items-start gap-3 rounded-panel border border-divider px-4 py-3.5 transition-colors duration-150 motion-reduce:transition-none ' +
+        'bg-surface hover:bg-surface-soft-hover has-checked:border-primary has-checked:bg-surface-sky has-checked:shadow-[inset_0_0_0_1px_var(--color-primary)] has-checked:hover:bg-surface-sky-hover ' +
         'has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-(--focus-ring)'
       }
     >
